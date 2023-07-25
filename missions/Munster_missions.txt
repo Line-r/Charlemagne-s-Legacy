@@ -1,0 +1,420 @@
+centralisation_missions = {
+	slot = 3
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = MUN
+			tag = WES
+		}
+	}
+
+	enforce_our_control = {
+		position = 1
+		icon = appease_the_estates
+
+		trigger = {
+			all_subject_country = {
+				NOT = { liberty_desire = 25 }
+				has_opinion = {
+					who = root
+					value = 100
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = munster_control_enforced
+				duration = 5475
+			}
+		}
+	}
+
+	the_imperial_border = {
+		position = 3
+		icon = overshadow_venice
+
+		required_missions = {
+			integrate_the_north
+			integrate_the_south
+		}
+		trigger = {
+			55 = {
+				owned_by = root
+			}
+			1874 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			frisia_area = {
+				add_permanent_claim = root
+			}
+			east_frisia_area = {
+				add_permanent_claim = root
+			}
+			1874 = {
+				add_province_modifier = {
+					name = oldenburg_dockyards
+					duration = -1
+				}
+
+				add_building_construction = {
+					building = dock
+					speed = 1
+					cost = 0
+				}
+			}
+		}
+	}
+
+	towards_saxony = {
+		position = 4
+		icon = encroach_on_the_germans
+		required_missions = {
+			the_imperial_border
+		}
+
+		trigger = {
+			2971 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			custom_tooltip = westphalia_saxon_claims_tt
+			hidden_effect = {
+				every_province = {
+					limit = {
+						culture = saxon
+						continent = europe
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+
+			add_country_modifier = {
+				name = towards_saxony
+				duration = 7300
+			}
+		}
+	}
+
+	ratify_westphalia = {
+		position = 5
+		icon = westphalian_conquest
+		required_missions = {
+			towards_saxony
+		}
+
+		trigger = {
+			owns_all_provinces = {
+				culture = hannoverian
+			}
+		}
+
+		effect = {
+			change_tag = WES
+			swap_non_generic_missions = yes
+			add_legitimacy = 25
+			add_prestige = 50
+
+			country_event = { id = westphalian_mission_events.1 }
+		}
+	}
+}
+
+centralize_north = {
+	slot = 2
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = MUN
+			tag = WES
+		}
+	}
+
+	integrate_the_north = {
+		position = 2
+		icon = avoid_fragmentation
+		required_missions = {
+			enforce_our_control
+		}
+		
+		trigger = {
+			north_westphalia_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			north_rhine_area = {
+				add_permanent_claim = root
+			}
+
+			69 = {
+				add_province_modifier = {
+					name = chief_city_dortmund
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+centralize_south = {
+	slot = 4
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = MUN
+			tag = WES
+		}
+	}
+
+	integrate_the_south = {
+		required_missions = {
+			enforce_our_control
+		}
+		position = 2
+		icon = counter_reformation
+
+		trigger = {
+			westphalia_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			82 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+
+			north_rhine_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+}
+
+additional_missions = {
+	slot = 4
+	generic = no
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			tag = MUN
+			tag = WES
+		}
+	}
+
+
+	wes_widukind = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { towards_saxony }
+		position = 5
+
+		provinces_to_highlight = {
+			culture = lower_saxon
+			continent = europe
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = westphal_lower_saxon_tt
+				NOT = {
+					any_province = {
+						culture = lower_saxon
+						continent = europe
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = westphalia_saxon_claims_tt
+			hidden_effect = {
+				every_province = {
+					limit = {
+						culture = saxon
+						continent = europe
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+additional_missions_2 = {
+	slot = 5
+	generic = no
+	has_country_shield = yes
+
+
+	potential = {
+		OR = {
+			tag = MUN
+			tag = WES
+		}
+	}
+
+	wes_rheinland_start = {
+		icon = mission_high_income
+		position = 1
+		
+		trigger = {
+			1876 = {
+				is_strongest_trade_power = ROOT
+				trade_share = {
+					country = ROOT
+					share = 10
+				}
+			}
+		}
+		
+		effect = {
+			add_mercantilism = 5
+			add_country_modifier = { 
+				name = efficienct_merchants 
+				duration = 7300
+			}
+		}
+	}
+	
+	wes_rheinland_mid = {
+		icon = mission_hanseatic_city
+		required_missions = { wes_rheinland_start }
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				continent = europe
+				culture = hessian
+				value = 10
+			}
+		}
+		
+		effect = {
+			random_owned_province = {
+				limit = {
+					culture = hessian
+				}
+				add_base_tax = 1
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = {
+					culture = hessian
+				}
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			random_owned_province = {
+				limit = {
+					culture = hessian
+				}
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+			if = {
+				limit = {
+					75 = {
+						OR = {
+							NOT = { is_claim = root }
+							NOT = { is_core = root }
+						}
+					}
+				}
+				75 = { add_permanent_claim = ROOT }
+			}
+			if = {
+				limit = {
+					67 = {
+						OR = {
+							NOT = { is_claim = root }
+							NOT = { is_core = root }
+						}
+					}
+				}
+				67 = { add_permanent_claim = ROOT }
+			}
+		}
+	}
+	
+	wes_rheinland_end = {
+		icon = mission_conquer_50_development
+		required_missions = { wes_rheinland_mid }
+		
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 85
+						province_id = 75
+						province_id = 67
+						province_id = 1876
+						province_id = 69
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+				AND = {
+					province_id = 1876
+					OR = {
+						NOT = { is_strongest_trade_power = ROOT }
+						trade_share = {
+							country = ROOT
+							share = 80
+						}
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			owns_core_province = 85	# Koln
+			owns_core_province = 75	# Strasbourg
+			owns_core_province = 67	# Nuremburg
+			owns_core_province = 1876	# Frankfurt
+			owns_core_province = 69	# Dortmund
+			1876 = {
+				is_strongest_trade_power = ROOT
+				trade_share = {
+					country = ROOT
+					share = 80
+				}
+			}
+		}
+		
+		effect = {
+			add_accepted_culture_or_dip_power = { culture = hessian }
+			add_accepted_culture_or_dip_power = { culture = hannoverian }
+			add_country_modifier = { 
+				name = westphalia_integrate_rheinland
+				duration = -1 
+			}
+		}
+	}
+}

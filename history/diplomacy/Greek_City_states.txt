@@ -1,0 +1,164 @@
+alliance = {
+	first = ATH
+	second = TH8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = ER8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = DE8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = IT8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = OI8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = SO8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = LA8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = HO8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = ATH
+	second = NAX
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = PY8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = PH8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = CO8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = OL8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = AR8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = CRT
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = KNI
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = CS8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+alliance = {
+	first = SP8
+	second = CO8
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+
+union = {
+	first = EL8
+	second = IS8
+	start_date = 1430.1.1
+	end_date = 1581.1.1
+}
+
+union = {
+	first = TR8
+	second = AB8
+	start_date = 1430.1.1
+	end_date = 1581.1.1
+}
+
+union = {
+	first = TR8
+	second = TE8
+	start_date = 1430.1.1
+	end_date = 1581.1.1
+}

@@ -1,0 +1,412 @@
+brn_confederacy_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = BRN
+	}
+
+	placate_subjects = {
+		icon = mission_have_two_subjects
+		position = 1
+
+		trigger = {
+			all_subject_country = {
+				has_opinion = {
+					who = BRN
+					value = 100
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = liberal_constitution
+				duration = 18250
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = TTL
+				months = 300
+			}
+		}
+	}
+
+	vassalize_leagues = {
+		icon = mission_landsknecht_soldier
+		position = 2
+
+		required_missions = {
+			placate_subjects
+		}
+
+		trigger = {
+			overlord_of = TTL
+			}
+
+			effect = {
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					target = GNV
+					months = 300
+				}
+			}
+	}
+
+	vassalize_geneva = {
+		icon = mission_noble_council
+		position = 3
+
+		required_missions = {
+			vassalize_leagues
+		}
+
+		trigger = {
+			overlord_of = GNV
+		 }
+		effect = { 
+			add_militarised_society = 10
+			GNV = {
+				set_in_empire = no
+			}
+			country_event = {
+				id = create_canton.3
+			}
+		}
+	}
+
+	expand_confederation = {
+		icon = brest_dockyards
+		position = 4
+
+		required_missions = {
+			vassalize_geneva
+		}
+
+		trigger = {
+			num_of_subjects = 25
+		}
+
+		effect = {
+			add_mil_power = 100
+			add_prestige = 25
+			add_casus_belli = {
+				type = cb_liberation
+				target = BUR
+				months = 600
+			}
+		}
+	}
+
+	scourge_of_europe = {
+		icon = mission_impaled_soldies
+		position = 5
+
+		required_missions = {
+			expand_confederation
+		}
+
+		trigger = {
+			OR = {
+				NOT = { exists = BUR }
+				BUR = {
+					NOT = { num_of_cities = 5 }
+				}
+			}
+		}
+
+		effect = {
+			add_militarised_society = 25
+			add_prestige = 100
+			dismantle_hre = yes
+			add_country_modifier = {
+				name = for_freedom
+				duration = 36500
+			}
+			every_subject_country = {
+				every_owned_province = {
+					add_base_manpower = 1
+					add_base_production = 1
+					add_base_tax = 1
+				}
+			}
+		}
+	}
+}
+
+brn_unification_missions = {
+
+
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = BRN
+	}
+
+	unite_confederation = {
+		icon = integrate_the_three_leagues
+		position = 4
+
+		required_missions = {
+			vassalize_geneva
+		}
+	
+		trigger = {
+				owns_or_non_sovereign_subject_of = 1871
+				owns_or_non_sovereign_subject_of = 1867
+				prestige = 50
+
+			is_at_war = no
+			NOT = { exists = SWI }
+
+		}
+
+		effect = {
+			every_subject_country = {
+				limit = {
+					ai = yes
+				}
+				ROOT = { inherit = PREV }
+			}
+		
+
+			change_tag = SWI
+			swap_non_generic_missions = yes
+
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+
+			switzerland_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = SWI
+			}
+			romandie_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = SWI
+			}
+			add_prestige = 25
+
+				country_event = { id = ideagroups.1 } #Swap Ideas
+				
+			if = {
+				limit = {
+					OR = {
+						government = theocracy
+						government = republic
+					}
+					is_revolutionary = no
+				}
+
+				add_government_reform = united_cantons_reform
+			}
+			else = {
+				if = {
+					limit = { is_revolutionary = no }
+					change_government_to_republic = yes
+					add_government_reform = united_cantons_reform
+				}
+			}
+			set_country_flag = formed_switzerland_flag
+			clr_country_flag = expansion_of_confederacy
+		}
+		}
+	}
+
+
+brn_branch_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = BRN
+	}
+
+	brn_trade_center = {
+		position = 2
+		icon = reform_the_state
+		required_missions = {
+			the_greatest_canton
+		}
+
+		trigger = {
+			165 = {
+				province_has_center_of_trade_of_level = 2
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+			all_subject_country = {
+				has_divert_trade = yes
+			}
+		}
+
+		effect = {
+			165 = {
+				add_center_of_trade_level = 1
+			}
+
+			add_country_modifier = {
+				name = buying_swiss
+				duration = 9125
+			}
+		}
+	}
+
+	ironworks_of_bern = {
+		position = 3
+		icon = saxon_manufacturing
+		required_missions = {
+			brn_trade_center
+		}
+
+		trigger = {
+			165 = {
+				has_building = workshop
+				has_manufactory_trigger = yes
+			}
+		}
+
+		effect = {
+			165 = {
+				add_province_modifier = {
+					name = bernese_ironworking
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+brn_branch_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = BRN
+	}
+
+	the_greatest_canton = {
+		position = 1
+		icon = fortress_switzerland
+
+		trigger = {
+			165 = {
+				development = 25
+				is_prosperous = yes
+			}
+
+		}
+
+		effect = {
+			165 = {
+				add_province_modifier = {
+					name = the_greatest_canton
+					duration = -1
+				}
+			}
+		}
+	}
+
+	the_unconquerable = {
+		position = 2
+		required_missions = {
+			the_greatest_canton
+		}
+		icon = alpine_fortifications
+
+		trigger = {
+			165 = {
+				has_building = fort_16th
+			}
+		}
+
+		effect = {
+			165 = {
+				add_building = fort_17th
+				add_province_modifier = {
+					name = the_unconquerable_mountains
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+brn_branch_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = BRN
+	}
+
+	prosperity_for_all = {
+		position = 2
+		icon = mission_diplomatic_relation
+		required_missions = {
+			the_greatest_canton
+		}
+
+		trigger = {
+			all_subject_country = {
+				capital_scope = {
+					development = 15
+				}
+			}
+		}
+
+		effect = {
+			every_subject_country = {
+				add_country_modifier = {
+					name = prospering_under_bern
+					duration = 9125
+				}
+			}
+		}
+	}
+
+	the_market_of_st_gallen = {
+		position = 3
+		icon = dominant_economy
+		required_missions = {
+			prosperity_for_all
+		}
+
+		trigger = {
+			1870 = {
+				country_or_non_sovereign_subject_holds = root
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+		}
+
+		effect = {
+			1870 = {
+				center_of_trade = 1
+			}
+		}
+	}
+}

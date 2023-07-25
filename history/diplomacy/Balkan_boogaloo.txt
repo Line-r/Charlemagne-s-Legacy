@@ -1,0 +1,48 @@
+union = {
+	first = RMN
+	second = TRA
+	start_date = 1436.1.1
+	end_date = 1450.9.21
+}
+
+union = {
+	first = BOS
+	second = HRZ
+	start_date = 1436.1.1
+	end_date = 1450.9.21
+}
+
+vassal = {
+	first = RUM
+	second = AYD
+	start_date = 1444.1.1
+	end_date = 1803.1.1
+}
+
+vassal = {
+	first = RUM
+	second = RAM
+	start_date = 1444.1.1
+	end_date = 1803.1.1
+}
+
+vassal = {
+	first = RUM
+	second = DUL
+	start_date = 1444.1.1
+	end_date = 1803.1.1
+}
+
+vassal = {
+	first = RUM
+	second = CND
+	start_date = 1444.1.1
+	end_date = 1803.1.1
+}
+
+guarantee = {
+	first = BOS
+	second = MON
+	start_date = 1444.1.1
+	end_date = 1558.1.1
+}

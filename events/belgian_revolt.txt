@@ -1,0 +1,69 @@
+namespace = belgian_revolt
+
+country_event = {
+	id = belgian_revolt.1
+	title = belgian_revolt.1.t
+	desc = belgian_revolt.1.d
+	picture = "BRABANT_REVOLT_eventPicture"
+	is_triggered_only = yes
+
+	option = {
+		name = "belgian_revolt.1.a"
+
+		add_stability = -2
+
+		random_owned_province = {
+			limit = {
+				region = low_countries_region
+				OR = {
+					culture = wallonian
+					culture = flemish
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				friend = BE1
+			}
+			set_province_flag = brb_rebels_start_flag
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { has_province_flag = brb_rebels_start_flag }
+				region = low_countries_region
+				OR = {
+					culture = wallonian
+					culture = flemish
+				}
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				friend = BE1
+			}
+			set_province_flag = brb_rebels_start_flag
+			set_province_flag = belgian_revolt
+		}
+
+
+		low_countries_region = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					culture = wallonian
+					culture = flemish
+					NOT = { religion = ROOT }
+				}
+			}
+			add_province_modifier = {
+				name = "belgian_revolt_modifier"
+				duration = -1 # removed via the on_end event
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = belgian_revolts_target
+		set_global_flag = belgian_revolts
+	}
+}

@@ -1,0 +1,11 @@
+﻿l_english:
+ styrian_events.1.t:0 "The Hungarian Question"
+ styrian_events.1.d:0 "Now that we rule over the Hungarian lands, the Magyars are demanding more local autonomy. Perhaps creating a royal union between our kingdom and the former kingdom of Hungary would be wise."
+ styrian_events.1.a:0 "Fine, give them their kingdom."
+ styrian_events.1.b:0 "Sorry, I don't understand Hungarian."
+ styrian_events.2.t:0 "Romania Demands Autonomy!"
+ styrian_events.2.d:0 "The conquest of the kingdom of Romania has left the state in near anarchy. The Romanians turn out to be an unruly bunch, and now they've dared to ask for more autonomy. Forming a royal union between our states may be beneficial, and failing to do so may upset them even more."
+ styrian_events.2.a:0 "What am I gonna do with all these crowns?"
+ styrian_events.2.b:0 "Impale them."
+ romania_denied_rights:0 "Romania Denied Rights"
+ desc_romania_denied_rights:0 "We have ignored the cry for local autonomy from the Romanians, greatly upsetting them."

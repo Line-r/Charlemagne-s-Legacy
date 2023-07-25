@@ -1,0 +1,106 @@
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = FRB
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = SLT
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = BSL
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = LUZ
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = UNT
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = ZUG
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = ZUR
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = SCH
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = GLR
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = HUS
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = APP
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = URI
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = TES
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = "canton"
+	first = BRN
+	second = SGL
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}

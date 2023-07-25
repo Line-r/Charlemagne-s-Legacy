@@ -1,0 +1,20 @@
+vassal = {
+	first = BAD
+	second = ALS
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+guarantee = {
+	first = WUR
+	second = DWT
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+vassal = {
+	first = BAD
+	second = KNZ
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}

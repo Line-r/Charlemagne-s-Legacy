@@ -1,0 +1,125 @@
+country_decisions = {
+	form_dietsland = {
+		major = yes
+		ai_will_do = {
+			factor = 100
+		}
+		potential = {
+			OR = {
+				primary_culture = dutch
+				primary_culture = flemish
+			}
+		}
+
+		allow = {
+			NOT = {exists = DIE}
+			NOT = {tag = DIE}
+			adm_tech = 10
+
+			lowlands_area = {
+				region_for_scope_province = {
+					type = all
+					OR = {
+						culture = dutch
+						culture = flemish
+					}
+					
+				}
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			every_subject_country = {
+				limit = {
+					OR = {
+						primary_culture = flemish
+						primary_culture = dutch
+					}
+				}
+				inherit = prev
+			}
+
+			change_tag = DIE
+
+			set_variable = {
+				which = fInfluence
+				value = 50
+			}
+			set_variable = {
+				which = dInfluence
+				value = 50
+			}
+		}
+	}
+}
+
+country_decisions = {
+	balance_flemish_dutch = {
+		major = yes
+		potential = {
+			tag = DIE
+		}
+
+		allow = {
+			
+		}
+
+		effect = {
+			set_variable = {
+				which = fInfluence
+				value = 50
+			}
+			set_variable = {
+				which = dInfluence
+				value = 50
+			}
+		}
+	}
+
+	lower_flemish_inf = {
+		potential = {
+			tag = DIE
+		}
+		allow = {
+			
+		}
+		effect = {
+			subtract_variable = {
+				which = fInfluence
+				value = 10
+			}
+			change_variable = {
+				which = dInfluence
+				value = 10
+			}
+
+			country_event = {
+				id = dietsland_mechanics.1
+			}
+		}
+	}
+
+	increase_flemish_inf = {
+		potential = {
+			tag = DIE
+		}
+		allow = {
+			
+		}
+		effect = {
+			subtract_variable = {
+				which = dInfluence
+				value = 10
+			}
+			change_variable = {
+				which = fInfluence
+				value = 10
+			}
+			
+			country_event = {
+				id = dietsland_mechanics.1
+			}
+		}
+	}
+}

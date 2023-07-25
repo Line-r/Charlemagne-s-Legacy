@@ -1,0 +1,67 @@
+namespace = VOL_events
+
+country_event = {
+	id = VOL_events.1
+	title = VOL_events.1.t
+	desc = VOL_events.1.d
+
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	option = { #unite the crowns
+	name = "VOL_events.1.a"
+		POL = {
+			inherit = LIT
+			change_tag = PLC
+			swap_non_generic_missions = yes
+			add_accepted_culture = lithuanian
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Keep the crowns seperated
+	name = "VOL_events.1.b"
+		POL = {
+			every_owned_province = {
+				add_core = root
+			}
+		}
+
+		LIT = {
+			every_owned_province = {
+				add_core = root
+			}
+		}
+	}
+}
+
+country_event = {
+	id = VOL_events.2
+	title = VOL_events.2.t
+	desc = VOL_events.2.d
+
+	picture = LIBERUM_VETO_eventPicture
+	is_triggered_only = yes
+
+
+	option = {
+		name = VOL_event.2.a
+		set_capital = 280
+
+		280 = {
+			add_base_tax = 2
+		}
+	}
+
+	option = {
+		name = VOL_event.2.b
+		279 = {
+			add_base_tax = 2
+		}
+	}
+}

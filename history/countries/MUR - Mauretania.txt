@@ -1,0 +1,6 @@
+government = monarchy
+primary_culture = moroccan
+religion = catholic
+technology_group = western
+capital = 344 # Marrakech
+add_accepted_culture = berber

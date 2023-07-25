@@ -1,0 +1,31 @@
+bookmark =
+{
+	name = "RISE_OF_THE_OTTOMANS"
+	desc = "RISE_OF_THE_OTTOMANS_DESC"
+	date = 1444.11.11
+	
+	center = 183
+	default = yes
+	
+	country = BUR
+	country = FRA
+	country = WSX
+	country = EGY
+	country = RUM
+	country = LON
+	country = STY
+	country = MEC
+	country = LIV
+	country = BRB
+	country = MUN
+	country = SAX
+	country = SAR
+	country = MAC
+	country = TRP
+	
+	easy_country = ENG
+	easy_country = LON
+	easy_country = RUM
+	easy_country = STY
+	easy_country = EGY
+}

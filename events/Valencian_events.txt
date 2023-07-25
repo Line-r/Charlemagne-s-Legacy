@@ -1,0 +1,259 @@
+namespace = valencian_events
+
+country_event = {
+	id = valencian_events.1
+	title = valencian_events.1.t
+	desc = valencian_events.1.d
+	picture = KINGS_CHOICE_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "valencian_events.1.a"
+
+		corsica_sardinia_area = {
+			add_core = SRC
+			remove_core = SAR
+			remove_core = COR
+		}
+
+		release = SRC
+		create_union = SRC
+	}
+
+	option = {
+		name = "valencian_events.1.b"
+
+		127 = {
+			change_trade_goods = gold
+			add_base_production = 3
+		}
+	}
+}
+
+country_event = {
+	id = valencian_events.2
+	title = valencian_events.2.t
+	desc = valencian_events.2.d
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_ara.EVTOPTA1"
+		add_country_modifier = {
+			name = ara_consulate_sea
+			duration = 18250
+		}
+	}
+}
+
+# Antonio Beccadelli (poet)
+country_event = {
+	id = flavor_ara.3
+	title = "flavor_ara.EVTNAME3"
+	desc = "flavor_ara.EVTDESC3"
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = VAL
+		NOT = { is_year = 1471 }
+		OR = {
+			dip = 3
+			adm = 3
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTA3"
+		add_adm_power = 10
+		add_prestige = 10
+		define_advisor = {
+			type = artist
+			name = "Antonio Beccadelli"
+			culture = sicilian
+			skill = 2
+			discount = yes
+		}
+		add_innovativeness_small_effect = yes
+	}
+}
+
+# Iovianus Pontanus
+country_event = {
+	id = flavor_ara.4
+	title = "flavor_ara.EVTNAME4"
+	desc = "flavor_ara.EVTDESC4"
+	picture = ECONOMY_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = VAL
+		NOT = { is_year = 1503 }
+		OR = {
+			dip = 3
+			adm = 3
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTA4"
+		add_prestige = 10
+		add_innovativeness_small_effect = yes
+	}
+	option = {
+		name = "flavor_ara.EVTOPTB4"
+		add_stability_or_adm_power = yes
+		add_innovativeness_small_effect = yes
+	}
+}
+
+# Monastery of Santa María de Sigena
+country_event = {
+	id = flavor_ara.5
+	title = "flavor_ara.EVTNAME5"
+	desc = "flavor_ara.EVTDESC5"
+	picture = ST_PETERS_CHURCH_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = VAL
+		NOT = { is_year = 1520 }
+		NOT = { has_country_modifier = ara_monastery_maria }
+		religion = catholic
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTA5"
+		add_years_of_income = -0.5
+		add_country_modifier = { 
+			name = ara_monastery_maria 
+			duration = 18250
+		}
+	}
+	option = {
+		name = "flavor_ara.EVTOPTB5"
+		add_years_of_income = -0.5
+		add_country_modifier = { 
+			name = ara_monastery_painter
+			duration = 18250
+		}
+	}
+	option = {
+		name = "flavor_ara.EVTOPTC5"
+		add_prestige = -1
+	}
+}
+
+# Sindicat Remença
+country_event = {
+	id = flavor_ara.6
+	title = "flavor_ara.EVTNAME6"
+	desc = "flavor_ara.EVTDESC6"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = VAL
+		NOT = { is_year = 1500 }
+		OR = { 
+			adm = 4 
+			dip = 4 
+		}
+		any_owned_province = {
+			culture = catalan
+		}
+		NOT = { 
+			any_owned_province = {
+				has_province_modifier = ara_sindicat_remenca 
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_core = ROOT
+					culture = catalan
+				}
+				set_province_flag = ara_sindicat_remença_flag
+			}
+			random_owned_province = {
+				limit = {
+					is_core = ROOT
+					culture = catalan
+					NOT = {  has_province_flag = ara_sindicat_remença_flag }
+				}
+				set_province_flag = ara_sindicat_remença_flag
+			}
+			random_owned_province = {
+				limit = {
+					is_core = ROOT
+					culture = catalan
+					NOT = { has_province_flag = ara_sindicat_remença_flag }
+				}
+				set_province_flag = ara_sindicat_remença_flag
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_ara.EVTOPTA6"
+		add_country_modifier = {
+			name = "decentralization_modifier"
+			duration = 3650
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = ara_sindicat_remença_flag
+			}
+			add_local_autonomy = 25
+			add_province_modifier = { 
+				name = ara_sindicat_remenca 
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_flag = ara_sindicat_remença_flag
+				}
+				clr_province_flag = ara_sindicat_remença_flag
+			}
+		}
+	}
+	option = {
+		name = "flavor_ara.EVTOPTB6"
+		every_owned_province = {
+			limit = {
+				has_province_flag = ara_sindicat_remença_flag
+			}
+			clr_province_flag = ara_sindicat_remença_flag
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 1
+			}
+		}
+	}
+}
+

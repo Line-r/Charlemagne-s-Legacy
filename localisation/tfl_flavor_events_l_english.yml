@@ -1,0 +1,150 @@
+﻿l_english:
+ #Kilwa
+ 
+toe_zan_event_1_title: "Renovating Kilwa"
+toe_zan_event_1_desc: "Our efforts to renovate and develop the city of Kilwa have proven succesful and we have attracted many foreigners. Learning from them bit by bit, we have been able to come up with ways to produce new goods in the city, despite those foreigners trying to keep their secrets to themselves. Now that our efforts are successful, the question remains: What do we want to produce there?"
+ZANRENOVATEKILWA1: "We shall become the African masters of silk!"
+ZANRENOVATEKILWA2: "Dyes - they will show our prestige!"
+ZANRENOVATEKILWA3: "Kilwan Glass shall be the crystal clear!"
+ZANRENOVATEKILWA4: "Let us rather keep our gold."
+
+#Kongo
+
+toe_flavor_kon_kongo_1_t: "The Comoros Islands"
+toe_flavor_kon_kongo_1_d: "We have arrived on the Mozambique coast, in reach of The Comoros Islands. The question is, are we the first there?"
+TOEFLAVORKON1.a: "Turns out we are!"
+TOEFLAVORKON1.b: "We aren't the first ones here..."
+toe_flavor_kon_kongo_2_t: "Southern Expansion"
+toe_flavor_kon_kongo_2_d: "Our state has amassed quite a big ammount of wealth recently. This brings up new ideas by not only our ruler but his advisors too. South of us, we have discovered some provinces, with sonewhat fertile terrain and one with special trade opportunities. Although not common practice, our ruler especially has taken interest in the provinces and may want explore them further."
+TOEFLAVORKON2.a: "And we will make one big effort!"
+TOEFLAVORKON2.b: "Perhaps we need a better opportunity."
+TOEFLAVORKON2.c: "Our settlers there will hopefully bring news of great riches soon."
+
+#Lubans
+
+flavor_lub.1.t: "Rapprochement with Kongo"
+flavor_lub.1.d: "We have decided that rather throwing our great soldiers in another pointless war we should approach Kongo again, but how?"
+LUBAPPROACHKON1: "They need help with their trade, and we can always use more money."
+LUBAPPROACHKON2: "Let us establish an embassy there!"
+LUBAPPROACHKON3: "A few gifts would show them how open we are to diplomacy."
+
+#Pegu
+
+toe_peg_event_1_title: "The End of Arakan Piracy"
+toe_peg_event_1_desc: "As our triumphant armies return home from what was once Arakan, we are faced with a serious question. Arakan piracy has been very troublesome for the Bengal Sultanate. We, having defeated Arakan, can perhaps make a good diplomatic manoeuvre by not just claiming all of the glory for ourselves. Bengal would more than likely want an ally in our region, to deter any possible enemies from here."
+pegarakandefeated1: "We see more of an ally in Bengal."
+pegarakandefeated2: "We don't need their help."
+my_tooltip: "This decision will unlock its own branch of the mission tree."
+toe_peg_event_2_title: "Fate of Chittagong"
+toe_peg_event_2_desc: "Bengal has accepted our offer and we now own Chittagong!"
+pegpayforchittagong.1: "Wonderful News!"
+
+#Bengal in the Befriend Bengal branch of Pegu mission tree.
+
+flavor_bng.13.t: "Chittagong Negotiation"
+flavor_bng.13.d: "Recently, our allies in Pegu have proposed that we give them the city of Chittagong, in exchange for a sum of money. Although we would usually decline, the people and government in Pegu have been quite friendly to us, and it would be dishonourable of us not to accept."
+flavor_bng.13.a: "A city, they will get from us."
+flavor_bng.13.b: "We have been nice, too, for not conquering them!"
+flavor_bng.14.t: "Question of Religion"
+flavor_bng.14.d: "Having already played an important diplomatic role in our nation, Pegu has now also sent missionaries to our lands. Although the Sultanate has been friendly and tolerant to the Hindus which live in it, they would rather live in a Hindu state. Buddhist missionaries, on top of that, have forced our government to decide how the state will continue its religious matters..."
+flavor_bng.14.a: "The Hindus will have their dream."
+flavor_bng.14.b: "We welcome Pegu's missionaries."
+flavor_bng.14.c: "The Sultanate will endure!"
+
+#Kitara Empire
+
+flavor_kta.1.t: "The Question of Religion"
+flavor_kta.1.d: "Recently having made contact with the Europeans, who seem to be living in a completely different world to ours, also seem to follow a strange religion. They practice something completely different to Fetishism. Their religion revolves around the figure of Christ, who we have just learned of. However, just like this, our ruler has shown passion to learn more about this religion and may be considering conversion! For the sake of the nation, we have to either root out the preference of Christianity or embrace it..."
+flavor_kta1.1: "Catholicism seems right. It's a branch of Christianity, and shall be our new faith!"
+flavor_kta1.2: "We will embrace the Protestant branch of Christianity."
+flavor_kta1.3: "Our ancestors knew better than that fool!"
+
+#Somalis
+
+flavor_smi.1.t: "The Qasriga Somalia"
+flavor_smi.1.d: "The Qasriga Somalia is supposed to be a huge complex of palaces, made from the finest materials in our nation and a symbol of prestige and power. Although this will be just what we need to make our capital one of the greatest in the known world, perhaps we cannot afford it..."
+flavor_smi1.1: "Bah! Useless Expenses..."
+flavor_smi1.2: "We will show the world just how great we are."
+
+#Aksum and the Alexandrian Patriarchate
+
+flavor_aks.1.t: "The Patriarchate of Alexandria"
+flavor_aks.1.d: "The Patriarchate of Alexandria functioned as an important Patriarchate in Africa for some time, being the only African Patriarchate. It is also being recognized as legitimate by most Christian leaders as a center of Christianity, even after these moved formally to Jerusalem, Antioch, Rome and Constantinople. In fact, Alexandria became one of them. Now, however, after a long period of foreign rule, the Christians of Alexandria are finally free. This, however, brings a question to the table: Should we reinstall the Patriarchate as our formal vassal or fully integrate the land and let them function under our direct administration?"
+flavor_aks.1.d1: "We will restore the Patriarchate to its rightful lands."
+flavor_aks.1.d2: "We will let them function under our administration."
+
+#Ethiopia in mod
+
+flavor_eth.29.t: "A Shared Past"
+flavor_eth.29.d: "The Bahrid Dynasty and the state of Medri Bahri have always had a shared past with us; The culture in both nations is quite similar to eachother, as well as our religion, and past fighting the infidels of the region together. Recently having increased our relations with us, and its increasingly dire state, the people, as well as the ruler of Medri Bahri, want to unite with us."
+flavor_eth.29.1: "Our people will achieve many things, united."
+
+#Adal 
+
+flavor_ada.1.t: "A Tale of Three Cities"
+flavor_ada.1.d: "Our recent expansion makes us the owner and sovereign of many cities, but some stand out, namely Mogadishu and Berbera. The two coastal cities of Somali culture are some of the most important cities in Africa. Berbera is a growing city, only halted by its terrain. Mogadishu was the trade center of Eastern Africa, and even though it has fallen in comparison to others, it still shines as a developed city with an important merchant community, more active than Zanzibar's at times. This brings us with the choice of whether we should change our capital. Of course, our capital remains grand, but people may favour the new 'jewel-cities' more than our current capital, which they argue has even degraded over time."
+flavor_ada.1.1: "Berbera seems best."
+flavor_ada.1.2: "We will restore Mogadishu!"
+flavor_ada.1.3: "Our capital is lovely! No need to change it."
+
+#Moroccan Minors - Missions
+
+flavor_mcm.1.t: "The Saharan Expedition"
+flavor_mcm.1.d: "Having set up a more noticable presence near our southern border, some brave people have ventured past the known world and claim to have found varying results. Some claim there is a vast civilization there. Some claim this civilization is actually fractured, others say there's just a vast desert. Whatever the case, the decision we take now may prove useful later."
+flavor_mcm.1.a: "Great empires? New riches? This sounds promising! Let's just hope we're first there."
+flavor_mcm.1.b: "Let us not jump to conclusions and first fund a state expedition."
+flavor_mcm.1.c: "That desert theory seems most likely..."
+
+#Moroccan Minors - Actual Events
+
+flavor_mmi.1.t: "Moroccan or Berber?"
+flavor_mmi.1.d: "In 1444, the Sultanate of Morocco is... troubled, to say the least. With many of their subjects eager for independence, we have some degree of authority, though we may not be able to defeat Morocco ourselves. This puts us in a position where we must choose between rebellion and loyalty; the Berber culture, which may be considered our ancestral one, is very troubled itself, and the Berber states of the desert may collapse any moment now. We Moroccan subjects, can be considered the last actually stable Berber bastion. However, Moroccan culture is also intriguing; not having as a culture, any downfall, whatsoever, it would certainly be favourable if we want a stable period, even if we are to declare independence afterwards. However, we must choose now, as the Moroccans are getting closer to the point where they can integrate us and their other subjects. This choice may just give us time to assemble a powerful enough force."
+flavor_mmi.1.a: "We are more Moroccan than Berber."
+flavor_mmi.1.b: "We are Berbers and forever will be!"
+mmi_moroccanwar_tooltip: "This may lead to war with Morocco!"
+flavor_mmi.2.t: "The Matters of Sus"
+flavor_mmi.2.d: "Our subjects in Sus, with their troublesome history of clashing cultures, have recently made an insulting announcement which has, to say the least,angered the Sultan. They say; 'We are Berbers, forever will be, and the Moroccans have no right to infringe on our lands!'. The Sultan, who has taken this personally, is ready to rally a force. His viziers, for once, humbly agree. It now remains for us to choose whether we will go to war or not."
+flavor_mmi.2.a: "They will fall!"
+flavor_mmi.2.b: "It would be too lowly of us to punish Berber tribesmen."
+flavor_mmi.3.t: "Our war: On our own, or not?"
+flavor_mmi.3.d: "The Moroccon Sultan has taken matters too seriously and is now preparing an army to attack us. We have not expected this and may not be prepared at all. If we choose to seek new allies, this may turn into a full-torn crisis for Morocco. However, if we stand our ground on our own, we can already say we are destined to fall."
+flavor_mmi.3.a: "Let us step back."
+flavor_mmi.3.b: "In the name of Allah, to war!"
+flavor_mmi.3.c: "Let us seek the help of The Iberians."
+flavor_mmi.4.t: "Crisis of Morocco"
+flavor_mmi.4.d: "Morocco is in a deep crisis. With the war in Sus, who may ask for the help of the Iberians, foreign intervention seems likely. Our other subjects may take this opportunity to declare their own independence. But for now, the war seems to be just the Moroccans against Sus and, perhaps, the Iberian juggernauts."
+flavor_mmi.4.a: "This will decide the fate of Morocco."
+flavor_mmi.5.t: "Sus calls for aid!"
+flavor_mmi.5.d: "Today, we were 'struck' by a wierd letter, from the Muslim Theocracy of Sus. They are expressing their need of help in a war against the Moroccans! This could be a great opportunity for us, depending on who is on the enemy's side."
+flavor_mmi.5.a: "Heathens or not, God may have shown them the light today."
+flavor_mmi.5.b: "We will observe."
+
+#Tlemcen
+
+flavor_tlc.1.t: "Mamluk Diplomacy"
+flavor_tlc.1.d: "Having established good relations with the Mamluks, both nations could benefit with an alliance to deter the Tunisian threat. The Mamluks will probably accept, however, it is up to us if we're to offer it to them or not."
+flavor_tlc.1.a: "This will surely benefit us both."
+flavor_tlc.1.b: "We are better having them as a potential ally."
+flavor_tlc.2.t: "Raid on Tunis"
+flavor_tlc.2.d: "As we have come in the possession of Tunis, we can conclude the war is over. Although the Tunisian sultanate may exist in some form, the siezing of Tunis is a major victory for us. However, many of our people have died, and this leaves us with the question; Will we be benevolent overlord of Tunisia or the ones who will avenge their dead by destoying the city?"
+flavor_tlc.2.a: "Let it be. Too many people have died already."
+flavor_tlc.2.b: "Pillage it!"
+flavor_tlc.2.c: "Raze it and take all its riches! Leave none alive!"
+
+#Mamluks - Mod
+flavor_mam.24.t: "Mamluk Architecture"
+flavor_mam.24.d: "Mamluk architecture blossomed in the 12th and 13th century, however, it greatly decayed and turned from a loved and admired style into something ignored by most rulers. Although the decision will not affect us that much we must decide whether to attempt and revive this style, or to abandon it."
+flavor_mam.24.a: "The future calls for new ideas."
+flavor_mam.24.b: "We cannot abandon our traditions!"
+flavor_mam.25.t: "The Royal Complexes"
+flavor_mam.25.d: "Royal Complexes were usually built by Mamluk Sultans, the most important being the Emir Qurgumas Complex and the Qalawun Complex. These appeared in many ways and forms, some being called citadels rather than complexes. However, they still resembled the same thing. Restoring these will calm down those who were angry when they were abandoned, as well as show the prestige and power of the Sultan."
+flavor_mam.25.a: "Restore the Complexes!"
+flavor_mam.26.t: "The Home of All Pirates ...almost"
+flavor_mam.26.d: "Algeria, if known for anything, is for the huge amount of pirates that come from there. Famous for their Mediterranean raids, they are known to be anything from corrupt and money hungry to  actual glory-seekers. Although they could help us with securing our trade opportunities in the Mediterannean, we would be loved by many if we put an end to their practices."
+flavor_mam.26.a: "Let us hire them to our service!"
+flavor_mam.26.b: "Put an end to their vile activities!"
+flavor_mam.27.t: "The New Library of Alexandria"
+flavor_mam.27.d: "As we discover more of Alexandria, vestiges of old structures appeared. There seems to have been another great library before the House of Wisdom in Baghdad - one in Alexandria. Seemingly destroyed by outsiders, the library has no more information left in it, be it book or paper. However, restoring it would bring great prestige and scholars to Alexandria. Not only that but it would also make Alexandria great again, like in the times of Alexander. The question is, what should we store in it?"
+flavor_mam.27.a: "Store administrative records."
+flavor_mam.27.b: "Store books on diplomacy."
+flavor_mam.27.c: "Store all military information we can find."

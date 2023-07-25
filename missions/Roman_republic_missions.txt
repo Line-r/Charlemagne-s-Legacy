@@ -1,0 +1,1612 @@
+state_branch_1 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 1
+
+	potential = {
+		tag = RME
+	}
+
+	rpr_rebuild_the_army = {
+		position = 1
+
+		trigger = {
+			army_size_percentage = 1
+			army_tradition = 50
+		}
+
+		effect = {
+			add_army_tradition = 10
+			add_country_modifier = {
+				name = a_roman_army
+				duration = 10950
+			}
+		}
+	}
+}
+
+state_branch_2 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 2
+
+	potential = {
+		tag = RME
+	}
+
+	rpr_bureaucracy = {
+		position = 1
+		trigger = {
+			all_owned_province = {
+				NOT = {local_autonomy = 0.1}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = expanded_the_administration
+				duration = -1
+			}
+		}
+	}
+
+	rebirth_of_the_praetorians = {
+		position = 3
+		required_missions = {
+			a_new_state
+		}
+
+		trigger = {
+			has_estate = estate_praetorians
+
+			custom_trigger_tooltip = {
+				tooltip = tt_praetorians_seized_power
+			}
+
+			NOT = {
+				has_country_flag = praetorians_denied
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = rebirth_of_the_praetorians
+				duration = 5475
+			}
+		}
+	}
+
+	a_new_caesar = {
+		position = 4
+		required_missions = {
+			rebirth_of_the_praetorians
+		}
+
+		trigger = {
+			estate_influence = {
+				estate = estate_praetorians
+				influence = 70
+			}
+		}
+
+		effect = {
+			add_government_reform = roman_dictatorial_senate
+			add_prestige = 20
+
+			country_event = {
+				id = rpr_events.3
+			}
+		}
+	}
+
+	dictatorial_powers = {
+		position = 5
+		required_missions = {
+			a_new_caesar
+		}
+
+		trigger = {
+			estate_loyalty = {
+				estate = estate_praetorians
+				loyalty = 75
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = dictatorial_powers
+				duration = -1
+			}
+
+			complete_mission = a_popular_government
+		}
+	}
+
+
+}
+
+state_branch_3 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 3
+
+	potential = {
+		tag = RME
+	}
+
+	a_new_state = {
+		position = 2
+		required_missions = {
+			the_roman_navy
+			rpr_rebuild_the_army
+			rpr_bureaucracy
+			institute_tax_reforms
+		}
+
+		trigger = {
+			prestige = 35
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = roman_reformed_state
+				duration = 18250
+			}
+
+			set_country_flag = rpr_a_new_state
+		}
+	}
+
+
+	a_powerful_government = {
+		position = 6
+		required_missions = {
+				dictatorial_powers
+				a_popular_government
+		}
+
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_building = courthouse
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = a_powerful_government
+				duration = -1
+			}
+		}
+	}
+
+}
+
+state_branch_4 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 4
+
+	potential = {
+		tag = RME
+	}
+
+	institute_tax_reforms = {
+		position = 1
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = roman_tax_reforms
+				duration = 5475
+			}
+		}
+	}
+
+	maintain_senatorial_independence = {
+		position = 3
+		required_missions = {
+			a_new_state
+		}
+
+		trigger = {
+			NOT = {
+				has_estate = estate_praetorians
+			}
+			has_country_flag = rpr_praetorians_denied
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = senatorial_independence_maintained
+				duration = -1
+			}
+		}
+	}
+
+	a_popular_government = {
+		position = 5
+		required_missions = {
+			maintain_senatorial_independence
+		}
+
+		trigger = {
+			legitimacy_equivalent = 100
+			adm = 4
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = a_popular_government
+				duration = 9125
+			}
+
+			complete_mission = dictatorial_powers
+		}
+
+	}
+
+
+}
+
+state_branch_5 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 5
+
+	potential = {
+		tag = RME
+	}
+
+	the_roman_navy = {
+		position = 1
+		
+		trigger = {
+			navy_size_percentage = 1
+			num_of_heavy_ship = 6
+			num_of_galley = 15
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = roman_navy
+				duration = 9125
+			}
+		}
+	}
+}
+
+
+rpr_expansion_branch_1 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 1
+
+	potential = {
+		tag = RME
+	}
+
+	sardinia_and_corsica = {
+		position = 10
+		required_missions = {
+			secure_neapolis
+		}
+
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			baleares_area = {
+				add_permanent_claim = root
+			}
+
+			127 = {
+				change_trade_goods = gold
+			}
+		}
+	}
+
+	mines_of_sassari = {
+		position = 11
+		required_missions = {
+			sardinia_and_corsica
+		}
+
+		trigger = {
+			127 = {
+				base_production = 10
+			}
+		}
+
+		effect = {
+			add_province_modifier = {
+				name = rpr_sassari_gold_mine
+				duration = -1
+			}
+		}
+	}
+
+	fate_of_the_phoenicians = {
+		position = 13
+		required_missions = {
+			southern_campaign
+		}
+
+		trigger = {
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			kabylia_area = {
+				add_permanent_claim = root
+			}
+
+			north_saharan_area = {
+				add_permanent_claim = root
+			}
+
+			fezzan_area = {
+				add_permanent_claim = root
+			}
+
+			ouled_nail_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	province_of_africa = {
+		position = 14
+		required_missions = {
+			fate_of_the_phoenicians
+		}
+
+		trigger = {
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			cyrenaica_area = {
+				add_permanent_claim = root
+			}
+			barbary_coast_area = {
+				add_permanent_claim = root
+			}
+			algiers_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	into_egypt = {
+		position = 15
+		required_missions = {
+			province_of_africa
+		}
+
+		trigger = {
+			cyrenaica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			delta_area = {
+				add_permanent_claim = root
+			}
+
+			bahari_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	province_of_aegypt = {
+		position = 16
+		required_missions = {
+			into_egypt
+		}
+
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+
+			358 = {
+				add_province_modifier = {
+					name = rpr_conquest_of_alexandia
+					duration = -1
+				}
+			}
+			egypt_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	mare_nostrum = {
+		position = 23
+		required_missions = {
+			province_of_aegypt
+		}
+
+		trigger = {
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			southern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}	
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = mare_nostrum
+				duration = -1
+			}
+		}
+	}
+}
+
+rpr_expansion_branch_2 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 2
+
+	potential = {
+		tag = RME
+	}
+
+	secure_neapolis = {
+		position = 9
+		required_missions = {
+			expand_the_republic
+		}
+
+		trigger = {
+			naples_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			121 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+
+			calabria_area = {
+				add_permanent_claim = root
+			}
+
+			apulia_area = {
+				add_permanent_claim = root
+			}
+
+			sicily_area = {
+				add_permanent_claim = root
+			}
+
+			western_sicily_area = {
+				add_permanent_claim = root
+			}
+
+			corsica_sardinia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	invasion_of_sicily = {
+		position = 10
+		required_missions = {
+			secure_neapolis
+		}
+
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			sicily_area = {
+				add_province_modifier = {
+					name = invasion_of_sicily
+					duration = 18250
+				}
+			}
+
+			western_sicily_area = {
+				add_province_modifier = {
+					name = invasion_of_sicily
+					duration = 18250
+				}
+			}
+		}
+	}
+
+	southern_campaign = {
+		position = 12
+		required_missions = {
+			invasion_of_sicily 
+			mines_of_sassari
+		}
+
+		trigger = {
+			
+		}
+
+		effect = {
+			tunisia_area = {
+				add_permanent_claim = root
+			}
+
+			djerba_area = {
+				add_permanent_claim = root
+			}
+
+			tripolitania_area = {
+				add_permanent_claim = root	
+			}
+		}
+	}
+
+	subjugate_the_berbers = {
+		position = 15
+		required_missions = {
+			province_of_africa
+		}
+
+		trigger = {
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			northern_morocco_area = {
+				add_permanent_claim = root
+			}
+			southern_morocco_area = {
+				add_permanent_claim = root
+			}
+			western_morocco_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	province_of_mauretania = {
+		position = 16
+		required_missions = {
+			subjugate_the_berbers
+		}
+
+		trigger = {
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			southern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			maghreb_region = {
+				add_permanent_claim = root	
+			}
+		}
+	}
+
+	seizure_of_normandy = {
+		position = 18
+		required_missions = {
+			gauls_and_britons
+		}
+
+		trigger = {
+			normandy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					exists = ENG
+				}
+
+				every_province = {
+					limit = {
+						owned_by = ENG
+						region = british_isles_region
+					}
+
+					add_permanent_claim = root
+				}
+			}
+
+			if = {
+				limit = {
+					exists = GBR
+				}
+
+				every_province = {
+					limit = {
+						owned_by = GBR
+						region = british_isles_region
+					}
+
+					add_permanent_claim = root
+				}
+			}
+			home_counties_area = {
+				add_permanent_claim = root
+			}
+			
+		}
+	}
+
+	reclaim_germania_superior = {
+		position = 21
+		required_missions = {
+			the_unholy_romans
+		}
+
+		trigger = {
+			lorraine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			west_burgundy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			bourgogne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			south_german_region = {
+				add_permanent_claim = root
+			}
+			north_german_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+}
+
+rpr_expansion_branch_3 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 3
+
+	potential = {
+		tag = RME
+	}
+
+	expand_the_republic = {
+		position = 8
+
+		trigger = {
+			total_development = 300
+		}
+
+		effect = {
+			naples_area = {
+				add_permanent_claim = root
+			}
+
+			emilia_romagna_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	the_frankish_menace = {
+		position = 13
+		required_missions = {
+			the_false_romans
+			southern_campaign
+		}
+
+		trigger = {
+			has_won_war_against = {
+				who = BUR
+				max_years_since = 100
+			}
+		}
+
+		effect = {
+			liguria_area = {
+				add_permanent_claim = root
+			}
+
+			if = {
+				limit = {
+					liguria_area = {
+						type = all
+						owned_by = root
+					}
+				}
+
+				liguria_area = {
+					add_core = root
+				}
+			}
+
+			provence_area = {
+				add_permanent_claim = root
+			}
+
+			savoy_dauphine_area = {
+				add_permanent_claim = root
+			}
+
+			piedmont_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	recover_massilia = {
+		position = 14
+		required_missions = {
+			the_frankish_menace
+		}
+
+		trigger = {
+			provence_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			languedoc_area = {
+				add_permanent_claim = root
+			}
+			pyrenees_area = {
+				add_permanent_claim = root
+			}
+
+			guyenne_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	expansion_into_aquitane = {
+		position = 15
+		required_missions = {
+			recover_massilia
+		}
+
+		trigger = {
+			languedoc_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			pyrenees_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			guyenne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			poitou_area = {
+				add_permanent_claim = root
+			}
+			4697 = {
+				add_permanent_claim = root
+			}
+			195 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	province_of_aquitane = {
+		position = 16
+		required_missions = {
+			expansion_into_aquitane
+		}
+
+		trigger = {
+			poitou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			4697 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+			195 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+		}
+
+		effect = {
+			loire_area = {
+				add_permanent_claim = root
+			}
+			massif_central_area = {
+				add_permanent_claim = root
+			}
+			orleans_area = {
+				add_permanent_claim = root
+			}
+			brittany_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	gauls_and_britons = {
+		position = 17
+		required_missions = {
+			province_of_aquitane
+		}
+
+		trigger = {
+			loire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			massif_central_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			orleans_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			brittany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}	
+		}
+
+		effect = {
+			normandy_area = {
+				add_permanent_claim = root
+			}
+			ile_de_france_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	province_of_gaul = {
+		position = 19
+		required_missions = {
+			march_on_paris
+			seizure_of_normandy
+		}
+
+		trigger = {
+			all_province = {
+					region = france_region
+					NOT = {
+						owned_by = FRA
+					}
+			}
+		}
+
+		effect = {
+			picardy_area = {
+				add_permanent_claim = root
+			}
+
+			champagne_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	the_unholy_romans = {
+		position = 20
+		required_missions = {
+			province_of_gaul
+		}
+
+		trigger = {
+			picardy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			champagne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			lorraine_area = {
+				add_permanent_claim = root
+			}
+
+			west_burgundy_area = {
+				add_permanent_claim = root
+			}
+
+			bourgogne_area = {
+				add_permanent_claim = root
+			}
+
+			wallonia_area = {
+				add_permanent_claim = root
+			}
+
+			flanders_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	end_the_facade = {
+		position = 22
+		required_missions = {
+			subjugate_the_belgians
+			reclaim_germania_superior
+		}
+
+		trigger = {
+			NOT = {
+				exists = BUR
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = rpr_events.4
+			}
+		}
+	}
+
+	glory_to_rome = {
+		position = 24
+		required_missions = {
+			end_the_facade
+			reclaim_germania_inferior
+			reclaim_judea
+			mare_nostrum
+		}
+
+		trigger = {
+			has_country_modifier = a_powerful_government
+		}
+
+		effect = {
+			change_tag = ROM
+		}
+	}
+
+}
+
+rpr_expansion_branch_4 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 4
+
+	potential = {
+		tag = RME
+	}
+
+	campaign_for_the_north = {
+		position = 9
+		required_missions = {
+			expand_the_republic
+		}
+		trigger = {
+			emilia_romagna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			lombardy_area = {
+				add_permanent_claim = root
+			}
+
+			venetia_area = {
+				add_permanent_claim = root
+			}
+
+			add_country_modifier = {
+				name = the_northern_campaign
+				duration = 9125
+			}
+		}
+	}
+	
+	reclaim_mediolanum = {
+		position = 10
+		required_missions = {
+			campaign_for_the_north
+		}
+		trigger = {
+			104 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			po_valley_area = {
+				add_permanent_claim = root
+			}
+
+			104 = {
+				add_base_production = 5
+				add_base_tax = 5
+				add_base_manpower = 5
+			}
+		}
+	}
+
+	tame_the_lombards = {
+		position = 11
+		required_missions = {
+			reclaim_mediolanum
+			return_to_venezia
+		}
+
+		trigger = {
+			lombardy_area = {
+				type = all
+				is_core = root
+			}
+
+			po_valley_area = {
+				type = all
+				is_core = root
+			}
+		}
+
+		effect = {
+			lombardy_area = {
+				add_province_modifier = {
+					name = rpr_lombards_tamed
+					duration = -1
+				}
+			}
+		}
+	}
+
+	the_false_romans = {
+		position = 11
+		required_missions = {
+			tame_the_lombards
+		}
+
+		trigger = {
+			OR = {
+				is_enemy = BUR
+				is_enemy = ATH
+				is_enemy = SP8
+				is_enemy = GRE
+				is_enemy = ARC
+				is_enemy = MAC
+				is_enemy = RUM
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = claims_of_the_romans
+				duration = 3650
+			}
+
+			carinthia_area = {
+				add_permanent_claim = root
+			}
+
+			croatia_area = {
+				add_permanent_claim = root
+			}
+
+			east_adriatic_coast_area = {
+				add_permanent_claim = root
+			}
+
+			rascia_area = {
+				add_permanent_claim = root
+			}
+
+			albania_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	own_the_adriatic = {
+		position = 12
+		required_missions = {
+			the_false_romans
+		}
+
+		trigger = {
+			carinthia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			croatia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			east_adriatic_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			144 = {
+				add_permanent_claim = root
+			}
+
+			4699 = {
+				add_permanent_claim = root
+			}
+
+			142 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	lay_claim_to_epirus = {
+		position = 13
+		required_missions = {
+			own_the_adriatic
+		}
+
+		trigger = {
+			144 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			4699 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			142 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			146 = {
+				add_permanent_claim = root
+			}
+
+			4955 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	humble_the_athenians = {
+		position = 14
+		required_missions = {
+			lay_claim_to_epirus
+		}
+
+		trigger = {
+			OR = {
+				146 = {
+					owned_by = root
+				}
+
+				reverse_has_opinion = {
+					who = ATH
+					value = 150
+				}
+			}
+		}
+
+		effect = {
+			inherit = ATH
+			inherit = TH8
+			inherit = ER8
+			inherit = DE8
+			inherit = IT8
+			inherit = SO8
+			inherit = OI8
+			inherit = LA8
+			inherit = HO8
+		}
+	}
+
+	constantines_will = {
+		position = 17
+		required_missions = {
+			the_province_of_greece
+		}
+
+		trigger = {
+			151 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			151 = {
+				add_province_modifier = {
+					name = rpr_constantines_will
+					duration = -1
+				}
+				change_religion = root
+			}
+		}
+	}
+
+	march_on_paris = {
+		position = 18
+		required_missions = {
+			gauls_and_britons
+		}
+
+		trigger = {
+			ile_de_france_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			france_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	subjugate_the_belgians = {
+		position = 21
+		required_missions = {
+			the_unholy_romans
+		}
+
+		trigger = {
+			wallonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			flanders_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			brabant_area = {
+				add_permanent_claim = root
+			}
+			north_brabant_area = {
+				add_permanent_claim = root
+			}
+			holland_area = {
+				add_permanent_claim = root
+			}
+			north_rhine_area = {
+				add_permanent_claim = root
+			}
+			lower_rhineland_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	reclaim_germania_inferior = {
+		position = 23
+		required_missions = {
+			subjugate_the_belgians
+		}
+
+		trigger = {
+			brabant_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			north_brabant_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			holland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			north_rhine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			lower_rhineland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+
+		effect = {
+			1744 = {
+				add_province_modifier = {
+					name = rpr_antwerp
+					duration = -1
+				}
+			}
+
+			low_countries_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+}
+
+rpr_expansion_branch_5 = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 5
+
+	potential = {
+		tag = RME
+	}
+
+	return_to_venezia = {
+		position = 10
+		required_missions = {
+			campaign_for_the_north
+		}
+
+		trigger = {
+			venetia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			112 = {
+				add_province_modifier = {
+					name = rpr_venice
+					duration = -1
+				}
+
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+
+	humiliate_sparta  = {
+		position = 15
+		required_missions = {
+			lay_claim_to_epirus
+		}
+
+		trigger = {
+			4955 = {
+				owned_by = root
+			}
+
+			OR = {
+				has_won_war_against = {
+					who = SP8
+					max_years_since = 20
+				}
+			}
+		}
+
+		effect = {
+			inherit = SP8
+			inherit = AR8
+			inherit = PH8
+			inherit = PY8
+			inherit = OL8
+			inherit = CO8
+			inherit = CS8
+			inherit = CRT
+			inherit = NAX
+			inherit = KNI
+		}
+	}
+
+	the_province_of_greece = {
+		position = 16
+		required_missions = {
+			humiliate_sparta
+			humble_the_athenians
+		}
+
+		trigger = {
+
+		}
+
+		effect = {
+			macedonia_area = {
+				add_permanent_claim = root
+			}
+			bulgaria_area = {
+				add_permanent_claim = root
+			}
+			thrace_area = {
+				add_permanent_claim = root
+			}
+			silistria_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	forget_alexander = {
+		position = 17
+		required_missions = {
+			the_province_of_greece
+		}
+
+		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			NOT = {
+				exists = MAC
+			}
+		}
+
+		effect = {
+			anatolia_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+
+
+	conquer_asia_minor = {
+		position = 18
+		required_missions = {
+			constantines_will
+		}
+
+		trigger = {
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			germiyan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			aleppo_area = {
+				add_permanent_claim = root
+			}
+
+			syria_area = {
+				add_permanent_claim = root
+			}
+			palestine_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	reclaim_judea = {
+		position = 23
+		required_missions = {
+			conquer_asia_minor
+		}
+
+		trigger = {
+			palestine_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			
+		}
+	}
+}

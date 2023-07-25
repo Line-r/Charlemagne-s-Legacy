@@ -1,0 +1,242 @@
+independence_missions = {
+	slot = 2
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		OR = {
+		#	tag = MEC
+		#	tag = ANG
+		#	tag = NOL
+		}
+	}
+	prepare_for_war = {
+		position = 1
+		icon = mission_rb_conquer_the_highlands
+
+		trigger = {
+			army_size_percentage = 1.0
+			manpower_percentage = 0.8
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = earldom_prepare
+				duration = 3650
+			}
+
+			add_liberty_desire = 50
+
+			create_general = {
+				tradition = 100
+			}
+		}
+	}
+
+	declare_independence = {
+		position = 2
+		icon = mission_rb_into_england
+
+		required_missions = {
+			prepare_for_war
+		}
+		trigger = {
+			ENG = {
+				is_at_war = no
+			}
+			liberty_desire = 25
+
+			reverse_has_opinion = {
+				who = WLS
+				value = 100
+			}
+
+			OR = {
+				AND = {
+					tag = NOL
+					reverse_has_opinion = {
+						who = ANG
+						value = 150
+					}
+					reverse_has_opinion = {
+						who = MEC
+						value = 150
+					}
+				}
+
+				AND = {
+					tag = MEC
+					reverse_has_opinion = {
+						who = ANG
+						value = 150
+					}
+					reverse_has_opinion = {
+						who = NOL
+						value = 150
+					}
+				}
+
+				AND = {
+					tag = ANG
+
+					reverse_has_opinion = {
+						who = NOL
+						value = 150
+					}
+					reverse_has_opinion = {
+						who = MEC
+						value = 150
+					}
+				}
+			}
+		}
+
+		effect = {
+			create_alliance = NOL
+			create_alliance = MEC
+			create_alliance = WLS
+			create_alliance = ANG
+
+			declare_war_with_cb = {
+				casus_belli = cb_independence_war
+				who = ENG
+			}
+
+			NOL = {
+				join_all_offensive_wars_of = ROOT
+				add_country_modifier = {
+					name = earldom_prepare
+					duration = 3650
+				}
+			}
+			MEC = {
+				join_all_offensive_wars_of = ROOT
+				add_country_modifier = {
+					name = earldom_prepare
+					duration = 3650
+				}
+			}
+			ANG = {
+				join_all_offensive_wars_of = ROOT
+				add_country_modifier = {
+					name = earldom_prepare
+					duration = 3650
+				}
+			}
+			WLS = {
+				join_all_offensive_wars_of = ROOT
+				add_country_modifier = {
+					name = earldom_prepare
+					duration = 3650
+				}
+			}
+
+
+		}
+	}
+
+	control_wessex = {
+		position = 3
+		icon = mission_rb_control_state_religion
+		required_missions = {
+			declare_independence
+		}
+		
+		trigger = {
+			236 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						alliance_with = ROOT
+						overlord = {
+							alliance_with = ROOT
+								}
+									}
+								}
+			}
+
+			ENG = {
+				war_exhaustion = 6
+			}
+
+			OR = {
+				AND = {
+					tag = MEC
+					NOL = {
+						ai = yes
+					}
+					ANG = {
+						ai = yes
+					}
+				}
+
+				AND = {
+					tag = NOL
+					MEC = {
+						ai = yes
+					}
+					ANG = {
+						ai = yes
+					}
+				}
+
+				AND = {
+					tag = ANG
+					NOL = {
+						ai = yes
+					}
+					MEC = {
+						ai = yes
+					}
+				}
+
+			}
+		}
+
+		effect = {
+			white_peace = ENG
+			inherit = MEC
+			inherit = NOL
+			inherit = ANG
+			grant_independence = yes
+
+			ENG = {
+				release = ROOT
+				release = WLS
+				home_counties_area = {
+					cede_province = ROOT
+					add_core = ROOT
+				}
+
+				wessex_area = {
+					add_core = WSX
+				}
+
+				release = WSX
+			}
+
+			create_union = WSX
+
+			WLS = {
+				white_peace = ENG
+				grant_independence = yes
+			}
+
+			change_tag = HEP
+			swap_non_generic_missions = yes
+
+			if = {
+				limit = {
+					war_with = FRA
+				}
+
+				white_peace = FRA
+
+				WLS = {
+					white_peace = FRA
+				}
+			}
+		}
+	}
+}

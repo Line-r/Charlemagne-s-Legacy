@@ -1,0 +1,12 @@
+﻿l_english:
+#Athens
+ athenian_events.1.t:0 "The Humiliation of Sparta"
+ athenian_events.1.d:0 "The Hellenic League led by Athens has been successful in defeating the Spartans in battle. The polises led by Sparta have sworn fealty to the Assembly, whilst those led by Athens have gained a new form of respect for them. Now that the Greek scuffle is over, Athens shall create a more centralized Greek state to protect the polises against foreign threats."
+ athenian_events.1.a:0 "It's all Greek to me."
+#Sparta
+ spartan_events.1.t:0 "The Humiliation of Athens"
+ spartan_events.1.d:0 "The Spartan League has been successful in defeating the Athenians in battle. The polises led by Athens have sworn fealty to the Diarchy, whilst those led by Sparta have gained a new form of respect for them. Now that the Greek scuffle is over, Sparta shall create a more centralized Greek state to protect the polises against foreign threats."
+ spartan_events.1.a:0 "This. Is. Sparta!"
+ spartan_events.2.t:0 "The Sack of Ragusa"
+ spartan_events.2.d:0 "In their conquest of the Adriatic coast, Arcadian troops have sacked the city of Ragusa. The mercantile city has been burned to the ground, its people slaughtered and their riches taken."
+ spartan_events.2.a:0 "On to Venice!"

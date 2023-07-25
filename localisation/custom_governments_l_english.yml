@@ -1,0 +1,41 @@
+﻿l_english:
+#Turkey
+ottoman_government:0 "Rûmi Government"
+ottoman_government_desc:0 "The Rûmi Government is in many ways synonymous with the Royal Household. The harem ensures that the beylik will never fall without an heir."
+turkish_assembly:0 "Turkish Assembly"
+#Athens
+ athens_merchant_republic:0 "Athenian Democracy"
+ athens_merchant_republic_desc:0 "Athenian democracy developed around the 6th century BC in the Greek city-state of Athens, comprising the city of Athens and the surrounding territory of Attica. Although Athens is the most famous ancient Greek democratic city-state, it was not the only one, nor was it the first; multiple other city-states adopted similar democratic constitutions before Athens."
+ATHENIAN_DEMOCRACY:0 "Grand Polis"
+ARCHONTES:0 "Árchontes"
+ATH_parliament_name:0 "Ecclesia"
+#Sparta
+ sparta_merchant_republic:0 "Spartan Diarchy"
+ sparta_merchant_republic_desc:0 "The state is ruled by two hereditary kings of the Agiad and Eurypontid families, both supposedly descendants of Heracles and equal in authority, so that one could not act against the power and political enactments of his colleague."
+SPARTAN_diarchy:0 "Spartan Diarchy"
+#Polis
+ polis:0 "Polis"
+ polis_desc:0 "A city-state, or polis, is the community structure of ancient Greece. Each city-state is organized with an urban center and the surrounding countryside."
+POLIS:0 "Polis"
+GRANDPOLIS:0 "Grand Polis"
+byzantine_parliament_name:0 "Ecclasia"
+#Ecclasia
+ anti_papacy_reform:0 "Antipope in Exile"
+ anti_papacy_reform_desc:0 "The Kingdom of Ecclasia is ran by a lineage of Antipopes, whomst all claim the title of Pope. The first antipope, Anacletus II, had been exiled to the commune of Brescia, forming the holy kingdom of Ecclasia from where he plotted his return to Rome. Though he could never reclaim his rightful title, his successors will continue to try and do so."
+ANTIPAPACY:0 "Anti-Papacy"
+ANTIPOPE:0 "Antipope"
+ANTIPOPETTE:0 "Antipopette"
+#Tripoli
+ phoenician_trade_republic:0 "Phoenician Thalassocratic Republic"
+ phoenician_trade_republic_desc:0 "A state with primarily maritime realms, an empire at sea, or a seaborne empire. Traditional thalassocracies seldom dominate interiors, even in their home territories."
+#Ukraine
+ thardom:0 "Volyn Thardom"
+ thardom_desc:0 "REPLACE_ME"
+#Styria
+ styrian_archduchy_reform:0 "Styrian Archduchy"
+ styrian_archduchy_reform_desc:0 "REPLACE_ME"
+#Swabia
+ ability_swabian_war_council_mechanic:0 "Totalenkrieg"
+ swabian_war_council_power:0 "Warfare Stagnation"
+ swabian_war_council_power_gain_modifier:0 "Stagnation Increase"
+ monthly_swabian_war_council_power:0 "Monthly Stagnation"

@@ -1,0 +1,43 @@
+namespace = cl_infoevents
+
+country_event = {
+	id = cl_infoevents.1
+	title = cl_infoevents.1.t
+	desc = cl_infoevents.1.d
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	trigger = {
+		has_game_started = yes
+		ai = no
+	}
+
+	option = {
+		name = cl_infoevents.1.a
+	}
+}
+
+country_event = {
+	id = cl_infoevents.2
+	title = cl_infoevents.2.t
+		desc = {
+			trigger = {
+				NOT = {
+					tag = ANJ
+				}
+			}
+			desc = cl_infoevents.2.d
+		}
+		desc = {
+			trigger = {	tag = ANJ }
+			desc = cl_infoevents.2.d.anjou
+		}
+
+	is_triggered_only = yes
+
+	option = {
+		name = cl_infoevents.2.a
+	}
+}

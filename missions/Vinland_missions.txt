@@ -1,0 +1,536 @@
+vin_branch_1 = {
+	slot = 1
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = STB
+			tag = HVE
+			tag = FYR
+			tag = SRS
+			tag = VIN
+		}
+	}
+
+	jarl_of_strondstadr = {
+		position = 2
+		icon = mission_subjugate_the_merchants
+		required_missions = {
+			vin_rally_the_men
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = SRS
+				NOT = {
+					exists = SRS
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = traditional_norse_training
+				duration = -1
+			}
+		}
+	}
+
+
+	explore_the_south = {
+		position = 5
+		icon = mission_pol_tend_east
+		required_missions = {
+			the_great_leap_westwards
+		}
+
+		trigger = {
+			southeast_america_region = {
+				has_discovered = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = quest_for_new_oslo
+				duration = -1
+			}
+		}
+	}
+
+
+}
+
+vin_branch_2 = {
+	slot = 2
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = STB
+			tag = HVE
+			tag = FYR
+			tag = SRS
+			tag = VIN
+		}
+	}
+
+	jarl_of_fyrirjord = {
+		position = 2
+		icon = mission_subjugate_the_merchants
+		required_missions = {
+			vin_rally_the_men
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = FYR
+				NOT = {
+					exists = FYR
+				}
+
+			}
+
+		}
+
+		effect = {
+			capital_scope = {
+				add_base_tax = 5
+				add_base_production = 5
+				add_base_manpower = 5
+			}
+
+			add_country_modifier = {
+				name = fyrir_shipbuilding
+				duration = -1
+			}
+		}
+	}
+
+
+	the_great_leap_westwards = {
+		position = 4
+		icon = mission_expand_into_the_forest
+		required_missions = {
+			vinland_saga
+		}
+
+		trigger = {
+			hudson_bay_area = {
+				has_discovered = root
+			}
+
+			great_plains_region = {
+				has_discovered = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = great_leap_westwards
+				duration = 18250
+			}
+		}
+	}
+
+	settle_the_lakes = {
+		position = 5
+		icon = mission_lit_harness_steppes
+		required_missions = {
+			the_great_leap_westwards
+		}
+
+		provinces_to_highlight = {
+			region = great_lakes_region
+			NOT = {
+				owned_by = root
+			}
+		}
+
+		trigger = {
+			great_lakes_region = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = freshwater_settlements
+				duration = -1
+			}
+		}
+	}
+
+	vin_king_of_north_america = {
+		position = 6
+		icon = mission_ruler_of_north_america
+		provinces_to_highlight = {
+			continent = north_america
+			NOT = {
+				owned_by = root
+			}
+		}
+		required_missions = {
+			settle_the_lakes
+			explore_the_south
+		}
+
+		trigger = {
+			north_america = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			add_prestige = 100
+			central_america_superregion = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+}
+
+
+vin_branch_3 = {
+	slot = 3
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = STB
+			tag = HVE
+			tag = FYR
+			tag = SRS
+			tag = VIN
+		}
+	}
+
+	vin_rally_the_men = {
+		position = 1
+		icon = mission_modernized_vikings
+		trigger = {
+			army_size_percentage = 1
+			num_of_generals = 1
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = FYR
+				months = 600
+			}
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = STB
+				months = 600
+			}
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = HVE
+				months = 600
+			}
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = SRS
+				months = 600
+			}
+
+			if = {
+				limit = { tag = FYR }
+				complete_mission = jarl_of_fyrirjord
+			}
+
+			if = {
+				limit = { tag = STB }
+				complete_mission = jarl_of_stollboer
+			}
+
+			if = {
+				limit = { tag = HVE }
+				complete_mission = jarl_of_hveitiakrstadr
+			}
+
+			if = {
+				limit = { tag = SRS }
+				complete_mission = jarl_of_strondstadr
+			}
+		}
+	}
+
+	vinland_saga = {
+		position = 3
+		icon = vinland_saga
+		required_missions = {
+			jarl_of_fyrirjord
+			jarl_of_hveitiakrstadr
+			jarl_of_stollboer
+			jarl_of_strondstadr
+		}
+
+		trigger = {
+			all_subject_country = {
+				NOT = {
+					liberty_desire = 10
+				}
+
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = vinland_events.1
+			}
+		}
+	}
+}
+
+
+vin_branch_4 = {
+	slot = 4
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = STB
+			tag = HVE
+			tag = FYR
+			tag = SRS
+			tag = VIN
+		}
+	}
+
+	jarl_of_hveitiakrstadr = {
+		position = 2
+		icon = mission_subjugate_the_merchants
+		required_missions = {
+			vin_rally_the_men
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = HVE
+				NOT = {
+					exists = HVE
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = rich_lands_of_massachusetts
+				duration = -1
+			}
+		}
+	}
+
+	prepare_the_grand_expedition = {
+		position = 4
+		icon = mission_exploration
+		required_missions = {
+			vinland_saga
+		}
+
+		trigger = {
+			num_of_explorers = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = prepare_the_grand_expedition
+				duration = 5475
+			}
+		}
+	}
+
+	rediscover_greenland = {
+		position = 5
+		icon = mission_rb_settle_the_north
+		required_missions = {
+			prepare_the_grand_expedition
+		}
+
+		trigger = {
+			has_discovered = 1105
+			has_discovered = 1104
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = settling_the_old_lands
+				duration = 5475
+			}
+		}
+	}
+
+	land_on_the_rift = {
+		position = 6
+		icon = mission_rb_cod_wars
+		required_missions = {
+			rediscover_greenland
+		}
+
+		trigger = {
+			has_discovered = 370
+			has_discovered = 371
+		}
+
+		effect = {
+			370 = {
+				add_core = root
+			}
+
+			371 = {
+				add_core = root
+			}
+		}
+	}
+
+	a_route_homewards = {
+		position = 7
+		icon = mission_conquer_norway
+		required_missions = {
+			land_on_the_rift
+		}
+
+		trigger = {
+			has_discovered = 1266
+			has_discovered = 1929
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = NOR
+				months = 300
+			}
+
+			western_norway = {
+				add_permanent_claim = root
+			}
+
+			eastern_norway = {
+				add_permanent_claim = root
+			}
+
+			northern_norway = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	home_sweet_home = {
+		position = 8
+		icon = mission_crown_of_norway
+		required_missions = {
+			a_route_homewards
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = NOR
+				owns_core_province = 17
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = return_of_the_vikings
+				duration = 18250
+			}
+
+			scandinavia_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+}
+
+vin_branch_5 = {
+	slot = 5
+	has_country_shield = yes
+	ai = yes
+	generic = no
+
+	potential = {
+		OR = {
+			tag = STB
+			tag = HVE
+			tag = FYR
+			tag = SRS
+			tag = VIN
+		}
+	}
+
+	jarl_of_stollboer = {
+		position = 2
+		icon = mission_subjugate_the_merchants
+		required_missions = {
+			vin_rally_the_men
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = STB
+				NOT = {
+					exists = STB
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = cradle_of_civilization
+				duration = -1
+			}
+		}
+	}
+
+	eriks_settlements = {
+		position = 6
+		icon = mission_norse_faith
+		required_missions = {
+			rediscover_greenland
+		}
+
+		trigger = {
+			1104 = {
+				owned_by = root
+			}
+
+			1105 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			1104 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+			1105 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+		}
+	}
+}
+
+
+

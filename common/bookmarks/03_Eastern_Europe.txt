@@ -1,0 +1,24 @@
+bookmark =
+{
+	#Eastern Europe
+	name = "EASTERN_EUROPE_BOOKMARK"
+	desc = "EASTERN_EUROPE_BOOKMARK_DESC"
+	date = 1444.11.11
+	
+	center = 161
+	
+	country = VOL
+	country = LIT
+	country = LIV
+	country = SLO
+	country = HUN
+	country = RMN
+	country = MAC
+	country = BYZ
+	country = ATH
+	country = SP8
+	country = TR8
+	country = FEO
+
+	easy_country = VOL
+}

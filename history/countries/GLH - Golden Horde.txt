@@ -1,0 +1,21 @@
+government = tribal
+add_government_reform = steppe_horde
+primary_culture = mishary
+religion = tengri_pagan_reformed
+technology_group = nomad_group
+government_rank = 3
+capital = 303	# Saratov
+add_historical_rival = ILK
+add_historical_rival = YUA
+add_historical_rival = CHG
+
+1425.1.1 = {
+	monarch = {
+		name = "Mahmud"
+		dynasty = "Kuchuk"
+		birth_date = 1397.8.10
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}

@@ -1,0 +1,18 @@
+government = republic
+add_government_reform = veche_republic
+government_rank = 1
+technology_group = eastern
+religion = catholic
+primary_culture = karelian
+capital = 32
+
+add_historical_friend = SMI
+
+1432.11.1 = {
+	monarch = {
+		name = "Mohkku"
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+}

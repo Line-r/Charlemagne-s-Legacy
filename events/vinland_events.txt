@@ -1,0 +1,34 @@
+namespace = vinland_events
+country_event = {
+	id = vinland_events.1
+	title = vinland_events.1.t
+	desc = vinland_events.1.d
+	picture = COURT_eventPicture
+	major = yes
+	major_trigger = {
+		technology_group = western
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = "vinland_events.1.a"
+
+		inherit = HVE
+		inherit = FYR
+		inherit = SRS
+		inherit = STB
+
+		change_tag = VIN
+		swap_non_generic_missions = yes
+
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+
+		add_country_modifier = {
+			name = prelude_to_the_grand_expedition
+			duration = 9125
+		}
+	}
+}

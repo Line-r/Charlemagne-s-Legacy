@@ -1,0 +1,380 @@
+namespace = ANJ_events
+
+country_event = {
+	#Anjou Succession
+	id = ANJ_events.1
+	title = ANJ_events.1.t
+	desc = ANJ_events.1.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	major = yes
+	fire_only_once = yes
+	major_trigger = {
+		religion = catholic
+	}
+
+	trigger = {
+		tag = ANJ
+		NOT = {
+			has_ruler = "Richard"
+		}
+	}
+
+	immediate = {
+		set_country_flag = "ANJ_succession_secured"
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "ANJ_events.1.a"
+		set_country_flag = ANJ_angevin_path
+		swap_non_generic_missions = yes
+		custom_tooltip = tt_ANJ_angevins
+	}
+
+	option = {
+		name = "ANJ_events.1.b"
+		set_country_flag = ANJ_french_path
+		swap_non_generic_missions = yes
+		custom_tooltip = tt_ANJ_france
+	}
+
+	option = {
+		name = "ANJ_events.1.c"
+		set_country_flag = ANJ_diplomatic_path
+		swap_non_generic_missions = yes
+		custom_tooltip = tt_ANJ_anjou
+	}
+}
+
+country_event = {
+	#Court of Valois
+
+	id = ANJ_events.2
+	title = ANJ_events.2.t
+	desc = ANJ_events.2.d
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "ANJ_events.2.a"
+		if = {
+			limit = {
+				exists = FRA
+			}
+			create_union = FRA
+		}
+
+		if = {
+			limit = {
+				exists = BOU
+			}
+			create_union = BOU
+		}
+
+
+		hidden_effect = {
+			set_country_flag = ANJ_PU_france
+		}
+
+		every_neighbor_country = {
+			add_aggressive_expansion = {
+				who = ROOT
+				value = 20
+			}
+		}
+	}
+
+	option = {
+		name = "ANJ_events.2.b"
+		FRA = {
+			every_owned_province = {
+				add_core = ROOT
+			}
+		}
+
+	}
+
+}
+
+country_event = {
+	id = ANJ_events.3
+	title = none
+	desc = none
+	picture = none
+	hidden = yes
+	#Automated event to remove PU modifiers for Anjou - Based upon Danish LoTN event
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		has_country_modifier = ANJ_parisian_guard_pu
+
+		FRA = {
+			OR = {
+				NOT = { is_subject_of = ROOT }
+				is_lesser_in_union = no
+			}
+		}
+
+	}
+
+	option = {
+		name = none
+		remove_country_modifier = ANJ_parisian_guard_pu
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	
+	id = ANJ_events.4
+	title = ANJ_events.4.t
+	desc = ANJ_events.4.d
+	picture = POPE_PREACHING_eventPicture
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 365
+	}
+
+	trigger = {
+		tag = ANJ
+		orleans_area = {
+			type = all
+			country_or_non_sovereign_subject_holds = root
+		}
+	}
+
+	option = {
+		name = ANJ_events.4.a
+		add_prestige = 15
+		
+		orleans_area = {
+			add_province_modifier = {
+				name = ANJ_dissatisfied_nuns
+				duration = 9125
+			}
+		}
+
+		hidden_effect = {
+			set_country_flag = ANJ_dealt_with_nuns
+		}
+	}
+
+	option = {
+		name = ANJ_events.4.b
+		add_stability = -1
+
+		orleans_area = {
+			add_core = ORL
+			cede_province = ORL
+		}
+
+		create_march = ORL
+
+		hidden_effect = {
+			set_country_flag = ANJ_befriend_nuns
+			ORL = {
+				add_country_modifier = {
+					name = "sisters_takeover"
+					duration = -1
+				}
+				if = {
+					limit = {
+						NOT = { government = theocracy }
+					}
+					change_government = theocracy
+				}
+		
+				if = {
+					limit = {
+						is_female = no
+					}
+					define_ruler = {
+						name = "Jeanne"
+						change_mil = 3
+						female = yes
+					}
+				}
+				if = {
+					limit = {
+						has_heir = yes
+					}
+					remove_heir = {}
+				}
+				add_government_reform = holy_state_reform
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = ANJ_events.5
+	title = ANJ_events.5.t
+	desc = ANJ_events.5.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ANJ_events.5.a
+
+			if = {
+				limit = {
+					exists = TOU
+				}
+				TOU = {
+					define_heir = {
+						dynasty = ROOT
+						claim = 0
+						no_consort_with_heir = yes
+						female = yes
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					exists = OCC
+				}
+				OCC = {
+					define_heir = {
+						dynasty = ROOT
+						claim = 0
+						no_consort_with_heir = yes
+						female = yes
+					}
+				}
+			}
+
+	}
+
+	immediate = {
+		TOU = {
+			kill_heir = {
+				
+			}
+		}
+		OCC = {
+			kill_heir = {
+				
+			}
+		}
+
+	}
+}
+
+country_event = {
+	id = ANJ_events.6
+	title = ANJ_events.6.t
+	desc = ANJ_events.6.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ANJ
+		OR = {
+			TOU = {
+				dynasty = ROOT
+			}
+			OCC = {
+				dynasty = ROOT
+			}
+		}
+	}
+
+	option = {
+		name = ANJ_events.6.a
+
+		if = {
+			limit = {
+				exists = TOU
+			}
+			create_union = TOU
+		}
+
+		if = {
+			limit = {
+				exists = OCC
+			}
+			create_union = OCC
+		}
+	}
+}
+
+country_event = {
+	id = ANJ_events.7
+	title = ANJ_events.7.t
+	desc = ANJ_events.7.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		#join the empire
+		name = ANJ_events.7.a
+
+		set_in_empire = yes
+	}
+
+	option = {
+		name = ANJ_events.7.b
+		add_prestige = 25
+	}
+}
+
+country_event = {
+	id = ANJ_events.8
+	title = ANJ_events.8.t
+	desc = ANJ_events.8.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ANJ_events.8.a
+		add_imperial_influence = 25
+		add_prestige = 50
+	}
+
+	option = {
+		name = ANJ_events.8.b
+		dismantle_hre = yes
+		low_countries_region = {
+			add_claim = root
+		}
+	}
+}
+
+country_event = {
+	id = ANJ_events.9
+	title = ANJ_events.9.t
+	desc = ANJ_events.9.d
+	picture = TOLLS_SHIP_CARGO_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ANJ_events.9.a
+		custom_tooltip = tt_establish_the_kingdom_of_the_antilles
+
+		hidden_effect = {
+			set_global_flag = kingdom_of_the_antilles_established
+		}
+	}
+}

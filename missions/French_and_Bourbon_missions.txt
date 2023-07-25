@@ -1,0 +1,391 @@
+fra_southern_conquest_path = {
+	slot = 4
+	ai = yes
+	potential = {
+		OR = {
+			tag = FRA
+			tag = BOU
+		}
+	}
+	generic = no
+	has_country_shield = yes
+
+	fra_the_occitan_realm = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			fra_a_dynastic_struggle
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					marriage_with = TOU
+					alliance_with = TOU
+					TOU = {
+						has_heir = no
+						reverse_has_opinion = {
+							who = root
+							value = 200
+						}
+					}
+				}
+
+				AND = {
+					marriage_with = OCC
+					alliance_with = OCC
+					OCC = {
+						has_heir = no
+						reverse_has_opinion = {
+							who = root
+							value = 200
+						}
+					}
+				}
+
+
+				is_rival = TOU
+				is_rival = OCC
+
+				AND = {
+					NOT = {
+						exists = TOU
+					}
+					NOT = {
+						exists = OCC
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						is_rival = TOU
+						is_rival = OCC
+					}
+				}
+
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = TOU
+					months = 300
+				}
+
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = TOU
+					months = 300
+				}
+			}
+
+			else_if = {
+				limit = {
+					AND = {
+						NOT = {
+							exists = TOU
+						}
+						NOT = {
+							exists = OCC
+						}
+					}
+				}
+
+				languedoc_area = {
+					add_permanent_claim = root
+				}
+				massif_central_area = {
+					add_permanent_claim = root
+				}
+			}
+			country_event = {
+				id = french_events.3
+			}
+		}
+	}
+
+	fra_king_of_occitania = {
+		position = 3
+		required_missions = {
+			fra_the_occitan_realm
+		}
+		icon = mission_unknown_mission
+
+		trigger = {
+			OR = {
+				AND = {
+					languedoc_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+					massif_central_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+				}
+
+				senior_union_with = TOU
+				senior_union_with = OCC
+			}
+		}
+
+		effect = {
+
+			if = {
+				limit = {
+					OR = {
+						senior_union_with = TOU
+						senior_union_with = OCC
+					}
+				}
+
+				savoy_dauphine_area = {
+					add_core = OCC
+				}
+				provence_area = {
+					add_core = OCC
+				}
+			}
+
+			else = {
+				savoy_dauphine_area = {
+					add_permanent_claim = root
+				}
+				provence_area = {
+					add_permanent_claim = root
+				}
+			}
+
+
+
+
+			hidden_effect = {
+				TOU = {
+					change_tag = OCC
+				}
+			}
+		}
+	}
+
+}
+
+
+fra_introductry_path = {
+	slot = 3
+	ai = yes
+	potential = {
+		OR = {
+			tag = FRA
+			tag = BOU
+		}
+	}
+	generic = no
+	has_country_shield = yes
+
+	fra_a_dynastic_struggle = {
+		position = 1
+		icon = mission_unknown_mission
+
+		trigger = {
+			NOT = {
+				num_of_rebel_armies = 1
+			}
+			NOT = {
+				num_of_rebel_controlled_provinces = 1
+			}
+
+		}
+
+		effect = {
+			if = {
+				limit = {
+					dynasty = "Bourbon"
+				}
+				country_event = {
+					id = french_events.1
+				}
+			}
+
+			else = {
+				country_event = {
+					id = french_events.2
+				}
+				add_prestige = 10
+			}
+		}
+	}
+
+	fra_shepard_of_the_south = {
+		position = 6
+		icon = mission_unknown_mission
+		required_missions = {
+			fra_king_of_gascony
+			fra_king_of_occitania
+		}
+
+		trigger = {
+			all_subject_country = {
+				NOT = {
+					liberty_desire = 10
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = fra_shepard_of_the_south
+				duration = 14600
+			}
+
+			country_event = {
+				id = french_events.8
+			}
+		}
+	}
+	
+}
+
+fra_anjou_conquest_path_1 = {
+	slot = 2
+	ai = yes
+	potential = {
+		OR = {
+			tag = FRA
+			tag = BOU
+		}
+	}
+	generic = no
+	has_country_shield = yes
+
+	fra_the_normand_succession = {
+		position = 2
+		required_missions = {
+			fra_a_dynastic_struggle
+		}
+		icon = mission_unknown_mission
+
+		trigger = {
+			OR = {
+				senior_union_with = NRM
+				has_country_flag = fra_normandy_denied
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = fra_normandy_granted
+				}
+
+				add_prestige = 15
+				add_country_modifier = {
+					name = fra_normandy_gained
+					duration = 5475
+				}
+			}
+
+			if = {
+				limit = {
+					has_country_flag = fra_normandy_denied
+				}
+
+				add_legitimacy = -10
+
+				add_country_modifier = {
+					name = fra_conquest_of_normandy
+					duration = 3650
+				}
+			}
+		}
+	}
+
+	fra_king_of_normandy = {
+		position = 3
+		required_missions = {
+			fra_the_normand_succession
+		}
+		icon = mission_unknown_mission
+
+		trigger = {
+			OR = {
+				AND = {
+					senior_union_with = NRM
+					NRM = {
+						NOT = {
+							liberty_desire = 0
+						}
+					}
+				}
+
+				normandy_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+		}
+
+		effect = {
+			loire_area = {
+				add_permanent_claim = root
+			}
+			poitou_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	fra_strike_at_the_heart = {
+		position = 4
+		required_missions = {
+			fra_king_of_normandy
+		}
+		icon = mission_unknown_mission
+
+		trigger = {
+			loire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			poitou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = fra_anjou_vanquished
+				duration = -1
+			}
+
+			every_province = {
+				limit = {
+					culture = gascon
+				}
+
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	fra_king_of_gascony = {
+		position = 5
+		required_missions = {
+			fra_strike_at_the_heart
+		}
+		icon = mission_unknown_mission
+
+		trigger = {
+			owns_all_provinces = {
+				culture = gascon
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = french_events.8
+			}
+		}
+	}
+}

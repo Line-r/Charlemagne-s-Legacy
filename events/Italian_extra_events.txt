@@ -1,0 +1,87 @@
+namespace = italian_extra_events
+
+country_event = {
+	id = italian_extra_events.1
+	title = italian_extra_events.1.t
+	desc = italian_extra_events.1.d
+	picture = CULTURE_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	major_trigger = {
+		OR = {
+			technology_group = western
+			technology_group = eastern
+		}
+	}
+	mean_time_to_happen = {
+		days = 120
+	}
+
+	trigger = {
+		primary_culture = tuscan
+		NOT = {
+			exists = ETR
+		}
+
+		OR = {
+			is_part_of_hre = yes
+			NOT = {hre_size = 1}
+		}
+
+		SIE = {
+			has_opinion = {
+				who = ROOT
+				value = 150
+			}
+		}
+
+		LUC = {
+			has_opinion = {
+				who = ROOT
+				value = 150
+			}
+		}
+		
+		PIS = {
+			has_opinion = {
+				who = ROOT
+				value = 150
+			}
+		}
+	}
+
+	option = {
+		name = "italian_extra_events.1.a"
+		add_stability = -2
+		every_country = {
+			limit = {
+				primary_culture = tuscan
+				NOT = {
+					ai = no
+				}
+			}
+			ROOT = { inherit = PREV }
+		}
+
+		change_tag = ETR
+		swap_non_generic_missions = yes
+
+			change_primary_culture = etrurian
+
+			tuscany_area = {
+					change_culture = etrurian
+
+			}
+
+			set_government_rank = 2
+			add_prestige = 25
+	}
+
+	option = {
+		name = "italian_extra_events.1.b"
+		add_legitimacy = 25
+		add_stability = 2
+	}
+}

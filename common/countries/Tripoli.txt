@@ -1,0 +1,80 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 25  105  90 } 
+revolutionary_colors = { 16  1  10 }
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	religious_ideas
+	maritime_ideas	
+	administrative_ideas
+	offensive_ideas
+	economic_ideas
+	expansion_ideas
+}
+
+historical_units = {
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_mass_infantry
+	muslim_dragoon
+	ali_bey_reformed_infantry
+}
+
+monarch_names = {
+	"Abbar #0" = 1	
+	"Eshbaal #0" = -1 
+	"Eugoras #0" = 1 
+	"Germelqart #0" = 1
+	"Hannibal #0" = 1 	
+	"Paltibaal #0" = -1
+	"Philosir #0" = 1
+}
+
+leader_names = {
+	Abbar
+	Abdmelqart
+	Adonibaal
+	Agbal 
+	Ahirom 
+	Azimilik 
+	Baal 
+	Baalhanno 
+	Bodashtart 
+	Bodmelqart 
+	Bomilcar 
+	Bostar 
+	Boulomenus 
+	Carthalo 
+	Chelbes 		
+	Eshbaal 
+	Eugoras 
+	Germelqart 
+	Hamilcar 
+	Hannibal 
+	Hanno 
+	Hasdrubal 
+	Himilco 
+	Hiram 
+	Mago 
+	Maharbal 
+	Mattan 
+	Metallo 
+	Milkherem 
+	Milkiram 		
+	Paltibaal 
+	Philosir
+}
+
+ship_names = {
+	Ba'ith Shahid Haqq Wakil Qawiyy Matin
+	Waliyy Hamid Muhsi Mubdi Mu'id Muhyi Mumit
+	Hayy Qayyum Wajid Majid Wahid Samad Qadir
+	Muqtadir Muqaddim Mu'akhkhir Awwal Akhir
+	Zahir Batin Wali Muta'al Barr Tawwab
+}

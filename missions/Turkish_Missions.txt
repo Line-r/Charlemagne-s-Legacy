@@ -1,0 +1,1404 @@
+tur_rum_westwards_expansion = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 2
+
+	potential = {
+		OR = {
+			tag = RUM
+			tag = TUR
+		}
+	}
+
+	across_the_bosphorus = {
+		position = 1
+		icon = mission_pf_soldier
+
+		provinces_to_highlight = {
+			area = thrace_area
+		}
+
+		trigger = {
+			thrace_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			bulgaria_area = {
+				add_permanent_claim = root
+			}
+			macedonia_area = {
+				add_permanent_claim = root
+			}
+		}
+
+		ai_weight = {
+			factor = 1000
+		}
+	}
+
+	destroy_alexanders_legacy = {
+		position = 2
+		icon = mission_pf_cross
+		required_missions = {
+			across_the_bosphorus
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = macedonia_area
+				owned_by = MAC
+			}
+		}
+
+		trigger = {
+			macedonia_area = {
+				type = all
+				owned_by = root
+			}
+
+			NOT = {exists = MAC}
+		}
+
+		effect = {
+			northern_greece_area = {
+				add_permanent_claim = root
+			}
+
+			morea_area = {
+				add_permanent_claim = root
+			}
+
+			aegean_archipelago_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	the_mulberry_peninsula = {
+		position = 3
+		icon = revenge_for_nicopolis
+		required_missions = {
+			destroy_alexanders_legacy
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = northern_greece_area
+				area = morea_area
+				area = aegean_archipelago_area
+			}
+		}
+
+		trigger = {
+			northern_greece_area = {
+				owned_by = root
+				type = all
+			}
+
+			morea_area = {
+				type = all
+				owned_by = root
+			}
+
+			aegean_archipelago_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = ALB
+				months = 3650
+			}
+
+			albania_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	clip_the_eagles_wings = {
+		position = 4
+		icon = pacify_the_albanian_lands
+		required_missions = {
+			the_mulberry_peninsula
+		}
+
+		provinces_to_highlight = {
+			area = albania_area
+		}
+
+		trigger = {
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					NOT = {is_year = 1480}
+				}
+
+				define_general = {
+					name = "Iskander Bey"
+								shock = 5
+								fire = 5
+								manuever = 5
+								siege = 2
+							}
+
+			}
+
+			rascia_area = {
+				add_permanent_claim = root
+			}
+
+			serbia_area = {
+				add_permanent_claim = root
+			}
+
+
+			}
+			
+		}
+
+		add_kebab = {
+			position = 5
+			icon = mission_non-western_soldiers
+			required_missions = {
+				clip_the_eagles_wings
+			}
+			trigger = {
+				rascia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+
+				serbia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+			}
+
+			effect = {
+				1766 = {
+					set_base_production = 10
+				}
+			}
+		}
+	}
+
+tur_rum_westwards_expansion_2 = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 1
+
+	potential = {
+		OR = {
+			tag = RUM
+			tag = TUR
+		}
+	}
+
+	tame_the_bulgyars = {
+		position = 2
+		icon = push_on_to_bulgaria
+		required_missions = {
+			across_the_bosphorus
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = bulgaria_area
+				owned_by = BUL
+			}
+		}
+
+		trigger = {
+			bulgaria_area = {
+				type = all
+				owned_by = root
+			}
+			NOT = {exists=BUL}
+		}
+		
+		effect = {
+			silistria_area = {
+				add_permanent_claim = root
+			}
+
+			wallachia_area = {
+				add_permanent_claim = root
+			}
+
+			moldavia_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = RMN
+				months = 3650
+			}
+		}
+	}
+
+	vlad_the_impaled = {
+		position = 6
+		icon = mission_impaled_soldies
+		required_missions = {
+			tame_the_bulgyars
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = silesia_area
+				area = wallachia_area
+				area = moldavia_area
+			}
+		}
+
+		trigger = {
+			silistria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			wallachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			moldavia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = vampire_hunter
+				duration = 9125
+			}
+		}
+	}
+
+
+}
+
+tur_rum_eastwards_expansion = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 4
+	potential = {
+		OR = {
+			tag = RUM
+			tag = TUR
+		}
+	}
+
+	the_black_sea_port = {
+		position = 1
+		icon = adriatic_access
+
+		provinces_to_highlight = {
+			province_id = 330
+		}
+
+		trigger = {
+			330 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			330 = {
+				add_building_construction = {
+					building = shipyard
+					speed = 1
+					cost = 0
+				}
+			}
+
+			north_kurdistan_area = {
+				add_permanent_claim = root
+			}
+
+			4302 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	seize_kurdistan = {
+		position = 2
+		icon = mission_arabian_fort
+		required_missions = {
+			the_black_sea_port
+		}
+
+		provinces_to_highlight = {
+			area = north_kurdistan_area
+		}
+
+		trigger = {
+			north_kurdistan_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			al_jazira_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+}
+
+tur_rum_eastwards_expansion_2 = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 5
+	potential = {
+		OR = {
+			tag = RUM
+			tag = TUR
+		}
+	}
+
+	head_for_damascus = {
+		position = 3
+		icon = mission_reclaim_morocco
+		required_missions = {
+			seize_kurdistan
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = dulkadir_area
+				province_id = 2313
+				province_id = 377
+			}
+		}
+
+		trigger = {
+			dulkadir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			2313 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			377 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+	
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = head_for_damascus
+				duration = 5475
+			}
+		}
+
+	}
+
+}
+
+tur_rum_development_missions = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 3
+	potential = {
+		OR = {
+			tag = RUM
+			tag = TUR
+		}
+	}
+
+	centralize_the_empire = {
+		position = 1
+		icon = anatolian_frontier
+
+		provinces_to_highlight = {
+			region = anatolia_region
+			country_or_subject_holds = root
+			NOT = {
+				owned_by = root
+			}
+		}
+
+		trigger = {
+			all_subject_country = {
+				NOT = {
+					capital_scope = {
+					region = anatolia_region
+					}
+				}
+				
+
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = centralised_state
+				duration = -1
+			}
+
+			capital_scope = {
+				add_base_manpower = 3
+				add_base_production = 3
+				add_base_tax = 3
+			}
+		}
+	}
+
+	guilds_of_anatolia = {
+		position = 2
+		icon = mission_restore_trade_superiority
+		required_missions = {
+			centralize_the_empire
+		}
+
+		provinces_to_highlight = {
+			region = anatolia_region
+			NOT = {
+				has_building = workshop
+			}
+		}
+
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					region = anatolia_region
+						has_building = workshop
+				}
+				amount = 10
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_building = workshop
+					region = anatolia_region
+				}
+				add_province_modifier = {
+					name = regulated_economic_growth
+					duration = 7300
+				}
+			}
+				
+
+		}
+	}
+
+	early_industrialization = {
+		position = 3
+		icon = industrialized_rhineland
+		required_missions = {
+			guilds_of_anatolia
+		}
+
+		provinces_to_highlight = {
+			owned_by = root
+			OR = {
+				has_building = mills
+				has_building = farm_estate
+				has_building = tradecompany
+				has_building = plantations
+				has_building = textile
+				has_building = weapons
+				has_building = wharf
+				has_building = furnace
+			}
+		}
+
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+						OR = {
+							has_building = mills
+							has_building = farm_estate
+							has_building = tradecompany
+							has_building = plantations
+							has_building = textile
+							has_building = weapons
+							has_building = wharf
+							has_building = furnace
+						}
+				}
+				amount = 20
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = early_industry
+				duration = 9125
+			}
+		}
+	}
+
+	zonguldak_basin_mines = {
+		position = 4
+		icon = saxon_manufacturing
+		required_missions = {
+			early_industrialization
+		}
+
+		provinces_to_highlight = {
+			province_id = 325
+		}
+
+		trigger = {
+			has_institution = manufactories
+			325 = {
+				owned_by = root
+				base_production = 15
+			}
+		}
+
+		effect = {
+			325 = {
+				change_trade_goods = coal
+				add_building_construction = {
+					building = furnace
+					speed = 1
+					cost = 0
+				}
+			}
+		}
+	}
+
+	the_turkish_revolution = {
+		position = 6
+		icon = mission_ottoman_diplomacy
+
+		trigger = {
+			OR = {
+				has_disaster = turkish_revolution
+				tag = TUR
+			}
+
+		}
+
+		effect = {
+			
+		}
+	}
+
+	
+
+
+}
+
+rum_eastwards_expansion = {
+	ai = yes
+	generic = no
+	slot = 4
+	has_country_shield = yes
+
+	potential = {
+		tag = RUM
+		has_country_flag = resolved_turkish_revolution
+	}
+
+	rebuild_the_army = {
+		position = 3
+		icon = mission_crusade_for_varna
+		required_missions = {
+			seize_kurdistan
+		}
+
+		trigger = {
+			manpower_percentage = 0.8
+			army_size_percentage = 0.6
+		}
+
+		effect = {
+			samtskhe_area = {
+				add_permanent_claim = root
+			}
+
+			imereti_area = {
+				add_permanent_claim = root
+			}
+
+			kartli_kakheti_area = {
+				add_permanent_claim = root
+			}
+
+			armenia_area = {
+				add_permanent_claim = root
+			}
+
+			shirvan_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	caucasus_ascension = {
+		position = 4
+		icon = mission_wine_monopolies
+		required_missions = {
+			rebuild_the_army
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = samtskhe_area
+				area = imereti_area
+				area = kartli_kakheti_area
+				area = armenia_area
+				area = shirvan_area
+			}
+		}
+
+		trigger = {
+			samtskhe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			armenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			shirvan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			tabriz_area = {
+				add_permanent_claim = root
+			}
+
+			shahrizor_area = {
+				add_permanent_claim = root
+			}
+
+			iraq_arabi_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	tughrils_legacy = {
+		position = 5
+		icon = mission_dominate_persian_gulf
+		required_missions = {
+			caucasus_ascension
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = tabriz_area
+				area = shahrizor_area
+				area = iraq_arabi_area
+			}
+		}
+
+		trigger = {
+			tabriz_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			shahrizor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			iraq_arabi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			persia_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	from_sea_to_sea = {
+		position = 6
+		icon = mission_conquer_persia
+		required_missions = {
+			tughrils_legacy
+		}
+
+		provinces_to_highlight = {
+			region = persia_region
+		}
+
+		trigger = {
+			persia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			transcaspia_area = {
+				add_permanent_claim = root
+			}
+
+			khiva_area = {
+				add_permanent_claim = root
+			}
+
+			kyzylkum_area = {
+				add_permanent_claim = root
+			}
+
+			merv_area = {
+				add_permanent_claim = root
+			}
+
+			arys_area = {
+				add_permanent_claim = root
+			}
+
+			transoxiana_area = {
+				add_permanent_claim = root
+			}
+
+			ferghana_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+}
+
+rum_eastwards_expansion_2 = {
+	ai = yes
+	generic = no
+	slot = 5
+	has_country_shield = yes
+
+	potential = {
+		tag = RUM
+		has_country_flag = resolved_turkish_revolution
+	}
+
+	the_fourth_holy_city = {
+		position = 4
+		icon = mission_mosque
+		required_missions = {
+			head_for_damascus
+		}
+
+		provinces_to_highlight = {
+			area = syria_area
+		}
+
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			palestine_area = {
+				add_permanent_claim = root
+			}
+
+			syrian_desert_area = {
+				add_permanent_claim = root
+			}
+
+			trans_jordan_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	push_back_the_ayyubids = {
+		position = 5
+		icon = mission_advance_to_the_arabian_sea
+		required_missions = {
+			the_fourth_holy_city
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = palestine_area
+				area = syria_area
+				area = trans_jordan_area
+			}
+		}
+
+		trigger = {
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			syrian_desert_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			arabia_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	decline_of_egypt = {
+		position = 6
+		icon = mission_dharma_mission_arabian_trade
+		required_missions = {
+			push_back_the_ayyubids
+		}
+
+		provinces_to_highlight = {
+			owned_by = EGY
+		}
+
+		trigger = {
+			OR = {
+				NOT = {exists = EGY}
+				EGY = {
+					NOT = {total_development = 250}
+				}
+			}
+		}
+
+		effect = {
+			egypt_region = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = EGY
+				months = 300
+			}
+		}
+	}
+}
+
+rum_westwards_expansion = {
+	ai = yes
+	generic = no
+	slot = 2
+	has_country_shield = yes
+
+	potential = {
+		tag = RUM
+		has_country_flag = resolved_turkish_revolution
+	}
+
+	slayer_of_patriarchs = {
+		icon = mission_russian_patriarchatee
+		position = 7
+		required_missions = {
+			vlad_the_impaled
+			add_kebab
+		}
+
+		trigger = {
+			
+		}
+
+		effect = {
+			balkan_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	sultan_of_illyria = {
+		icon = claim_the_borderlands
+		position = 8
+		required_missions = {
+			slayer_of_patriarchs
+		}
+
+		provinces_to_highlight = {
+			region = balkan_region
+		}
+
+		trigger = {
+			balkan_region = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			carpathia_region = {
+				add_permanent_claim = root
+			}
+
+			apulia_area = {
+				add_permanent_claim = root
+			}
+
+			calabria_area = {
+				add_permanent_claim = root
+			}
+
+		}
+	}
+
+	danube_monopoly = {
+		icon = danubian_power
+		position = 9
+		required_missions = {
+			sultan_of_illyria
+		}
+
+		provinces_to_highlight = {
+			province_id = 153
+		}
+
+		trigger = {
+			153 = {
+				is_strongest_trade_power = root
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			south_german_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+}
+
+rum_middle_expansion = {
+	ai = yes
+	generic = no
+	slot = 3
+	has_country_shield = yes
+
+	potential = {
+		tag = RUM
+		has_country_flag = resolved_turkish_revolution
+	}
+
+	black_sea_fleet = {
+		position = 7
+		icon = mission_conquer_arakan
+		required_missions = {
+			the_turkish_revolution
+		}
+
+		trigger = {
+			navy_size_percentage = 0.8
+		}
+
+		effect = {
+			crimea_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	downfall_of_gotha = {
+		position = 8
+		icon = mission_the_third_rome
+		required_missions = {
+			black_sea_fleet
+		}
+
+		provinces_to_highlight = {
+			area = crimea_area
+			owned_by = FEO
+		}
+
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			NOT = {exists = FEO}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = pontic_greek
+						culture = goths
+					}
+				}
+				change_culture = turkish
+			}
+
+			yedisan_area = {
+				add_permanent_claim = root
+			}
+
+			zaporizhia_area = {
+				add_permanent_claim = root
+			}
+
+			azov_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	dominate_the_black_sea = {
+		position = 9
+		icon = imperial_navy
+		required_missions = {
+			downfall_of_gotha
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = yedisan_area
+				area = zaporizhia_area
+				area = azov_area
+			}
+		}
+
+		trigger = {
+			yedisan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			zaporizhia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			azov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			circassia_area = {
+				add_permanent_claim = root
+			}
+
+			dagestan_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+}
+
+turkey_aleppo = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 5
+
+	potential = {
+		tag = TUR
+	}
+
+	growth_of_aleppo = {
+		position = 4
+		icon = mission_dharma_mission_arabian_trade
+		required_missions = {
+			head_for_damascus
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 377
+				province_id = 2313
+			}
+		}
+
+		trigger = {
+			377 = {
+				development = 25
+			}
+			2313 = {
+				development = 20
+			}
+		}
+
+		effect = {
+			377 = {
+				add_center_of_trade_level = 2 
+			}
+		}
+	}
+}
+
+turkey_middle_path = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 3
+
+	potential = {
+		tag = TUR
+	}
+
+	tur_republicanism = {
+		position = 7
+		icon = republican_yearnings
+		required_missions = {
+			the_turkish_revolution
+		}
+
+		trigger = {
+			republican_tradition = 100
+			corruption = 0
+			has_active_debate = yes
+		}
+
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = turkish_republicanism
+				duration = -1
+			}
+		}
+	}
+
+	tur_statism = {
+		position = 8
+		icon = the_london_steelyard
+		required_missions = {
+			tur_republicanism
+			tur_laicism
+			tur_nationalism
+			tur_populism
+			turkish_reformism
+		}
+
+		provinces_to_highlight = {
+			owned_by = root
+			NOT = {
+				development = 20
+			}
+		}
+
+		trigger = {
+			all_owned_province = {
+				development = 20
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = turkish_statism
+				duration = -1
+			}
+		}
+	}
+
+	the_six_arrows = {
+		position = 9
+		icon = six_arrows
+
+		required_missions = {
+			tur_statism
+		}
+
+		trigger = {
+			is_revolutionary = yes
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = the_six_arrows
+				duration = -1
+			}
+		}
+	}
+}
+
+turkey_leftmost_path = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 1
+
+	potential = {
+		tag = TUR
+	}
+
+	tur_populism = {
+		position = 7
+		icon = adjust_the_general_means
+		required_missions = {
+			the_turkish_revolution
+		}
+
+		provinces_to_highlight = {
+			owned_by = root
+			NOT = {
+				culture = turkish
+			}
+		}
+
+		trigger = {
+			all_owned_province = {
+				OR = {
+					culture = turkish
+					has_owner_accepted_culture = yes
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = we_are_all_turks
+				duration = -1
+			}
+		}
+	}
+}
+
+turkish_left_path = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 2
+
+	potential = {
+		tag = TUR
+	}
+
+	tur_laicism = {
+		position = 7
+		icon = wars_of_religion
+		required_missions = {
+			the_turkish_revolution
+		}
+
+		trigger = {
+			is_defender_of_faith = no
+			NOT = {
+				any_ally = {
+					religion = sunni
+				}
+			}
+			piety = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = turkish_laicism
+				duration = -1
+			}
+		}
+	}
+}
+
+tur_rightmost_path = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 5
+
+	potential = {
+		tag = TUR
+	}
+
+	turkish_reformism = {
+		position = 7
+		icon = the_great_school
+		required_missions = {
+			the_turkish_revolution
+		}
+
+		trigger = {
+			stability = 3
+			reform_level = 11
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = turkish_reformism
+				duration = -1
+			}
+		}
+	}
+}
+
+tur_right_path = {
+	ai = yes
+	generic = no
+	has_country_shield = yes
+	slot = 4
+
+	potential = {
+		tag = TUR
+	}
+
+	tur_nationalism = {
+		position = 7
+		icon = protect_against_austria
+		required_missions = {
+			the_turkish_revolution
+		}
+
+		provinces_to_highlight = {
+			owned_by = root
+			local_autonomy = 0.1
+		}
+
+		trigger = {
+				NOT = {average_autonomy = 0}
+				has_institution = enlightenment
+				owns_all_provinces = {
+					culture = turkish
+				}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = turkish_nationalism
+				duration = -1
+			}
+		}
+	}
+}

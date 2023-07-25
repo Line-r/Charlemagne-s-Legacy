@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudal_monarchy
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = flemish
+capital = 2974
+
+
+1418.1.1 = {
+	monarch = {
+		name = "Michiel"
+		dynasty = "van Akkevelde"
+		culture = flemish
+		birth_date = 1380.1.1
+		dip = 2
+		adm = 4
+		mil = 3
+	}
+}

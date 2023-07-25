@@ -1,0 +1,51 @@
+swabian_disaster = {
+	potential = {
+		tag = SWA
+	}
+
+	can_start = {
+		owns_or_non_sovereign_subject_of = 1868
+		has_country_flag = swa_siegfried_appears
+	}
+
+	on_start = swa_events.3
+
+	can_stop = {
+
+			has_any_disaster = yes
+		}
+
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = {
+				stability = 3
+			}
+		}
+
+		modifier = {
+			factor = 2
+			is_at_war = yes
+		}
+
+		modifier = {
+			factor = 2
+			unrest = 3
+		}
+
+		modifier = {
+			factor = 3
+			unrest = 5
+		}
+	}
+
+	can_end = {
+		has_country_flag = swa_end_swabian_disaster
+	}
+
+
+	modifier = {
+		global_unrest = 5
+	}
+
+}

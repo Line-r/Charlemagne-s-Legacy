@@ -1,0 +1,63 @@
+namespace = RMN_events
+
+country_event = {
+	id = RMN_events.1
+	title = RMN_events.1.t
+	desc = RMN_events.1.d
+	fire_only_once = yes
+
+	hidden = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		tag = RMN
+		NOT = {
+			moldavia_area = {
+				owned_by = root
+			}
+		}
+
+		wallachia_area = {
+			owned_by = root
+		}
+	}
+
+	option = {
+		change_tag = WAL
+		add_stability = -3
+		add_prestige = -50
+	}
+}
+
+country_event = {
+	id = RMN_events.2
+	title = RMN_events.2.t
+	desc = RMN_events.2.d
+	fire_only_once = yes
+
+	hidden = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		tag = RMN
+		NOT = {
+			wallachia_area = {
+				owned_by = root
+			}
+		}
+
+		moldavia_area = {
+			owned_by = root
+		}
+	}
+
+	option = {
+		change_tag = MOL
+		add_stability = -3
+		add_prestige = -50
+	}
+}

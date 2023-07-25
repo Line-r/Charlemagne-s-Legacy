@@ -1,0 +1,101 @@
+namespace = polish_new_events
+
+country_event = {
+	id = polish_new_events.18
+	title = polish_new_events.18.t
+	desc = polish_new_events.18.d
+
+	picture = LIBERUM_VETO_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = POL
+		is_subject = no
+		has_regency = yes
+		NOT = { has_reform = celestial_empire }
+	}
+	
+	immediate = {
+		set_global_flag = plc_union_outcome_flag
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.1
+			is_year = 1447
+		}
+		modifier = {
+			factor = 0.01
+			is_year = 1448
+		}
+		modifier = {
+			factor = 0.001
+			is_year = 1449
+		}
+	}
+	
+	option = {
+		name = polish_new_events.18.a #We must retain the Jagiellon Dynasty
+
+		ai_chance = { 
+			factor = 75 
+		}
+
+		define_ruler = {
+			change_dip = 3
+			change_adm = 3
+			change_mil = 3
+			max_random_adm = 4
+			max_random_dip = 4
+			max_random_mil = 4
+			claim = 100
+			culture = schlesian
+			dynasty = "Piast"
+		}
+
+		define_heir = {
+			dynasty = "Piast"
+			name = "Ines"
+			adm = 3
+			dip = 3
+			mil = 3
+			claim = 30
+			female = yes
+			no_consort_with_heir = yes
+		}
+
+		add_historical_friend = SIL
+
+		SIL = {
+			add_historical_friend = POL
+		}
+		
+	}
+	
+	option = {
+		name = polish_new_events.18.b #Appoint a Local Noble.
+		ai_chance = { 
+			factor = 25
+		}
+		define_ruler = {
+			change_dip = 3
+			change_adm = 3
+			change_mil = 3
+			max_random_adm = 6
+			max_random_dip = 6
+			max_random_mil = 6
+			claim = 100
+			culture = polish
+		}
+
+		SIL = {
+			add_opinion = {
+				who = ROOT
+				modifier = lit_denied_birthright
+			}
+		}
+	}
+}

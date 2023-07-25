@@ -1,0 +1,265 @@
+namespace = dietsland_mechanics
+
+country_event = {
+	id = dietsland_mechanics.1
+	title = dietsland_mechanics.1.t
+	desc = dietsland_mechanics.1.d
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = { 
+				AND = {
+					check_variable = {which = fInfluence value = 50}
+					check_variable = {which = dInfluence value = 50}
+				}
+			}}
+			every_owned_province = {
+				remove_province_modifier = inf_40
+			}
+
+			#Flemish mods
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 40}
+						check_variable = {which = dInfluence value = 60}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = flemish
+					}
+					add_province_modifier = {
+						name = inf_40
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_50
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_30
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 30}
+						check_variable = {which = dInfluence value = 70}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = flemish
+					}
+					add_province_modifier = {
+						name = inf_30
+						duration = -1
+					}
+					
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_40
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_20
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 20}
+						check_variable = {which = dInfluence value = 80}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = flemish
+					}
+					add_province_modifier = {
+						name = inf_20
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_30
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_10
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 10}
+						check_variable = {which = dInfluence value = 90}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = flemish
+					}
+					add_province_modifier = {
+						name = inf_10
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_20
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_0
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 0}
+						check_variable = {which = dInfluence value = 100}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = flemish
+					}
+					add_province_modifier = {
+						name = inf_0
+						duration = -1
+					}
+				}
+
+				every_owned_province = {
+					remove_province_modifier = inf_10
+				}
+				
+			}
+
+
+
+			#Dutch mods
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 60}
+						check_variable = {which = dInfluence value = 40}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = dutch
+					}
+					add_province_modifier = {
+						name = inf_40
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_50
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_30
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 70}
+						check_variable = {which = dInfluence value = 30}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = dutch
+					}
+					add_province_modifier = {
+						name = inf_30
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_40
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_20
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 80}
+						check_variable = {which = dInfluence value = 20}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = dutch
+					}
+					add_province_modifier = {
+						name = inf_20
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_30
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_10
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 90}
+						check_variable = {which = dInfluence value = 10}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = dutch
+					}
+					add_province_modifier = {
+						name = inf_10
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_20
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_0
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						check_variable = {which = fInfluence value = 100}
+						check_variable = {which = dInfluence value = 0}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = dutch
+					}
+					add_province_modifier = {
+						name = inf_0
+						duration = -1
+					}
+				}
+				every_owned_province = {
+					remove_province_modifier = inf_10
+				}
+				
+			}
+
+
+}
+}

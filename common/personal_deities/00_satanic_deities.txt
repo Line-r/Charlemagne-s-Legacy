@@ -1,0 +1,95 @@
+baphomet = {
+	discipline = 0.05
+	core_creation = -0.10
+	
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+cimeries = {
+	cavalry_flanking = 0.15
+	cavalry_cost = -0.33
+
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+beelzebub = {
+	mercenary_manpower = 1
+	mercenary_cost = -0.33
+
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+ishtar = {
+	development_cost_modifier = -0.15
+	build_cost = -0.20
+
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+lilith = {
+	army_tradition = 0.1
+	ae_impact = -0.05
+
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+apollyon = {
+	global_missionary_strength = 0.05
+	missionary_maintenance_cost = -0.5
+	
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+loki = {
+	devotion = 1
+	culture_conversion_cost = -0.20
+
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+dagon = {
+	privateer_efficiency = 0.33
+	navy_tradition = 0.1
+
+	allow = { religion = satanism }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

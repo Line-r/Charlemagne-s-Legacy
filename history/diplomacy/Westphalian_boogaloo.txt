@@ -1,0 +1,54 @@
+dependency = {
+	subject_type = westphalian_vassal
+	first = MUN
+	second = RVA
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = westphalian_vassal
+	first = MUN
+	second = OSN
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = westphalian_vassal
+	first = MUN
+	second = LPP
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = westphalian_vassal
+	first = MUN
+	second = CLB
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = westphalian_vassal
+	first = MUN
+	second = OLD
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = westphalian_vassal
+	first = MUN
+	second = PAD
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+union = {
+	first = MUN
+	second = HES
+	start_date = 1435.1.1
+	end_date = 1820.1.1
+}

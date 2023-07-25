@@ -1,0 +1,1303 @@
+vol_eastwards_expansion = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = VOL
+			tag = UKR
+		}
+	}
+
+	annexation_of_kiev = {
+		position = 1
+		icon = mission_restore_kiev
+
+		provinces_to_highlight = {
+			area = west_dniepr_area
+		}
+
+		trigger = {
+			west_dniepr_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+
+			280 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+
+			yedisan_area = {
+				add_permanent_claim = root
+			}
+
+			zaporizhia_area = {
+				add_permanent_claim = root
+			}
+
+			east_dniepr_area = {
+				add_permanent_claim = root
+			}
+
+			chernigov_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	seize_chernigov = {
+		position = 2
+		icon = mission_advance_to_the_dnieper
+		required_missions = {
+			annexation_of_kiev
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = east_dniepr_area
+				area = chernigov_area
+			}
+		}
+
+		trigger = {
+			east_dniepr_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			chernigov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			oka_area = {
+				add_permanent_claim = root
+			}
+
+			sloboda_ukraine_area = {
+				add_permanent_claim = root
+			}
+
+		}
+	}
+
+	vol_break_the_horde = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			seize_chernigov
+		}
+
+		trigger = {
+			oka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			sloboda_ukraine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			total_development = GLH
+		}
+
+		effect = {
+
+			add_country_modifier = {
+				name = vol_crushed_the_horde
+				duration = -1
+			}
+		}
+	}
+
+	the_don_estuary = {
+		position = 4
+		icon = indonesian_trade
+
+		required_missions = {
+			vol_break_the_horde
+		}
+
+		provinces_to_highlight = {
+			province_id = 286
+		}
+
+		trigger = {
+			286 = {
+				owned_by = root
+				development = 20
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+		}
+
+		effect = {
+			286 = {
+				center_of_trade = 1
+			}
+		}
+	}
+
+	vol_crush_the_pretenders = {
+		position = 5
+		icon = mission_unknown_mission
+		required_missions = {
+			rule_ruthenia
+		}
+
+		trigger = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = tt_vol_crush_pretenders
+					any_country = {
+						culture_group = east_slavic
+						NOT = {
+							is_subject_of = root
+						}
+	
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = vol_pretenders_crushed
+				duration = -1
+			}
+		}
+	}
+
+	vol_duchy_of_curonia = {
+		position = 7
+		icon = mission_unknown_mission
+		required_missions = {
+			king_of_livonia
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = KUR
+
+				AND = {
+					39 = {
+						country_or_non_sovereign_subject_holds = root
+					}
+
+					1935 = {
+						country_or_non_sovereign_subject_holds = root
+					}
+				}
+			}
+		}
+
+		effect = {
+			1935 = {
+				change_trade_goods = cloth
+			}
+		}
+	}
+
+
+	vol_great_balten_city = {
+		position = 8
+		icon = mission_unknown_mission
+		required_missions = {
+			vol_duchy_of_curonia
+		}
+
+		trigger = {
+			38 = {
+				country_or_non_sovereign_subject_holds = root
+				development = 20
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
+			}
+		}
+
+		effect = {
+			38 = {
+				add_permanent_province_modifier = vol_port_of_riga
+			}
+		}
+	}
+
+
+	vol_a_baltic_fleet = {
+		position = 9
+		icon = mission_unknown_mission
+		required_missions = {
+			vol_great_balten_city
+		}
+
+		trigger = {
+			num_of_galley = 15
+			num_of_heavy_ship = 3
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = vol_baltic_fleet
+				duration = 9125
+			}
+		}
+	}
+
+	vol_master_of_the_steppes = {
+		position = 10
+		icon = mission_unknown_mission
+		required_missions = {
+			vol_appease_the_cossacks
+		}
+
+		trigger = {
+			cavalry_fraction = 0.5
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 20
+				has_terrain = steppe
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = vol_master_of_the_steppes
+				duration = -1
+			}
+		}
+	}
+
+}
+
+vol_ukraine_expansion = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = VOL
+			tag = UKR
+			}
+	}
+
+	seize_the_steppes = {
+		position = 2
+		icon = mission_recruit_the_cossacks
+		required_missions = {
+			annexation_of_kiev
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = yedisan_area
+				area = zaporizhia_area
+			}
+		}
+
+		trigger = {
+			yedisan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			zaporizhia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+
+			set_country_flag = enables_estate_cossacks_flag
+			custom_tooltip = tt_cossacks_volly
+
+			crimea_area = {
+				add_permanent_claim = root
+			}
+			azov_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	seize_the_crim = {
+		position = 3
+		icon = mission_recruit_streltsy
+		required_missions = {
+			seize_the_steppes
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = crimea_area
+				area = azov_area
+			}
+		}
+
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			azov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					culture = crimean
+				}
+
+				add_province_modifier = {
+					name = vol_integrate_the_crimeans
+					duration = -1
+				}
+			}
+
+			lower_don_area = {
+				add_permanent_claim = root
+			}
+			astrakhan_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	rule_ruthenia = {
+		required_missions = {
+			seize_the_crim
+		}
+		position = 4
+		icon = mission_rule_ruthenia
+
+		provinces_to_highlight = {
+			region = ruthenia_region
+		}
+
+		trigger = {
+			ruthenia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			set_government_rank = 3
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			ruthenia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = "ruthenian_integration"
+					duration = 7300
+				}
+			}
+
+			ruthenia_region = {
+				add_core = root
+			}
+
+			every_province = {
+				limit = {
+					culture_group = east_slavic
+				}
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	vol_appease_the_cossacks = {
+		position = 9
+		icon = mission_unknown_mission
+
+		trigger = {
+			has_estate = estate_cossacks
+			has_estate_privilege = estate_cossacks_establish_the_cossack_regiments
+			estate_loyalty = {
+				estate = estate_cossacks
+				loyalty = 60
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = vol_cossacks_appeased
+				duration = -1
+			}
+		}
+	}
+
+	vol_employ_the_cossacks = {
+		position = 10
+		icon = mission_unknown_mission
+		required_missions = {
+			vol_appease_the_cossacks
+		}
+
+		trigger = {
+			num_of_cossacks = 30
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = vol_cossacks_employed
+				duration = -1
+			}
+			
+		}
+	}
+
+}
+
+vol_path_3_expansion = {
+	slot = 3
+	generic = no
+	has_country_shield = yes
+	ai = yes
+	potential = {
+		OR = {
+		tag = VOL
+		tag = UKR
+		}
+	}
+
+	vol_rebuild_the_great_city = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			annexation_of_kiev
+		}
+
+		trigger = {
+			280 = {
+				owned_by = root
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+
+				development = 20
+
+			}
+		}
+
+		effect = {
+
+			280 = {
+				add_center_of_trade_level = 1
+
+				
+			add_province_modifier = {
+				name = vol_rebuild_kiev
+				duration = -1
+			}
+			}
+
+			country_event = {
+				id = VOL_events.2
+			}
+		}
+	}
+
+	break_the_order = {
+		position = 4
+		icon = control_the_church
+		required_missions = {
+			king_of_lithuania
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = smolensk_area
+				area = white_ruthenia_area
+				owned_by = SMO
+			}
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = SMO
+
+				AND = {
+					smolensk_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+					white_ruthenia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+				}
+			}
+
+
+		}
+
+		effect = {
+			custom_tooltip = tt_vol_smolensk
+			if = {
+				limit = {
+					overlord_of = SMO
+				}
+
+				SMO = {
+					change_government = monarchy
+					hidden_effect = {
+						override_country_name = SMOLENSK_NAME
+					}
+				}
+
+				add_country_modifier = {
+					name = vol_cannons_of_smolensk
+					duration = -1
+				}
+			}
+
+
+			tver_area = {
+				add_permanent_claim = root
+			}
+
+			pskov_area = {
+				add_permanent_claim = root
+			}
+
+			novgorod_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	novgorodian_conquest = {
+		position = 5
+		icon = mission_conquer_novgorod
+		required_missions = {
+			break_the_order
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = tver_area
+				area = pskov_area
+				area = novgorod_area
+			}
+		}
+
+		trigger = {
+			tver_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			pskov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			novgorod_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					exists = LVA
+				}
+
+
+					add_casus_belli = {
+						type = cb_restore_personal_union
+						target = LVA
+						months = 300
+					}
+			}
+
+			if = {
+				limit = {
+					exists = LIV
+				}
+					add_casus_belli = {
+						type = cb_restore_personal_union
+						target = LIV
+						months = 300
+				}
+			}
+
+			livonia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	king_of_livonia = {
+		position = 6
+		icon = mission_plc_golden_liberty
+		required_missions = {
+			novgorodian_conquest
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = livonia_area
+			}
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+				livonia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+				}
+
+
+				overlord_of = LVA
+				overlord_of = LIV
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					overlord_of = LIV
+					NOT = {exists = LVA}
+				}
+				LIV = {
+					change_tag = LVA
+					add_liberty_desire = -20
+					change_government = monarchy
+				}
+			}
+
+			if = {
+				limit = {
+					overlord_of = LVA
+				}
+				LVA = {
+					add_liberty_desire = -20
+					change_government = monarchy
+				}
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = EST
+				months = 300
+			}
+
+			estonia_ingria_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = KUR
+				months = 300
+			}
+
+			curonia_area = {
+				add_permanent_claim = root
+			}
+
+		}
+	}
+
+	vol_baltic_hegemon = {
+		position = 8
+		icon = mission_unknown_mission
+		required_missions = {
+			vol_duchy_of_estonia
+			vol_duchy_of_curonia
+		}
+
+		trigger = {
+			baltic_region = {
+				type = all
+				
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = KRL
+				months = 300
+			}
+		}
+	}
+
+	liberator_of_karelia = {
+		position = 9
+		icon = mission_weather_the_troubles
+		required_missions = {
+			vol_baltic_hegemon
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = karelia_area
+				area = north_karelia
+			}
+		}
+
+		trigger = {
+
+			karelia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			north_karelia = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			33 = {
+				add_base_manpower = 3
+				add_base_production = 3
+				add_base_tax = 3
+			}
+
+			finland_area = {
+				add_permanent_claim = root
+			}
+			bothnia_area = {
+				add_permanent_claim = root
+			}
+			laponia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+}
+
+vol_westwards_expansion = {
+	slot = 4
+	generic = no
+	has_country_shield = yes
+	ai = yes
+	potential = {
+		OR = {
+		tag = VOL
+		tag = UKR
+		}
+	}
+
+	the_polish_succession = {
+		position = 1
+		icon = polish_diplomacy
+	
+		trigger = {
+			POL = {
+				has_regency = no
+			}
+
+			army_strength = {
+				who = POL
+				value = 0.8
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = POL
+				months = 300
+			}
+		}
+	}
+
+	king_of_poland = {
+		position = 2
+		icon = king_of_poland
+		required_missions = {
+			the_polish_succession
+		}
+
+		provinces_to_highlight = {
+			owned_by = POL
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = POL
+				NOT = {exists=POL}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { exists = LIT }
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = LIT
+					months = 300
+				}
+			}
+
+			samogitia_area = {
+				add_permanent_claim = root
+			}
+
+			lithuania_area = {
+				add_permanent_claim = root
+			}
+
+			minsk_area = {
+				add_permanent_claim = root
+			}
+
+			moldavia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	king_of_lithuania = {
+		position = 3
+		icon = king_of_kings
+		required_missions = {
+			king_of_poland
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = samogitia_area
+				area = lithuania_area
+				area = minsk_area
+			}
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					overlord_of = LIT
+					LIT = {
+						NOT = {liberty_desire = 20}
+						has_opinion = {
+							who = root
+							value = 150
+						}
+					}
+				}
+
+				samogitia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+
+				lithuania_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+
+				minsk_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { 
+					overlord_of = LIT
+					overlord_of = POL
+				 }
+
+				country_event = {
+					id = VOL_events.1
+				}
+			}
+
+			east_prussia_area = {
+				add_permanent_claim = root
+			}
+
+			west_prussia_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = SMO
+				months = 120
+			}
+		}
+	}
+
+	quell_the_teutons = {
+		required_missions = {
+			king_of_lithuania
+		}
+		position = 4
+		icon = develop_konigsberg
+
+		provinces_to_highlight = {
+			OR = {
+				area = east_prussia_area
+				area = west_prussia_area
+			}
+		}
+
+		trigger = {
+			east_prussia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			west_prussia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = vol_conquest_of_prussia
+				duration = -1
+			}
+
+			hinter_pommern_area = {
+				add_permanent_claim = root
+			}
+			vorpommern_area = {
+				add_permanent_claim = root
+			}
+			mecklenburg_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	sack_of_the_second_rome = {
+		required_missions = {
+			king_of_romania
+		}
+		icon = a_roman_empire
+		position = 4
+
+		trigger = {
+			151 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			151 = {
+				set_base_manpower = 3
+				set_base_production = 3
+				set_base_tax = 3
+			}
+
+			279 = {
+				add_base_manpower = 6
+				add_base_production = 6
+				add_base_tax = 6
+			}
+		}
+	}
+
+
+	vol_duchy_of_estonia = {
+		position = 7
+		icon = mission_unknown_mission
+		required_missions = {
+			king_of_livonia
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = EST
+				estonia_ingria_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+			}
+		}
+
+		effect = {
+			estonia_ingria_area = {
+				add_province_modifier = {
+					name = vol_ruler_of_estonia
+					duration = 7300
+				}
+			}
+		}
+	}
+
+
+}
+
+vol_westwards_expansion_second_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = VOL
+			tag = UKR
+			}
+	}
+
+
+
+	vol_grand_ironworks = {
+		position = 10
+		icon = saxon_manufacturing
+		required_missions = {
+			develop_volhynia
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				trade_goods = iron
+				has_building = weapons
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_building = weapons
+					trade_goods = iron
+				}
+
+				add_province_modifier = {
+					name = grand_ironworks
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+vol_misc_mission = {
+	slot = 5
+	generic = no
+	has_country_shield = yes
+	ai = yes
+	potential = {
+		OR = {
+		tag = VOL
+		tag = UKR
+		}
+	}
+
+	vol_tame_the_bull = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			king_of_poland
+		}
+
+		trigger = {
+			moldavia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			wallachia_area = {
+				add_permanent_claim = root
+			}
+
+			if = {
+				limit = {
+					exists = WAL
+				}
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					target = WAL
+					months = 240
+				}
+			}
+		}
+	}
+
+	king_of_romania = {
+		required_missions = {
+			vol_tame_the_bull
+		}
+		icon = la_marseillaise
+		position = 4
+
+		provinces_to_highlight = {
+			OR = {
+				area = moldavia_area
+				area = wallachia_area
+			}
+		}
+
+		trigger = { 
+					moldavia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+					wallachia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+
+		}
+		effect = {
+			silistria_area = {
+				add_permanent_claim = root
+			}
+
+			thrace_area = {
+				add_permanent_claim = root
+			}
+
+			bulgaria_area = {
+				add_permanent_claim = root
+			}
+
+			if = {
+				limit = {
+					overlord_of = TRA
+					overlord_of = RMN
+				}
+				RMN = {
+					inherit = TRA
+				}
+			}
+		 }
+	}
+
+	the_carpathian_frontier = {
+		position = 5
+		icon = take_the_littoral
+		required_missions = {
+			king_of_romania
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 3
+				OR = {
+					area = red_ruthenia_area
+					area = moldavia_area
+					area = slovakia_area
+					area = transylvania_area
+				}
+
+				has_fort_building_trigger = yes
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = red_ruthenia_area
+						area = moldavia_area
+						area = slovakia_area
+						area = transylvania_area
+					}
+					has_fort_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = carpathian_forts
+					duration = -1
+				}
+
+			}
+		}
+	}
+
+
+	develop_volhynia = {
+		position = 9
+		icon = mission_sovereign_principality
+
+		provinces_to_highlight = {
+			province_id = 279
+		}
+
+		trigger = {
+			279 = {
+				owned_by = root
+				development = 25
+			}
+		}
+
+		effect = {
+			279 = {
+				change_trade_goods = glass
+				add_building = mills
+			}
+		}
+	}
+
+	black_soils = {
+		position = 10
+		icon = mission_pol_breadbasket_europe
+
+		required_missions = {
+			develop_volhynia
+		}
+
+		provinces_to_highlight = {
+			owned_by = root
+			trade_goods = grain
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				trade_goods = grain
+				development = 10
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					trade_goods = grain
+				}
+
+				add_province_modifier = {
+					name = vol_black_soils
+					duration = -1
+				}
+			}
+		}
+	}
+
+
+
+}

@@ -1,0 +1,77 @@
+namespace = wsx_events
+
+country_event = {
+	id = wsx_events.1
+	title = wsx_events.1.t
+	desc = wsx_events.1.d
+	
+	is_triggered_only = yes
+
+	option = {
+		name = wsx_events.1.a #Brittania path
+		set_country_flag = wsx_england_path
+
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = wsx_events.1.b #Angevin path
+		set_country_flag = wsx_angevin_path
+
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = wsx_events.2
+	title = wsx_events.2.t
+	desc = wsx_events.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = wsx_events.2.a
+
+		change_tag = PLA
+		set_government_rank = 3
+		178 = {
+			move_capital_effect = yes
+		}
+
+		poitou_area = {
+			add_claim = root
+		}
+
+		guyenne_area = {
+			add_claim = root
+		}
+	}
+
+
+	immediate = {
+		hidden_effect = {
+			ANJ = {
+				country_event = {
+					id = wsx_events.3
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = wsx_events.3
+	title = wsx_events.3.t
+	desc = wsx_events.3.d
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = wsx_events.3.a
+		
+		change_tag = AQI
+		release = BRI
+		create_union = BRI
+	}
+}

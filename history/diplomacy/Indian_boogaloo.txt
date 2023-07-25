@@ -1,0 +1,62 @@
+march = {
+	first = DLH
+	second = MAW
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+march = {
+	first = BGA
+	second = CMP
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+vassal = {
+	first = BGA
+	second = BIJ
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+vassal = {
+	first = KAT
+	second = PTL
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+vassal = {
+	first = KAT
+	second = JGD
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+vassal = {
+	first = KAT
+	second = PRB
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+march = {
+	first = MLW
+	second = GWA
+	start_date = 1444.1.1
+	end_date = 1444.1.1
+}
+
+vassal = {
+	first = MLW
+	second = PAN
+	start_date = 1444.1.1
+	end_date = 1444.1.1
+}
+
+vassal = {
+	first = DLH
+	second = NGP
+	start_date = 1444.1.1
+	end_date = 1444.1.1
+}

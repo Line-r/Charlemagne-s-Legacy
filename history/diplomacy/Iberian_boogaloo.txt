@@ -1,0 +1,25 @@
+union = {
+	first = VAL
+	second = CAT
+	start_date = 1425.1.1
+	end_date = 1450.9.21
+}
+vassal = {
+	first = VAL
+	second = MJO
+	start_date = 1444.1.1
+	end_date = 1450.9.21
+}
+vassal = {
+    first = LON
+    second = GAL
+    start_date = 1444.1.1
+	end_date = 1450.9.21
+}
+
+union = {
+    first = ARA
+    second = NAV
+    start_date = 1424.1.1
+	end_date = 1450.9.21
+}

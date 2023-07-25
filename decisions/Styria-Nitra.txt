@@ -1,0 +1,61 @@
+country_decisions = {
+	unite_styria_nitra = {
+		major = yes
+		potential = {
+			OR = {
+				tag = STY
+				tag = SLO
+			}
+		}
+		
+		allow = {
+			adm_tech = 5
+
+			OR = {
+				AND = {
+					tag = STY
+					overlord_of = SLO
+					SLO = {
+						NOT = {liberty_desire = 10}
+						has_opinion = {
+							who = STY
+							value = 150
+						}
+					}
+				}
+				AND = {
+					tag = SLO
+					overlord_of = STY
+					STY = {
+						NOT = {liberty_desire = 10}
+						has_opinion = {
+							who = SLO
+							value = 150
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {tag = STY}
+				inherit = SLO
+			}
+
+			if = {
+				limit = {tag = SLO}
+				inherit = STY
+			}
+
+			change_tag = STN
+
+
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+
+		}
+	}
+}

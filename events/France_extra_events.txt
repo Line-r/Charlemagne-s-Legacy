@@ -1,0 +1,91 @@
+namespace = france_extra_events
+
+country_event = {
+	id = france_extra_events.1
+	title = france_extra_events.1.t
+	desc = france_extra_events.1.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 31
+	}
+
+	trigger = {
+		tag = FRA
+		ENG = {
+			OR = {
+				war_with = MEC
+				war_with = ANG
+				war_with = NOL
+
+			}
+
+
+		}
+
+		NOT = {
+			truce_with = ENG
+		}
+	}
+
+	option = {
+		name = "france_extra_events.1.a"
+
+		ai_chance = {
+			factor = 100
+		}
+
+		declare_war_with_cb = {
+			who = ENG
+			casus_belli = cb_core
+			war_goal_province = 177
+		}
+	}
+
+	option = {
+		name = "france_extra_events.1.b"
+
+		add_treasury = -200
+
+		MEC = {
+			add_opinion = {
+				who = FRA
+				modifier = historical_friend
+			}
+		}
+
+		ANG = {
+			add_opinion = {
+				who = FRA
+				modifier = historical_friend
+			}
+		}
+
+		NOL = {
+			add_opinion = {
+				who = FRA
+				modifier = historical_friend
+			}
+		}
+
+		hidden_effect = {
+			MEC = {
+				add_treasury = 200
+			}
+			ANG = {
+				add_treasury = 200
+			}
+			NOL = {
+				add_treasury = 200
+			}
+		}
+	}
+
+	option = {
+		name = "france_extra_events.1.c"
+
+		add_prestige = -10
+	}
+}

@@ -1,0 +1,48 @@
+namespace = lowlands_events
+
+country_event = {
+	id = lowlands_events.1
+	title = lowlands_events.1.t
+	desc = lowlands_events.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = "lowlands_events.1.a"
+
+		every_owned_province = {
+			limit = {
+				culture = dutch
+			}
+			add_core = NED
+		}
+
+		release = NED
+		create_union = NED
+		NED = {
+			add_liberty_desire = -50
+		}
+
+		frisia_area = {
+			add_permanent_claim = NED
+		}
+	}
+
+	option = {
+		name = "lowlands_events.1.b"
+
+		every_owned_province = {
+			limit = {
+				culture = dutch
+			}
+			add_province_modifier = {
+				name = yearning_for_dutch_nation
+				duration = 36500
+			}
+		}
+
+		frisia_area = {
+			add_permanent_claim = root
+		}
+	}
+}

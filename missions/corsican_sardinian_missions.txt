@@ -1,0 +1,303 @@
+unification_missions = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			tag = COR
+			tag = SAR
+			primary_culture = sardinian
+		}
+	}
+
+	amass_an_army = {
+		icon = mission_italian_condottiere
+		position = 1
+
+		trigger = {
+			army_size_percentage = 1.0
+			navy_size_percentage = 1.0
+		}
+
+		effect = {
+			add_permanent_claim = 127
+			add_permanent_claim = 4735
+			add_permanent_claim = 2986
+			add_permanent_claim = 1247
+
+			add_country_modifier = {
+				name = military_reform
+				duration = 3650
+			}
+		}
+	}
+
+	unify_the_islands = {
+		icon = unite_with_sardinia
+		position = 2
+
+		required_missions = {
+			amass_an_army
+		}
+
+		trigger = {
+			owns = 127
+			owns = 4735
+			owns = 2986
+			owns = 1247
+		}
+
+		effect = {
+			western_sicily_area = {
+				add_permanent_claim = ROOT
+			}
+
+			sicily_area = {
+				add_permanent_claim = ROOT
+			}
+
+			add_core = 127
+			add_core = 4735
+			add_core = 2986
+			add_core = 1247
+		}
+	}
+
+	seize_sicily = {
+		icon = fortify_malta
+		position = 3
+		required_missions = {
+			unify_the_islands
+		}
+
+		trigger = {
+			western_sicily_area = {
+				type = all
+				owned_by = ROOT
+			}
+
+			sicily_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+
+		effect = {
+			baleares_area = {
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				add_permanent_claim = root
+			}
+
+			add_permanent_claim = 101
+		}
+	}
+
+	seize_genoa = {
+		icon = end_genoese_competition
+		position = 4
+		required_missions = {
+			seize_sicily
+		}
+
+		trigger = {
+			liguria_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+
+		effect = {
+			piedmont_area = {
+				add_permanent_claim = ROOT
+			}
+			savoy_dauphine_area = {
+				add_permanent_claim = ROOT
+			}
+
+			add_country_modifier = {
+				name = trade_income_increase
+				duration = -1
+			}
+		}
+	}
+}
+
+spanish_invasion = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			tag = COR
+			tag = SAR
+			primary_culture = sardinian
+		}
+	}
+
+	seize_baleares = {
+		icon = explore_caribbean
+		position = 4
+		required_missions = {
+			seize_sicily
+		}
+
+		trigger = {
+			baleares_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+
+		effect = {
+			valencia_area = {
+				add_permanent_claim = ROOT
+			}
+			catalonia_area = {
+				add_permanent_claim = ROOT
+			}
+
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = VAL
+				months = 600
+			}
+		}
+	}
+
+	king_of_valencia = {
+		icon = king_of_aragon
+		position = 5
+		required_missions = {
+			seize_baleares
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = VAL
+
+				AND = {
+					valencia_area = {
+						type = all
+						owned_by = ROOT
+					}
+
+					catalonia_area = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+			}
+		}
+
+		effect = {
+			iberia_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+italian_invasion = {
+
+	potential = {
+		OR = {
+			tag = COR
+			tag = SAR
+			primary_culture = sardinian
+		}
+	}
+
+	slot = 3
+	ai = yes
+	has_country_shield = yes
+	generic = no
+
+	seize_calabria = {
+		position = 4
+		icon = develop_our_capital
+		required_missions = {
+		seize_sicily
+	}
+
+	trigger = {
+		calabria_area = {
+			type = all
+				owned_by = ROOT
+		}
+	}
+
+	effect = {
+		add_casus_belli = {
+			type = cb_restore_personal_union
+			target = NAP
+			months = 600
+		}
+
+		naples_area = {
+			add_permanent_claim = ROOT
+		}
+		apulia_area = {
+			add_permanent_claim = ROOT
+		}
+	}
+	}
+
+	king_of_naples = {
+		icon = union_with_naples
+		position = 5
+		required_missions = {
+			seize_calabria
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = NAP
+
+				AND = {
+					naples_area = {
+						type = all
+				owned_by = ROOT
+					}
+
+					apulia_area = {
+						type = all
+				owned_by = ROOT
+					}
+				}
+			}
+		}
+
+		effect = {
+			release = NAP
+			create_union = NAP
+
+			every_owned_province = {
+				naples_area = {
+					cede_province = NAP
+					add_core = NAP
+				}
+				apulia_area = {
+					cede_province = NAP
+					add_core = NAP
+				}
+				calabria_area = {
+					cede_province = NAP
+					add_core = NAP
+				}
+			}
+
+			NAP = {
+				add_liberty_desire = -50
+			}
+
+			add_legitimacy = 25
+			add_prestige = 25
+		}
+	}
+}

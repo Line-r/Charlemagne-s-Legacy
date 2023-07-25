@@ -1,0 +1,19 @@
+# 93 Liùge - Principal cities: Liùge & Namur
+
+owner = LIE
+hre = yes
+controller = LIE
+capital = "LiËge"
+is_city = yes
+culture = wallonian
+religion = catholic
+base_tax = 6 
+base_production = 6
+trade_goods = glass
+base_manpower = 3
+add_core = LIE
+fort_15th = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

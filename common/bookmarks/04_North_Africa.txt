@@ -1,0 +1,15 @@
+bookmark =
+{
+	name = "NORTH_AFRICA_BOOKMARK"
+	desc = "NORTH_AFRICA_BOOKMARK_DESC"
+	date = 1444.11.11
+	
+	country = EGY
+	country = RUM
+	country = TRP
+	country = TLC
+	country = MOR
+
+	easy_country = EGY
+	easy_country = RUM
+}

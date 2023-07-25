@@ -1,0 +1,6 @@
+government = republic
+mercantilism = 25
+religion = catholic
+technology_group = western
+capital = 104
+fixed_capital = 104

@@ -1,0 +1,13 @@
+union = {
+	first = STY
+	second = TIR
+	start_date = 1415.1.1
+	end_date = 1450.9.21
+}
+
+union = {
+	first = STY
+	second = CLI
+	start_date = 1435.1.1
+	end_date = 1550.1.1
+}	

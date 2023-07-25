@@ -1,0 +1,28 @@
+dependency = {
+	subject_type = fiefdom
+	first = POL
+	second = POZ
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = fiefdom
+	first = POL
+	second = SRZ
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = fiefdom
+	first = POL
+	second = SDZ
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+dependency = {
+	subject_type = fiefdom
+	first = POL
+	second = KRA
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}

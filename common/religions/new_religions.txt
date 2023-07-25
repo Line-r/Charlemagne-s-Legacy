@@ -1,0 +1,97 @@
+heresy_group = {
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	flags_with_emblem_percentage = 33 # default == 0
+	flag_emblem_index_range = { 1 57 }
+	crusade_name = SACRIFICE
+
+	satanism = {
+			color = { 20 20 20 }
+			icon = 29
+			allowed_center_conversion = {
+				catholic
+				protestant
+				reformed
+				orthodox
+			}
+			country = {
+				manpower_in_true_faith_provinces = 0.3
+				ae_impact = -0.15
+
+			}
+			
+			country_as_secondary = {
+				manpower_in_true_faith_provinces = 0.1
+				ae_impact = -0.05
+			}
+	
+			
+			on_convert = {
+				change_religion = satanism
+				add_prestige = -100
+				remove_country_modifier = counter_reformation
+				remove_country_modifier = the_statue_in_restraint_of_appeals
+				remove_country_modifier = revocation_of_restraint_of_appeals
+				remove_country_modifier = bavarian_jesuits
+				remove_country_modifier = the_societas_jesu
+				remove_country_modifier = the_declaration_of_indulgence
+				remove_country_modifier = de_heretico_comburendo
+				remove_country_modifier = the_conventicle_act
+				
+				if = {
+					limit = {
+						has_country_flag = reformation_money
+						NOT = {
+							calc_true_if = {
+								all_province = {
+									religion = reformed
+									is_reformation_center = yes
+								}
+								amount = 3
+							}
+						}
+					}
+
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = reformation_money }
+						NOT = {
+							calc_true_if = {
+								all_province = {
+									religion = satanism
+									is_reformation_center = yes
+								}
+								amount = 3
+							}
+						}
+					}
+					add_years_of_income = 1.0
+
+				}
+				add_country_modifier = {
+					name = "conversion_zeal"
+					duration = 3650
+				}
+				set_country_flag = "reformation_money"
+				every_known_country = {
+					limit = {
+						reverse_has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_demote_pope
+						}
+					}
+					reverse_remove_opinion = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+			}
+			
+			heretic = { METHODIST BAPTIST QUAKER }
+			
+			date = 1444.1.1
+			
+			personal_deity = yes
+		}
+}

@@ -1,0 +1,27 @@
+bookmark =
+{
+	name = "CENTRAL_EUROPE_BOOKMARK"
+	desc = "CENTRAL_EUROPE_BOOKMARK_DESC"
+	date = 1444.11.11
+	
+	center = 4716
+	
+	country = STY
+	country = BRN
+	country = MUN
+	country = POM
+	country = SAX
+	country = LBV
+	country = ANS
+	country = WBG
+	country = BOH
+	country = MVA
+	country = SAR
+	country = COR
+	country = SIC
+
+	easy_country = STY
+	easy_country = MUN
+	easy_country = BOH
+	
+}

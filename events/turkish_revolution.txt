@@ -1,0 +1,170 @@
+namespace = turkish_revolution
+
+country_event = {
+	id = turkish_revolution.1
+	title = turkish_revolution.1.t
+	desc = turkish_revolution.1.d
+	picture = REVOLUTION_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+
+	option = { #The horror!
+	name = "turkish_revolution.1.a"
+		every_owned_province = {
+			limit = {
+				culture = turkish
+				development = 10
+			}
+			spawn_rebels = {
+				type = revolutionary_rebels
+				size = 2
+			}
+		}
+
+		add_stability = -2
+	}
+}
+
+country_event = {
+	id = turkish_revolution.2
+	title = turkish_revolution.2.t
+	desc = turkish_revolution.2.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "turkish_revolution.2.a"
+		random_owned_province = {
+			spawn_rebels = {
+				type = revolutionary_rebels
+				size = 1
+			}
+		}
+	}
+
+	option = {
+		name = "turkish_revolution.2.b"
+		random_owned_province = {
+			add_province_modifier = {
+				name = increased_local_autonomy
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = {
+	id = turkish_revolution.3
+	title = turkish_revolution.3.t
+	desc = turkish_revolution.3.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "turkish_revolution.3.a"
+		random_owned_province = {
+			spawn_rebels = {
+				type = revolutionary_rebels
+				size = 1
+			}
+			add_base_tax = -1
+		}
+	}
+
+	option = {
+		name = "turkish_revolution.3.b"
+		add_years_of_income = -0.4
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = turkish_revolution.4
+	title = turkish_revolution.4.t
+	desc = turkish_revolution.4.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "turkish_revolution.4.a"
+		change_government_reform_progress = -50
+	}
+}
+
+country_event = {
+	id = turkish_revolution.5
+	title = turkish_revolution.5.t
+	desc = turkish_revolution.5.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "turkish_revolution.5.a"
+		kill_consort = yes
+	}
+}
+
+country_event = {
+	id = turkish_revolution.6
+	title = turkish_revolution.6.t
+	desc = turkish_revolution.6.d
+	picture = REVOLUTION_eventPicture
+
+	trigger = {
+		tag = RUM
+
+
+		OR = {
+			AND = {
+				has_disaster = turkish_revolution
+				NOT = {manpower_percentage = 0.2}
+				capital_scope = {
+					controlled_by = revolutionary_rebels
+				}
+			}
+			government = republic
+
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Switch to Turkey
+	name = "turkish_revolution.6.a"
+		change_tag = TUR
+		set_country_flag = resolved_turkish_revolution
+		add_stability = 2
+
+		set_capital = 326
+
+		change_government = republic
+		add_government_reform = turkish_assembly
+		set_government_rank = 3
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = turkish_revolution.7
+	title = turkish_revolution.7.t
+	desc = turkish_revolution.7.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = "turkish_revolution.7.a"
+		set_country_flag = resolved_turkish_revolution
+		swap_non_generic_missions = yes
+		override_country_name = SELJUKS
+	}
+}

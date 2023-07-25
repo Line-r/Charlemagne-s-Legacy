@@ -1,0 +1,21 @@
+# 1865 - Ghent
+
+owner = FLA
+controller = FLA
+add_core = FLA
+is_city = yes
+capital = "Aalst"
+culture = flemish
+religion = catholic
+base_tax = 4
+base_production = 5
+trade_goods = wool
+base_manpower = 3
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+
+1150.1.1 = {
+	add_building = town_hall
+}

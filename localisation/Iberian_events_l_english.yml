@@ -1,0 +1,18 @@
+﻿l_english:
+#Leon
+ leonese_events.1.t:0 "The Kingdom of Portugal"
+ leonese_events.1.d:0 "The son of $MONARCH$, $HEIR$, has shown ambition to rule over a kingdom of his own. This may be a vital opportunity for $MONARCH$ to project influence over the newly conquered area of Alentejo."
+ leonese_events.1.a:0 "Establish the Kingdom of Portugal"
+ leonese_events.1.b:0 "Kingdom of Portugal? Preposterous!"
+ leonese_events.2.t:0 "The Kingdom of Mauretania"
+ leonese_events.2.d:0 "With the Leonese conquest of Morocco, and their expansion in to the Maghreb having only just begun, a rare opportunity has presented itself. Leon cannot possibly rule over a this Muslim, Berber region by themselves. Establishing a more autonomous kingdom here may help to alleviate some of the unrest."
+leonese_events.2.a:0 "Establish the Kingdom of Mauretania"
+ leonese_events.3.t:0 "The Iberian Wedding"
+ leonese_events.3.d:0 "$MOANRCH$, $MONARCHTITLE$ of Leon, was married to the princess of Castile in Valladolid in October 1469. This was a marriage of political opportunism, not romance. The court of Leon dreamed of a return to Castile, and Castille's princess needed help to gain succession to the throne. The marriage initiated a dark and troubled life, in which $MONARCH$ fought on the Castilian and Leonese fronts in order to impose his authority over the noble oligarchies, shifting his basis of support from one kingdom to the other according to the intensity of the danger. Many considered $MONARCH$ the savior of his kingdoms, a bringer of unity. Others despised him for having oppressed them. Machiavelli attributed to him the objectionable qualities of the Renaissance prince."
+#Valencia
+ valencian_events.1.t:0 "Kingdom of Sardinia"
+ valencian_events.1.d:0 "REPLACE_ME"
+ valencian_events.1.a:0 "Establish the Kingdom of Sardinia-Corsica"
+ valencian_events.1.b:0 "Seek out other riches."
+ valencian_events.2.t:0 "Consulate of the Sea"
+ valencian_events.2.d:0 "Our new quasi-judicial body that will administer maritime and commercial law is called the Consulate of the Sea. It gives our merchants the right to settle their commercial disputes without interference from the royal courts and in exchange we, the Crown of Valencia, receive financial support."

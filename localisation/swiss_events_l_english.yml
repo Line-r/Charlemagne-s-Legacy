@@ -1,0 +1,10 @@
+﻿l_english:
+create_canton.1.t:0 "Joining the Confederacy"
+create_canton.1.d:0 "My lord, we've been long been treated well by our Swiss overlord. Perhaps we should join their confederation at last."
+create_canton.1.a:0 "Fine."
+ create_canton.2.t:0 "A new member"
+ create_canton.2.d:0 "My Grossmeister, due to good relations with one of our vassals, we've allowed them to become a part of our confederacy. This is obviously a result of our excellent diplomacy."
+ create_canton.2.a:0 "As it should be."
+ create_canton.3.t:0 "The expansion of the Confederacy"
+ create_canton.3.d:0 "With the addition of Geneva and the Three Leagues to the swiss confederation, the Bernese Grossmeister has set their sights on the rest of Europe. They consider the Emperor and their Frankish confederation to be merely a cover-up for a falling empire, and have shown that the emperor is unable to defend its subjects against the might of the Swiss."
+ create_canton.3.a:0 "All the world is subject to Switzerland."

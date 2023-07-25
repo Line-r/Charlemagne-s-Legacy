@@ -1,0 +1,48 @@
+estate_praetorians = {
+	icon = 2
+
+	privileges = {
+		
+	}
+
+	agendas = {
+	
+	}
+	
+	influence_from_dev_modifier = 1.0
+
+	province_independence_weight = {
+		factor = 1
+	}
+
+	land_ownership_modifier = {
+		
+	}
+
+	country_modifier_angry = {
+		legitimacy = -1
+		global_tax_modifier = -0.30
+		global_manpower_modifier = -0.2
+		monarch_lifespan = -0.4
+	}
+
+	country_modifier_neutral = {
+		land_maintenance_modifier = -0.15
+	}
+
+	country_modifier_happy = {
+		monarch_lifespan = 0.30
+		legitimacy = 1
+		shock_damage = 0.05
+		yearly_absolutism = 2
+	}
+
+	trigger = {
+		tag = RME
+		has_country_flag = praetorians_returned
+	}
+
+	color = { 255 0 0 }
+
+	base_influence = 20
+}

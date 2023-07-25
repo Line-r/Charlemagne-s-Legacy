@@ -1,0 +1,22 @@
+﻿l_english:
+ toggle_info_title:0 "Toggle info/debug decisions"
+ toggle_info_desc:0 "Clicking this decision will show/hide other decisions. These decisions will explain the lore of your current region, a guide on how to play as a your current nation, and have other debugging/bugfixing tools."
+ toggle_info_off_title:0 "Toggle info/debug decisions"
+ toggle_info_off_desc:0 "Clicking this decision will show/hide other decisions. These decisions will explain the lore of your current region, a guide on how to play as a your current nation, and have other debugging/bugfixing tools."
+ tt_cl_toggle_info:0 "Toggle info ON"
+ get_lore_title:0 "£adm£ Show [Root.Capital.GetRegionName] Region Lore"
+ get_lore_desc:0 "Shows the lore of your current region again."
+ how_to_play_title:0 "£adm£ How to play $COUNTRY$"
+ how_to_play_desc:0 "Get a quick guide on the content and unique mechanics of your nation."
+ cl_infoevents.1.t:0 "Downfall of the Khanates - [Root.Capital.GetRegionName]"
+ cl_infoevents.1.d:0 "Whoops, it appears there's no lore written for this region yet!"
+ cl_infoevents.1.a:0 "Onwards."
+ cl_infoevents.2.t:0 "$COUNTRY$"
+ cl_infoevents.2.d:0 "Whoops, it appears that there's no guide on how to play this nation yet! Please refer to the wiki linked on the Workshop page for more info."
+cl_infoevents.2.a:0 "I still have no idea what I'm doing..."
+
+
+#-----------Lore and How-To's below this point---------------
+
+#Anjou
+ cl_infoevents.2.d.anjou:0 "The kingdom of Anjou starts off with the glorious Richard of Anjou, a king dying of old age. Upon the death of Richard, an event with fire which will let the player choose what path their nation should take, which will change their mission tree accordingly.\n\nAnjou will be able to choose between the following paths:\n\n\n§RAngevin Path§! This path focuses on the restoration of the lost Angevin Empire. The France region becomes an afterthought for Anjou, as they focus on reconquering the British Isles.\n\n§BFrench Path§! This mission tree is fairly similar to that of Capet, focusing on a militaristic conquest of the France region. It's essentially an easier start compared to Capet, with the same end goal.\n\n§PDiplomatic Path§! Continue the legacy of Richard of Anjou with the diplomatic path. These missions focus on spreading the Anjou dynasty far and wide, conquering France through personal unions. Their missions unlock a unique government reform which gives them tax modifiers based upon their royal marriages and personal unions. They are a great nation for those who enjoy a more laid back, tall playstyle."

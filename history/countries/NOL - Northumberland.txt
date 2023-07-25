@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+primary_culture = english
+religion = catholic
+capital = 246	# Newcastle
+
+1429.11.6 = { #Coronation
+	monarch = {
+		name = "Robert"
+		dynasty = "de Mowbray"
+		birth_date = 1410.11.6
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}

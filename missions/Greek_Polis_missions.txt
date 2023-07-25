@@ -1,0 +1,1637 @@
+development_of_greece = {
+	slot = 4
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		OR = {
+			culture = greek
+			culture = spartan
+			culture = athenian
+		}
+
+
+		NOT = {
+			OR = {
+				tag = MAC
+				tag = BYZ
+				tag = GRE
+			}
+		}
+	}
+
+	growth_of_the_city = {
+		position = 1
+		icon = adriatic_access
+
+		trigger = {
+			capital_scope = {
+				development = 12
+			}
+		}
+
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = growing_population
+					duration = 7300
+				}
+			}
+
+		}
+	}
+
+	city_building = {
+		position = 2
+		icon = capture_adriatic_ports
+		required_missions = {
+			growth_of_the_city
+		}
+
+		trigger = {
+			capital_scope = {
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+
+			}
+		}
+
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = industrious_boost
+					duration = 5475
+				}
+			}
+		}
+	}
+
+	greek_manufactories = {
+		position = 3
+		icon = expand_the_doges_palace
+		required_missions = {
+			city_building
+		}
+
+		trigger = {
+			capital_scope = {
+				OR = {
+					has_building = mills
+					has_building = farm_estate
+					has_building = tradecompany
+					has_building = plantations
+					has_building = textile
+					has_building = weapons
+					has_building = wharf
+					has_building = furnace
+				}
+			}
+		}
+
+		effect = {
+			capital_scope = {
+				add_base_production = 3
+			}
+		}
+	}
+
+}
+
+
+athens_central_path = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 2
+
+	potential = {
+		tag = ATH
+	}
+
+	ath_appease_the_city_states = {
+		position = 1
+		icon = immaculate_government
+
+		trigger = {
+			TH8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			ER8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			DE8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			IT8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			SO8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			OI8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			LA8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			HO8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = appeased_the_city_states
+				duration = 9125
+			}
+		}
+
+	}
+
+	the_hellenic_league = {
+		position = 4
+		icon = foothold_in_greece
+
+		required_missions = {
+			riches_of_ragusa
+			outmatch_sparta
+		}
+
+		trigger = {
+			NOT = {
+				truce_with = SP8
+			}
+		}
+
+		effect = {
+
+			custom_tooltip = tt_hellenic_war
+
+			add_casus_belli = {
+				type = cb_hellenic_wars
+				target = SP8
+				months = 24
+			}
+
+
+			declare_war_with_cb = {
+				casus_belli = cb_hellenic_wars
+				who = SP8
+			}
+
+			TH8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			ER8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			DE8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			IT8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			SO8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			OI8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			LA8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			HO8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+			NAX = {
+				join_all_offensive_wars_of = ROOT
+			}
+
+			AR8= {
+				join_all_defensive_wars_of = SP8
+			}
+			PH8= {
+				join_all_defensive_wars_of = SP8
+			}
+			PY8= {
+				join_all_defensive_wars_of = SP8
+			}
+			OL8= {
+				join_all_defensive_wars_of = SP8
+			}
+			CO8= {
+				join_all_defensive_wars_of = SP8
+			}
+			CS8 = {
+				join_all_defensive_wars_of = SP8
+			}
+		}
+	}
+
+	humiliate_sparta = {
+		position = 5
+		icon = reclaim_the_aegean
+		required_missions = {
+			the_hellenic_league
+		}
+
+		trigger = {
+			4955 = {
+				owned_by = root
+			}
+			NOT = {
+				exists = SP8
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = athenian_events.1
+			}
+
+			macedonia_area = {
+				add_permanent_claim = root
+			}
+
+			MAC = {
+				every_owned_province = {
+					add_permanent_claim = root
+				}
+			}
+		}
+	}
+}
+
+athens_military_path = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 3
+
+	potential = {
+		tag = ATH
+	}
+
+	build_an_army = {
+		position = 2
+		icon = the_latin_empire
+		required_missions = {
+			ath_appease_the_city_states
+		}
+
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.8
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = shield_of_the_league
+				duration = 3650
+			}
+		}
+	}
+
+	outmatch_sparta = {
+		position = 3
+		icon = protect_against_austria
+		required_missions = {
+			build_an_army
+		}
+
+		trigger = {
+			army_size = SP8
+			navy_size = SP8
+		}
+
+		effect = {
+			create_general = {
+				tradition = 50
+			}
+		}
+	}
+}
+
+athens_trade_path = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 1
+
+	potential = {
+		tag = ATH
+	}
+
+	aegean_wall = {
+		position = 2
+		icon = crusader_fleet
+		required_missions = {
+			ath_appease_the_city_states
+		}
+
+		trigger = {
+			navy_size_percentage = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = aegean_wall
+				duration = 3650
+			}
+			create_admiral = {
+				tradition = 50
+			}
+		}
+	}
+
+	riches_of_ragusa = {
+		position = 3
+		icon = dalmatian_conquest
+		required_missions = {
+			aegean_wall
+		}
+
+		trigger = {
+			137 = {
+				trade_share = {
+					country = ROOT
+					share = 20
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ragusan_hegemon
+				duration = 9125
+			}
+		}
+	}
+}
+
+
+sparta_central_path = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 2
+
+	potential = {
+		tag = SP8
+	}
+
+	sp8_appease_the_city_states = {
+		position = 1
+		icon = immaculate_government
+
+		trigger = {
+			TH8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			ER8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			DE8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			IT8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			SO8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			OI8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			LA8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			HO8 = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = appeased_the_city_states
+				duration = 9125
+			}
+		}
+
+	}
+
+	the_arcadian_league = {
+		position = 4
+		icon = foothold_in_greece
+
+		required_missions = {
+			riches_of_ragusa
+			outmatch_athens
+		}
+
+		trigger = {
+			NOT = {
+				truce_with = ATH
+			}
+		}
+
+		effect = {
+
+			custom_tooltip = tt_hellenic_war
+
+			add_casus_belli = {
+				type = cb_hellenic_wars
+				target = ATH
+				months = 24
+			}
+
+
+			declare_war_with_cb = {
+				casus_belli = cb_hellenic_wars
+				who = ATH
+			}
+
+			TH8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			ER8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			DE8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			IT8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			SO8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			OI8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			LA8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			HO8 = {
+				join_all_defensive_wars_of = ATH
+			}
+			NAX = {
+				join_all_defensive_wars_of = ATH
+			}
+
+			AR8= {
+				join_all_offensive_wars_of = ROOT
+			}
+			PH8= {
+				join_all_offensive_wars_of = ROOT
+			}
+			PY8= {
+				join_all_offensive_wars_of = ROOT
+			}
+			OL8= {
+				join_all_offensive_wars_of = ROOT
+			}
+			CO8= {
+				join_all_offensive_wars_of = ROOT
+			}
+			CS8 = {
+				join_all_offensive_wars_of = ROOT
+			}
+		}
+	}
+
+	humiliate_athens = {
+		position = 5
+		icon = reclaim_the_aegean
+		required_missions = {
+			the_arcadian_league
+		}
+
+		trigger = {
+			146 = {
+				owned_by = root
+			}
+			NOT = {
+				exists = ATH
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = spartan_events.1
+			}
+		}
+	}
+}
+
+sparta_military_path = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 3
+
+	potential = {
+		tag = SP8
+	}
+
+	build_an_army = {
+		position = 2
+		icon = the_latin_empire
+		required_missions = {
+			sp8_appease_the_city_states
+		}
+
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.8
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = shield_of_the_league
+				duration = 3650
+			}
+		}
+	}
+
+	outmatch_athens = {
+		position = 3
+		icon = protect_against_austria
+		required_missions = {
+			build_an_army
+		}
+
+		trigger = {
+			army_size = ATH
+			navy_size = ATH
+		}
+
+		effect = {
+			create_general = {
+				tradition = 50
+			}
+		}
+	}
+}
+
+athens_trade_path = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 1
+
+	potential = {
+		tag = SP8
+	}
+
+	aegean_wall = {
+		position = 2
+		icon = crusader_fleet
+		required_missions = {
+			sp8_appease_the_city_states
+		}
+
+		trigger = {
+			navy_size_percentage = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = aegean_wall
+				duration = 3650
+			}
+			create_admiral = {
+				tradition = 50
+			}
+		}
+	}
+
+	riches_of_ragusa = {
+		position = 3
+		icon = dalmatian_conquest
+		required_missions = {
+			aegean_wall
+		}
+
+		trigger = {
+			137 = {
+				trade_share = {
+					country = ROOT
+					share = 20
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ragusan_hegemon
+				duration = 9125
+			}
+		}
+	}
+}
+
+hellenic_missions_center = {
+	slot = 3
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = GRE
+	}
+
+	vanquish_macedonia = {
+		position = 1
+		icon = reclaim_the_aegean
+
+		trigger = {
+			NOT = {
+				exists = MAC
+			}
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			thrace_area = {
+				add_permanent_claim = root
+			}
+
+			hudavendigar_area = {
+				add_permanent_claim = root
+			}
+
+			aydin_area = {
+				add_permanent_claim = root
+			}
+
+			albania_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = RAG
+				months = 300
+			}
+		}
+	}
+
+	return_to_sicily = {
+		position = 6
+		icon = king_of_sicily
+		required_missions = {
+			sway_the_italians
+			convince_the_phoenicians
+		}
+
+		trigger = {
+			western_sicily_area = {
+				type = all
+				owned_by = root
+			}
+			sicily_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = sicilian_might
+				duration = -1
+			}
+		}
+	}
+
+	masters_of_trade = {
+		position = 7
+		icon = indonesian_trade
+		required_missions = {
+			return_to_sicily
+		}
+
+		trigger = {
+			358 = {
+				is_strongest_trade_power = root
+			}
+
+			341 = {
+				OR = {
+					is_strongest_trade_power = root
+					is_strongest_trade_power = TRP
+				}
+			}
+
+			1749 = {
+				is_strongest_trade_power = root
+			}
+
+			220 = {
+				is_strongest_trade_power = root
+			}
+
+			101 = {
+				is_strongest_trade_power = root
+			}
+
+			112 = {
+				is_strongest_trade_power = root
+			}
+
+			137 = {
+				is_strongest_trade_power = root
+			}
+
+			151 = {
+				is_strongest_trade_power = root
+			}
+
+			377 = {
+				is_strongest_trade_power = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = masters_of_trade
+				duration = -1
+			}
+		}
+	}
+
+	masters_of_the_sea = {
+		position = 8
+		icon = imperial_navy
+		required_missions = {
+			masters_of_trade
+		}
+
+		trigger = {
+			NOT = {
+				any_country = {
+					
+					navy_size = root
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = masters_of_the_sea
+				duration = -1
+			}
+		}
+	}
+}
+
+hellenic_missions_right = {
+	slot = 4
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = GRE
+	}
+
+	the_seljuk_coast = {
+		position = 2
+		icon = anatolian_frontier
+		required_missions = {
+			vanquish_macedonia
+		}
+
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			cukurova_area = {
+				add_permanent_claim = root
+			}
+
+			aleppo_area = {
+				add_permanent_claim = root
+			}
+
+			syria_area = {
+				add_permanent_claim = root
+			}
+
+			palestine_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	the_holy_land = {
+		position = 3
+		icon = jerusalem
+		required_missions = {
+			the_seljuk_coast
+		}
+
+		trigger = {
+			palestine_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			bahari_area = {
+				add_permanent_claim = root
+			}
+			delta_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	pearl_of_egypt = {
+		position = 4
+		icon = mission_advance_to_the_arabian_sea
+		required_missions = {
+			the_holy_land
+		}
+
+		trigger = {
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+		}
+
+		effect = {
+			cyrenaica_area = {
+				add_permanent_claim = root
+			}
+
+			tripolitania_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = TRP
+				months = 600
+			}
+		}
+	}
+
+	convince_the_phoenicians = {
+		position = 5
+		icon = mission_conquer_tunisia
+		required_missions = {
+			pearl_of_egypt
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = TRP
+
+				AND = {
+					alliance_with = TRP
+					marriage_with = TRP
+				}
+
+				tripolitania_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					exists = TRP
+					NOT = {overlord_of = TRP}
+				}
+
+				create_union = TRP
+				TRP = {
+					add_liberty_desire = -50
+				}
+			}
+
+			if = {
+				limit = {
+					exists = TRP
+					overlord_of = TRP
+				}
+
+				TRP = {
+					add_liberty_desire = -50
+				}
+			}
+
+			if = {
+				limit = {
+					alliance_with = TRP
+				}
+
+				create_union = TRP
+				TRP = {
+					add_liberty_desire = -50
+				}
+			}
+
+			maghreb_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+}
+
+
+hellenic_missions_left = {
+	slot = 2
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = GRE
+	}
+	
+	sway_ragusa = {
+		position = 2
+		icon = dalmatian_conquest
+		required_missions = {
+			vanquish_macedonia
+		}
+
+		trigger = {
+			137 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			venetia_area = {
+				add_permanent_claim = root
+			}
+			east_adriatic_coast_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = VEN
+				months = 300
+			}
+		}
+
+	}
+
+	force_the_venetian_hand = {
+		position = 3
+		icon = expand_the_doges_palace
+		required_missions = {
+			sway_ragusa
+		}
+
+		trigger = {
+			112 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			italy_region = {
+				add_permanent_claim = root
+			}
+			baleares_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = NAP
+				months = 300
+			}
+		}
+	}
+
+	sway_the_italians = {
+		position = 5
+		icon = italian_riches
+		required_missions = {
+			force_the_venetian_hand
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 25
+				region = italy_region
+			}
+		}
+
+		effect = {
+			provence_area = {
+				add_permanent_claim = root
+			}
+
+			languedoc_area = {
+				add_permanent_claim = root
+			}
+
+			western_sicily_area = {
+				add_permanent_claim = root
+			}
+
+			sicily_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+
+}
+
+hellenic_missions_left_2 = {
+	slot = 1
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = GRE
+	}
+
+	the_balearic_isles = {
+		position = 4
+		icon = invest_in_the_rich_trades
+		required_missions = {
+			force_the_venetian_hand
+		}
+
+		trigger = {
+			baleares_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			catalonia_area = {
+				add_permanent_claim = root
+			}
+
+			valencia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	catalonian_trade_post = {
+		position = 5
+		icon = king_of_aragon
+		required_missions = {
+			the_balearic_isles
+		}
+
+		trigger = {
+			catalonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			226 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	hunt_for_atlantis = {
+		position = 6
+		icon = mission_rb_take_gibraltar
+		required_missions = {
+			catalonian_trade_post
+		}
+
+		trigger = {
+			266 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = beyond_the_mediterranean
+				duration = -1
+			}
+		}
+	}
+}
+
+arcadia_missions_center = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 2
+	potential = {
+		tag = ARC
+	}
+
+	end_alexanders_legacy = {
+		position = 1
+		icon = reclaim_the_aegean
+
+		trigger = {
+			NOT = {
+				exists = MAC
+			}
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = broke_alexander
+				duration = 5475
+			}
+
+			thrace_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	spartan_training = {
+		position = 2
+		icon = mission_protect_albania
+		required_missions = {
+			end_alexanders_legacy
+		}
+
+		trigger = {
+			militarised_society = 80
+			army_size = 1
+		}
+
+		effect = {
+			albania_area = {
+				add_permanent_claim = root
+			}
+
+			rascia_area = {
+				add_permanent_claim = root
+			}
+
+			east_adriatic_coast_area = {
+				add_permanent_claim = root
+			}
+
+			hudavendigar_area = {
+				add_permanent_claim = root
+			}
+
+			aydin_area = {
+				add_permanent_claim = root
+			}
+
+			germiyan_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	raze_venice = {
+		position = 5
+		icon = mission_raid_on_venice
+		required_missions = {
+			scourge_of_the_turks
+			sack_of_ragusa
+		}
+
+		trigger = {
+			112 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			112 = {
+				add_base_tax = -6
+				add_base_production = -6
+				add_base_manpower = -6
+			}
+
+			capital_scope = {
+				add_base_tax = 6
+				add_base_production = 6
+				add_base_manpower = 6
+			}
+
+			calabria_area = {
+				add_permanent_claim = root
+			}
+
+			122 = {
+				add_permanent_claim = root
+			}
+
+			1933 = {
+				add_permanent_claim = root
+			}
+		}
+
+	}
+
+	magna_graecia = {
+		position = 6
+		icon = mission_retake_ceuta
+		required_missions = {
+			raze_venice
+		}
+
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			122 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			1933 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		
+		effect = {
+			palestine_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	arc_the_holy_land = {
+		position = 7
+		icon = jerusalem
+		required_missions = {
+			magna_graecia
+		}
+
+		trigger = {
+			palestine_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			bahari_area = {
+				add_permanent_claim = root
+			}
+			delta_area = {
+				add_permanent_claim = root
+			}
+
+			al_jazira_area = {
+				add_permanent_claim = root
+			}
+
+			iraq_arabi_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	
+	spartan_superiority = {
+		position = 9
+		icon = unite_the_realm
+		required_missions = {
+			sack_of_alexandria
+			flatten_baghdad
+		}
+
+		trigger = {
+			NOT = {
+				all_known_country = {
+					army_size = ARC
+				}
+			}
+
+			militarised_society = 1
+			prestige = 75
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = spartan_superiority
+				duration = -1
+			}
+		}
+	}
+
+	a_new_empire = {
+		position = 10
+		icon = cross_the_pindus
+
+		required_missions = {
+			spartan_superiority
+		}
+
+		trigger = {
+		
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = spartan_empire
+				duration = 36500
+			}
+		}
+	}
+}
+
+arcadia_missions_right = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 3
+	potential = {
+		tag = ARC
+	}
+
+
+	adriatic_coast = {
+		position = 3
+		icon = dalmatian_conquest
+		required_missions = {
+			spartan_training
+		}
+
+		trigger = {
+			east_adriatic_coast_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = spartan_events.2
+			}
+		}
+	}
+
+	sack_of_ragusa = {
+		position = 4
+		icon = adriatic_access
+		required_missions = {
+			adriatic_coast
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tt_sacked_ragusa
+				has_country_flag = sacked_ragusa
+			}
+		}
+
+
+
+		effect = {
+			add_country_modifier = {
+				name = sack_of_ragusa
+				duration = 9125
+			}
+
+			venetia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	flatten_baghdad = {
+		position = 8
+		icon = mission_dominate_persian_gulf
+		required_missions = {
+			arc_the_holy_land
+		}
+
+		trigger = {
+			410 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			410 = {
+				set_base_tax = 1
+				set_base_production = 1
+				set_base_manpower = 1
+			}
+
+			capital_scope = {
+				add_base_tax = 5
+				add_base_production = 5
+				add_base_manpower = 5
+			}
+			
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+
+			persia_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+}
+
+arcadia_missions_left = {
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	slot = 1
+	potential = {
+		tag = ARC
+	}
+
+	invade_asia_minor = {
+		position = 3
+		icon = anatolian_frontier
+		required_missions = {
+			spartan_training
+		}
+
+		trigger = {
+			hudavendigar_area = {
+				type = all
+				owned_by = root
+			}
+
+			aydin_area = {
+				type = all
+				owned_by = root
+			}
+
+			germiyan_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			anatolia_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	scourge_of_the_turks = {
+		required_missions = {
+			invade_asia_minor
+		}
+		position = 4
+		icon = mercenary_companies
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				region = italy_region
+			}
+
+			NOT = {
+				AND = {
+				exists = RUM
+				exists = TUR
+				}
+			}
+		}
+
+		effect = {
+			aleppo_area = {
+				add_permanent_claim = root
+			}
+
+			syria_area = {
+				add_permanent_claim = root
+
+			}
+		}
+	}
+
+	sack_of_alexandria = {
+		position = 8
+		icon = mission_conquer_alexandria
+		required_missions = {
+			arc_the_holy_land
+		}
+
+		trigger = {
+			358 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			358 = {
+				set_base_tax = 1
+				set_base_production = 1
+				set_base_manpower = 1
+			}
+
+			capital_scope = {
+				add_base_tax = 5
+				add_base_production = 5
+				add_base_manpower = 5
+			}
+			
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+}

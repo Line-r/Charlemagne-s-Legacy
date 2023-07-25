@@ -1,0 +1,8 @@
+spriteTypes = {
+	spriteType = {
+		name = "BRABANT_REVOLT_eventPicture"
+		texturefile = "gfx\event_pictures\event_pictures_charlemagne/BRABANT_REVOLT_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	
+}

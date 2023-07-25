@@ -1,0 +1,30 @@
+country_decisions = {
+	ANJ_kingdom_of_the_antilles = {
+		major = yes
+		potential = {
+			is_subject_of = ANJ
+			has_global_flag = kingdom_of_the_antilles_established
+			capital_scope = {
+				region = carribeans_region
+			}
+
+			NOT = {
+				tag = Z01
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			change_tag = Z01
+			add_government_reform = crown_colony_government
+		}
+
+		ai_importance = 400
+		ai_will_do = {
+			factor = 400
+		}
+	}
+}

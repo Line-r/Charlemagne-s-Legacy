@@ -1,0 +1,139 @@
+namespace = create_canton
+
+country_event = {
+	id = create_canton.1
+	title = create_canton.1.t
+	desc = create_canton.1.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	trigger = {
+	is_subject_of_type = vassal
+	is_subject_of = BRN
+	has_opinion = {
+		who = BRN
+		value = 180
+	}
+	NOT = {liberty_desire = 30}
+	}
+
+	option = {
+		name = "create_canton.1.a"
+		
+		BRN = {
+			create_subject = {
+				subject_type = canton
+				who = ROOT
+			}
+			country_event = {
+				id = create_canton.2
+				days = 1
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = create_canton.2
+	title = create_canton.2.t
+	desc = create_canton.2.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "create_canton.2.a"
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+	}
+}
+
+country_event = {
+	id = create_canton.3
+	title = create_canton.3.t
+	desc = create_canton.3.d
+	picture = LIBERUM_VETO_eventPicture
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "create_canton.3.a"
+		set_country_flag = expansion_of_confederacy
+	}
+}
+
+country_event = {
+	id = create_canton.4
+	title = create_canton.4.t
+	desc = create_canton.4.d
+	picture = WESTERNISATION_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		tag = BRN
+		ai = yes
+		is_year = 1550
+		is_free_or_tributary_trigger = yes
+	}
+
+	option = {
+		every_subject_country = {
+			limit = {
+				ai = yes
+			}
+			ROOT = { inherit = PREV }
+		}
+	
+
+		change_tag = SWI
+		swap_non_generic_missions = yes
+
+		add_country_modifier = {
+			name = "centralization_modifier"
+			duration = 7300
+		}
+
+		switzerland_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+			}
+			add_permanent_claim = SWI
+		}
+		romandie_area = {
+			limit = {
+				NOT = { owned_by = ROOT }
+			}
+			add_permanent_claim = SWI
+		}
+		add_prestige = 25
+
+			country_event = { id = ideagroups.1 } #Swap Ideas
+			
+		if = {
+			limit = {
+				OR = {
+					government = theocracy
+					government = republic
+				}
+				is_revolutionary = no
+			}
+
+			add_government_reform = united_cantons_reform
+		}
+		else = {
+			if = {
+				limit = { is_revolutionary = no }
+				change_government_to_republic = yes
+				add_government_reform = united_cantons_reform
+			}
+		}
+		set_country_flag = formed_switzerland_flag
+		clr_country_flag = expansion_of_confederacy
+	}
+	}

@@ -1,0 +1,882 @@
+macedon_missions_center = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = MAC
+	}
+
+	rebuild_the_nation = {
+		position = 1
+		icon = capture_adriatic_ports
+		
+		trigger = {
+			all_owned_province = {
+				NOT = {
+					devastation = 1
+				}
+			}
+
+			stability = 1
+			prestige = 10
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = restoration_of_macedon
+				duration = 5475
+			}
+
+			remove_country_modifier = the_macedon_rebellion
+		}
+	}
+
+	the_rising_sun = {
+		position = 4
+		icon = mission_autocephalous_archbishopric
+
+		required_missions = {
+			rebuild_the_capital
+			recover_the_army
+		}
+		
+		trigger = {
+
+		}
+
+		effect = {
+			thrace_area = {
+				add_permanent_claim = root
+			}
+
+			144 = {
+				add_permanent_claim = root
+			}
+
+			4699 = {
+				add_permanent_claim = root
+			}
+
+			142 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	slay_the_purple_phoenix = {
+		position = 5
+		icon = mission_pf_cross
+		required_missions = {
+			the_rising_sun
+		}
+
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			NOT = {
+				exists = BYZ
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = ATH
+				months = 300
+			}
+
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = SP8
+				months = 300
+			}
+
+		}
+
+
+	}
+
+	mac_magna_graecia = {
+		position = 8
+		icon = mission_retake_ceuta
+		required_missions = {
+			athenian_thinkers
+			adopt_spartan_training
+		}
+
+		trigger = {
+			northern_greece_area = {
+				owned_by = root
+			}
+
+			morea_area = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			albania_area = {
+				add_permanent_claim = root
+			}
+
+			bulgaria_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	aegean_fleet = {
+		position = 9
+		icon = adriatic_access
+		required_missions = {
+			mac_magna_graecia
+		}
+
+		trigger = {
+			navy_size_percentage = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = aegean_wall
+				duration = 7300
+			}
+		}
+	}
+
+	the_seljuk_menace = {
+		position = 10
+		icon = mission_non-western_soldiers
+		required_missions = {
+			aegean_fleet
+		}
+
+		trigger = {
+			army_strength = {
+				who = RUM
+				value = 0.8
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = onwards_to_anatolia
+				duration = 5475
+			}
+
+			hudavendigar_area = {
+				add_permanent_claim = root
+			}
+
+			aydin_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	conquer_the_west_coast = {
+		position = 11
+		icon = mission_retake_ceuta
+		required_missions = {
+			the_seljuk_menace
+		}
+
+		trigger = {
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			anatolia_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	mac_scourge_of_the_seljuks = {
+		position = 13
+		icon = anatolian_frontier
+		required_missions = {
+			conquer_the_west_coast
+			mac_conquer_the_north
+			mac_conquer_the_south
+		}
+
+		trigger = {
+			NOT = {
+				exists = RUM
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = scourge_of_the_seljuks
+				duration = -1
+			}
+		}
+	}
+
+	alexanders_legacy = {
+		position = 14
+		icon = mission_monarch_in_throne_room
+		required_missions = {
+			mac_scourge_of_the_seljuks
+		}
+
+		trigger = {
+			prestige = 100
+			#Placeholder?
+		}
+
+		effect = {
+			aleppo_area = {
+				add_permanent_claim = root
+			}
+			syria_area = {
+				add_permanent_claim = root
+			}
+
+			al_jazira_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+
+	past_the_euphrates = {
+		position = 19
+		icon = mission_advance_to_the_arabian_sea
+		required_missions = {
+			iraq_secured
+			alexandria_returned
+		}
+
+		trigger = {
+			khuzestan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = mac_control_the_persian_gulf
+				duration = 9125
+			}
+		}
+	}
+
+	prepare_the_new_campaign = {
+		position = 20
+		icon = mission_into_persia_1
+		required_missions = {
+			past_the_euphrates
+		}
+
+		trigger = {
+				persia_region = {
+					any_country = {
+					NOT = {
+						army_strength = {
+							who = root
+							value = 1
+						}
+					}
+					}
+
+				}
+		}
+
+		effect = {
+			persia_region = {
+				add_permanent_claim = root
+			}
+
+			tabriz_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	conquest_of_persepolis = {
+		position = 21
+		icon =  mission_into_persia_2
+		required_missions = {
+			prepare_the_new_campaign
+		}
+
+		trigger = {
+			2218 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			2218 = {
+				add_center_of_trade_level = 2
+			}
+
+			khorasan_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	alexanders_legacy_restored = {
+		position = 22
+		icon = mission_persianate_empire
+		required_missions = {
+			conquest_of_persepolis
+			sack_of_tehran
+			siege_of_tabriz
+		}
+
+		trigger = {
+			persia_region = {
+				type = all
+				owned_by = root
+			}
+			khorasan_region = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			
+		}
+	}
+}
+
+macedon_missions_left = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = MAC
+	}
+
+
+	recover_the_army = {
+		position = 3
+		icon = sav_union_with_naples
+		required_missions = {
+			rebuild_the_nation
+		}
+
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.5
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = mac_recovered_the_army
+				duration = 3650
+			}
+		}
+	}
+
+	uprooter_of_democracy = {
+		position = 6
+		icon = adriatic_access
+		required_missions = {
+			slay_the_purple_phoenix
+		}
+
+		trigger = {
+			OR = {
+				owns = 146
+				overlord_of = ATH
+			}
+		}
+
+		effect = {
+			inherit = TH8
+			inherit = ER8
+			inherit = DE8
+			inherit = IT8
+			inherit = SO8
+			inherit = OI8
+			inherit = LA8
+			inherit = HO8
+		}
+	}
+
+	athenian_thinkers = {
+		position = 7
+		icon = adjust_the_general_means
+		required_missions = {
+			uprooter_of_democracy
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					owns = 146
+					146 = {
+						NOT = {
+							local_autonomy = 1
+							unrest = 1
+						}
+				}
+				}
+
+				AND = {
+					overlord_of = ATH
+					ATH = {
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = athenian_thinkers
+				duration = -1
+			}
+		}
+	}
+
+	mac_conquer_the_north = {
+		position = 12
+		icon = claim_the_borderlands
+		required_missions = {
+			conquer_the_west_coast
+		}
+
+		trigger = {
+			kastamonu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = black_sea_coast
+				duration = 9125
+			}
+
+			crimea_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	into_the_levant = {
+		position = 15
+		icon = mission_levantine_restoration
+		required_missions = {
+			alexanders_legacy
+		}
+
+		trigger = {
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			palestine_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	jerusalem_in_our_hands = {
+		position = 16
+		icon = kingdom_of_heaven
+		required_missions = {
+			into_the_levant
+		}
+
+		trigger = {
+			palestine_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			palestine_area = {
+				add_core = KOJ
+			}
+
+			release = KOJ
+			create_union = KOJ
+			add_country_modifier = {
+				name = mac_liberator_of_jerusalem
+				duration = -1
+			}
+
+			363 = {
+				add_permanent_claim = root
+			}
+			362 = {
+				add_permanent_claim = root
+			}
+			bahari_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	eyes_on_the_nile = {
+		position = 17
+		icon = mission_look_west
+		required_missions = {
+			jerusalem_in_our_hands
+		}
+
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			358 = {
+				add_core = root
+			}
+		}
+	}
+
+	alexandria_returned = {
+		position = 18
+		icon = mission_occupy_alexandria
+		required_missions = {
+			eyes_on_the_nile
+		}
+
+		trigger = {
+			358 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			358 = {
+				add_province_modifier = {
+					name = valencia_alexandria_prospers
+					duration = -1
+				}
+			}
+		}
+	}
+
+	siege_of_tabriz = {
+		position = 21
+		icon = mission_control_the_desh
+		required_missions = {
+			prepare_the_new_campaign
+		}
+
+		trigger = {
+			416 = {
+				OR = {
+					controlled_by = root
+					owned_by = root
+				}
+			}
+		}
+
+		effect = {
+			416 = {
+				add_core = root
+			}
+		}
+	}
+}
+
+macedon_missions_right = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = MAC
+	}
+
+	legitimizing_our_house = {
+		position = 2
+		icon = king_of_kings
+		required_missions = {
+			rebuild_the_nation
+		}
+
+		trigger = {
+			legitimacy = 80
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = mac_legitimized
+				duration = 3650
+			}
+
+			add_prestige = 15
+		}
+	}
+
+	rebuild_the_capital = {
+		position = 3
+		icon = appease_the_estates
+		required_missions = {
+			legitimizing_our_house
+		}
+
+		trigger = {
+			148 = {
+				development = 20
+			}
+		}
+
+		effect = {
+			148 = {
+				add_province_modifier = {
+					name = macedon_rebuild
+					duration = 7300
+				}
+			}
+		}
+	}
+
+	this_is_sparta = {
+		position = 6
+		icon = protect_against_austria
+		required_missions = {
+			slay_the_purple_phoenix
+		}
+
+		trigger = {
+			OR = {
+				owns = 4955
+				overlord_of = SP8
+			}
+		}
+
+		effect = {
+			inherit = AR8
+			inherit = PH8
+			inherit = PY8
+			inherit = OL8
+			inherit = CO8
+			inherit = CS8
+			inherit = CRT
+			inherit = NAX
+			inherit = KNI
+		}
+	}
+
+	adopt_spartan_training = {
+		position = 7
+		icon = revenge_for_nicopolis
+		required_missions = {
+			this_is_sparta
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					owns = 4955
+					4955 = {
+						NOT = {
+							local_autonomy = 1
+							unrest = 1
+						}
+				}
+				}
+
+				AND = {
+					overlord_of = SP8
+					SP8 = {
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+			}
+			
+		}
+
+
+		effect = {
+			add_government_reform = spartan_training
+		}
+	}
+
+	mac_conquer_the_south = {
+		position = 12
+		icon = kingdom_of_cyprus
+		required_missions = {
+			conquer_the_west_coast
+		}
+
+		trigger = {
+			germiyan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = CYP
+				months = 300
+			}
+		}
+	}
+
+	mac_eastwards_conquest = {
+		position = 15
+		icon = mission_conquer_air
+		required_missions = {
+			alexanders_legacy
+		}
+
+		trigger = {
+			al_jazira_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			iraq_arabi_area = {
+				add_permanent_claim = root
+			}
+
+			shahrizor_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	mac_seize_baghdad = {
+		position = 16
+		icon = mission_control_the_ganges_delta
+		required_missions = {
+			mac_eastwards_conquest
+		}
+
+		trigger = {
+			410 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			basra_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	iraq_secured = {
+		position = 18
+		icon = mission_crusade_for_varna
+		required_missions = {
+			mac_seize_baghdad
+		}
+
+		trigger = {
+			basra_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			iraq_arabi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			shahrizor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			khuzestan_area = {
+				add_permanent_claim = root
+			}
+
+
+		}
+	}
+
+	sack_of_tehran = {
+		position = 21
+		icon = mission_crush_delhi
+		required_missions = {
+			prepare_the_new_campaign
+		}
+
+		trigger = {
+			428 = {
+				owned_by = root
+			}
+		}
+
+		effect = {
+			428 = {
+				set_base_tax = 1
+				set_base_production = 1
+				set_base_manpower = 1
+			}
+
+			capital_scope = {
+				add_base_tax = 4
+				add_base_production = 4
+				add_base_manpower = 4
+			}
+
+			add_prestige = 15
+		}
+	}
+}

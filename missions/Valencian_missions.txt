@@ -1,0 +1,747 @@
+valencia_conquest_center = {
+	slot = 3
+	ai = yes
+	generic = no
+	has_country_shield = yes
+
+	potential = {
+		tag = VAL
+	}
+
+	integrate_majorca = {
+		position = 1
+		icon = mission_caribbean_cn
+
+		trigger = {
+			baleares_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = expanding_our_reach
+				duration = 5475
+			}
+		}
+	}
+
+	king_of_occitania = {
+		position = 5
+		required_missions = {
+			integrate_catalonia
+		}
+		icon = king_of_kings
+
+		trigger = {
+			OR = {
+				languedoc_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+
+				overlord_of = TOU
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = {
+					OR = {
+						culture = gascon
+						culture = occitain
+					}
+					
+				}
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	the_occitan_dream = {
+		position = 6
+		required_missions = {
+			king_of_occitania
+		}
+		icon = mission_invade_occitania
+
+		trigger = {
+			pyrenees_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			guyenne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			massif_central_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			savoy_dauphine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			provence_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = dominator_of_southern_france
+				duration = -1
+			}
+		}
+	}
+}
+
+valencia_conquest_left = {
+	slot = 1
+	ai = yes
+	generic = no
+	has_country_shield = yes
+
+	potential = {
+		tag = VAL
+	}
+
+	valencian_navy = {
+		position = 2
+		icon = mission_aragonese_navy
+		required_missions = {
+			integrate_majorca
+		}
+
+		trigger = {
+			navy_size_percentage = 0.8
+		}
+
+		effect = {
+			corsica_sardinia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	king_of_sardinia = {
+		position = 3
+		icon = unite_with_sardinia
+		required_missions = {
+			valencian_navy
+		}
+
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = valencian_events.1
+
+			}	
+			add_prestige = 15
+
+			341 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	city_of_tunis = {
+		position = 4
+		icon = mission_conquer_tunisia
+		required_missions = {
+			king_of_sardinia
+		}
+
+		trigger = {
+			341 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			2954 = {
+				add_permanent_claim = root
+			}
+
+			354 = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	break_the_phoenicians = {
+		position = 5
+		icon = mission_disrupt_portuguese_trade
+		required_missions = {
+			city_of_tunis
+		}
+
+		trigger = {
+			2954 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			354 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			delta_area = {
+				add_permanent_claim = root
+			}
+
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = TRP
+				months = 300
+			}
+		}
+	}
+
+	conquer_alexandria = {
+		position = 6
+		icon = mission_conquer_alexandria
+		required_missions = {
+			break_the_phoenicians
+		}
+
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			bahari_area = {
+				add_permanent_claim = root
+			}
+
+			358 = {
+				add_province_modifier = {
+					name = valencia_alexandria_prospers
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+valencia_conquest_left_branch = {
+	slot = 2
+	ai = yes
+	generic = no
+	has_country_shield = yes
+
+	potential = {
+		tag = VAL
+	}
+
+	integrate_catalonia = {
+		position = 4
+		icon = king_of_aragon
+		required_missions = {
+			conquest_of_aragon
+			king_of_sardinia
+		}
+
+		trigger = {
+			catalonia_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			4696 = {
+				add_permanent_claim = root
+			}
+
+			languedoc_area = {
+				add_permanent_claim = root
+			}
+
+
+
+			if = {
+				limit = {exists = TOU}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = TOU
+					months = 300
+				}
+			}
+
+			if = {
+				limit = {exists = OCC}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = OCC
+					months = 300
+				}
+			}
+
+		}
+		
+	}
+
+	toulon_dockyards = {
+		position = 5
+		icon = mission_great_trading_houses
+		required_missions = {
+			integrate_catalonia
+		}
+
+		trigger = {
+			4696 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			4696 = {
+				add_province_modifier = {
+				name = "toulon_dockyards"
+				duration = -1
+				}
+			}
+
+			liguria_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	dominate_genoa = {
+		position = 6
+		icon = mission_dominate_genoa
+		required_missions = {
+			toulon_dockyards
+		}
+
+		trigger = {
+			liguria_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			101 = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+
+
+}
+
+valencian_conquest_right = {
+	slot = 4
+	ai = yes
+	generic = no
+	has_country_shield = yes
+
+	potential = {
+		tag = VAL
+	}
+
+	protector_of_the_city = {
+		position = 2
+		icon = fixed_garrison_system
+		required_missions = {
+			integrate_majorca
+		}
+
+		trigger = {
+			army_size_percentage = 1
+		}
+
+		effect = {
+			aragon_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	conquest_of_aragon = {
+		position = 3
+		icon = friends_in_high_places
+		required_missions = {
+			protector_of_the_city
+		}
+
+		trigger = {
+			aragon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = NAV
+				months = 300
+			}
+
+			add_accepted_culture = aragonese
+			add_country_modifier = {
+				name = true_king_of_aragon
+				duration = 18250
+			}
+		}
+	}
+
+	dominator_of_east_iberia = {
+		position = 6
+		icon = mission_restore_faith_in_the_throne
+		required_missions = {
+			conquest_of_aragon
+			make_the_duchy_whole
+		}
+
+		trigger = {
+			
+		}
+
+		effect = {
+			if = {
+				limit = {
+					LON = {
+						overlord_of = CAS
+					}
+				}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = LON
+					months = 300
+				}
+			}
+
+			if = {
+				limit = {
+					LON = {
+						NOT = {
+							overlord_of = CAS
+						}
+					}
+				}
+
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = LON
+					months = 300
+				}
+
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = CAS
+					months = 300
+				}
+			}
+		}
+	}
+
+	king_of_iberia = {
+		position = 7
+		icon = mission_reclaim_andalucia
+		required_missions = {
+			dominator_of_east_iberia
+		}
+
+		trigger = {
+			overlord_of = LON
+			overlord_of = CAS
+		}
+
+		effect = {
+			toledo_area = {
+				add_core = VAL
+				remove_core = CAS
+			}
+
+			CAS = {
+				toledo_area = {
+					cede_province = VAL
+				}
+			}
+
+			every_province = {
+				limit = {
+					region = iberia_region
+					owned_by = GRA
+				}
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	val_the_reconquista = {
+		position = 8
+		icon = mission_protect_granada
+		required_missions = {
+			king_of_iberia
+		}
+
+		trigger = {
+			NOT = {
+				GRA = {
+					any_owned_province = {
+						region = iberia_region
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = lon_completing_the_reconquista
+				duration = 7300
+			}
+
+			
+		}
+	}
+}
+
+valencian_conquest_right_branch = {
+	slot = 5
+	ai = yes
+	generic = no
+	has_country_shield = yes
+
+	potential = {
+		tag = VAL
+	}
+
+	valencian_silk = {
+		icon = mission_valencian_silk
+		position = 1
+
+		trigger = {
+			owns_core_province = 220
+			if = {
+				limit = {
+					has_dlc = "Dharma"
+				}
+				220 = {
+					OR = { 
+						province_has_center_of_trade_of_level = 3
+						development = 20
+					}
+				}
+			}
+			else = {
+				220 = {
+					development = 20
+				}
+			}
+		}
+		effect = {
+			220 = {
+				change_trade_goods = silk
+				add_province_modifier = {
+					name = "llotja_de_la_seda"
+					duration = -1
+				}
+			}
+		}
+	}
+
+	val_trade_guilds = {
+		icon = mission_guilds_of_barcelona
+		required_missions = { valencian_silk }
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 213
+		}
+		
+		trigger = {
+			owns_core_province = 213
+			if = {
+				limit = {
+					has_estate = estate_burghers
+				}
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+				estate_influence = {
+					estate = estate_burghers
+					influence = 40
+				}
+				num_of_estate_privileges = {
+					estate = estate_burghers
+					value = 2
+				}
+			}
+			else = {
+				mercantilism = 20
+			}
+		}
+		effect = {
+			213 = {
+				add_base_production = 3
+				add_province_modifier = {
+					name = "barcelona_guilds"
+					duration = 7300
+				}
+			}
+		}
+	}
+
+	val_industry = {
+		icon = mission_industria_sedera
+		required_missions = { val_trade_guilds }
+		position = 3
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_manufactory_trigger = yes
+			}
+			OR = {
+				production_leader = {
+					trade_goods = wine
+					value = yes
+				}
+				production_leader = {
+					trade_goods = glass
+					value = yes
+				}
+				production_leader = {
+					trade_goods = paper
+					value = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "industria_sedera"
+				duration = 7300
+			}
+		}
+	}
+
+	king_of_navarra = {
+		position = 4
+		icon = mission_subjugate_navarra
+		required_missions = {
+			conquest_of_aragon
+		}
+
+		trigger = {
+			210 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+			209 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			pyrenees_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	make_the_duchy_whole = {
+		position = 5
+		icon = mission_invade_england
+		required_missions = {
+			king_of_navarra
+		}
+
+		trigger = {
+			173 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = king_of_the_basque
+				duration = -1
+			}
+		}
+	}
+
+	consultate_of_the_sea = {
+		icon = mission_consulate_of_the_sea
+		position = 7
+		required_missions = { dominator_of_east_iberia }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1298
+				province_id = 1295
+				AND = {
+					OR = {
+						province_id = 213
+						province_id = 220
+					}
+					OR = {
+						NOT = { has_building = marketplace }
+						NOT = { owned_by = ROOT }
+					}
+				}
+			}
+		}
+		trigger = {
+			1295 = {
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+			1298 = {
+				trade_share = {
+					country = ROOT
+					share = 25
+				}
+			}
+			213 = {
+				has_building = marketplace
+				owned_by = ROOT
+			}
+			220 = {
+				has_building = marketplace
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			country_event = { id = valencian_events.2 }
+		}
+	}
+
+	gc_ara_banking = {
+		icon = mission_taula_de_canvi
+		required_missions = { consultate_of_the_sea }
+		position = 8
+		
+		trigger = {
+			NOT = { num_of_loans = 1 }
+			treasury = 3000
+		}
+		effect = {
+			add_country_modifier = {
+				name = "taula_de_canvi"
+				duration = 7300
+			}
+		}
+	}
+}

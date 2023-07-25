@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = eastern
+primary_culture = greek
+add_accepted_culture = bulgarian
+religion = orthodox
+capital = 148
+add_historical_friend = BUL
+add_historical_rival = BYZ
+
+1422.1.1 = {
+	monarch = {
+		name = "Alexandros"
+		dynasty = "Kastenianos"
+		birth_date = 1402.5.7		
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+
+1444.1.1 = {
+	add_country_modifier = {
+		name = the_macedon_rebellion
+		duration = -1
+	}
+
+
+}

@@ -1,0 +1,125 @@
+country_decisions = {
+	toggle_info = {
+		color = {
+			91 23 105
+		}
+		potential = {
+			NOT = {
+				has_country_flag = cl_info_toggled_on
+			}
+			ai = no
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			custom_tooltip = tt_cl_toggle_info
+			set_country_flag = cl_info_toggled_on
+		}
+	}
+
+	toggle_info_off = {
+		color = {
+			91 23 105
+		}
+		potential = {
+				has_country_flag = cl_info_toggled_on
+			ai = no
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			custom_tooltip = tt_cl_toggle_info
+			clr_country_flag = cl_info_toggled_on
+		}
+	}
+
+	update_missions = {
+		color = {
+			91 23 105
+		}
+
+		potential = {
+			ai = no
+			has_country_flag = cl_info_toggled_on
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			swap_non_generic_missions = yes
+		}
+	}
+
+	siegfried_sanity_max = {
+		color = {
+			91 23 105
+		}
+
+		potential = {
+			ai = no
+			has_country_flag = cl_info_toggled_on
+			tag = SWA
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			change_variable = {
+				which = swaSiegfriedSanity
+				value = 100
+			}
+		}
+	}
+
+	get_lore = {
+		color = {
+			91 23 105
+		}
+
+		potential = {
+			ai = no
+			has_country_flag = cl_info_toggled_on
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			country_event = {
+				id = cl_infoevents.1
+			}
+		}
+	}
+
+	how_to_play = {
+		color = {
+			91 23 105
+		}
+
+		potential = {
+			ai = no
+			has_country_flag = cl_info_toggled_on
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			country_event = {
+				id = cl_infoevents.2
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+namespace = spartan_events
+
+country_event = {
+	id = spartan_events.1
+	title = spartan_events.1.t
+	desc = spartan_events.1.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		has_discovered = 4955
+	}
+
+	option = {
+		name = "spartan_events.1.a"
+
+		inherit = AR8
+		inherit = PH8
+		inherit = PY8
+		inherit = OL8
+		inherit = CO8
+
+		inherit = TH8
+		inherit = ER8
+		inherit = DE8
+		inherit = IT8
+		inherit = SO8
+		inherit = OI8
+		inherit = LA8
+		inherit = HO8
+		
+		inherit = CS8
+		inherit = CRT
+		inherit = NAX
+		inherit = KNI
+
+		change_tag = ARC
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = spartan_events.2
+	title = spartan_events.2.t
+	desc = spartan_events.2.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "spartan_events.2.a"
+		137 = {
+			set_base_tax = 1
+			set_base_production = 1
+			set_base_manpower = 1
+		}
+
+		capital_scope = {
+			add_base_tax = 5
+			add_base_production = 5
+			add_base_manpower = 5
+		}
+
+			
+		hidden_effect = {
+			set_country_flag = sacked_ragusa
+		}
+	}
+
+}

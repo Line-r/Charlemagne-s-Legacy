@@ -1,0 +1,33 @@
+war_with_neighbor = {
+	category = 1
+
+	allow = {
+		tag = SWA
+		has_country_flag = swa_augsburg_accord
+	}
+
+	effect = {
+		random_neighbor_country = {
+			reverse_add_casus_belli = {
+				type = cb_swabian_imperialism
+				target = ROOT
+				months = 36
+			}
+
+			add_opinion = {
+				who = ROOT
+				modifier = target_of_swabian_imperialism
+			}
+		}
+	}
+
+	effect_duration = 3
+
+	chance = {
+		factor = 100
+	}
+
+	ai_will_do = {
+		factor = 0
+	}
+}

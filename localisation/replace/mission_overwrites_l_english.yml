@@ -1,0 +1,13 @@
+﻿l_english: 
+eng_war_france_title:0 "Scorch the Fleur"
+ eng_war_france_desc:0 "There is an uneasy peace between [Root.GetName] and France. Both sides are aware that this is unlikely to last, and we must decide whether to honor their treaty and bide our time, or prepare for war."
+ eng_reclaim_arm_paris_title:0 "Strategic Control"
+ eng_reclaim_arm_paris_desc:0 "As the war resumes, it is time we adjusted our approach. Rather than whittle away the French forces with skirmishes and pitched battles, we should strike at the heart of their nation."
+ emp_bur_join_the_empire_title:0 "Legitimacy over the Empire"
+ emp_bur_join_the_empire_desc:0 "As the Middle Frankish Empire is divided in to several states, we have to ensure that the electorates of our confederacy vote in favour of our rulership."
+emp_bur_english_alliance_title:0 "Taking a Stance"
+ emp_bur_english_alliance_desc:0 "When the time comes to rid ourselves of the French pretenders to our west, the English could either be a natural ally, or an enemy. We should consider making our intentions clear to them."
+emp_bur_league_of_public_weal_title:0 "League of the Public Weal"
+ emp_bur_league_of_public_weal_desc:0 "The kingdom of France are mere pretenders claiming the legacy of Charlemange. We should prepare to humiliate them on the world stage and possibly spark a few feuds between their dukes."
+ emp_bur_romandie_title:0 "The Swiss Menace"
+ emp_bur_romandie_desc:0 "The Swiss Confederacy has always been a thorn in our side. The Grossmeister of Bern wishes to destroy our sacred empire. Dealing with the Swiss would be better for all of us."

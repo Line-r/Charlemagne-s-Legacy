@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudal_monarchy
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = flemish
+capital = 1742
+
+
+1418.1.1 = {
+	monarch = {
+		name = "Reneer"
+		dynasty = "van Limburg"
+		culture = flemish
+		birth_date = 1370.1.1
+		dip = 0
+		adm = 2
+		mil = 2
+	}
+}

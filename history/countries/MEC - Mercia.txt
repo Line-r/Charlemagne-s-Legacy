@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = english_monarchy
+mercantilism = 25
+technology_group = western
+primary_culture = english
+religion = catholic
+government_rank = 2
+capital = 1861
+
+
+1429.11.6 = { #Coronation
+	monarch = {
+		name = "Ceolwulf IV"
+		dynasty = "of Mercia"
+		birth_date = 1400.12.3
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}

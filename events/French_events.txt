@@ -1,0 +1,337 @@
+namespace = french_events
+
+country_event = {
+	id = french_events.1
+	title = french_events.1.t
+	desc = french_events.1.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		change_tag = BOU
+		add_stability = -1
+		add_country_modifier = {
+			name = BOU_the_house_of_bourbon
+			duration = 10950
+		}
+	}
+}
+
+country_event = {
+	id = french_events.2
+	title = french_events.2.t
+	desc = french_events.2.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		190 = {
+			remove_core = BOU
+		}
+
+		add_stability = 1
+		change_mil = 1
+		add_country_modifier = {
+			name = FRA_bourbon_defeated
+			duration = 10950
+		}
+	}
+}
+
+country_event = {
+	id = french_events.3
+	title = french_events.3.t
+	desc = french_events.3.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				exists = TOU
+			}
+			create_union = TOU
+		}
+		else = {
+			create_union = OCC
+		}
+
+		TOU = {
+			add_historical_friend = root
+		}
+
+		OCC = {
+			add_historical_friend = root
+		}
+	}
+
+	option = {
+		custom_tooltip = tt_claims_over_occitania
+
+		hidden_effect = {
+			TOU = {
+				every_owned_province = {
+					add_permanent_claim = FRA
+				}
+			}
+
+			OCC = {
+				every_owned_province = {
+					add_permanent_claim = FRA
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = french_events.4
+	title = french_events.4.t #Normand succession
+	desc = french_events.4.d
+	picture = COURT_eventPicture
+
+	trigger = {
+		OR = {
+			tag = FRA
+			tag = BOU
+		}
+		ANJ = {
+			NOT = {
+				has_ruler = "Richard"
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	fire_only_once = yes
+
+
+	option = {
+		name = french_events.4.a
+		#We must press our claims over the duchy of Normandy
+
+		custom_tooltip = tt_fra_press_claim_normandy
+
+		ANJ = {
+			country_event = {
+				id = french_events.5
+			}
+		}
+	}
+
+}
+
+country_event = {
+	id = french_events.5
+	title = french_events.5.t #Normand succession p2
+	desc = french_events.5.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		#Grant the claims
+		name = french_events.5.a
+
+		release = NRM
+
+		custom_tooltip = tt_fra_release_normandy
+		hidden_effect = {
+			FRA = {
+				create_union = NRM
+				set_country_flag = fra_normandy_granted
+			}
+			BOU = {
+				create_union = NRM
+				set_country_flag = fra_normandy_granted
+			}
+		}
+	}
+
+	option = {
+		#Refuse the claims
+		name = french_events.5.b
+
+
+
+		if = {
+			limit = { exists = FRA }
+			reverse_add_opinion = {
+				who = FRA
+				modifier = fra_normandy_denied
+			}
+		}
+
+		if = {
+			limit = { exists = BOU }
+			reverse_add_opinion = {
+				who = BOU
+				modifier = fra_normandy_denied
+			}
+		}
+
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = french_events.6
+				}
+			}
+
+			BOU = {
+				country_event = {
+					id = french_events.6
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = french_events.6
+	title = french_events.6.t #Normand succession - Anjou responds
+	desc = french_events.6.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		#Normandy rightfully belongs to us!
+		normandy_area = {
+			add_core = root
+		}
+
+		hidden_effect = {
+			set_country_flag = fra_normandy_denied
+		}
+	}
+}
+
+country_event = {
+	id = french_events.7
+	title = french_events.7.t #The duke of normandy dies
+	desc = french_events.7.d
+	picture = COURT_eventPicture
+
+	trigger = {
+		OR = {
+			tag = FRA
+			tag = BOU
+		}
+		senior_union_with = NRM
+	}
+
+	mean_time_to_happen = {
+		months = 180
+	}
+
+	option = {
+		name = french_events.7.a #I could kiss that...donkey?
+		inherit = NRM
+	}
+}
+
+country_event = {
+	id = french_events.8
+	title = french_events.8.t #King of the Gascons
+	desc = french_events.8.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = french_events.8.a #establish the kingdom of gascony
+
+		every_owned_province = {
+			limit = {
+				culture = gascon
+			}
+			add_core = GUY
+			cede_province = GUY
+		}
+
+		create_union = GUY
+
+		add_country_modifier = {
+			name = fra_king_of_the_gascons
+			duration = -1
+		}
+
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = AMG
+					AMG = {
+						OR = {
+							is_subject_of = FRA
+							is_subject_of = BOU
+						}
+					}
+			}
+
+			GUY = {
+				inherit = AMG
+			}
+			}
+		}
+
+	}
+
+	option = {
+		name = french_events.8.b
+
+		add_prestige = 20
+
+		every_owned_province = {
+			limit = {
+				culture = gascon
+			}
+
+			add_base_tax = 1
+		}
+		
+		add_accepted_culture = gascon
+		add_accepted_culture_or_dip_power = yes
+	}
+}
+
+country_event = {
+	id = french_events.8
+	title = french_events.8.t #King of the Gascons
+	desc = french_events.8.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = french_events.8.a #French path
+
+		override_country_name = FRENCHNATION
+		swap_non_generic_missions = yes
+
+		custom_tooltip = tt_fra_french_path
+
+		hidden_effect = {
+			set_country_flag = fra_french_path
+		}
+	}
+
+	option = {
+		name = french_events.8.b #Frankish path
+		
+		override_country_name = WESTFRANKISHNATION
+		swap_non_generic_missions = yes
+
+		custom_tooltip = tt_fra_frankish_path
+
+		hidden_effect = {
+			set_country_flag = fra_frankish_path
+		}
+	}
+
+}

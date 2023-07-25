@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = leonese
+religion = catholic
+technology_group = western
+capital = 208 #Leon
+add_historical_friend = CAS
+
+1425.1.1 = {
+	monarch = {
+		birth_date = 1416.1.1
+		name = "Valeriano"
+		dynasty = "Enriquez"
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

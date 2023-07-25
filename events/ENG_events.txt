@@ -1,0 +1,37 @@
+namespace = ENG_events
+
+country_event = {
+	id = ENG_events.1
+	title = ENG_events.1.t
+	desc = ENG_events.1.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	major = yes
+
+	mean_time_to_happen = {
+		days = 15
+	}
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		all_owned_province = {
+			NOT = { region = france_region }
+		}
+	}
+
+	option = {
+		name = "ENG_events.1.a"
+
+		override_country_name = ANGLIA_NAME
+		add_prestige = -25
+		remove_accepted_culture = gascon
+		remove_accepted_culture = normand
+		remove_accepted_culture = cosmopolitan_french
+
+		inherit = MEC
+		inherit = ANG
+		inherit = NOL
+		
+		set_government_rank = 2
+	}
+}

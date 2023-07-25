@@ -1,0 +1,592 @@
+trp_berber_missions = {
+    slot = 1
+    generic = no
+    has_country_shield = yes
+    ai = yes
+
+    potential = {
+        tag = TRP
+    }
+
+    integrate_kabylia = {
+        position = 1
+        icon = mission_bedouins
+
+        provinces_to_highlight = {
+            OR = {
+                area = kabylia_area
+                province_id = 338
+            }
+        }
+
+        trigger = {
+            kabylia_area = {
+                type = all
+                owned_by = root
+            }
+
+            338 = {
+                owned_by = root
+            }
+        }
+
+        effect = {
+            hautes_plaines_area = {
+                add_permanent_claim = root
+            }
+            barbary_coast_area = {
+                add_permanent_claim = root
+            }
+            algiers_area = {
+                add_permanent_claim = root
+            }
+
+            north_saharan_area = {
+                add_permanent_claim = root
+            }
+
+            ouled_nail_area = {
+                add_permanent_claim = root
+            }
+        }
+    }
+
+    through_algiers = {
+        position = 2
+        icon = mission_conquer_algiers
+        required_missions = {
+            integrate_kabylia
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = hautes_plaines_area
+                area = barbary_coast_area
+                area = algiers_area
+            }
+        }
+
+        trigger = {
+            hautes_plaines_area = {
+                type = all
+                owned_by = root
+            }
+            barbary_coast_area = {
+                type = all
+                owned_by = root
+            }
+            algiers_area = {
+                type = all
+                owned_by = root
+            }
+        }
+
+        effect = {
+            northern_morocco_area = {
+                add_permanent_claim = root
+            }
+            marrekesh_area = {
+                add_permanent_claim = root
+            }
+            western_morocco_area = {
+                add_permanent_claim = root
+            }
+            
+        }
+    }
+
+    master_of_the_berbers = {
+        position = 3
+        required_missions = {
+            through_algiers
+        }
+        icon = mission_reclaim_morocco
+
+        provinces_to_highlight = {
+            OR = {
+                area = northern_morocco_area
+                area = marrekesh_area
+                area = western_morocco_area
+            }
+        }
+
+        trigger = {
+            northern_morocco_area = {
+                type = all
+                owned_by = root
+            }
+            marrekesh_area = {
+                type = all
+                owned_by = root
+            }
+            western_morocco_area = {
+                type = all
+                owned_by = root
+            }
+        }
+
+        effect = {
+            upper_andalucia_area = {
+                add_permanent_claim = root
+            }
+            lower_andalucia_area = {
+                add_permanent_claim = root
+            }
+        }
+    }
+
+    in_to_iberia = {
+        position = 4
+        required_missions = {
+            master_of_the_berbers
+        }
+        icon = mission_guilds_of_barcelona
+
+        provinces_to_highlight = {
+            OR = {
+                area = upper_andalucia_area
+                area = lower_andalucia_area
+            }
+        }
+
+        trigger = {
+            upper_andalucia_area = {
+                type = all
+                owned_by = root
+            }
+            lower_andalucia_area = {
+                type = all
+                owned_by = root
+            }
+        }
+
+        effect = {
+            valencia_area = {
+                add_permanent_claim = root
+            }
+
+            toledo_area = {
+                add_permanent_claim = root
+            }
+
+            add_casus_belli = {
+                type = cb_vassalize_mission
+                target = VAL
+                months = 600
+            }
+        }
+    }
+
+    the_city_of_valencia = {
+        position = 5
+        required_missions = {
+            in_to_iberia
+        }
+        icon = mission_raid_on_valencia
+
+        provinces_to_highlight = {
+            area = valencia_area
+        }
+        
+        trigger = {
+            valencia_area = {
+                country_or_non_sovereign_subject_holds = root
+            }
+        }
+
+        effect = {
+            iberia_region = {
+                add_permanent_claim = root
+            }
+        }
+    }
+}
+
+trp_minor_berber_branch = {
+    slot = 2
+    generic = no
+    has_country_shield = yes
+    ai = yes
+
+    potential = {
+        tag = TRP
+    }
+
+    conquer_the_ibadi = {
+        position = 2
+        icon = mission_conquer_air
+        required_missions = {
+            integrate_kabylia
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = north_saharan_area
+                area = ouled_nail_area
+            }
+        }
+
+        trigger = {
+            north_saharan_area = {
+                type = all
+                owned_by = root
+            }
+
+            ouled_nail_area = {
+                type = all
+                owned_by = root
+            }
+        }
+
+        effect = {
+            north_saharan_area = {
+                add_province_modifier = {
+                    name = enforcing_unity
+                    duration = 3650
+                }
+            }
+        }
+    }
+
+}
+
+restoration_branch = {
+    slot = 4
+    generic = no
+    has_country_shield = yes
+    ai = yes
+    potential = {
+        tag = TRP
+    }
+
+    a_force_to_be_reckoned_with = {
+        position = 1
+        icon = mission_protect_granada
+
+        trigger = {
+            army_size_percentage = 0.9
+            navy_size_percentage = 0.8
+        }
+
+        effect = {
+            cyrenaica_area = {
+                add_permanent_claim = root
+            }
+        }
+    }
+
+    towards_the_delta = {
+        position = 2
+        icon = mission_conquer_timbuktu
+        required_missions = {
+            a_force_to_be_reckoned_with
+        }
+
+        provinces_to_highlight = {
+            area = cyrenaica_area   
+        }
+
+        trigger = {
+            cyrenaica_area = {
+                type = all
+                owned_by = root
+            }
+        }
+
+        effect = {
+            delta_area = {
+                add_permanent_claim = root
+            }
+        }
+    }
+
+    the_city_of_alexandria = {
+        position = 3
+        icon = mission_conquer_alexandria
+
+        required_missions = {
+            towards_the_delta
+        }
+
+        provinces_to_highlight = {
+            province_id = 358
+        }
+
+        trigger = {
+            358 = {
+                owned_by = root
+            }
+        }
+
+        effect = {
+            bahari_area = {
+                add_permanent_claim = root
+            }
+
+            vostani_area = {
+                add_permanent_claim = root
+            }
+
+            palestine_area = {
+                add_permanent_claim = root
+            }
+
+            1855 = {
+                add_core = root
+            }
+
+            378 = {
+                add_core = root
+            }
+        }
+    }
+
+    reconquest_of_phoenicia = {
+        position = 4
+        icon = mission_retake_ceuta
+        required_missions = {
+            the_city_of_alexandria
+        } 
+
+        provinces_to_highlight = {
+            OR = {
+                province_id = 1855
+                province_id = 378
+            }
+        }
+
+        trigger = {
+            owns_core_province = 1855
+            owns_core_province = 378
+
+        }
+
+        effect = {
+            add_stability = 2
+            add_prestige = 25
+            add_legitimacy = 25
+            override_country_name = PHOEN
+
+            378 = {
+                change_culture = phoenician
+            }
+
+            1855 = {
+                change_culture = phoenician
+            }
+
+            add_country_modifier = {
+                name = phoenicia_restored
+                duration = 18250
+            }
+        }
+    }
+}
+
+colonial_missions = {
+    slot = 3
+    generic = no
+    has_country_shield = yes
+    ai = yes
+    potential = {
+        tag = TRP
+    }
+
+    prepare_an_expedition = {
+        position = 1
+        icon = mission_aragonese_navy
+
+        trigger = {
+            num_of_explorers = 1
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = navigator_boost
+                duration = 5475
+            }
+
+            378 = {
+                add_unit_construction = {
+                    type = light_ship
+                    amount = 5
+                    speed = 0.5
+                    cost = 0
+                }
+            }
+        }
+    }
+
+    discover_the_americas = {
+        position = 2
+        icon = mission_caribbean_cn
+
+        required_missions = {
+            prepare_an_expedition
+        }
+
+        provinces_to_highlight = {
+            colonial_region = colonial_the_carribean
+        }
+
+        trigger = {
+            carribeans_region = {
+                has_discovered = root
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = colonial_enthusiasm
+                duration = 7300
+            }
+        }
+    }
+
+    settle_in_brazil = {
+        position = 3
+        icon = mission_colonise_brazil
+
+        required_missions = {
+            discover_the_americas
+        }
+
+        provinces_to_highlight = {
+            colonial_region = colonial_brazil
+        }
+
+        trigger = {
+            brazil_region = {
+                type = any
+                country_or_non_sovereign_subject_holds = root
+            }
+        }
+
+        effect = {
+            create_conquistador = {
+                tradition = 50
+            }
+        }
+    }
+}
+
+northern_branch = {
+    slot = 5
+    generic = no
+    has_country_shield = yes
+    ai = yes
+    potential = {
+        tag = TRP
+    }
+
+    standardize_phoenician = {
+        position = 1
+        icon = mission_conquer_tunisia
+
+        provinces_to_highlight = {
+            OR = {
+                area = tunisia_area
+                province_id = 341
+            }
+        }
+
+        trigger = {
+            tunisia_area = {
+                type = all
+                owned_by = root
+            }
+
+            341 = {
+                development = 20
+            }
+
+        }
+
+        effect = {
+            tunisia_area = {
+                change_culture = phoenician
+            }
+
+            add_country_modifier = {
+                name = tunisian_conquest_tlc
+                duration = -1
+            }
+
+            sicily_area = {
+                add_permanent_claim = root
+            }
+            western_sicily_area = {
+                add_permanent_claim = root
+            }
+        }
+    }
+
+    trp_seize_sicily = {
+        position = 2
+        icon = mission_break_sicily
+        required_missions = {
+            standardize_phoenician
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = sicily_area
+                area = western_sicily_area
+            }
+        }
+ 
+        trigger = { 
+            sicily_area = {
+                type = all
+                owned_by = root
+            }
+            western_sicily_area = {
+                type = all
+                owned_by = root
+            }
+        }
+        effect = { 
+            western_mediterrenean_area = {
+                add_permanent_claim = root
+            }
+        }
+    }
+
+    seize_corsica_sardinia = { 
+        position = 4
+        icon = unite_with_sardinia
+
+        required_missions = {
+            trp_seize_sicily
+        }
+
+        provinces_to_highlight = {
+            area = corsica_sardinia_area
+        }
+
+        trigger = {
+           corsica_sardinia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = root
+            }
+        }
+
+        effect = {
+            baleares_area = {
+                add_permanent_claim = root
+            }
+            provence_area = {
+                add_permanent_claim = root
+            }
+            languedoc_area = {
+                add_permanent_claim = root
+            }
+            liguria_area = {
+                add_permanent_claim = root
+            }
+            venetia_area = {
+                add_permanent_claim = root
+            }
+        }
+    }
+}

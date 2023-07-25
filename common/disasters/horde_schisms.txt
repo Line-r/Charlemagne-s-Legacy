@@ -1,0 +1,45 @@
+horde_schisms = {
+    potential = {
+        OR = {
+            tag = GLH
+            tag = ILK
+            tag = YUA
+            tag = CHG
+        }
+    }
+
+    can_start = {
+        has_any_disaster = no
+        NOT = { horde_unity = 90 }
+    }
+
+    can_stop = {
+        has_any_disaster = yes
+        horde_unity = 100
+    }
+
+    progress = {
+        modifier = {
+            factor = 5
+            NOT = { horde_unity = 80 }
+        }
+    }
+
+    can_end = {
+        tag = MGE
+    }
+
+    on_start = horde_schism_events.1
+
+    modifier = {
+        global_unrest = 20
+        stability_cost_modifier = 1
+        global_manpower_modifier = -0.8
+        yearly_corruption = 5
+        min_autonomy = 70
+        can_not_declare_war = yes
+        horde_unity = -5
+        land_maintenance_modifier = 0.5
+        
+    }
+}

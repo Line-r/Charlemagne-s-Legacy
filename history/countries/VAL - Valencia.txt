@@ -1,0 +1,20 @@
+government = monarchy
+
+add_government_reform = feudalism_reform
+
+religion = catholic
+primary_culture = catalan
+technology_group = western
+capital = 220	# Valencia
+
+1420.1.1 = {
+	monarch = {
+		birth_date = 1415.2.2
+		name = "Alícia II"
+		female = yes
+		dynasty = "de Luna"
+		adm = 2
+		dip = 6
+		mil = 3
+	}
+}

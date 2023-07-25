@@ -1,0 +1,597 @@
+swa_generic_path_1 = {
+	slot = 1
+	generic = yes
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		primary_culture = swabian
+	}
+
+	swa_secure_lower_swabia = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			swa_build_up_our_forces
+		}
+
+		trigger = {
+			lower_swabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			ROOT = {
+				every_subject_country = {
+					limit = {
+						capital_scope = {
+							area = lower_swabia_area
+						}
+					}
+					add_liberty_desire = -25
+				}
+			}
+
+			every_owned_province = {
+				limit = {
+					area = lower_swabia_area
+				}
+
+				add_province_modifier = {
+					name = swa_reestablished_control
+					duration = 5475
+				}
+			}
+		}
+	}
+}
+
+
+swa_generic_path_2 = {
+	slot = 2
+	generic = yes
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		primary_culture = swabian
+	}
+
+
+	swa_build_up_our_forces = {
+		position = 1
+		icon = mission_unknown_mission
+
+		trigger = {
+			army_size_percentage = 1
+		}
+
+		effect = {
+			upper_swabia_area = {
+				add_permanent_claim = root
+			}
+
+			lower_swabia_area = {
+				add_permanent_claim = root
+			}
+
+			custom_tooltip = tt_swa_swabian_unification_cb
+		}
+	}
+
+	swa_unify_upper_swabia = {
+		position = 2
+		icon = mission_unknown_mission
+
+		required_missions = {
+			swa_build_up_our_forces
+		}
+
+
+		trigger = {
+			upper_swabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			ROOT = {
+				every_subject_country = {
+					limit = {
+						capital_scope = {
+							area = upper_swabia_area
+						}
+					}
+					add_liberty_desire = -25
+				}
+			}
+
+			every_owned_province = {
+				limit = {
+					area = upper_swabia_area
+				}
+
+				add_province_modifier = {
+					name = swa_reestablished_control
+					duration = 5475
+				}
+			}
+		}
+	}
+}
+
+swa_generic_path_3 = {
+	slot = 3
+	generic = yes
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		primary_culture = swabian
+	}
+
+
+	swa_establish_the_swabian_confederation = {
+		icon = mission_unknown_mission
+		position = 3
+		required_missions = {
+			swa_secure_lower_swabia
+			swa_unify_upper_swabia
+		}
+
+		trigger = {
+			upper_swabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			lower_swabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			every_subject_country = {
+				limit = {
+					OR = {
+						capital_scope = {
+							area = upper_swabia_area
+						}
+						capital_scope = {
+							area = lower_swabia_area
+						}
+					}
+				}
+
+				root = {
+					inherit = prev
+				}
+			}
+
+
+			country_event = {
+				id = swa_events.1
+			}
+		}
+	}
+
+	swa_dominate_swabia = {
+		icon = mission_unknown_mission
+		position = 4
+		required_missions = {
+			swa_establish_the_swabian_confederation
+		}
+
+		trigger = {
+			4714 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			74 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			75 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			4765 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = swa_dominator_of_swabia
+				duration = -1
+			}
+
+			add_prestige = 25
+			add_republican_tradition = 10
+		}
+	}
+
+
+}
+
+swa_generic_path_5 = {
+	slot = 5
+	generic = yes
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		primary_culture = swabian
+	}
+
+	swa_a_glorious_swabian_city = {
+		icon = mission_unknown_mission
+		position = 1
+
+		trigger = {
+			capital_scope = {
+				development = 25
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+
+		effect = {
+			capital = {
+				add_province_modifier = {
+					name = swa_glorious_city
+					duration = -1
+				}
+			}
+		}
+	}
+
+	swa_riches_of_swabia = {
+		icon = mission_unknown_mission
+		position = 2
+
+		trigger = {
+			development_in_provinces = {
+				value = 150
+				OR = {
+					area = upper_swabia_area
+					area = lower_swabia_area
+					area = upper_rhineland_area
+					area = alsace_area
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = swa_riches_of_swabia
+				duration = -1
+			}
+		}
+	}
+}
+
+
+swa_totalenkrieg_path_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = SWA
+		has_country_flag = swa_siegfried_appears
+	}
+
+	swa_reign_in_the_lands = {
+		position = 7
+		icon = mission_unknown_mission
+		required_missions = {
+			swa_a_diverging_path
+		}
+
+		trigger = {
+			all_core_province = {
+				NOT = {
+					AND = {
+						local_autonomy = 0.25
+						unrest = 1
+					}
+				}
+			}
+		}
+
+		effect = {
+			every_core_province = {
+				add_province_modifier = {
+					name = swa_iron_fist_rule
+					duration = -1
+				}
+			}
+
+			add_republican_tradition = 25
+			add_stability = 1
+		}
+	}
+
+	swa_seconds_to_midnight = {
+		position = 13
+		icon = mission_unknown_mission
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tt_swa_insanity_at_90
+				check_variable = {
+					which = swaSiegfriedSanity
+					value = 90
+				}
+			}
+		}
+
+		effect = {
+			
+		}
+	}
+}
+
+
+swa_totalenkrieg_path_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = SWA
+		has_country_flag = swa_siegfried_appears
+	}
+
+	swa_a_diverging_path = {
+		position = 6
+		icon = mission_unknown_mission
+
+		trigger = {
+			has_disaster = swabian_disaster
+		}
+
+		effect = {
+			add_republican_tradition = 5
+		}
+	}
+
+	swa_crush_the_pretenders = {
+		position = 7
+		icon = mission_unknown_mission
+
+		required_missions = {
+			swa_a_diverging_path
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tt_swa_crush_the_pretenders
+
+				NOT = {
+					AND = {
+						num_of_rebel_armies = 1
+	
+						any_owned_province = {
+							has_province_modifier = swa_loyalist_province
+						}
+					}
+				}
+			}
+			
+
+		}
+
+		effect = {
+			add_republican_tradition = 25
+			add_stability = 1
+
+			every_owned_province = {
+				add_province_modifier = {
+					name = swa_reigned_in_province
+					duration = 9125
+				}
+			}
+		}
+	}
+
+	swa_legitimize_the_new_republic = {
+		position = 8
+		icon = mission_unknown_mission
+
+		required_missions = {
+			swa_crush_the_pretenders
+			swa_regain_military_support
+			swa_reign_in_the_lands
+		}
+
+		trigger = {
+			republican_tradition = 90
+			stability = 0
+		}
+
+		effect = {
+			end_disaster = swabian_disaster
+			add_stability = 3
+			add_republican_tradition = 100
+
+			country_event = {
+				id = swa_events.5
+			}
+		}
+
+	}
+
+	swa_the_downwards_spiral_commences = {
+		position = 9
+		icon = mission_unknown_mission
+
+		required_missions = {
+			swa_legitimize_the_new_republic
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tt_swa_insanity_at_25
+				check_variable = {
+					which = swaSiegfriedSanity
+					value = 25
+				}
+			}
+		}
+
+		effect = {
+			every_province = {
+				limit = {
+					culture = bavarian
+				}
+				add_claim = root
+			}
+		}
+	}
+
+	swa_establish_dominance_over_bavaria = {
+		position = 10
+		icon = mission_unknown_mission
+
+		required_missions = {
+			swa_the_downwards_spiral_commences
+		}
+
+		trigger = {
+			upper_bavaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			lower_bavaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			east_bavaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					culture = bavarian
+				}
+
+				add_province_modifier = {
+					name = swa_great_bavarian_expulsion
+					duration = 10950
+				}
+			}
+
+			custom_tooltip = tt_increase_Siegfrieds_insanity
+				change_variable = {
+					which = swaSiegfriedSanity
+					value = 10
+				}
+			
+
+			
+		}
+	}
+
+	swa_establish_the_warcouncil = {
+		position = 11
+		icon = mission_unknown_mission
+
+		required_missions = {
+			swa_establish_dominance_over_bavaria
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tt_swa_insanity_at_65
+				check_variable = {
+					which = swaSiegfriedSanity
+					value = 65
+				}
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				set_country_flag = swa_warcouncil_established
+			}
+			add_government_reform = swabia_warcouncil
+
+			add_government_power = {
+				mechanic_type = swabian_war_council_mechanic
+				power_type = swabian_war_council_power
+				value = 65
+			}
+		}
+	}
+
+	swa_totalenkrieg = {
+		position = 13
+		icon = mission_unknown_mission
+
+		required_missions = {
+			swa_establish_the_warcouncil
+		}
+
+		trigger = {
+
+		}
+
+		effect = {
+			custom_tooltip = tt_enable_totalenkrieg_cb
+		}
+	}
+}
+
+swa_totalenkrieg_path_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = SWA
+		has_country_flag = swa_siegfried_appears
+	}
+
+	swa_regain_military_support = {
+		position = 7
+		icon = mission_unknown_mission
+		required_missions = {
+			swa_a_diverging_path
+		}
+
+		trigger = {
+			manpower_percentage = 0.8
+			army_size_percentage = 0.6
+			NOT = {
+				num_of_mercenaries = 1
+			}
+		}
+
+		effect = {
+			remove_country_modifier = swa_military_support_lost
+
+			add_country_modifier = {
+				name = swa_regained_military_support
+				duration = 7300
+			}
+
+			add_republican_tradition = 25
+			add_stability = 1
+		}
+	}
+}
+

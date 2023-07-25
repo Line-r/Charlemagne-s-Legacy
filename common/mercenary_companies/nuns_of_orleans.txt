@@ -1,0 +1,57 @@
+merc_nuns_of_orleans = {
+    regiments_per_development = 0.04        # Size of the mercenary company based on the recruiting country's development. (always rounds down)
+    cost_modifier = 0.5			            # Cost multiplier of the mercenary company. Note that there is a base +50% maintenance cost on mercenaries applied after this multiplier.
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+    home_province = 184                 # Mercenary company's province of origin. Distance determines recruitment time and range. If unspecified, will be a local company.
+
+    cavalry_weight = 0.3                    # Fraction of the army that is composed of cavalry.
+    artillery_weight = 0.6                  # Fraction of the army that is composed of artillery.
+
+    cavalry_cap = 6                         # Mercenary company will never have more than this many cavalry.
+
+	sprites = { dlc001_orl_sprite_pack dlc049_FRA_sprite_pack dlc028_fra_sprite_pack dlc054_fra_sprite_pack fra_base_sprite_pack }
+
+    trigger = {                             # The conditions for the mercenary company to be shown in the mercenary recruitment tab.
+        OR = {
+            has_country_flag = ANJ_befriend_nuns
+        }
+
+        NOT = {
+            has_country_flag = ANJ_nuns_reformed
+        }
+    }
+
+    modifier = {
+        may_recruit_female_generals = yes
+        female_advisor_chance = 1.0
+        fire_damage = 0.2
+		discipline = 0.05
+    }
+}
+
+merc_nuns_of_orleans_reformed = {
+    regiments_per_development = 0.04        # Size of the mercenary company based on the recruiting country's development. (always rounds down)
+    cost_modifier = 0.5			            # Cost multiplier of the mercenary company. Note that there is a base +50% maintenance cost on mercenaries applied after this multiplier.
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+    home_province = 184                 # Mercenary company's province of origin. Distance determines recruitment time and range. If unspecified, will be a local company.
+
+    cavalry_weight = 0.3                    # Fraction of the army that is composed of cavalry.
+    artillery_weight = 0.6                  # Fraction of the army that is composed of artillery.
+
+    cavalry_cap = 6                         # Mercenary company will never have more than this many cavalry.
+
+	sprites = { dlc001_orl_sprite_pack dlc049_FRA_sprite_pack dlc028_fra_sprite_pack dlc054_fra_sprite_pack fra_base_sprite_pack }
+
+    trigger = {                             # The conditions for the mercenary company to be shown in the mercenary recruitment tab.
+            has_country_flag = ANJ_befriend_nuns
+            has_country_flag = ANJ_nuns_reformed
+
+    }
+
+    modifier = {
+        may_recruit_female_generals = yes
+        female_advisor_chance = 1.0
+        fire_damage = 0.25
+		discipline = 0.1
+    }
+}

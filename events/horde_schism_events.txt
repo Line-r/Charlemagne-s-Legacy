@@ -1,0 +1,148 @@
+namespace = horde_schism_events
+
+country_event = {
+	id = horde_schism_events.1
+	title = horde_schism_events.1.t
+	desc = horde_schism_events.1.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "horde_schism_events.1.a"
+
+		every_ally = {
+			break_alliance = root
+		}
+
+		every_known_country = {
+			limit = {
+				ai = yes
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = dying_horde
+			}
+		}
+
+		add_stability = -6
+	}
+}
+
+country_event = {
+	id = horde_schism_events.2
+	title = horde_schism_events.2.t
+	desc = horde_schism_events.2.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = GLH
+		has_disaster = horde_schisms
+	}
+
+	mean_time_to_happen = {
+		days = 3650
+
+		modifier = {
+			factor = 0.2
+			is_at_war = yes
+		}
+	}
+
+	option = {
+		name = "horde_schism_events.2.a"
+
+	}
+
+	immediate = {
+		every_owned_province = {
+			limit = {
+				culture_group = east_slavic
+			}
+
+			add_core = KRU
+		}
+		release = KRU
+
+
+		hidden_effect = {
+			KRU = {
+				add_manpower = 40
+				add_treasury = 500
+				declare_war_with_cb = {
+					casus_belli = cb_border_war
+					who = GLH
+					war_goal_province = 1082
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	hidden = yes
+	id = horde_schism_events.3
+	title = horde_schism_events.3.t
+	desc = horde_schism_events.3.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	mean_time_to_happen = {
+		days = 5
+	}
+	fire_only_once = yes
+
+	trigger = {
+		ai = yes
+		is_year = 1449
+	}
+
+	option = {
+		add_horde_unity = -70
+	}
+}
+
+country_event = {
+	id = horde_schism_events.4
+	title = horde_schism_events.4.t
+	desc = horde_schism_events.4.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = GLH
+		has_disaster = horde_schisms
+	}
+
+	mean_time_to_happen = {
+		days = 1825
+
+		modifier = {
+			factor = 0.3
+			is_at_war = yes
+		}
+	}
+
+	option = {
+		name = "horde_schism_events.2.a"
+	}
+
+	immediate = {
+		arkhangelsk_area = {
+			add_core = AKH
+		}
+
+		release = AKH
+
+
+		hidden_effect = {
+			AKH = {
+				add_manpower = 15
+				add_treasury = 500
+				declare_war_with_cb = {
+					casus_belli = cb_border_war
+					who = GLH
+					war_goal_province = 4258
+				}
+			}
+		}
+	}
+}

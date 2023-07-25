@@ -1,0 +1,28 @@
+bookmark =
+{
+	#west european bookmarks
+	name = "WEST_EUROPE_BOOKMARK"
+	desc = "WEST_EUROPE_DESC"
+	date = 1444.11.11
+
+	center = 1744
+
+
+	country = BUR
+	country = FRA
+	country = TOU
+	country = ENG
+	country = SCO
+	country = MEC
+	country = LON
+	country = VAL
+	country = GRA
+	country = BRB
+	country = FLA
+	country = HAI
+
+	easy_country = ENG
+	easy_country = FRA
+	easy_country = LON
+	
+}

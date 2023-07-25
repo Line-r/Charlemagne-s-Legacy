@@ -1,0 +1,8 @@
+spriteTypes = {
+	spriteType = {
+	 name = "GFX_disaster_turkish_revolution"
+	 texturefile = "gfx//interface//disasters//aspiration_for_liberty.dds"
+	 noOfFrames = 3
+	 loadType = "INGAME"
+	}
+   }

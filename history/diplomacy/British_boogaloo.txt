@@ -1,0 +1,30 @@
+vassal = {
+	first = WSX
+	second = WLS
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "heptarchic_subject"
+	first = WSX
+	second = NOL
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "heptarchic_subject"
+	first = WSX
+	second = ANG
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+dependency = {
+	subject_type = "heptarchic_subject"
+	first = WSX
+	second = MEC
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}

@@ -1,0 +1,35 @@
+swabian_war_council_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 13
+	available = {
+		tag = SWA
+		has_country_flag = swa_warcouncil_established
+	}
+
+	powers = {
+		swabian_war_council_power = {
+			max = 100
+			base_monthly_growth = -0.5
+			scaled_modifier = {
+				modifier = {
+					manpower_recovery_speed = 0.50
+					land_morale = 0.15
+					discipline = 0.10
+					war_exhaustion = -0.3
+					defensiveness = 0.25
+				 }
+			}
+
+			reverse_scaled_modifier = {
+				 modifier = {
+					manpower_recovery_speed = -0.80
+					land_morale = -0.25
+					discipline = -0.20
+					war_exhaustion = 0.5
+					defensiveness = -0.33
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,8 @@
+spriteTypes = {
+	spriteType = {
+	 name = "GFX_disaster_horde_schisms"
+	 texturefile = "gfx//interface//disasters//horde_schisms.dds"
+	 noOfFrames = 3
+	 loadType = "INGAME"
+	}
+   }

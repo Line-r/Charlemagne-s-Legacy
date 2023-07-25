@@ -1,0 +1,41 @@
+country_decisions = {
+	unite_sardinia_corsica = {
+		major = yes
+		potential = {
+			OR = {
+				tag = SAR
+				tag = COR
+			}
+		}
+		
+		allow = {
+			OR = {
+				AND = {
+					tag = COR
+					NOT = {exists = SAR}
+				}
+				AND = {
+					tag = SAR
+					NOT = {exists = COR}
+				}
+			}
+			corsica_sardinia_area = {
+				type = all
+				is_core = root
+			}
+
+		}
+
+		effect = {
+			
+			change_tag = SRC
+
+
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+
+		}
+	}
+}

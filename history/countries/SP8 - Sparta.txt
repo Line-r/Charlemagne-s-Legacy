@@ -1,0 +1,22 @@
+government = republic
+add_government_reform = sparta_merchant_republic
+government_rank = 1
+primary_culture = spartan
+religion = catholic
+technology_group = western
+capital = 4955	#Athens
+fixed_capital = 4955
+add_historical_rival = ATH
+add_historical_rival = BYZ
+add_historical_friend = TR8
+
+1420.1.1 = {
+	monarch = {
+		name = "Menelaus"
+		dynasty = "Atreus"
+		birth_date = 1402.1.8
+		adm = 3
+		dip = 2
+		mil = 5
+	}
+}

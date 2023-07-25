@@ -1,0 +1,29 @@
+defined_text = {
+    name = fInfLoc
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = fInfluence
+				value = 1
+			}
+		}
+		localisation_key = fInfLocKey
+	}
+}
+
+defined_text = {
+	name = dInfLoc
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+			which = dInfluence
+			value = 1
+		}
+		}
+
+		localisation_key = dInfLocKey
+	}
+
+}

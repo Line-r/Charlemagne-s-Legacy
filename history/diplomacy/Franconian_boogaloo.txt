@@ -1,0 +1,13 @@
+vassal = {
+	first = WBG
+	second = NSA
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+vassal = {
+	first = ANS
+	second = ROT
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}

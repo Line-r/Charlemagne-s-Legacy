@@ -1,0 +1,193 @@
+wsx_initial_missions_3 = {
+	slot = 3
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = WSX
+	}
+
+	wsx_aftermath_of_the_heptarchic_wars = {
+		position = 1
+		icon = mission_unknown_mission
+
+		trigger = {
+			all_subject_country = {
+				NOT = {
+					liberty_desire = 10
+				}
+			}
+
+			stability = 0
+		}
+
+		effect = {
+			add_stability = 2
+
+			country_event = {
+				id = wsx_events.1
+			}
+		}
+	}
+}
+
+wsx_british_conquest_3 = {
+	slot = 3
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = WSX
+		has_country_flag = wsx_england_path
+	}
+
+
+}
+
+
+wsx_angevin_conquest_2 = {
+	slot = 2
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = WSX
+		has_country_flag = wsx_angevin_path
+	}
+
+	wsx_beaches_of_normandy = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			wsx_the_channel_landing_fleet
+		}
+
+		trigger = {
+			normandy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			add_accepted_culture = normand
+			normandy_area = {
+				add_province_modifier = {
+					name = wsx_william_the_reconquerer
+					duration = 9125
+				}
+			}
+		}
+	}
+
+}
+
+wsx_angevin_conquest_3 = {
+	slot = 3
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = WSX
+		has_country_flag = wsx_angevin_path
+	}
+
+	wsx_the_channel_landing_fleet = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			wsx_aftermath_of_the_heptarchic_wars
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					num_of_transport = 10
+					navy_size = ANJ
+				}
+				NOT = {
+					exists = ANJ
+				}
+			}
+
+		}
+
+		effect = {
+			normandy_area = {
+				add_core = root
+			}
+			loire_area = {
+				add_core = root
+			}
+
+			add_country_modifier = {
+				name = wsx_onwards_to_normandy
+				duration = 3650
+			}
+		}
+	}
+
+
+	wsx_restoration_of_the_angevins = {
+		position = 4
+		icon = mission_unknown_mission
+		required_missions = {
+			wsx_beaches_of_normandy
+			wsx_return_to_angers
+		}
+
+
+		trigger = {
+			owns_core_province = 178
+			is_at_war = no
+			stability = 1
+		}
+
+		effect = {
+			country_event = {
+				id = wsx_events.2
+			}
+		}
+	}
+}
+
+
+wsx_angevin_conquest_4 = {
+	slot = 4
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = WSX
+		has_country_flag = wsx_angevin_path
+	}
+
+	wsx_return_to_angers = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			wsx_the_channel_landing_fleet
+		}
+
+		trigger = {
+			loire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			178 = {
+				add_base_tax = 2
+			}
+
+			add_legitimacy = 20
+			add_prestige = 15
+		}
+	}
+}

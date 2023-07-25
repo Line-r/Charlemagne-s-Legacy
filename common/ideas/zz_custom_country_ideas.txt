@@ -1,0 +1,529 @@
+TOU_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		global_manpower_modifier = 0.20
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}	
+
+	trigger = {
+        OR = {
+            tag = TOU
+            tag = OCC
+        }
+		
+	}
+	free = yes		#will be added at load.
+	
+	french_language_in_all_courts = {
+		diplomatic_upkeep = 1
+	}
+	elan = {
+		land_morale = 0.20
+	}
+	estates_general = {
+		global_tax_modifier = 0.1
+	}
+	native_trading_principles = {
+		native_uprising_chance = -0.5
+		native_assimilation = 0.5
+	}
+	vauban_fortifications = {
+		fort_maintenance_modifier = -0.2
+	}
+	the_philosophes = {
+		technology_cost = -0.1
+	}
+	liberty_egalite_fraternity = {
+		tolerance_heathen = 2
+		tolerance_heretic = 2
+	}
+}
+
+
+SWI_ideas = {
+	start = {
+		merc_maintenance_modifier = -0.15
+		infantry_power = 0.1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		OR = {
+			tag = BRN
+			tag = FRB
+			tag = SLT
+			tag = BSL
+			tag = LUZ
+			tag = UNT
+			tag = ZUG
+			tag = SCH
+			tag = GLR
+			tag = HUS
+			tag = APP
+			tag = URI
+			tag = TES
+			tag = SGL
+		}
+	}
+	free = yes  #will be triggered at load
+	
+	swiss_mercenaries = {
+		mercenary_discipline = 0.05
+		mercenary_manpower = 0.5
+	}
+	swiss_tolerance = {
+		tolerance_heretic = 2
+	}
+	the_swiss_confederation = {
+		stability_cost_modifier = -0.1
+	}
+	alpine_defensiveness = {
+		fort_maintenance_modifier = -0.2
+		defensiveness = 0.25
+	}
+	oasis_of_peace_and_prosperity = {
+		development_cost = -0.1
+	}
+	haven_for_refugees = {
+		prestige = 1
+	}
+	clockwork = {
+		production_efficiency = 0.1
+	}
+}
+
+NOR_ideas = {
+	start = {
+		global_sailors_modifier = 0.25
+		ship_durability = 0.10
+	}
+	
+	bonus = {
+		trade_steering = 0.20
+	}
+	
+	trigger = {
+		tag = VIN
+	}
+	free = yes
+	
+	natural_seamanship = {
+		naval_morale = 0.20
+		
+	}
+	call_of_our_forefathers = {
+		range = 0.33
+		may_explore = yes
+	}
+	pioneer_spirit = {
+		colonists = 1
+	}
+	nor_shipbuilding = {
+		global_ship_cost = -0.1
+	}
+	seize_the_opportunity = {
+ 		global_trade_power = 0.1
+	}
+	nor_fishing = {
+		production_efficiency = 0.1
+	}
+	write_new_sagas = {
+		prestige = 1
+		discipline = 0.025
+	}
+}
+
+DUA_ideas = {
+	free = yes
+
+	start = {
+		naval_morale = 0.20
+		global_manpower_modifier = 0.20
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}	
+
+	trigger = {
+		tag = DUA
+	}
+	french_language_in_all_courts = {
+		diplomatic_upkeep = 1
+	}
+	elan = {
+		land_morale = 0.20
+	}
+	city_upon_a_hill = {
+		global_colonial_growth = 20
+	}
+	native_trading_principles = {
+		native_uprising_chance = -0.5
+		native_assimilation = 0.5
+	}
+	vauban_fortifications = {
+		fort_maintenance_modifier = -0.2
+	}
+	the_philosophes = {
+		technology_cost = -0.1
+	}
+	british_industrialization = {
+		global_trade_goods_size_modifier = 0.2
+	}
+}
+
+MAC_ideas = {
+	start = {
+		advisor_cost = -0.10
+		tolerance_own = 3
+	}
+	
+	bonus = {
+		prestige = 1
+	}
+	
+	trigger = {
+		tag = MAC
+	}
+	free = yes
+	
+	regulations_for_mercenaries = {
+		merc_maintenance_modifier = -0.15
+	}
+	repopulation_of_countryside = {
+		global_trade_goods_size_modifier = 0.05
+		global_manpower_modifier = 0.10
+	}
+	byz_state_admin_reform = {
+		global_tax_modifier = 0.10
+	}
+	byz_admin_power = {
+		stability_cost_modifier = -0.1
+	}
+	merchant_class = {
+		global_trade_power = 0.1
+	}
+	new_imperial_army = {
+		discipline = 0.05
+	}
+	ecumenical_patriarch = {
+		global_missionary_strength = 0.03
+	}
+}
+
+
+HEP_ideas = {
+	start = {
+		hostile_attrition = 1.0
+		cavalry_power = 0.1 #Border Reivers
+	}
+	bonus = {
+		missionaries = 1 #Bastion of Catholicism
+	}
+	trigger = {
+		OR = {
+			tag = NOL
+			tag = MEC
+			tag = ANG
+			tag = HEP
+			tag = WSX
+		}
+	}
+	
+	free = yes
+	
+	nol_secure_percy_rule = {
+		legitimacy = 1
+	}
+	nol_memory_of_hegemony = {
+		fabricate_claims_cost = -0.25
+	}
+	nol_cradle_of_british_christianity = {
+		tolerance_own = 1
+	}
+	nol_land_of_castles = {
+		fort_maintenance_modifier = -0.15
+	}
+	nol_lindisfarne_gospels = {
+		prestige = 1
+	}
+	nol_literary_and_philosophical_society = {
+		idea_cost = -0.1
+	}
+	nol_coals_to_newcastle = {
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+
+STY_ideas = {
+	start = {
+		land_morale = 0.10
+		improve_relation_modifier = 0.3
+	}
+	
+	bonus = {
+		heir_chance = 0.50
+	}
+	
+	trigger = {
+		tag = STY
+	}
+	free = yes		#will be added at load.
+
+	imperial_ambitions = {
+		ae_impact = -0.05
+		diplomatic_annexation_cost = -0.15
+	}
+	military_border = {
+		global_garrison_growth = 0.15
+		fort_maintenance_modifier = -0.10
+	}
+	fugger_banks = {
+		inflation_reduction = 0.05
+		interest = -0.5
+	}
+	habsburg_dominance = {
+		diplomatic_reputation = 2
+	}
+	edict_of_restitution = {
+		global_missionary_strength = 0.02
+	}
+	austrian_court = {
+		diplomatic_upkeep = 1
+	}
+	hofkriegsrat = {
+		reinforce_speed = 0.3
+		discipline = 0.05
+	}
+}
+
+NED_ideas = {
+	start = {
+		global_sailors_modifier = 0.25
+		naval_forcelimit_modifier = 0.50
+	}
+	
+	bonus = {
+		trade_efficiency = 0.15
+	}
+
+	trigger = {
+		OR = {
+			tag = NED
+			tag = HOL
+			tag = ZEE
+		}
+	}
+	free = yes		#will be added at load.
+	
+	amsterdam_wisselbank = {
+		inflation_reduction = 0.1
+	}
+	dutch_trading_spirit = {
+		merchants = 1
+		trade_range_modifier = 0.10
+	}
+	polders = {
+		development_cost = -0.1
+	}
+	instructie_voor_de_admiraliteiten = {
+		leader_naval_fire = 2
+		allowed_marine_fraction = 0.25
+	}
+	embrace_humanism = {
+		tolerance_heretic = 3
+	}
+	army_sappers = {
+		siege_ability = 0.10
+	}
+	platoon_fire = {
+		fire_damage = 0.1
+	}
+}
+
+FRI_ideas = {
+	start = {
+		production_efficiency = 0.1
+		development_cost = -0.1
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			tag = FRI
+			tag = UFR
+		}
+	}
+	free = yes
+	
+	fri_coastal_industry = {
+		global_ship_trade_power = 0.1
+	}
+	fri_upstalsboom_league = {
+		state_maintenance_modifier = -0.25
+	}
+	fri_dutch_courage = {
+		land_morale = 0.1
+	}
+	fri_zuiderzee_settlements = {
+		build_cost = -0.1
+		build_time = -0.1
+	}
+	fri_flooding_polders = {
+		defensiveness = 0.15
+	}
+	fri_mennonism = {
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+	}
+	fri_brothers_arms = {
+		num_accepted_cultures = 1
+		global_own_trade_power = 0.1
+	}
+}
+
+FLA_ideas = {
+	start = {
+		global_trade_goods_size_modifier = 0.1
+		embracement_cost = -0.1
+	}
+	
+	bonus = {
+		trade_efficiency = 0.10
+	}
+	
+	trigger = {
+		OR = {
+			tag = FLA
+			tag = FLN
+			tag = LIM
+			tag = ANW
+		}
+	}
+	free = yes
+	
+	fla_cloth = {
+		production_efficiency = 0.15
+	}
+	fla_land_reclamation = {
+		development_cost = -0.1
+	}
+	fla_beeldenstorm = {
+		global_heretic_missionary_strength = 0.02
+	}
+	fla_painters = {
+		global_institution_spread = 0.1
+	}
+	fla_ship_building = {
+		light_ship_cost = -0.20
+	}
+	fla_university = {
+		technology_cost = -0.05
+	}
+	fla_noose_bearers = {
+		hostile_attrition = 1
+	}
+}
+
+MAM_ideas = {
+	start = {
+		trade_steering = 0.25
+		cavalry_power = 0.10
+	}
+	
+	bonus = {
+		global_prov_trade_power_modifier = 0.25
+	}
+	
+	trigger = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+	}
+	free = yes
+	
+	red_sea_trade = {
+		global_trade_power = 0.05
+		trade_range_modifier = 0.10
+	}
+	monuments_to_greatness = {
+		prestige = 1
+	}
+	purchase_new_mamelukes = {
+		manpower_recovery_speed = 0.15
+	}
+	mam_army_reform = {
+		discipline = 0.05
+	}
+	reform_fellah_system = {
+		production_efficiency = 0.1
+	}
+	reformed_succession = {
+		stability_cost_modifier = -0.15
+	}
+	mam_monopoly_ports = {
+		trade_efficiency = 0.10
+	}
+}
+
+TRP_ideas = {
+	start = {
+		trade_goods_size_modifier = 0.20
+		no_religion_penalty = yes
+		mercenary_cost = -0.33
+	}
+
+	bonus = {
+		light_ship_cost = -0.50
+	}
+
+	trigger = {
+		tag = TRP
+	}
+
+	free = yes
+
+	an_art_perfected = {
+		global_prov_trade_power_modifier = 0.25
+	}
+
+	mistress_of_the_sea = {
+		galley_power = 0.15
+		galley_cost = -0.20
+	}
+
+	dominate_the_sea = {
+		naval_forcelimit_modifier = 0.33
+	}
+
+	further_reaches = {
+		colonists = 1
+		range = 0.25
+	}
+
+	master_of_puppets = {
+		vassal_income = 0.2
+		vassal_forcelimit_bonus = 0.33
+	}
+
+	desert_development = {
+		development_cost = -0.10
+	}
+
+	a_seaworthy_army = {
+		allowed_marine_fraction = 0.2
+		movement_speed_onto_off_boat_modifier = 0.50
+	}
+
+}

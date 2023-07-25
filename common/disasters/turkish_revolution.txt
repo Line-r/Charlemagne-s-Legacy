@@ -1,0 +1,75 @@
+turkish_revolution = {
+	potential = {
+        tag = RUM
+		NOT = {has_country_flag = resolved_turkish_revolution}
+    }
+
+    can_start = {
+        has_any_disaster = no
+		NOT = {legitimacy = 60}
+       	OR = {
+			is_year = 1620
+			AND = {
+					has_country_flag = executed_ayhan
+			}
+		}
+    }
+
+    can_stop = {
+        has_any_disaster = yes
+        stability = 3
+    }
+
+    progress = {
+        modifier = {
+            factor = 1
+			NOT = {stability = 0}
+        }
+
+		modifier = {
+			factor = 2
+			NOT={stability = -1}
+		}
+
+		modifier = {
+			factor = 4
+			unrest = 5
+		}
+    }
+
+    can_end = {
+		OR = {
+			tag = TUR
+			had_country_flag = {
+				flag = turkish_revolts
+				days = 9125
+			}
+		}
+
+    }
+
+    modifier = {
+        global_unrest = 5
+		stability_cost_modifier = 0.5
+		can_not_declare_war = yes
+    }
+
+	on_start = turkish_revolution.1
+	on_start_effect = {
+		set_country_flag = turkish_revolts
+	}
+
+	on_monthly = {
+        events = {
+        }
+        random_events = { 
+                1000 = 0
+                100 = turkish_revolution.2
+                80 = turkish_revolution.3
+				50 = turkish_revolution.4
+				30 = turkish_revolution.5
+        }
+}
+
+on_end = turkish_revolution.7
+}

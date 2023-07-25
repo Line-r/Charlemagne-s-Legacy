@@ -1,0 +1,19 @@
+government = republic
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = eastern
+religion = catholic
+primary_culture = polish
+capital = 258
+
+
+1429.12.8 = {
+	monarch = {
+		name = "Iwan"
+		dynasty = "Premyslid"
+		birth_date = 1414.1.1
+		dip = 5
+		adm = 2
+		mil = 4
+	}
+}

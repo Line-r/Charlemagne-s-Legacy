@@ -1,0 +1,18 @@
+country_decisions = {
+	siegfried_sanity = {
+		major = yes
+		potential = {
+			tag = SWA
+			has_country_flag = swa_augsburg_accord
+			has_ruler_flag = swa_siegfried
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			
+		}
+	}
+}

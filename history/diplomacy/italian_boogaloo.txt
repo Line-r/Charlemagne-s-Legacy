@@ -1,0 +1,6 @@
+union = {
+	first = SIC
+	second = NAP
+	start_date = 1415.1.1
+	end_date = 1558.1.1
+}

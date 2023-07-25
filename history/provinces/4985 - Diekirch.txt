@@ -1,0 +1,23 @@
+# 94 Luxembourg - Principal cities: Luxembourg
+
+owner = LUX
+hre = yes
+controller = LUX
+add_core = LUX 
+capital = "Dikrech"
+is_city = yes
+culture = wallonian
+religion = catholic 
+base_tax = 5
+base_production = 5
+trade_goods = wool
+base_manpower = 2
+add_core = LUX
+fort_15th = yes
+
+
+
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

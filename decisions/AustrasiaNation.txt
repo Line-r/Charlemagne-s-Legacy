@@ -1,0 +1,66 @@
+country_decisions = {
+	form_austrasia = {
+		major = yes
+
+		potential = {
+			OR = {
+				culture = hessian
+				culture = flemish
+			}
+			NOT = {
+				exists = AUT
+			}
+		}
+
+		allow = {	
+			188 = {
+				is_core = root
+				owned_by = root
+			}
+			lorraine_area = {
+				type = all
+				owned_by = root
+			}
+			lower_rhineland_area = {
+				type = all
+				owned_by = root
+			}
+			north_rhine_area = {
+				type = all
+				owned_by = root
+			}
+			palatinate_area = {
+				type = all
+				owned_by = root
+			}
+			hesse_area = {
+				type = all
+				owned_by = root
+			}
+			north_brabant_area = {
+				type = all
+				owned_by = root
+			}
+			brabant_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			change_tag = AUT
+			swap_non_generic_missions = yes
+
+			add_accepted_culture = hessian
+			add_accepted_culture = flemish
+
+			set_government_rank = 2
+			add_prestige = 25
+
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

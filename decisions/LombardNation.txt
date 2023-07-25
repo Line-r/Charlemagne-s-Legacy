@@ -1,0 +1,49 @@
+country_decisions = {
+	kingdom_of_lombardy = {
+		major = yes
+
+		potential = {
+			OR = {
+				culture = lombard
+				culture = venetian
+			}
+			NOT = {
+				exists = LOM
+			}
+			NOT = {
+				tag = ECC
+			}
+		}
+
+		allow = {	
+			venetia_area = {
+				type = all
+				owned_by = root
+			}
+			po_valley_area = {
+				type = all
+				owned_by = root
+			}
+			lombardy_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			change_tag = LOM
+			swap_non_generic_missions = yes
+
+			add_accepted_culture = lombard
+			add_accepted_culture = venetian
+
+			set_government_rank = 2
+			add_prestige = 25
+
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

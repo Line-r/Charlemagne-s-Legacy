@@ -1,0 +1,258 @@
+namespace = swa_events
+
+country_event = {
+	id = swa_events.1
+	title = swa_events.1.t
+	desc = swa_events.1.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = swa_events.1.a
+		change_tag = SWA
+		swap_non_generic_missions = yes
+
+		change_government_to_republic = yes
+
+		add_government_reform = swabian_confederacy
+
+		override_country_name = SWABIAN_CON
+		
+		hidden_effect = {
+			set_country_flag = swa_swabian_confederacy
+		}
+	}
+}
+
+country_event = {
+	id = swa_events.2
+	title = swa_events.2.t
+	desc = swa_events.2.d
+
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWA
+		owns_or_non_sovereign_subject_of = 1868
+	}
+
+	mean_time_to_happen = {
+		months = 400
+	
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 0 }
+		}
+	}
+
+	option = {
+		name = swa_events.2.a
+
+		add_stability = -1
+		add_prestige = -15
+
+		1868 = {
+			add_province_modifier = {
+				name = swa_siegfried_unrest
+				duration = 3650
+			}
+		}
+		
+
+		hidden_effect = {
+			set_country_flag = swa_siegfried_appears
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+country_event = {
+	id = swa_events.3
+	title = swa_events.3.t
+	desc = swa_events.3.d
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = swa_events.3.a
+		set_country_flag = swa_swabian_junta
+		add_government_reform = swabian_military_junta
+
+		add_stability = -3
+
+
+		define_ruler = {
+			name = "Siegfried Barbarossa"
+			adm = 5
+			dip = 4
+			mil = 6
+			age = 26
+			culture = root
+		}
+
+		define_ruler_to_general = {
+			fire = 6
+			shock = 6
+			manuever = 4
+			siege = 4
+		}
+
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 2	
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3	
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+
+
+		add_country_modifier = {
+			name = swa_military_support_lost
+			duration = -1
+		}
+
+
+		hidden_effect = {
+			add_ruler_personality = strict_personality
+			add_ruler_personality = charismatic_negotiator_personality
+			set_ruler_flag = swa_siegfried
+
+			every_owned_province = {
+				add_province_modifier = {
+					name = swa_loyalist_province
+					duration = -1
+				}
+				set_local_autonomy = 90
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = swa_events.4
+	title = swa_events.4.t
+	desc = swa_events.4.d
+
+	hidden = yes
+
+	trigger = {
+		tag = SWA
+		any_owned_province = {
+			has_province_modifier = swa_loyalist_province
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		random_owned_province = {
+			limit = {
+				has_province_modifier = swa_loyalist_province
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3	
+			}
+			remove_province_modifier = swa_loyalist_province
+		}
+	}
+
+}
+
+country_event = {
+	#Augsburg accord
+	id = swa_events.5
+	title = swa_events.5.t
+	desc = swa_events.5.d
+
+	is_triggered_only = yes
+
+
+	option = {
+		1868 = {
+			move_capital_effect = yes
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+		}
+
+		add_government_reform = swabian_empire
+		restore_country_name = yes
+
+		hidden_effect = {
+			clr_country_flag = swa_swabian_junta
+			set_country_flag = swa_augsburg_accord
+
+			set_variable = {
+				which = swaSiegfriedSanity
+				value = 0
+			}
+		}
+		
+	}
+
+	immediate = {
+		set_country_flag = swa_swabian_empire
+	}
+	
+}
+
+country_event = {
+	#Apply totalenkrieg increase
+	id = swa_events.6
+	hidden = yes
+
+	trigger = {
+		tag = SWA
+		NOT = {
+			has_country_flag = swa_tk_on
+		}
+		is_at_war = yes
+		has_government_mechanic = swabian_war_council_mechanic
+	}
+
+	option = {
+		add_country_modifier = {
+			name = swa_tk_increase
+			duration = -1
+		}
+
+		set_country_flag = swa_tk_on
+	}
+
+}
+
+country_event = {
+	#Apply totalenkrieg decrease
+	id = swa_events.7
+	hidden = yes
+
+	trigger = {
+		tag = SWA
+		has_country_flag = swa_tk_on
+		is_at_war = no
+		has_government_mechanic = swabian_war_council_mechanic
+	}
+
+	option = {
+		remove_country_modifier = swa_tk_increase
+		clr_country_flag = swa_tk_on
+	}
+
+}

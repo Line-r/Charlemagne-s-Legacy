@@ -1,0 +1,43 @@
+namespace = athenian_events
+
+country_event = {
+	id = athenian_events.1
+	title = athenian_events.1.t
+	desc = athenian_events.1.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		has_discovered = 146
+	}
+
+	option = {
+		name = "athenian_events.1.a"
+
+		inherit = AR8
+		inherit = PH8
+		inherit = PY8
+		inherit = OL8
+		inherit = CO8
+
+		inherit = TH8
+		inherit = ER8
+		inherit = DE8
+		inherit = IT8
+		inherit = SO8
+		inherit = OI8
+		inherit = LA8
+		inherit = HO8
+		
+		inherit = CS8
+		inherit = CRT
+		inherit = NAX
+		inherit = KNI
+
+		change_tag = GRE
+		swap_non_generic_missions = yes
+	}
+}

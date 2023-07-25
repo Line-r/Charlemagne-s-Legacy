@@ -1,0 +1,21 @@
+vassal = {
+	first = FRA
+	second = BOI
+	start_date = 1444.1.1
+	end_date = 1821.1.1
+}
+
+
+vassal = {
+	first = TOU
+	second = DAU
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}
+
+vassal = {
+	first = TOU
+	second = AVI
+	start_date = 1444.1.1
+	end_date = 1820.1.1
+}

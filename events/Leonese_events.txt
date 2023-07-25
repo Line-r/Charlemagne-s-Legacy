@@ -1,0 +1,310 @@
+namespace = leonese_events
+
+country_event = {
+	id = leonese_events.1
+	title = leonese_events.1.t
+	desc = leonese_events.1.d
+	picture = PORTUGUESE_MERCHANTS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+	major_trigger = {
+		has_discovered = 217
+	}
+
+	trigger = {
+		tag = LON
+		alentejo_area = {
+			type = all
+			owned_by = root
+			religion = catholic
+		}
+		has_heir = yes
+		heir_age = 15
+		has_female_heir = no
+	}
+
+	option = {
+		name = "leonese_events.1.a"
+		alentejo_area = {
+			add_core = POR
+			change_culture = portugese
+		}
+
+		release = POR
+		create_union = POR
+
+
+		hidden_effect = {
+			POR = {
+				add_idea_group = exploration_ideas
+			}
+		}
+
+	}
+
+	option = {
+		name = "leonese_events.1.b"
+		add_prestige = 10
+		add_legitimacy = 5
+	}
+}
+
+country_event = {
+	id = leonese_events.2
+	title = leonese_events.2.t
+	desc = leonese_events.2.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = leonese_events.2.a
+		every_owned_province = {
+			limit = {
+				region = maghreb_region
+			}
+			add_core = MUR
+		}
+
+		release = MUR
+		create_union = MUR
+	}
+}
+
+country_event = {
+	id = leonese_events.3
+	title = "leonese_events.3.t"
+	desc = "leonese_events.3.d"
+	picture = DIPLOMACY_eventPicture
+
+	major = yes
+	
+	fire_only_once = yes
+	
+	
+	trigger = {
+		NOT = { exists = SPA }
+		OR = {
+			AND = {
+				tag = LON
+				NOT = { war_with = CAS }
+				is_subject = no
+				CAS = {
+					exists = yes
+					ai = yes
+					was_player = no
+					is_subject = no
+					is_neighbor_of = ROOT
+					NOT = { is_in_war = { attacker_leader = CAS } }
+					NOT = { is_in_war = { defender_leader = CAS } }
+					NOT = { is_in_war = { casus_belli = cb_independence_war } }
+				}
+			}
+			AND = {
+				tag = CAS
+				NOT = { war_with = LON }
+				is_subject = no
+				ai = no
+				LON = {
+					exists = yes
+					ai = yes
+					was_player = no
+					is_subject = no
+					is_neighbor_of = ROOT
+					NOT = { is_in_war = { attacker_leader = LON } }
+					NOT = { is_in_war = { defender_leader = LON } }
+					NOT = { is_in_war = { casus_belli = cb_independence_war } }
+				}
+			}
+		}
+		is_year = 1450
+		is_subject = no
+		num_of_cities = 10
+		OR = {
+			AND = {
+				CAS = { is_female = yes }
+				LON = { is_female = no }
+			}
+			AND = {
+				CAS = { is_female = no }
+				LON = { is_female = yes }
+			}
+			LON = {
+				ai = yes
+				has_regency = yes
+			}
+			CAS = {
+				ai = yes
+				has_regency = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.1
+			OR = {
+				AND = {
+					tag = CAS
+					LON = {
+						has_regency = no 
+					}
+				}
+				AND = {
+					tag = LON
+					CAS = { 
+						has_regency = no 
+					}
+				}
+			}
+		}
+	}
+	
+	
+	option = {		# Let us bind their Dynasty to ours
+		name = "flavor_spa.EVTOPTA3716"
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { tag = LON }
+			create_union = CAS
+			add_opinion = {
+				who = CAS
+				modifier = spa_iberian_wedding
+			}
+			CAS = {
+				add_opinion = {
+					who = ROOT
+					modifier = spa_iberian_wedding
+				}
+				add_liberty_desire = -50
+			}
+			every_known_country = {
+				limit = {
+					marriage_with = CAS
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = spa_iberian_wedding_negative
+				}
+			}
+		}
+		if = {
+			limit = { tag = CAS }
+			create_union = LON
+			add_opinion = {
+				who = LON
+				modifier = spa_iberian_wedding
+			}
+			LON = {
+				add_opinion = {
+					who = ROOT
+					modifier = spa_iberian_wedding
+				}
+				add_liberty_desire = -50
+			}
+			every_known_country = {
+				limit = {
+					marriage_with = LON
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = spa_iberian_wedding_negative
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = noble_rebels
+				size = 2
+			}
+		}
+	}
+	option = {		# No let us marry a local talent instead
+		name = "flavor_spa.EVTOPTB3716"
+		ai_chance = { factor = 0 }
+		add_stability_or_adm_power = yes
+		if = {
+			limit = { tag = CAS }
+			LON = {
+				add_opinion = {
+					who = ROOT
+					modifier = spa_declined_iberian_wedding
+				}
+			}
+		}
+		if = {
+			limit = { tag = LON }
+			CAS = {
+				add_opinion = {
+					who = ROOT
+					modifier = spa_declined_iberian_wedding
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_regency = no
+				has_consort = no
+				has_government_attribute = queen
+			}
+			define_consort = {
+				ADM = 2
+				MIL = 2
+				DIP = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = leonese_events.4
+	title = leonese_events.4.t 
+	desc = leonese_events.4.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = LON
+		has_country_modifier = pride_of_iberia
+		NOT = { has_flagship = yes }
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		remove_country_modifier = pride_of_iberia
+	}
+	
+	option = { 
+		name = leonese_events.4.a
+	}
+}
+
+country_event = {
+	id = leonese_events.5
+	title = leonese_events.5.t
+	desc = leonese_events.5.d
+	picture = LAND_MILITARY_eventPicture
+
+	major = yes
+	major_trigger = {
+		technology_group = western
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = leonese_events.5.a
+		add_army_tradition = 20
+		add_mil_power = 150
+		add_country_modifier = {
+			name = superiority_above_all
+			duration = -1
+		}
+	}
+}

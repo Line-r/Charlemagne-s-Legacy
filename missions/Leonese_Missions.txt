@@ -1,0 +1,1352 @@
+leon_path_left = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = LON
+	}
+	
+
+	integrate_galicia = {
+		position = 1
+		icon = mission_portuguese_interference
+
+		provinces_to_highlight = {
+			area = galicia_area
+		}
+
+		trigger = {
+			galicia_area = {
+				type = all
+				owned_by = root
+			}
+		}
+
+		effect = {
+			add_accepted_culture = galician
+			add_country_modifier = {
+				name = galician_integration
+				duration = -1
+			}
+		}
+	}
+
+	develop_the_heartland = {
+		position = 4
+		icon = mission_great_trading_houses
+
+		required_missions = {
+			rooting_out_the_infidels
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 208
+
+				province_id = 4553
+	
+				province_id = 216
+
+			}
+		}
+
+		trigger = {
+			208 = {
+				development = 20
+			}
+
+			4553 = {
+				development = 15
+			}
+
+			216 = {
+				development = 15
+			}
+		}
+
+		effect = {
+			leon_area = {
+				change_trade_goods = cloth
+				add_province_modifier = {
+					name = leonese_cloth_halls
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	army_reform = {
+		position = 5
+		icon = mission_industria_sedera
+
+		required_missions = {
+			develop_the_heartland
+		}
+
+		trigger = {
+			army_professionalism = 0.15
+			army_tradition = 50
+			army_size_percentage = 0.8
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = lon_army_reform
+				duration = 5475
+			}
+		}
+	}
+
+	tax_reforms = {
+		position = 9
+		icon = adjust_the_general_means
+		required_missions = {
+			iberia_unified
+		}
+
+		provinces_to_highlight = {
+			owned_by = root
+			NOT = {
+				base_tax = 8
+			}
+		}
+
+		trigger = {
+			all_owned_province = {
+				base_tax = 8
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = leonese_tax_reforms
+				duration = -1
+			}
+		}
+	}
+}
+
+leon_path_center = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = LON
+	}
+
+	the_reconquista = {
+		position = 2
+		icon = mission_protect_granada
+		required_missions = {
+			integrate_galicia
+			the_iberian_wedding
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = alentejo_area
+				area = extremadura_area
+				area = lower_andalucia_area
+				area = upper_andalucia_area
+			}
+		}
+
+		trigger = {
+			alentejo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			extremadura_area = {
+				type = all
+
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			lower_andalucia_area = {
+				type = all
+
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			upper_andalucia_area = {
+				type = all
+
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			NOT = {
+				GRA = {
+					any_owned_province = {
+						region = iberia_region
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = lon_completing_the_reconquista
+				duration = 7300
+			}
+
+			
+		}
+
+		
+	}
+
+	rooting_out_the_infidels = {
+		position = 3
+		icon = mission_establish_jesuit_missions
+		required_missions = {
+			the_reconquista
+		}
+
+		provinces_to_highlight = {
+			region = iberia_region
+			NOT = {
+				religion_group = christian
+			}
+		}
+
+		trigger = {
+			iberia_region = {
+				type = all
+				religion_group = ROOT
+			}
+		}
+
+		effect = {
+			northern_morocco_area = {
+				add_permanent_claim = root
+			}
+
+			add_country_modifier = {
+				name = an_example_to_us_all
+				duration = 12775
+			}
+		}
+	}
+
+	kingdom_of_leon_castille = {
+		position = 4
+		icon = mission_castillian_aggression
+		required_missions = {
+			rooting_out_the_infidels
+		}
+
+		provinces_to_highlight = {
+			owned_by = CAS
+		}
+
+		trigger = {
+			NOT = {
+				exists = CAS
+			}
+		}
+
+		effect = {
+			add_accepted_culture = castillian
+			set_government_rank = 2
+			add_country_modifier = {
+				name = castillian_integration
+				duration = -1
+			}
+		}
+	}
+
+	our_god_given_right = {
+		position = 6
+		icon = influence_the_church
+		required_missions = {
+			army_reform
+			kingdom_of_leon_castille
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				owned_by = PAP
+				owned_by = ECC
+			}
+		}
+
+		trigger = {
+			OR = {
+				PAP = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+
+				ECC = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = VAL
+				months = 300
+			}
+
+			valencia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	crown_of_valencia = {
+		position = 7
+		icon = mission_raid_on_valencia
+		required_missions = {
+			our_god_given_right
+		}
+
+		provinces_to_highlight = {
+			area = valencia_area
+		}
+
+		trigger = {
+			valencia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			iberia_region = {
+				add_permanent_claim = root
+			}
+
+			aragon_area = {
+				add_core = CAT
+			}
+		}
+	}
+
+	iberia_unified = {
+		position = 8
+		icon = mission_reclaim_andalucia
+		required_missions = {
+			crown_of_valencia
+		}
+
+		provinces_to_highlight = {
+			region = iberia_region
+		}
+
+		trigger = {
+			iberia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			set_government_rank = 3
+			add_country_modifier = {
+				name = lon_plus_ultra
+				duration = 18250
+			}
+		}
+	}
+
+	university_of_madrid = {
+		position = 9
+		icon = wittenberg_university
+		required_missions = {
+			iberia_unified
+		}
+
+		provinces_to_highlight = {
+			province_id = 217
+		}
+
+		trigger = {
+			217 = {
+				has_building = university
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = madrid_university
+				duration = -1
+			}
+		}
+	}
+
+	viva_iberia = {
+		position = 10
+		icon = hispaniae
+		required_missions = {
+			university_of_madrid
+			tax_reforms
+			expand_the_administration
+		}
+
+		trigger = {
+			prestige = 75
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = viva_iberia
+				duration = -1
+			}
+		}
+	}
+}
+
+
+leon_path_right = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = LON
+	}
+
+	the_iberian_wedding = {
+		position = 1
+		icon = imperial_ascendancy
+
+		provinces_to_highlight = {
+			OR = {
+				area = asturias_area
+				area = castille_area
+				area = toledo_area
+			}
+		}
+
+		trigger = {
+			OR = {
+				overlord_of = CAS
+				AND = {
+					asturias_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+
+					castille_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+
+					toledo_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+				}
+			}
+		}
+
+		effect = {
+			CAS = {
+				add_liberty_desire = -25
+			}
+
+			alentejo_area = {
+				add_permanent_claim = root
+			}
+
+			extremadura_area = {
+				add_permanent_claim = root
+			}
+
+			lower_andalucia_area = {
+				add_permanent_claim = root
+			}
+
+			upper_andalucia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+
+
+	iberian_armada = {
+		position = 4
+		icon = mission_aragonese_navy
+		required_missions = {
+			rooting_out_the_infidels
+		}
+
+		trigger = {
+			navy_size_percentage = 0.8
+			num_of_heavy_ship = 6
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = iberian_armada
+				duration = 5475
+			}
+			northern_morocco_area = {
+				add_permanent_claim = root
+			}
+
+			marrekesh_area = {
+				add_permanent_claim = root
+			}
+
+			western_morocco_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	christian_kingdom_of_morocco = {
+		position = 5
+		icon = mission_new_world_power
+		required_missions = {
+			iberian_armada
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = northern_morocco_area
+				area = marrekesh_area
+				area = western_morocco_area
+			}
+			NOT = {
+				religion_group = christian
+			}
+		}
+
+		trigger = {
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+				religion = root
+			}
+
+			marrekesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+				religion = root
+			}
+
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+				religion = root
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = leonese_events.2
+			}
+		}
+	}
+
+	expand_the_administration = {
+		position = 9
+		icon = contracts_of_correspondence
+		required_missions = {
+			iberia_unified
+		}
+
+		provinces_to_highlight = {
+			owned_by = root
+			local_autonomy = 0.1
+		}
+
+		trigger = {
+			all_owned_province = {
+				NOT = {local_autonomy = 0.1}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = expanded_the_administration
+				duration = -1
+			}
+		}
+	}
+}
+
+lon_exploration_missions_1 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = LON
+	}
+
+
+	pen_and_sword = {
+		position = 2
+		icon = king_of_kings
+		required_missions = {
+			the_iberian_wedding
+		}
+
+		trigger = {
+			if = {
+				limit = {
+					government = monarchy
+					has_government_attribute = heir
+				}
+				OR = {
+					calc_true_if = {
+						desc = emp_hab_spread_dynasties_trigger_tooltip2
+						amount = 4
+						all_country = {
+							OR = {
+								junior_union_with = root
+								dynasty = root
+							}
+							has_opinion = {
+								who = root
+								value = 120
+							}
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = emp_hab_spread_dynasties_trigger_tooltip
+						calc_true_if = {
+							amount = 5
+							europe = {
+								owner = {
+									OR = {
+										tag = root
+										junior_union_with = root
+										dynasty = root
+										AND = {
+											is_colonial_nation = yes
+											overlord = {
+												OR = {
+													tag = root
+													junior_union_with = root
+													dynasty = root
+												}
+											}
+										}
+									}
+								}
+							}
+							asia = {
+								owner = {
+									OR = {
+										tag = root
+										junior_union_with = root
+										dynasty = root
+										AND = {
+											is_colonial_nation = yes
+											overlord = {
+												OR = {
+													tag = root
+													junior_union_with = root
+													dynasty = root
+												}
+											}
+										}
+									}
+								}
+							}
+							africa = {
+								owner = {
+									OR = {
+										tag = root
+										junior_union_with = root
+										dynasty = root
+										AND = {
+											is_colonial_nation = yes
+											overlord = {
+												OR = {
+													tag = root
+													junior_union_with = root
+													dynasty = root
+												}
+											}
+										}
+									}
+								}
+							}
+							south_america = {
+								owner = {
+									OR = {
+										tag = root
+										junior_union_with = root
+										dynasty = root
+										AND = {
+											is_colonial_nation = yes
+											overlord = {
+												OR = {
+													tag = root
+													junior_union_with = root
+													dynasty = root
+												}
+											}
+										}
+									}
+								}
+							}
+							north_america = {
+								owner = {
+									OR = {
+										tag = root
+										junior_union_with = root
+										dynasty = root
+										AND = {
+											is_colonial_nation = yes
+											overlord = {
+												OR = {
+													tag = root
+													junior_union_with = root
+													dynasty = root
+												}
+											}
+										}
+									}
+								}
+							}
+							oceania = {
+								owner = {
+									OR = {
+										tag = root
+										junior_union_with = root
+										dynasty = root
+										AND = {
+											is_colonial_nation = yes
+											overlord = {
+												OR = {
+													tag = root
+													junior_union_with = root
+													dynasty = root
+												}
+											}
+										}
+									}
+								}
+							}
+							new_world = {
+								owner = {
+									OR = {
+										tag = root
+										junior_union_with = root
+										dynasty = root
+										AND = {
+											is_colonial_nation = yes
+											overlord = {
+												OR = {
+													tag = root
+													junior_union_with = root
+													dynasty = root
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				calc_true_if = {
+					amount = 4
+					all_country = {
+						OR = {
+							is_subject_of = root
+							alliance_with = root
+						}
+						has_opinion = {
+							who = root
+							value = 120
+						}
+						custom_trigger_tooltip = {
+							tooltip = same_government_as_root
+							same_govt_as_root_trigger = yes
+						}
+					}
+				}
+			}
+
+			land_forcelimit = 50
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = the_pen_and_sword
+				duration = -1
+			}
+		}
+	}
+
+	superioridad_sobre_todo = {
+		position = 3
+		icon = mission_marines
+		required_missions = {
+			pen_and_sword
+		}
+
+		trigger = {
+			army_professionalism = 0.5
+
+		}
+
+		effect = {
+			country_event = {
+				id = leonese_events.5
+			}
+		}
+	}
+
+	a_fine_balance = {
+		position = 4
+		icon = balance_of_power
+		required_missions = {
+			superioridad_sobre_todo
+		}
+
+		trigger = {
+			calc_true_if = {
+				desc = tt_a_fine_balance
+				amount = 500
+				europe = {
+					type = all
+					OR = {
+						owned_by = root
+						owner = {
+							OR = {
+								is_subject_of = ROOT
+								alliance_with = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			change_dip = 2
+			change_heir_dip = 2
+			add_country_modifier = {
+				name = lon_a_fine_balance
+				duration = 18250
+			}
+		}
+	}
+
+	find_a_route_to_india = {
+		position = 5
+		icon = mission_look_west
+		required_missions = {
+			iberian_armada
+		}
+
+		trigger = {
+			num_of_explorers = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = towards_the_west_indies
+				duration = 7300
+			}
+		}
+	}
+
+	the_new_world = {
+		position = 6
+		icon = mission_caribbean_cn
+		required_missions = {
+			find_a_route_to_india
+		}
+
+		provinces_to_highlight = {
+			colonial_region = colonial_the_carribean
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_discover_caribbean
+				colonial_the_carribean = { has_discovered = ROOT }
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = leonese_settlements
+				duration = 9125
+			}
+		}
+	}
+
+	viceroyalty_of_the_americas = {
+		position = 7
+		icon = mission_new_kingdom_of_granada
+		required_missions = {
+			the_new_world
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				colonial_region = colonial_colombia
+				colonial_region = colonial_brazil
+				colonial_region = colonial_eastern_america
+			}
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				colonial_region = colonial_colombia
+				is_city = yes
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				colonial_region = colonial_brazil
+				is_city = yes
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				colonial_region = colonial_eastern_america
+				is_city = yes
+			}
+		}
+
+		effect = {
+			every_subject_country = {
+				limit = {
+					OR = {
+						capital_scope = {
+							colonial_region = colonial_colombia
+						}
+						capital_scope = {
+							colonial_region = colonial_brazil
+						}
+						capital_scope = {
+							colonial_region = colonial_eastern_america
+						}
+
+					}
+
+				}
+
+				add_country_modifier = {
+					name = leonese_viceroyals
+					duration = -1
+				}
+			}
+		}
+	}
+
+	wealth_of_the_americas = {
+		position = 8
+		icon = mission_african_gold
+		required_missions = {
+			viceroyalty_of_the_americas
+		}
+
+		provinces_to_highlight = {
+			colonial_region = colonial_mexico
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				colonial_region = colonial_mexico
+				is_city = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = wealth_of_the_americas
+				duration = -1
+			}
+		}
+	}
+
+	
+
+
+}
+
+lon_exploration_missions_2 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = LON
+	}
+
+	expand_the_commerce = {
+		position = 1
+		icon = mission_african_gold
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 208
+				province_id = 231
+				province_id = 227
+			}
+			NOT = {
+				AND = {
+					OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+					}
+				province_has_center_of_trade_of_level = 2
+				}
+
+			}
+		}
+
+		trigger = {
+			208 = {
+				province_has_center_of_trade_of_level = 2
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+			231 = {
+				province_has_center_of_trade_of_level = 2
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+			227 = {
+				province_has_center_of_trade_of_level = 2
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+			}
+		}
+
+		effect = {
+			208 = {
+				add_center_of_trade_level = 1
+				add_province_modifier = {
+					name = expanded_the_commerce
+					duration = 9125
+				}
+			}
+			231 = {
+				add_province_modifier = {
+					name = expanded_the_commerce
+					duration = 9125
+				}
+			}
+			227 = {
+				add_province_modifier = {
+					name = expanded_the_commerce
+					duration = 9125
+				}
+			}
+		}
+	}
+
+	gemcutters_of_cacares = {
+		position = 2
+		icon = bohemian_crystal
+		required_missions = {
+			expand_the_commerce
+		}
+
+		provinces_to_highlight = {
+			province_id = 1747
+		}
+
+		trigger = {
+			1747 = {
+				base_production = 10
+				has_building = workshop
+			}
+		}
+
+		effect = {
+			1747 = {
+				change_trade_goods = gems
+				add_province_modifier = {
+					name = gemcutters_of_cacares
+					duration = -1
+				}
+			}
+		}
+	}
+
+	puerto_de_porto = {
+		position = 4
+		icon = imperial_navy
+		required_missions = {
+			gemcutters_of_cacares
+		}
+
+		provinces_to_highlight = {
+			province_id = 231
+		}
+
+		trigger = {
+			231 = {
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+		}
+
+		effect = {
+			231 = {
+				add_province_modifier = {
+					name = puerto_de_porto
+					duration = -1
+				}
+			}
+		}
+	}
+
+	pride_of_iberia = {
+		position = 5
+		icon = mission_expanded_leidang
+		required_missions = {
+			puerto_de_porto
+			iberian_armada
+		}
+
+		trigger = {
+			has_flagship = yes
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = pride_of_iberia
+				duration = -1
+				desc = until_our_flagship_is_gone_desc 
+			}
+			define_admiral = {
+				shock = 5
+				fire = 4
+				manuever = 6
+				siege = 3
+			}
+		}
+	}
+
+	the_long_way_around = {
+		position = 6
+		icon = mission_african_trade_post
+		required_missions = {
+			find_a_route_to_india
+		}
+
+		provinces_to_highlight = {
+			region = south_africa_region
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				region = south_africa_region
+				is_city = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = lon_sea_route_to_india
+				duration = 9125
+			}
+		}
+	}
+
+	the_crown_jewel = {
+		position = 7
+		icon = mission_rb_inland_india
+		required_missions = {
+			the_long_way_around
+		}
+
+		provinces_to_highlight = {
+			superregion = india_superregion
+		}
+
+		trigger = {
+			india_superregion = {
+				has_discovered = root
+			}
+		}
+
+		effect = {
+			lanka_area = {
+				add_permanent_claim = root
+			}
+
+			south_lanka_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	acquire_ceylon = {
+		position = 8
+		icon = mission_portuguese_ceylon
+		required_missions = {
+			the_crown_jewel
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				area = lanka_area
+				area = south_lanka_area
+			}
+		}
+
+		trigger = {
+			lanka_area = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			south_lanka_area = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			coromandel_region = {
+				add_permanent_claim = root
+			}
+
+			deccan_region = {
+				add_permanent_claim = root
+			}
+
+			every_province = {
+				limit = {
+					OR = {
+						is_core = MAD
+						is_core = TNJ
+						is_core = KLT
+					}
+				}
+
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	end_the_tamils = {
+		position = 9
+		icon = mission_cope_with_refugees
+		required_missions = {
+			acquire_ceylon
+		}
+
+		provinces_to_highlight = {
+			OR = {
+				region = coromandel_region
+				region = deccan_region
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					region = coromandel_region
+					region = deccan_region
+				}
+				value = 25
+			}
+		}
+
+		effect = {
+			bengal_region = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	conquest_of_bengal = {
+		position = 10
+		icon = mission_bengal_campaign
+		required_missions = {
+			end_the_tamils
+		}
+
+		provinces_to_highlight = {
+			region = bengal_region
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = bengal_region
+				value = 20
+				}
+		}
+
+		effect = {
+			india_superregion = {
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	destruction_of_delhi = {
+		position = 11
+		icon = mission_crush_delhi
+		required_missions = {
+			conquest_of_bengal
+		}
+
+		provinces_to_highlight = {
+			province_id = 522
+		}
+
+		trigger = {
+			522 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+
+		effect = {
+			522 = {
+				set_base_tax = 1
+				set_base_production = 1
+				set_base_manpower = 1
+			}
+
+			capital_scope = {
+				add_base_tax = 8
+				add_base_production = 8
+				add_base_manpower = 8
+			}
+		}
+	}
+}

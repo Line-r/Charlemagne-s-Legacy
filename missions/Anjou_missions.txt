@@ -1,0 +1,1027 @@
+ANJ_shared_missions = {
+	#These missions are shared by all Anjou paths
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = ANJ
+	}
+	has_country_shield = yes
+
+	ANJ_the_anjou_succession = {
+		icon = mission_unknown_mission
+		required_missions = { }
+		position = 1
+
+		trigger = {
+			has_country_flag = ANJ_succession_secured
+		}
+
+		effect = {
+
+		}
+	}
+}
+
+ANJ_diplo_leftmost = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = ANJ
+		has_country_flag = ANJ_diplomatic_path
+	}
+	has_country_shield = yes
+
+
+	ANJ_sisterhood_of_orleans = {
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_the_parisian_guard
+		}
+		position = 6
+
+		trigger = {
+			orleans_area = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				has_country_flag = ANJ_dealt_with_nuns
+				has_country_flag = ANJ_befriend_nuns
+			}
+		}
+
+
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = ANJ_befriend_nuns
+				}
+				custom_tooltip = ANJ_sisterhood_for_hire_tt
+			}
+
+			if = {
+				limit = {
+					has_country_flag = ANJ_dealt_with_nuns
+				}
+				184 = {
+					add_building = temple
+				}
+				
+				add_country_modifier = {
+					name = ANJ_dealt_with_nuns_mod
+					duration = 5475
+				}
+			}
+		}
+
+	}
+
+	ANJ_crossbearer = {
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_sisterhood_of_orleans
+		}
+		position = 7
+
+		trigger = {
+
+			OR = {
+				AND = {
+					has_country_flag = ANJ_befriend_nuns
+					num_of_mercenaries = 20
+					is_bankrupt = no
+					is_in_deficit = no
+					is_defender_of_faith = yes
+					reverse_has_opinion = {
+						who = PAP
+						value = 150
+					}
+				}
+
+				AND = {
+					has_country_flag = ANJ_dealt_with_nuns
+					is_defender_of_faith = yes
+					NOT = {
+						current_age = age_of_discovery
+					}
+					religious_unity = 1
+					reverse_has_opinion = {
+						who = PAP
+						value = 150
+					}
+				}
+			}
+
+		}
+
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = ANJ_befriend_nuns
+				}
+				set_country_flag = ANJ_nuns_reformed
+			}
+			else = {
+				184 = {
+					add_building = cathedral
+				}
+
+				add_country_modifier = {
+					name = ANJ_crossbearer_mod
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ANJ_king_of_the_antilles = {
+		position = 11
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_settle_the_new_ports
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				colonial_region = colonial_the_carribean
+				is_city = yes
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = ANJ_events.9
+			}
+		}
+	}
+
+	ANJ_luxury_goods = {
+		position = 12
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_king_of_the_antilles
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				region = carribeans_region
+				development = 10
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+
+		}
+
+		effect = {
+			Z01 = {
+				every_owned_province = {
+					add_province_modifier = {
+						name = ANJ_luxury_goods_of_the_caribbean
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+ANJ_diplo_left = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = ANJ
+		has_country_flag = ANJ_diplomatic_path
+	}
+	has_country_shield = yes
+
+	ANJ_ile_de_anjou = {
+		icon = mission_unknown_mission
+		position = 4
+		required_missions = {
+			ANJ_the_court_of_valois
+		}
+
+		trigger = {
+			ile_de_france_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					
+					AND = {
+						owned_by = FRA
+						FRA = {
+							is_subject_of = ROOT
+
+							reverse_has_opinion = {
+								who = FRA
+								value = 100
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					FRA = {
+						is_subject_of = ROOT
+					}
+				}
+
+				FRA = {
+					remove_historical_rival = ROOT
+				}
+				183 = {
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 3
+				}
+
+			}
+
+			if = {
+				limit = {
+					ile_de_france_area = {
+						owned_by = ROOT
+					}
+				}
+				
+				183 = {
+					add_base_tax = -3
+					add_base_production = -3
+					add_base_manpower = -3
+				}
+
+				178 = {
+					add_base_tax = 6
+					add_base_production = 6
+					add_base_manpower = 6
+				}
+			}
+		}
+	}
+
+	ANJ_the_parisian_guard = {
+		icon = mission_unknown_mission
+		position = 5
+		required_missions = {
+			ANJ_ile_de_anjou
+		}
+
+		trigger = {
+			183 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				base_manpower = 10
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					FRA = {
+						is_subject_of = ANJ
+						owns = 183
+					}
+				}
+
+					add_country_modifier = {
+						name = ANJ_parisian_guard_pu
+						duration = -1
+						desc = ANJ_parisian_guard_pu_tt
+					}
+			}
+
+			else = {
+				add_country_modifier = {
+					name = ANJ_parisian_guard_perm
+					duration = -1
+				}
+			}
+		}
+
+	}
+
+	ANJ_our_lady_of_paris = {
+		icon = mission_unknown_mission
+		position = 8
+		required_missions = {
+			ANJ_crossbearer
+			ANJ_the_parisian_guard
+		}
+
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = Leviathan
+				}
+
+				185 = {
+					has_great_project = {
+						type = notre_dame_cathedral
+						tier = 3
+					}
+				}
+			}
+			else = {
+				185 = {
+					has_building = cathedral
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_a_sign_of_our_faith
+				duration = -1
+			}
+		}
+	}
+
+	ANJ_a_new_world = {
+		position = 9
+		icon = mission_unknown_mission
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = miss_discover_caribbean
+				colonial_the_carribean = { has_discovered = ROOT }
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_discover_new_land
+				duration = 5475
+			}
+		}
+	}
+
+	ANJ_settle_the_new_ports = {
+		position = 10
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_a_new_world
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				colonial_region = colonial_the_carribean
+				is_city = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_ports_of_the_carribean
+				duration = -1
+			}
+		}
+	}
+
+	ANJ_up_the_mississippi = {
+		position = 11
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_settle_the_new_ports
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				colonial_region = colonial_louisiana
+				is_city = yes
+			}
+
+			893 = {
+				country_or_non_sovereign_subject_holds = root
+			}
+
+			
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_traverse_the_mississippi
+				duration = -1
+			}
+		}
+	}
+
+	ANJ_house_of_the_rising_sun = {
+		position = 12
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_up_the_mississippi
+		}
+
+		trigger = {
+			893 = {
+				country_or_non_sovereign_subject_holds = root
+				development = 20
+				has_manufactory_trigger = yes
+			}
+		}
+
+		effect = {
+			893 = {
+				change_trade_goods = glass
+				add_province_modifier = {
+					name = ANJ_house_of_the_rising_sun
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ANJ_a_dynasty_across_continents = {
+		position = 13
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_luxury_goods
+			ANJ_house_of_the_rising_sun
+			ANJ_la_plata_anjou
+		}
+
+		trigger = {
+			calc_true_if = {
+				amount = 4
+				all_country = {
+					is_colonial_nation_of = root
+					dynasty = root
+				}
+			}
+
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_a_dynasty_spanning_continents
+				duration = -1
+			}
+		}
+	}
+}
+
+ANJ_diplo_central = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = ANJ
+		has_country_flag = ANJ_diplomatic_path
+	}
+	has_country_shield = yes
+
+	ANJ_a_show_of_strength = {
+		#Now "stabilize_the_realm"
+		icon = mission_unknown_mission
+		required_missions = { ANJ_the_anjou_succession }
+		position = 2
+
+		trigger ={
+			has_heir = yes
+			stability = 1
+		}
+
+		effect = {
+			ile_de_france_area = {
+				add_core = ROOT
+			}
+			add_legitimacy = 10
+		}
+	}
+
+	ANJ_the_court_of_valois = {
+		icon = mission_unknown_mission
+		required_missions = { ANJ_a_show_of_strength }
+		position = 3
+
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						war_with = FRA
+						war_with = BOU
+					}
+					183 = {
+						controlled_by = ROOT
+					}
+				}
+
+				183 = {
+					owned_by = root
+				}
+			}
+
+		}
+
+		effect = {
+			country_event = {
+				id = ANJ_events.2
+			}
+		}
+	}
+
+	ANJ_anjou_diplomacy = {
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_the_parisian_guard
+			ANJ_toulouse_ensemble
+		}
+		position = 6
+
+		trigger = {
+			num_of_royal_marriages = 6
+			legitimacy = 90
+			stability = 2
+		}
+
+		effect = {
+			add_government_reform = anjou_splendor_government
+		}
+	}
+
+	ANJ_king_of_anjou = {
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_anjou_diplomacy
+		}
+		position = 7
+
+		trigger = {
+			personal_union = 4
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_king_of_anjou
+				duration = -1
+			}
+		}
+	}
+
+	ANJ_anjou_above_all = {
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_king_of_anjou
+		}
+		position = 8
+
+		trigger = {
+			calc_true_if = {
+				desc = emp_hab_spread_dynasties_trigger_tooltip2
+				amount = 6
+				all_country = {
+					OR = {
+						junior_union_with = root
+						dynasty = root
+					}
+					has_opinion = {
+						who = root
+						value = 120
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_anjou_above_all
+				duration = -1
+			}
+		}
+	}
+
+	ANJ_brittany_dockyards = {
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_glasscutters_of_caux
+		}
+		position = 9
+
+		trigger = {
+			170 = {
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
+			}
+			171 = {
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
+			}
+			169 = {
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
+			}
+			172 = {
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
+			}
+		}
+
+		effect = {
+			brittany_area = {
+				add_province_modifier = {
+					name = ANJ_brittany_dockyards
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ANJ_reach_further = {
+		position = 11
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_settle_the_new_ports
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				colonial_region = colonial_brazil
+				is_city = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_reach_further
+				duration = 7300
+			}
+		}
+	}
+
+	ANJ_la_plata_anjou = {
+		position = 12
+		icon = mission_unknown_mission
+		required_missions = {
+			ANJ_reach_further
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				colonial_region = colonial_la_plata
+				is_city = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_further_and_further
+				duration = -1
+			}
+		}
+	}
+}
+
+ANJ_diplo_right = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = ANJ
+		has_country_flag = ANJ_diplomatic_path
+	}
+	has_country_shield = yes
+
+
+	ANJ_the_occitan_ruse = {
+		icon = mission_unknown_mission
+		position = 4
+		required_missions = {
+			ANJ_the_court_of_valois
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						alliance_with = TOU
+						alliance_with = OCC
+					}
+					OR = {
+						marriage_with = TOU
+						marriage_with = OCC
+					}
+
+					has_heir = yes
+				}
+
+				AND = {
+					NOT = {
+						exists = TOU
+					}
+					NOT = {
+						exists = OCC
+					}
+				}
+			}
+		}
+
+
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						exists = OCC
+						exists = TOU
+					}
+				}
+
+				country_event = {
+					id = ANJ_events.5
+				}
+			}
+			else = {
+				languedoc_area = {
+					add_claim = root
+				}
+			}
+
+		}
+	}
+
+	ANJ_toulouse_ensemble = {
+		icon = mission_unknown_mission
+		position = 5
+		required_missions = {
+			ANJ_the_occitan_ruse
+		}
+
+		trigger = {
+			196 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						senior_union_with = TOU
+						senior_union_with = OCC
+					}
+				}
+
+				TOU = {
+					add_historical_friend = ROOT
+				}
+				OCC = {
+					add_historical_friend = ROOT
+				}
+
+				196 = {
+					change_trade_goods = paper
+				}
+			}
+
+			else = {
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					target = AMG
+				}
+			}
+		}
+	}
+
+	ANJ_glasscutters_of_caux = {
+		icon = mission_unknown_mission
+		position = 8
+		required_missions = {
+			
+		}
+
+		trigger = {
+			167 = {
+				development = 20
+			}
+		}
+
+		effect = {
+			167 = {
+				change_trade_goods = gems
+				add_province_modifier = {
+					name = gemcutters_of_caux
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ANJ_cloth_valley = {
+		icon = mission_unknown_mission
+		position = 9
+		required_missions = {
+			ANJ_glasscutters_of_caux
+		}
+
+		trigger = {
+			loire_area = {
+				type = all
+				base_production = 10
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+
+		effect = {
+			loire_area = {
+				add_province_modifier = {
+					name = ANJ_valley_of_cloth
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ANJ_the_greatest_vineyard = {
+		icon = mission_unknown_mission
+		position = 10
+		required_missions = {
+			ANJ_cloth_valley
+		}
+
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				any_owned_province = {
+					has_building = farm_estate
+					trade_goods = wine
+				}
+			}
+		}
+
+		effect = {
+			change_price = {
+				trade_goods = wine
+				key = ANJ_wine_trade
+				value = 0.5
+				duration = -1
+			}
+		}
+	}
+
+
+	
+}
+
+ANJ_diplo_rightmost = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		tag = ANJ
+		has_country_flag = ANJ_diplomatic_path
+	}
+
+	ANJ_a_stake_in_the_game = {
+		icon = mission_unknown_mission
+		position = 7
+		required_missions = {
+			ANJ_anjou_diplomacy
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					marriage_with = BUR
+					alliance_with = BUR
+				}
+
+				AND = {
+					is_rival = BUR
+
+					emperor = {
+						is_enemy = ROOT
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					alliance_with = BUR
+					BUR = {
+						is_emperor = yes
+					}
+				}
+
+				country_event = {
+					id = ANJ_events.7
+					#ask to join empire
+				}
+			}
+
+
+			else = {
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = BUR
+					months = 300
+				}
+			}
+		}
+	}
+
+	ANJ_king_of_middle_francia = {
+		icon = mission_unknown_mission
+		position = 8
+		required_missions = {
+			ANJ_a_stake_in_the_game
+		}
+
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 5
+
+					all_elector = {
+						preferred_emperor = ROOT
+					}
+
+				}
+
+				west_burgundy_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+
+				bourgogne_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = ANJ_king_of_middle_francia_mod
+				duration = 7300
+			}
+		}
+	}
+
+	ANJ_anjou_ascendant = {
+		icon = mission_unknown_mission
+		position = 9
+		required_missions = {
+			ANJ_king_of_middle_francia
+		}
+
+		trigger = {
+			OR = {
+				is_emperor = yes
+				NOT = {
+					hre_size = 1
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+
+				country_event = {
+					id = ANJ_events.8
+				}
+			}
+
+			else = {
+				low_countries_region = {
+					add_core = root
+				}
+			}
+		}
+	}
+
+}

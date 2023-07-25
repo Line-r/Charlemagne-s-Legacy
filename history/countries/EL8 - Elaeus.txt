@@ -1,0 +1,18 @@
+government = republic
+add_government_reform = polis
+government_rank = 1
+primary_culture = greek
+religion = catholic
+technology_group = western
+capital = 4969
+fixed_capital = 4969
+
+1399.1.1 = {
+	monarch = {
+		name = "Ecclesia"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}
