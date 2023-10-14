@@ -33,6 +33,65 @@ leon_path_left = {
 		}
 	}
 
+	lon_port_of_lisboa = {
+		position = 2
+		icon = develop_provence
+
+		trigger = {
+			227 = {
+				owned_by = root
+				development = 25
+			}
+		}
+
+		effect = {
+			227 = {
+				add_center_of_trade_level = 1
+				add_building_construction = {
+					building = shipyard
+					cost = 0
+				}
+			}
+		}
+	}
+
+	lon_manueline_architecture = {
+		position = 3
+		icon = spa_dominate_sevilla
+		required_missions = {
+			lon_port_of_lisboa
+		}
+
+		trigger = {
+			227 = {
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+
+				has_building = courthouse
+
+				has_great_project = {
+					type = belem_tower
+					tier = 1
+				}
+			}
+		}
+
+		effect = {
+			227 = {
+				add_great_project_tier = {
+					type = belem_tower
+					tier = 1
+				}
+
+				add_permanent_province_modifier = {
+					name = lon_architecture_of_lisbon
+				}
+			}
+		}
+	}
+
 	develop_the_heartland = {
 		position = 4
 		icon = mission_great_trading_houses
@@ -95,6 +154,40 @@ leon_path_left = {
 			add_country_modifier = {
 				name = lon_army_reform
 				duration = 5475
+			}
+		}
+	}
+
+	lon_leon_the_pious = {
+		position = 7
+		icon = make_haste_slowly
+		required_missions = {
+			our_god_given_right
+		}
+
+		trigger = {
+			OR = {
+				is_papal_controller = yes
+				alliance_with = ECC
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					alliance_with = ECC
+				}
+				add_country_modifier = {
+					name = lon_a_pious_kingdom
+					duration = 10950
+				}
+			}
+
+			else = {
+				add_country_modifier = {
+					name = lon_siding_with_ecclasia
+					duration = 10950
+				}
 			}
 		}
 	}
@@ -257,6 +350,8 @@ leon_path_center = {
 				name = castillian_integration
 				duration = -1
 			}
+
+			override_country_name = LONCAS
 		}
 	}
 
@@ -477,6 +572,32 @@ leon_path_right = {
 		}
 	}
 
+	lon_assemble_the_tercios = {
+		position = 3
+		icon = spa_tercios_system
+
+		required_missions = {
+			pen_and_sword
+		}
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = lon_assembled_the_tercios
+				duration = -1
+			}
+		}
+	}
+
 
 
 	iberian_armada = {
@@ -551,6 +672,36 @@ leon_path_right = {
 		effect = {
 			country_event = {
 				id = leonese_events.2
+			}
+		}
+	}
+
+	lon_valencian_looms = {
+		position = 8
+		icon = saxon_manufacturing
+		required_missions = {
+			crown_of_valencia
+		}
+
+		trigger = {
+			220 = {
+				country_or_non_sovereign_subject_holds = root
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+
+				has_manufactory_trigger = yes
+			}
+		}
+
+		effect = {
+			220 = {
+				add_permanent_province_modifier = {
+					name = lon_looms_of_valencia
+				}
+
+				add_center_of_trade_level = 1
 			}
 		}
 	}
@@ -927,6 +1078,7 @@ lon_exploration_missions_1 = {
 		}
 
 		effect = {
+			custom_tooltip = tt_lon_every_colonial_subject_in
 			every_subject_country = {
 				limit = {
 					OR = {

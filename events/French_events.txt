@@ -1,6 +1,7 @@
 namespace = french_events
 
 country_event = {
+	#Triggered by first French mission, if Bourbons are in charge
 	id = french_events.1
 	title = french_events.1.t
 	desc = french_events.1.d
@@ -9,6 +10,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
+		name = french_events.1.a
 		change_tag = BOU
 		add_stability = -1
 		add_country_modifier = {
@@ -19,6 +21,7 @@ country_event = {
 }
 
 country_event = {
+	#Won against the Bourbon
 	id = french_events.2
 	title = french_events.2.t
 	desc = french_events.2.d
@@ -27,6 +30,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
+		name = french_events.1.b
 		190 = {
 			remove_core = BOU
 		}
@@ -47,43 +51,85 @@ country_event = {
 	picture = COURT_eventPicture
 
 	is_triggered_only = yes
-
-	option = {
-		if = {
-			limit = {
-				exists = TOU
-			}
-			create_union = TOU
-		}
-		else = {
-			create_union = OCC
-		}
-
-		TOU = {
-			add_historical_friend = root
-		}
-
-		OCC = {
-			add_historical_friend = root
-		}
+	major = yes
+	major_trigger = {
+		same_continent = root
 	}
 
 	option = {
-		custom_tooltip = tt_claims_over_occitania
+		name = french_events.3.a
+		#Join France
 
-		hidden_effect = {
-			TOU = {
-				every_owned_province = {
-					add_permanent_claim = FRA
-				}
+		ai_chance = {
+			factor = 80
+		}
+
+		if = {
+			limit = {
+				exists = FRA
+			}
+			FRA = {
+				create_union = TOU
+				add_historical_friend = TOU
+			}
+			add_historical_friend = FRA
+		}
+
+		if = {
+			limit = { 
+				exists = BOU
+			}
+			BOU = {
+				create_union = TOU
+				add_historical_friend = TOU
+			}
+			add_historical_friend = FRA
+		}
+
+
+
+	}
+
+	option = {
+		name = french_events.3.b
+		#Decline the union
+
+		ai_chance = {
+			factor = 20
+		}
+
+		if = {
+			limit = {
+				exists = FRA
 			}
 
-			OCC = {
-				every_owned_province = {
-					add_permanent_claim = FRA
+			
+		break_alliance = FRA
+		break_marriage = FRA
+
+		FRA = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = TOU
+				months = 300
+			}
+		}
+		}
+
+		else = {
+			break_alliance = BOU
+			break_marriage = BOU
+	
+			BOU = {
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = TOU
+					months = 300
 				}
 			}
 		}
+
+
 	}
 }
 
@@ -106,7 +152,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 10
+		days = 100
 	}
 
 	fire_only_once = yes
@@ -143,13 +189,30 @@ country_event = {
 
 		custom_tooltip = tt_fra_release_normandy
 		hidden_effect = {
-			FRA = {
-				create_union = NRM
-				set_country_flag = fra_normandy_granted
+			release = ALE
+			if = {
+				limit = {
+					exists = FRA
+				}
+					FRA = {
+						create_union = NRM
+						set_country_flag = fra_normandy_granted
+					}
 			}
-			BOU = {
-				create_union = NRM
-				set_country_flag = fra_normandy_granted
+
+			if = {
+				limit = {
+					exists = BOU
+				}
+
+				BOU = {
+					create_union = NRM
+					set_country_flag = fra_normandy_granted
+				}
+			}
+
+			NRM = {
+				inherit = ALE
 			}
 		}
 	}
@@ -202,6 +265,9 @@ country_event = {
 
 	option = {
 		#Normandy rightfully belongs to us!
+		name = french_events.6.a
+		
+		add_legitimacy = -10
 		normandy_area = {
 			add_core = root
 		}
@@ -217,6 +283,8 @@ country_event = {
 	title = french_events.7.t #The duke of normandy dies
 	desc = french_events.7.d
 	picture = COURT_eventPicture
+
+	fire_only_once = yes
 
 	trigger = {
 		OR = {
@@ -301,37 +369,462 @@ country_event = {
 }
 
 country_event = {
-	id = french_events.8
-	title = french_events.8.t #King of the Gascons
-	desc = french_events.8.d
+	id = french_events.10
+	title = french_events.10.t #French path choice
+	desc = french_events.10.d
 	picture = COURT_eventPicture
 
 	is_triggered_only = yes
 
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+
 	option = {
-		name = french_events.8.a #French path
+		name = french_events.10.a #French path
 
 		override_country_name = FRENCHNATION
-		swap_non_generic_missions = yes
+
 
 		custom_tooltip = tt_fra_french_path
 
 		hidden_effect = {
 			set_country_flag = fra_french_path
 		}
+		swap_non_generic_missions = yes
 	}
 
 	option = {
-		name = french_events.8.b #Frankish path
+		name = french_events.10.b #Frankish path
 		
 		override_country_name = WESTFRANKISHNATION
-		swap_non_generic_missions = yes
 
 		custom_tooltip = tt_fra_frankish_path
 
 		hidden_effect = {
 			set_country_flag = fra_frankish_path
 		}
+
+		swap_non_generic_missions = yes
+
 	}
 
+}
+
+country_event = {
+	id = french_events.9
+	title = french_events.9.t
+	desc = french_events.9.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = french_events.9.a
+		#seek better relations with Anjou
+		trigger = {
+			has_country_flag = fra_normandy_granted
+		}
+
+		remove_historical_rival = ANJ
+		ANJ = {
+			remove_historical_rival = FROM
+		}
+
+		create_alliance = ANJ
+
+		hidden_effect = {
+			set_country_flag = fra_alliance_with_anj
+		}
+
+		swap_non_generic_missions = yes
+	}
+
+	option = {
+		name = french_events.9.b
+		#kill
+
+		loire_area = {
+			add_permanent_claim = root
+		}
+		poitou_area = {
+			add_permanent_claim = root
+		}
+
+		hidden_effect = {
+			set_country_flag = fra_rivals_with_anj
+		}
+
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = french_events.11
+	title = french_events.11.t
+	desc = french_events.11.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		root = {
+			save_event_target_as = fra_emp_target
+		}
+	}
+	
+	option = {
+		name = french_events.11.a
+		
+		emperor = {
+			country_event = {
+				id = french_events.12
+			}
+		}
+
+	}
+}
+
+country_event = {
+	id = french_events.12
+	title = french_events.12.t
+	desc = french_events.12.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+	
+	option = {
+		name = french_events.12.a
+		
+		event_target:fra_emp_target = {
+			set_in_empire = yes
+		}
+
+		ai_chance = {
+			factor = 20
+
+			modifier = {
+				alliance_with = event_target:fra_emp_target
+				factor = 50
+			}
+
+			modifier = {
+				is_rival = event_target:fra_emp_target
+				factor = 0
+			}
+		}
+	}
+
+	option = {
+		name = french_events.12.b
+
+		event_target:fra_emp_target = {
+			country_event = {
+				id = french_events.13
+			}
+		}
+
+		ai_chance = {
+			factor = 80
+
+			modifier = {
+				factor = 50
+				alliance_with = event_target:fra_emp_target
+			}
+
+			modifier = {
+				factor = 100
+				is_rival = event_target:fra_emp_target
+			}
+		}
+	}
+}
+
+country_event = {
+	id = french_events.13
+	title = french_events.13.t
+	desc = french_events.13.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = french_events.13.a
+		add_opinion = {
+			who = emperor
+			modifier = fra_denied_entrance
+		}
+
+		hidden_effect = {
+			set_country_flag = enable_emperorship_cb
+		}
+	}
+}
+
+country_event = {
+	id = french_events.14
+	title = french_events.14.t
+	desc = french_events.14.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = french_events.14.a
+		add_imperial_influence = -15
+
+		random_elector = {
+			elector = no
+			add_opinion = {
+				who = root
+				modifier = fra_stole_electorate
+			}
+		}
+
+		root = {
+			elector = yes
+		}
+	}
+
+	option = {
+		name = french_events.14.b
+		add_imperial_influence = 5
+		add_legitimacy = 20
+	}
+}
+
+country_event = {
+	id = french_events.15
+	title = french_events.15.t
+	desc = french_events.15.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = french_events.15.a
+
+		if = {
+			limit = { 
+				LUX = {
+					is_subject_of = root
+					is_elector = yes
+				}
+			 }
+
+			 LUX = {
+				elector = no
+			 }
+		}
+
+		else = {
+			random_elector = {
+				elector = no
+				add_opinion = {
+					who = root
+					modifier = fra_stole_electorate
+				}
+			}
+		}
+		
+		event_target:francetarget = {
+			elector = yes
+		}
+	}
+
+	option = {
+		name = french_events.15.b
+
+		event_target:francetarget = {
+			add_opinion = {
+				who = root
+				modifier = fra_refused_electorate
+			}
+		}
+	}
+}
+
+country_event = {
+	id = french_events.16
+	title = "EVTNAME9076"
+	desc = "EVTDESC9076"
+	picture = HRE_eventPicture
+	hidden = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA9076"
+		HLR = {
+			inherit = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = french_events.17
+	title = french_events.17.t
+	desc = french_events.17.d
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = french_events.17.a
+
+		202 = {
+			cede_province = PAP
+		}
+
+		PAP = {
+			add_opinion = {
+				who = root
+				modifier = fra_ceded_avignon
+			}
+		}
+
+		add_country_modifier = {
+			name = fra_relations_with_the_pope
+			duration = -1
+		}
+	}
+
+	option = {
+		name = french_events.17.b
+
+		202 = {
+			set_great_project_tier_3 = yes
+		}
+
+		PAP = {
+			add_opinion = {
+				who = root
+				modifier = fra_denied_avignon
+			}
+		}
+
+		add_country_modifier = {
+			name = fra_bow_to_no_man
+			duration = -1
+		}
+
+		lazio_area = {
+			add_permanent_claim = root
+		}
+	}
+}
+
+country_event = {
+	id = french_events.18
+	title = french_events.18.t
+	desc = french_events.18.d
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = french_events.18.a
+
+		126 = {
+			cede_province = KNI
+		}
+
+		KNI = {
+			add_opinion = {
+				who = root
+				modifier = fra_granted_malta
+			}
+		}
+	}
+
+	option = {
+		name = french_events.18.b
+
+		126 = {
+			set_great_project_tier_3 = yes
+
+			add_province_modifier = {
+				name = fra_gate_to_the_med
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = french_events.19
+	title = french_events.19.t
+	desc = french_events.19.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = french_events.19.a
+		
+		every_owned_province = {
+			limit = {
+				culture = gascon
+			}
+
+			cede_province = GUY
+		}
+
+		if = {
+			limit = {
+				exists = FRA
+
+			}
+			FRA = {
+				create_union = GUY
+			}
+		}
+
+		if = {
+			limit = {
+				exists = BOU
+			}
+			BOU = {
+				create_union = GUY
+			}
+		}
+	}
+
+	option = {
+		name = french_events.19.b
+
+		if = {
+			limit = {
+				exists = FRA
+
+			}
+			every_owned_province = {
+				limit = {
+					culture = gascon
+				}
+	
+				add_core = FRA
+			}
+		}
+
+		if = {
+			limit = {
+				exists = BOU
+
+			}
+			every_owned_province = {
+				limit = {
+					culture = gascon
+				}
+	
+				add_core = BOU
+			}
+		}
+	}
 }

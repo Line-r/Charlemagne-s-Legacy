@@ -289,7 +289,7 @@ brittany_area = { #5
 }
 
 normandy_area = { #4
-	167 168 1879 4385
+	167 168 1879 4385 4952
 }
 
 provence_area = { #3
@@ -314,7 +314,7 @@ languedoc_area = { #5
 
 bourgogne_area = { #3
 	color = { 144 0 32 }
-	192 193 4764
+	192 193 4764 4945
 }
 
 west_burgundy_area = { #3
@@ -339,7 +339,7 @@ picardy_area = { #4
 }
 
 ile_de_france_area = { #4
-	182 183 185 4388
+	182 183 185 4388 4954
 }
 
 champagne_area = { #3
@@ -777,11 +777,11 @@ zaporizhia_area = { #3
 }
 
 azov_area = { #4
-	286 287 2413 2414
+	286 287 2413 2414 2447
 }
 
 crimea_area = { #4
-	284 285 2410 2447
+	284 285 2410 4953 4947
 }
 
 white_ruthenia_area = { #3
@@ -1007,7 +1007,7 @@ carinthia_area = { #4 # Carniola in-game
 switzerland_area = { #4
 	166 1869 1870 1873 4722
 	#Added provinces
-	4944 4945 4946 4947 4948 4949 4950 4951 4952 4953 4954
+	4944 4946 4948 4949 4950 4951
 }
 
 romandie_area = { #3

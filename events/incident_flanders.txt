@@ -1,48 +1,49 @@
-namespace = incidents_flanders
-normal_or_historical_nations = yes
+namespace = incident_flanders
 
-# Burgundy considers entry
 country_event = {
-	id = incidents_flanders.1
-	title = "incidents_flanders.1.t"
-	desc = "incidents_flanders.1.desc"
-	picture = HRE_eventPicture
+	#The death of Theodoor
+	id = incident_flanders.1
+	title = incident_flanders.1.t
+	desc = incident_flanders.1.d
+	picture = TRADEGOODS_eventPicture
 	
-	major = yes
-	
-	is_triggered_only = yes
+	major = no
 	fire_only_once = yes
+
+	trigger = {
+		tag = FLA
+		NOT = {
+			has_ruler = "Theodoor"
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
 	
 	option = {
-		name = "incidents_flanders.1.a"
-		ai_chance = {
-			factor = 10
-			modifier = {
-				factor = 1.5
-				has_opinion = {
-					who = emperor
-					value = 100
-				}
-			}
-		}
-
+		name = incident_flanders.1.a
+		
 		emperor = {
-			set_imperial_incident = incident_flanders_wants_to_join
+			set_imperial_incident = incident_flanders_incident
 		}
 	}
 }
 
-# Emperor considers Burgundy's offer
 country_event = {
-	id = incidents_flanders.2
-	title = "incidents_flanders.2.t"
-	desc = "incidents_flanders.2.desc"
-	picture = HRE_eventPicture
+	id = incident_flanders.2
+	title = incident_flanders.2.t
+	desc = incident_flanders.2.d
+	picture = TRADEGOODS_eventPicture
 	
+	major = yes
+
+
 	is_triggered_only = yes
 	
 	option = {
-		name = "incidents_flanders.2.a"
+		name = incident_flanders.2.a
+
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -69,26 +70,25 @@ country_event = {
 				NOT = { FLA = { is_rival = emperor } }
 			}
 		}
+		
 		FLA = {
 			set_in_empire = yes
-			
-			set_country_flag = flanders_joined_empire
+
+			add_opinion = {
+				who = emperor
+				modifier = fla_flanders_joins_empire
+			}
 		}
 
-		emperor = { #Give emperor the event to demand antwerp
-		if = {
-			limit = {FLA = {owns_core_province = 1744} }
-
-			country_event = {
-				id = incidents_flanders.5
-				days = 15
+		hidden_effect = {
+			DOR = {
+				set_in_empire = yes
 			}
 		}
 	}
-	}
-	
+
 	option = {
-		name = "incidents_flanders.2.c"
+		name = incident_flanders.2.b
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -116,245 +116,79 @@ country_event = {
 		hidden_effect = {
 			FLA = {
 				country_event = {
-					id = incidents_flanders.4
+					id = incident_flanders.3
 					days = 5
 				}
-
-			}
-
-		}
-	}
-}
-
-# Flanders is refused Imperial membership
-country_event = {
-	id = incidents_flanders.4
-	title = "incidents_flanders.4.t"
-	desc = "incidents_flanders.4.desc"
-	picture = BAD_WITH_MONARCH_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = "incidents_flanders.4.a"
-		ai_chance = {
-			factor = 1
-		}
-		every_known_country = {
-			limit = {
-				culture = dutch
-				is_emperor = no
-				government = monarchy
-			}
-			reverse_add_casus_belli = {
-				target = FLA
-				type = cb_restore_personal_union
-				months = 600
 			}
 		}
-
-		every_known_country = {
-			limit = {
-				culture = flemish
-				is_emperor = no
-				government = monarchy
-			}
-			reverse_add_casus_belli = {
-				target = FLA
-				type = cb_restore_personal_union
-				months = 600
-			}
-		}
-
-		add_opinion = {
-			who = emperor
-			modifier = burgundy_refused_membership_opinion
-		}
-		reverse_add_opinion = {
-			who = emperor
-			modifier = burgundy_refused_membership_opinion
-		}
-		set_country_flag = flanders_refused_empire
-	}
-
-	major = yes
-}
-
-#Let emperor decide what to do with Antwerp
-country_event = {
-	id = incidents_flanders.5
-	title = incidents_flanders.5.t
-	desc = incidents_flanders.5.d
-	picture = CITY_DEVELOPMENT_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = "incidents_flanders.5.1"
-		FLA = {
-			set_country_flag = antwerp_demanded_brb
-			country_event = {
-				id = incidents_flanders.6
-				days = 5
-			}
-		}
-
-		ai_chance = {
-			factor = 0
-
-			modifier = {
-				factor = 100
-				has_opinion = {
-					who = BRB
-					value = 150
+		tooltip = {
+			FLA = {
+				every_known_country = {
+					limit = {
+						is_elector = yes
+						is_emperor = no
+						NOT = { government = monarchy }
+					}
+					reverse_add_casus_belli = {
+						target = FLA
+						type = cb_vassalize_mission
+						months = 480
+					}
 				}
-			}
-		}
-	}
-
-	option = {
-		name = "incidents_flanders.5.2"
-		FLA = {
-			set_country_flag = antwerp_demanded_free
-			country_event = {
-				id = incidents_flanders.6
-				days = 5
-			}
-		}
-
-		ai_chance = {
-			factor = 100
-
-			modifier = {
-				factor = 0
-				has_opinion = {
-					who = BRB
-					value = 150
-				}
-			}
-		}
-	}
-
-	option = {
-		name = "incidents_flanders.5.3"
-		
-		1744 = {
-			add_core = BRB
-		}
-
-		ai_chance = {
-			factor = 0
-
-			modifier = {
-				factor = 100
-				has_opinion = {
-					who = FLA
-					value = 150
-				}
-			}
-		}	
-	}
-
-}
-
-#Let Flanders accept or decline
-country_event = {
-	id = incidents_flanders.6
-	title = incidents_flanders.6.t
-	desc = incidents_flanders.6.d
-	picture = CITY_DEVELOPMENT_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		trigger = {
-			has_country_flag = antwerp_demanded_brb
-		}
-		name = "incidents_flanders.6.1"
-
-		1744 = {
-			add_core = BRB
-			cede_province = BRB
-		}
-
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0
-				is_rival = BRB
-			}
-		}
-	}
-
-	option = {
-		trigger = {
-			has_country_flag = antwerp_demanded_free
-		}
-
-		name = "incidents_flanders.6.2"
-
-		1744 = {
-			add_core = ANW
-		}
-
-		release = ANW
-
-		FLA = {
-			create_guarantee = ANW
-		}
-
-		ai_chance = {
-			factor = 100
-
-			modifier = {
-				factor = 0
-				is_rival = BUR
-			}
-
-			modifier = {
-				factor = 0
-				is_emperor = yes
-			}
-		}
-	}
-
-	option = {
-		name = "incidents_flanders.6.3"
-
-		reverse_add_opinion = {
-			who = BUR
-			modifier = opinion_electoral_state_removed
-		}
-
-		reverse_add_opinion = {
-			who = BRB
-			modifier = opinion_electoral_state_removed
-		}
-
-		ai_chance = {
-			factor = 0
-			modifier = {
-				factor = 100
-				has_country_flag = antwerp_demanded_brb
-				is_rival = BRB
-			}
-
-			modifier = {
-				factor = 100
-				has_country_flag = antwerp_demanded_free
-				is_rival = BUR
-			}
-
-			modifier = {
-				factor = 100
-				has_country_flag = antwerp_demanded_brb
-				NOT = {
-					has_opinion = {
-						who = BUR
-						value = 100
+				every_known_country = {
+					limit = {
+						is_elector = yes
+						is_emperor = no
+						government = monarchy
+					}
+					reverse_add_casus_belli = {
+						target = FLA
+						type = cb_restore_personal_union
+						months = 480
 					}
 				}
 			}
+		}
+	}
+}
+
+country_event = {
+	id = incident_flanders.3
+	title = incident_flanders.3.t
+	desc = incident_flanders.3.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = incident_flanders.3.a
+		every_known_country = {
+			limit = {
+				is_elector = yes
+				is_emperor = no
+				government = monarchy
+			}
+			reverse_add_casus_belli = {
+				target = FLA
+				type = cb_restore_personal_union
+				months = 480
+			}
+		}
+		every_known_country = {
+			limit = {
+				is_elector = yes
+				is_emperor = no
+				NOT = { government = monarchy }
+			}
+			reverse_add_casus_belli = {
+				target = FLA
+				type = cb_vassalize_mission
+				months = 480
+			}
+		}
+		add_opinion = {
+			who = emperor
+			modifier = fla_refused_membership
 		}
 	}
 }

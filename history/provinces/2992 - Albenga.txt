@@ -1,9 +1,8 @@
 # - Albenga
 
-owner = BUR
+owner = GEN
 hre = yes
-controller = BUR
-add_core = BUR
+controller = GEN
 add_core = GEN
 culture = ligurian
 religion = catholic

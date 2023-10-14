@@ -1,0 +1,7 @@
+﻿l_english: 
+ HRE_LEFTBRANCH:0 "Francia"
+ HRE_RIGHTBRANCH:0 "Germania"
+ HRE_JOIN:0 "Join Empire"
+ HRE_LEAVE:0 "Leave Empire"
+ LEAVE_HRE_CONFIRM:0 "Leave the Empire"
+ HRE_DISMANTLE:0 "Dismantle Empire"

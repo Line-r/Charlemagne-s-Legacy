@@ -1,0 +1,119 @@
+
+ANJ_splendor_mechanic_1 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 1
+	}
+
+	global_tax_modifier = 0.05
+}
+
+ANJ_splendor_mechanic_2 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 2
+	}
+
+	global_tax_modifier = 0.05
+}
+
+ANJ_splendor_mechanic_3 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 3
+	}
+
+	global_tax_modifier = 0.05
+}
+
+ANJ_splendor_mechanic_4 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 4
+	}
+
+	global_tax_modifier = 0.05
+}
+
+ANJ_splendor_mechanic_5 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 5
+	}
+
+	global_tax_modifier = 0.05
+}
+
+ANJ_splendor_mechanic_6 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 6
+	}
+
+	global_tax_modifier = 0.05
+}
+
+ANJ_splendor_mechanic_7 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 7
+	}
+
+	global_tax_modifier = 0.05
+}
+
+ANJ_splendor_mechanic_8 = {
+	potential = {
+		tag = ANJ
+		has_unlocked_government_reform = anjou_splendor_government
+	}
+
+	trigger = {
+		num_of_royal_marriages = 8
+	}
+
+	global_tax_modifier = 0.05
+}
+
+
+LON_cas_pu_maintained_mod = {
+	potential = {
+		tag = LON
+		has_country_flag = lon_cas_pu_maintained
+	}
+
+	trigger = {
+		overlord_of = CAS
+	}
+
+	morale_damage = 0.15
+	land_morale = 0.10
+}

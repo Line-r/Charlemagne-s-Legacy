@@ -1,0 +1,53 @@
+country_decisions = {
+	declare_war_against_the_empire = {
+		major = yes
+		potential = {
+			OR = {
+				tag = FRA
+				tag = BOU
+			}
+			mission_completed = fra_the_imperial_threat
+			NOT = {
+				has_country_flag = fra_declared_war_against_empire
+			}
+		}
+
+		allow = {
+			NOT = {
+				truce_with = emperor
+			}
+		}
+		
+		effect = {
+			declare_war_with_cb = {
+				who = emperor
+				casus_belli = cb_humiliate
+			}
+
+			every_elector = {
+				limit = {
+					NOT = {
+						alliance_with = root
+					}
+				}
+				join_all_defensive_wars_of = emperor
+
+			}
+
+			every_elector = {
+				limit = {
+					alliance_with = root
+				}
+				join_all_offensive_wars_of = root
+			}
+
+			hidden_effect = {
+				set_country_flag = fra_declared_war_against_empire
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

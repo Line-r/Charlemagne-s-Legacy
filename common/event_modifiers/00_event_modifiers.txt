@@ -14706,3 +14706,268 @@ swa_great_bavarian_expulsion = {
 swa_tk_increase = {
 	yearly_government_power = 24
 }
+
+swa_immortal_temp = {
+	monarch_lifespan = 100
+}
+
+swa_national_propaganda = {
+	land_forcelimit_modifier = 0.1
+	yearly_government_power = 12
+}
+
+swa_hell_on_earth_mod = {
+	manpower_recovery_speed = 0.15
+	prestige_from_land = 1
+}
+
+swa_swabian_supremacy = {
+	administrative_efficiency = 0.1
+	prestige_decay = -0.03
+}
+
+swa_swabia_above_all = {
+	all_power_cost = -0.05
+}
+
+swa_strenghten_the_council_mod = {
+	yearly_government_power = 6
+}
+
+swa_integrated_bavarians = {
+	local_manpower_modifier = 0.25
+	local_unrest = -2
+}
+
+swa_insurpassable_nation = {
+	prestige = 2
+}
+
+swa_konstanz_cloth_halls = {
+	trade_goods_size_modifier = 0.25
+}
+
+fra_influencing_the_empire = {
+	diplomatic_reputation = 2
+	diplomatic_upkeep = 1
+}
+
+fra_francia_ascendant = {
+	imperial_authority = 0.05
+	improve_relation_modifier = 0.15
+}
+
+fra_picardy_in_the_empire = {
+	local_development_cost_modifier = -0.05
+}
+
+fra_rex_italia = {
+	ae_impact = -0.10
+	diplomatic_reputation = 1
+}
+
+fra_rex_belgicus = {
+	development_cost_modifier = -0.10
+	production_efficiency = 0.05
+}
+
+fra_gate_to_francia = {
+	local_defensiveness = 0.20
+}
+
+fra_lothars_legacy = {
+	legitimacy = 1
+	all_power_cost = -0.025
+}
+
+fra_dominator_swabia = {
+	land_morale = 0.10
+}
+
+fra_rheinland_market = {
+	global_trade_power = 0.05
+	trade_efficiency = 0.10
+}
+
+fra_the_second_capital = {
+	trade_goods_size = 1
+}
+
+fra_nissa_la_bella = {
+	local_development_cost_modifier = -0.10
+	local_ship_repair = 0.15
+}
+fra_great_mines_of_sardinia = {
+	trade_goods_size = 1
+}
+fra_relations_with_the_pope = {
+	papal_influence = 2
+	curia_powers_cost = -0.20
+}
+fra_bow_to_no_man = {
+	tolerance_heretic = 2
+}
+
+fra_scourge_of_lothar = {
+	ae_impact = -0.10
+}
+
+fra_sparkling_wine = {
+	local_development_cost_modifier = -0.10
+	local_production_efficiency = 0.15
+}
+
+fra_genoese_trade = {
+	trade_value_modifier = 0.15
+}
+
+fra_le_havre = {
+	local_sailors_modifier = 0.15
+	local_ship_repair = -0.25
+}
+
+fra_gate_to_the_med = {
+	local_ship_repair = -0.25
+}
+
+fra_beyond_calais = {
+	range = 0.20
+}
+
+fra_compagnie_des_antilles = {
+	global_own_trade_power = 0.25
+}
+
+fra_spread_the_faith = {
+	local_missionary_strength = 0.05
+}
+
+fra_colombian_goods = {
+	trade_goods_size_modifier = 0.20
+}
+
+fra_northern_frontier = {
+	colonists = 1
+}
+
+fra_saint_laurent_monopolized = {
+	global_foreign_trade_power = 0.15
+}
+
+fra_glorious_marseilles = {
+	province_trade_power_modifier = 0.15
+}
+
+fra_wine_monopolies = {
+	trade_goods_size_modifier = 0.33
+}
+
+fra_troyes_manufacturing = {
+	trade_goods_size = 1
+}
+
+fra_rhineland_proximity = {
+	local_development_cost = -0.15
+	trade_value_modifier = 0.10
+}
+
+fra_orlean_centralised = {
+	local_development_cost_modifier = -0.10
+}
+
+fra_lorraine_steelmills = {
+	trade_goods_size = 1
+}
+
+fra_monopoly_over_champagne = {
+	global_own_trade_power = 0.15
+	caravan_power = 0.10
+}
+
+fra_influential_merchants = {
+	merchants = 1
+}
+
+fra_death_of_chivalry = {
+	all_estate_loyalty_equilibrium = 0.05
+	all_estate_influence_modifier = -0.10
+	reform_progress_growth = 0.05
+}
+
+fra_strength_in_numbers = {
+	infantry_power = 0.05
+}
+
+fra_revolutionized_conscription = {
+	infantry_cost = -0.50
+	cavalry_cost = -0.50
+	artillery_cost = -0.25
+	regiment_recruit_speed = 0.25
+}
+
+emperor_victorious_over_lombards = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.10
+	imperial_authority = 0.10
+}
+
+emperor_lombardy_freed = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.10
+	ae_impact = -0.15
+}
+
+emperor_victorious_against_emperor = {
+	prestige = 2
+}
+
+emperor_magna_humilitas = {
+	land_forcelimit_modifier = -0.5
+	land_maintenance_modifier = 0.25
+	land_morale = -0.1
+}
+
+emperor_leader_of_the_league = {
+	land_morale = 0.10
+	discipline = 0.05
+}
+
+brn_chur_markets = {
+	local_center_of_trade_upgrade_cost = -0.20
+	trade_value_modifier = 0.25
+}
+
+brn_lake_geneva_prosperity = {
+	local_development_cost_modifier = -0.10
+	local_prosperity_growth = 0.05
+	local_production_efficiency = 0.10
+}
+
+brn_alpine_confederacy = {
+	fort_maintenance_modifier = -0.20
+	global_prosperity_growth = 0.05
+}
+
+lon_looms_of_valencia = {
+	trade_goods_size = 1
+}
+
+lon_a_pious_kingdom = {
+	papal_influence = 1
+}
+
+lon_siding_with_ecclasia = {
+	tolerance_own = 2
+	tolerance_heretic = 1
+}
+
+lon_architecture_of_lisbon = {
+	local_development_cost_modifier = -0.10
+}
+
+lon_assembled_the_tercios = {
+	has_tercio = yes
+	allowed_tercio_fraction = 0.10
+	army_tradition = 0.5
+	yearly_army_professionalism = 0.25
+}

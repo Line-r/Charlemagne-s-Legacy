@@ -137,3 +137,36 @@ country_event = {
 		clr_country_flag = expansion_of_confederacy
 	}
 	}
+
+	country_event = {
+		id = create_canton.5
+		title = create_canton.5.t
+		desc = create_canton.5.d
+		picture = TRADEGOODS_eventPicture
+		
+		major = yes
+		major_trigger = {
+			same_continent = root
+		}
+
+		is_triggered_only = yes
+		
+		option = {
+			name = create_canton.1.a
+			add_prestige = 25
+			dismantle_hre = yes
+
+			add_power_projection = {
+				type = 10_permanent_power_projection
+				amount = 10
+			}
+		}
+
+		option = {
+			name = create_canton.1.b
+			set_in_empire = yes
+			every_subject_country = {
+				set_in_empire = yes
+			}
+		}
+	}

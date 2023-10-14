@@ -1,0 +1,398 @@
+namespace = incident_italy
+
+
+country_event = {
+	id = incident_italy.1
+	title = incident_italy.1.t
+	desc = incident_italy.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		is_emperor = yes
+		is_year = 1455
+
+		any_country = {
+			culture_group = latin
+			is_part_of_hre = yes
+		}
+
+		NOT = {
+			emperor = {
+				culture_group = latin
+			}
+		}
+	}
+	
+	option = {
+		name = incident_italy.1.a
+		
+		define_advisor = {
+			type = diplomat
+			name = "Benedèt Batista"
+			skill = 3
+			culture = piedmontese
+			religion = catholic
+			discount = yes
+		}
+
+		hidden_effect = {
+			set_global_flag = emperor_sent_diplomat
+		}
+	}
+}
+
+country_event = {
+	id = incident_italy.2
+	title = incident_italy.2.t
+	desc = incident_italy.2.d
+	picture = TRADEGOODS_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		is_emperor = yes
+		has_global_flag = emperor_sent_diplomat
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = incident_italy.2.a
+		add_prestige = -20
+
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+				culture_group = latin
+			}
+
+			add_opinion = {
+				who = root
+				modifier = emperor_diplomatic_mission_failed
+			}
+		}
+
+		hidden_effect = {
+			set_global_flag = emperor_diplomatic_mission_failed
+		}
+	}
+}
+
+country_event = {
+	id = incident_italy.3
+	title = incident_italy.3.t
+	desc = incident_italy.3.d
+	picture = TRADEGOODS_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		is_emperor = yes
+		has_global_flag = emperor_diplomatic_mission_failed
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = incident_italy.3.a
+		set_imperial_incident = incident_italy_incident
+	}
+}
+
+country_event = {
+	id = incident_italy.4
+	title = incident_italy.4.t
+	desc = incident_italy.4.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = incident_italy.4.a
+		
+		emperor = {
+			add_prestige = 20
+		}
+
+		hidden_effect = {
+			set_global_flag = emperor_engages_lombards
+		}
+	}
+
+	option = {
+		name = incident_italy.4.b
+
+		emperor = {
+			add_imperial_influence = -25
+			add_prestige = -25
+		}
+
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+				culture_group = latin
+			}
+
+			set_in_empire = no
+		}
+	}
+}
+
+country_event = {
+	#Form league event
+	id = incident_italy.5
+	title = incident_italy.5.t
+	desc = incident_italy.5.d
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		is_part_of_hre = yes
+		culture_group = latin
+		is_elector = yes
+
+		has_global_flag = emperor_engages_lombards
+
+		NOT = {
+			has_global_flag = emperor_lombard_league_formed
+		}
+	}
+	
+	option = {
+		name = incident_italy.5.a
+		custom_tooltip = tt_emperor_rally_lombards
+
+		add_country_modifier = {
+			name = emperor_leader_of_the_league
+			duration = 7300
+		}
+
+		hidden_effect = {
+			set_global_flag = emperor_lombard_league_formed
+			save_event_target_as = lombardleagueleader
+			set_country_flag = lombardleagueleader
+		}
+	}
+
+	option = {
+		name = incident_italy.5.b
+		custom_tooltip = tt_emperor_pass_on_being_leader
+	}
+}
+
+country_event = {
+	id = incident_italy.6
+	title = incident_italy.6.t
+	desc = incident_italy.6.d
+	picture = TRADEGOODS_eventPicture
+
+	major = yes
+	major_trigger = {
+		has_country_flag = lombardleagueleader
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	trigger = {
+		has_global_flag = emperor_lombard_league_formed
+		NOT = {
+			has_country_flag = emperor_joined_lombard_league
+		}
+		NOT = {
+			has_country_flag = lombardleagueleader
+		}
+	}
+	
+	option = {
+		name = incident_italy.6.a
+		add_prestige = 15
+
+		add_opinion = {
+			who = event_target:lombardleagueleader
+			modifier = emperor_lombard_league_member
+		}
+
+		hidden_effect = {
+			set_country_flag = emperor_joined_lombard_league
+		}
+	}
+
+	option = {
+		name = incident_italy.6.b
+	}
+}
+
+country_event = {
+	id = incident_italy.7
+	#AI join trigger
+
+	hidden = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = emperor_joined_lombard_league
+		event_target:lombardleagueleader = {
+			war_with = emperor
+		}
+	}
+	option = {
+		join_all_offensive_wars_of = event_target:lombardleagueleader
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = incident_italy.8
+	#AI declaration trigger
+
+	hidden = yes
+
+	trigger = {
+		has_country_flag = lombardleagueleader
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		declare_war_with_cb = {
+			casus_belli = cb_italian_independence
+			who = emperor
+		}
+	}
+}
+
+country_event = {
+	id = incident_italy.9
+	#The emperor is victorious against Italy
+	title = incident_italy.9.t
+	desc = incident_italy.9.d
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		is_emperor = yes
+		has_won_war_against = {
+			who = event_target:lombardleagueleader
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = incident_italy.9.a
+		add_prestige = 30
+		add_legitimacy = 15
+		add_imperial_influence = 40
+
+		add_country_modifier = {
+			name = emperor_victorious_over_lombards
+			duration = -1
+		}
+
+		every_country = {
+			limit = {
+				OR = {
+					has_country_flag = lombardleagueleader
+					has_country_flag = emperor_joined_lombard_league
+				}
+			}
+
+			add_country_modifier = {
+				name = emperor_magna_humilitas
+				duration = 9125
+			}
+			clr_country_flag = lombardleagueleader
+			clr_country_flag = emperor_joined_lombard_league
+		}
+
+	}
+}
+
+
+country_event = {
+	id = incident_italy.10
+	#Lombards win their independence
+	title = incident_italy.10.t
+	desc = incident_italy.10.d
+	picture = TRADEGOODS_eventPicture
+	
+	
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = lombardleagueleader
+		has_won_war_against = {
+			who = emperor
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = incident_italy.10.a
+		add_prestige = 100
+		add_legitimacy = 50
+		set_in_empire = no
+
+		add_country_modifier = {
+			name = emperor_lombardy_freed
+			duration = -1
+		}
+
+
+		emperor = {
+			add_imperial_influence = -50
+		}
+
+		every_country = {
+			limit = {
+				has_country_flag = emperor_joined_lombard_league
+			}
+
+			clr_country_flag = emperor_joined_lombard_league
+			set_in_empire = no
+
+			add_country_modifier = {
+				name = emperor_victorious_against_emperor
+				duration = 9125
+			}
+		}
+
+		hidden_effect = {
+			clr_country_flag = lombardleagueleader
+		}
+	}
+}

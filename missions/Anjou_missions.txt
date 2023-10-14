@@ -327,7 +327,7 @@ ANJ_diplo_left = {
 					has_dlc = Leviathan
 				}
 
-				185 = {
+				183 = {
 					has_great_project = {
 						type = notre_dame_cathedral
 						tier = 3
@@ -335,7 +335,7 @@ ANJ_diplo_left = {
 				}
 			}
 			else = {
-				185 = {
+				183 = {
 					has_building = cathedral
 				}
 			}

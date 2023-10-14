@@ -14,13 +14,15 @@ country_event = {
 
 		change_government_to_republic = yes
 
+		hidden_effect = {
+			set_country_flag = swa_swabian_confederacy
+		}
+		
 		add_government_reform = swabian_confederacy
 
 		override_country_name = SWABIAN_CON
 		
-		hidden_effect = {
-			set_country_flag = swa_swabian_confederacy
-		}
+
 	}
 }
 
@@ -136,6 +138,10 @@ country_event = {
 					duration = -1
 				}
 				set_local_autonomy = 90
+			}
+
+			add_ruler_modifier = {
+				name = swa_immortal_temp
 			}
 		}
 	}
@@ -255,4 +261,37 @@ country_event = {
 		clr_country_flag = swa_tk_on
 	}
 
+}
+
+
+country_event = {
+	#End of Siegfried?
+	id = swa_events.8
+	title = swa_events.8.t
+	desc = swa_events.8.d
+
+	is_triggered_only = yes
+
+
+	option = {
+		kill_ruler = yes
+		swap_non_generic_missions = yes
+
+		hidden_effect = {
+			clr_country_flag = swa_siegfried_appears
+		}
+	}
+
+	option = {
+		swap_non_generic_missions = yes
+		add_stability = -1
+		add_legitimacy = 25
+
+		random_owned_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 5
+			}
+		}
+	}
 }

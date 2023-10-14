@@ -1747,6 +1747,9 @@ cb_unify_lowlands_culture = {
 cb_expand_confederacy = {
 	prerequisites = {
 		tag = BRN
+		NOT = {
+			has_country_flag = brn_greater_confederacy
+		}
 		has_country_flag = expansion_of_confederacy
 		is_free_or_tributary_trigger = yes
 
@@ -1761,6 +1764,36 @@ cb_expand_confederacy = {
 			}
 			NOT = {
 				num_of_cities = 5
+			}
+			NOT = { is_subject_of = BRN }
+		}
+	}
+	
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		po_revoke_cores
+		po_become_tributary_state
+		po_subjugate_tributary_state
+		po_form_personal_union
+	}
+	war_goal = take_capital_vassalize
+}
+
+cb_expand_confederacy_2 = {
+	prerequisites = {
+		tag = BRN
+		has_country_flag = brn_greater_confederacy
+		is_free_or_tributary_trigger = yes
+
+		FROM = {
+			capital_scope = {
+				same_continent = ROOT
+			}
+			any_owned_province = {
+				any_neighbor_province = {
+					country_or_non_sovereign_subject_holds = BRN
+				}
 			}
 			NOT = { is_subject_of = BRN }
 		}
@@ -1831,6 +1864,67 @@ cb_contain_swabian_aggression = {
 
 		FROM = {
 			tag = SWA
+		}
+	}
+
+	war_goal = superiority_punitive
+}
+
+cb_take_emperorship = {
+	prerequisites = {
+		OR = {
+			tag = FRA
+			tag = BOU
+		}
+		has_country_flag = enable_emperorship_cb
+		FROM = {
+			is_emperor = yes
+		}
+	}
+
+	war_goal = war_take_emperorship_wgt
+}
+
+cb_dismantle_burgundy = {
+	prerequisites = {
+		OR = {
+			tag = FRA
+			tag = BOU
+		}
+		mission_completed = fra_francia_ascendant
+
+		FROM = {
+			tag = BUR
+			num_of_subjects = 1
+		}
+	}
+
+	war_goal = war_dismantle_wgt
+}
+
+cb_conquest_for_east_francia = {
+	prerequisites = {
+		mission_completed = fra_secure_the_imperial_border
+
+		FROM = {
+			culture_group = germanic
+			NOT = {
+				is_part_of_hre = yes
+			}
+			NOT = {
+				is_subject_of = root
+			}
+		}
+	}
+
+	war_goal = take_capital_vassalize
+}
+
+cb_italian_independence = {
+	prerequisites = {
+		has_country_flag = lombardleagueleader
+		FROM = {
+			is_emperor = yes
 		}
 	}
 

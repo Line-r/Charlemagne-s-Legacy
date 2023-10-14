@@ -230,7 +230,9 @@ vol_eastwards_expansion = {
 
 		effect = {
 			38 = {
-				add_permanent_province_modifier = vol_port_of_riga
+				add_permanent_province_modifier = {
+					name = vol_port_of_riga
+				}
 			}
 		}
 	}
@@ -415,12 +417,15 @@ vol_ukraine_expansion = {
 				add_core = root
 			}
 
-			every_province = {
-				limit = {
-					culture_group = east_slavic
+			hidden_effect = {
+				every_province = {
+					limit = {
+						culture_group = east_slavic
+					}
+					add_permanent_claim = root
 				}
-				add_permanent_claim = root
 			}
+
 		}
 	}
 

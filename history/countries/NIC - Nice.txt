@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = occitain
+add_accepted_culture = cosmopolitan_french
+religion = catholic
+technology_group = western
+fixed_capital = 201
+
+
+1417.1.1 = {
+	monarch = {
+		name = "Emmanuel"
+		dynasty = "Nizzardo"
+		birth_date = 1401.9.22
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}

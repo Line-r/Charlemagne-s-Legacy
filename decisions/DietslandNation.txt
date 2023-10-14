@@ -5,6 +5,7 @@ country_decisions = {
 			factor = 100
 		}
 		potential = {
+			always = no
 			OR = {
 				primary_culture = dutch
 				primary_culture = flemish

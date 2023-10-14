@@ -308,3 +308,52 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = leonese_events.6
+	title = leonese_events.6.t
+	desc = leonese_events.6.d
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = LON
+		overlord_of = CAS
+
+		CAS = {
+			NOT = {
+				num_of_cities = 20
+			}
+			NOT = {
+				liberty_desire = 10
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	option = {
+		name = leonese_events.6.a
+		add_prestige = 20
+		add_legitimacy = 15
+		inherit = CAS
+	}
+
+	option = {
+		name = leonese_events.6.b
+		
+		custom_tooltip = tt_lon_cas_pu_maintained
+
+		hidden_effect = {
+			set_country_flag = lon_cas_pu_maintained
+		}
+	}
+}

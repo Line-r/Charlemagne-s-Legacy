@@ -13,7 +13,7 @@ vassal = {
 vassal = {
     first = LON
     second = GAL
-    start_date = 1444.1.1
+    start_date = 1439.1.1
 	end_date = 1450.9.21
 }
 

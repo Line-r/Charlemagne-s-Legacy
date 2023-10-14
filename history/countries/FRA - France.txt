@@ -24,7 +24,7 @@ change_estate_land_share = {
 
 1380.9.16 = {
 	monarch = {
-		name = "Louis XII"
+		name = "Philippe IV"
 		dynasty = "Capet"
 		birth_date = 1394.12.3
 		adm = 4

@@ -27,6 +27,7 @@ add_army_professionalism = 0.05
 		dip = 5
 		mil = 5
 	}
+	elector = yes
 }
 
 1464.8.3 = {

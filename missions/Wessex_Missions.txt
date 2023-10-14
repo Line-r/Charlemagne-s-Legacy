@@ -43,8 +43,75 @@ wsx_british_conquest_3 = {
 		has_country_flag = wsx_england_path
 	}
 
+	wsx_the_brythonic_alliance = {
+		icon = mission_unknown_mission
+		position = 2
+		required_missions = {
+			wsx_aftermath_of_the_heptarchic_wars
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					alliance_with = CUM
+
+					CUM = {
+						any_rival_country = {
+							has_been_insulted_by_root = yes
+						}
+					}
+				}
+				AND = {
+					is_rival = CUM
+
+					CUM = {
+						has_been_insulted_by_root = yes
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					alliance_with = CUM
+				}
+
+				create_marriage = CUM
+				custom_tooltip = tt_wsx_cumbria_pu
+
+
+
+				hidden_effect = {
+					CUM = {
+						set_country_flag = cum_pu_on_ruler_death
+					}
+				}
+			}
+			else = {
+				CUM = {
+					every_owned_province = {
+						add_claim = root
+					}
+				}
+			}
+		}
+	}
+}
+
+wsx_british_conquest_2 = {
+	slot = 2
+	generic = no
+	has_country_shield = yes
+	ai = yes
+
+	potential = {
+		tag = WSX
+		has_country_flag = wsx_england_path
+	}
 
 }
+
 
 
 wsx_angevin_conquest_2 = {

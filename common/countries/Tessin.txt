@@ -1,6 +1,6 @@
 #Tessin Generated using LEU4MT
 graphical_culture = westerngfx
-color = { 168 50 74 }
+color = { 34  30  174 }
 historical_idea_groups = {
 	administrative_ideas
 	plutocracy_ideas

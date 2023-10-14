@@ -4,6 +4,7 @@ owner = BRB
 hre = no
 controller = BRB
 add_core = BRB
+add_core = ANW
 is_city = yes
 capital = "Antwerp"
 culture = flemish

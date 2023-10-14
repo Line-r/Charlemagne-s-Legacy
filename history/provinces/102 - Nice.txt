@@ -1,10 +1,10 @@
 #102 - Nice
 
-owner = BUR
+owner = NIC
 hre = yes
-controller = BUR
-add_core = BUR
-culture = ligurian
+controller = NIC
+add_core = NIC
+culture = occitain
 religion = catholic
 base_tax = 4 
 base_production = 4

@@ -1,0 +1,18 @@
+
+BRN_placated_leagues = {
+	potential = {
+		owner = {
+			tag = BRN
+			mission_completed = brn_placate_the_leagues
+		}
+	}
+
+	trigger = {
+		owner = {
+			overlord_of = TTL	
+		}
+	}
+
+	local_manpower = 1
+	local_development_cost_modifier = -0.05
+}

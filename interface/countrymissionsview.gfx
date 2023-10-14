@@ -599,4 +599,29 @@ spriteTypes = {
 		name = "vinland_saga"
 		texturefile = "gfx/interface/missions/vinland_saga.dds"
 	}
+
+	spriteType = {
+		name = "fra_dynastic_struggle"
+		texturefile = "gfx/interface/missions/fra_dynastic_struggle.dds"
+	}
+
+	spriteType = {
+		name = "fra_king_of_normandy"
+		texturefile = "gfx/interface/missions/fra_king_of_normandy.dds"
+	}
+
+	spriteType = {
+		name = "fra_king_of_occitania"
+		texturefile = "gfx/interface/missions/fra_king_of_occitania.dds"
+	}
+
+	spriteType = {
+		name = "fra_king_of_the_gascons"
+		texturefile = "gfx/interface/missions/fra_king_of_the_gascons.dds"
+	}
+
+	spriteType = {
+		name = "fra_shepard_of_the_south"
+		texturefile = "gfx/interface/missions/fra_shepard_of_the_south.dds"
+	}
 }
