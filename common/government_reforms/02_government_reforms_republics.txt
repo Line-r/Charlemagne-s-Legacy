@@ -4554,10 +4554,38 @@ swabian_empire = {
 	}
 
 	modifiers = {
-		min_local_autonomy = 0.05
+		stability_cost_modifier = 0.50
 		monarch_military_power = 3
 	}
 
+	government_abilities = {
+		siegfried_sanity_mechanic
+	}
+
+}
+
+swabian_empire_warcouncil = {
+	icon = "fist_in_air"
+
+	dictatorship = yes
+	has_term_election = no
+
+	potential = {
+		tag = SWA
+		has_country_flag = swa_swabian_empire
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		has_parliament = yes
+		maintain_dynasty = yes
+
+	}
+
+	modifiers = {
+		min_local_autonomy = 0.05
+		monarch_military_power = 3
+	}
 
 }
 

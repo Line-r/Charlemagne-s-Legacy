@@ -5463,3 +5463,45 @@ gov_holy_horde = {
 		}
 	}
 }
+
+gov_siegfried = {
+	rank = {
+		1 = GOVSIEGFRIED
+		2 = GOVSIEGFRIED
+		3 = GOVSIEGFRIED	
+	}
+
+	ruler_male = {
+		1 = GRACEFUL
+		2 = GRACEFUL
+		3 = GRACEFUL
+	}
+
+	trigger = {
+		tag = SWA
+		has_reform = swabian_empire
+		NOT = {
+			ruler_has_personality = immortal_personality
+		}
+	}
+}
+
+gov_siegfried_ascendant = {
+	rank = {
+		1 = GOVSIEGFRIEDASC
+		2 = GOVSIEGFRIEDASC
+		3 = GOVSIEGFRIEDASC
+	}
+
+	ruler_male = {
+		1 = ASC_GRACEFUL
+		2 = ASC_GRACEFUL
+		3 = ASC_GRACEFUL
+	}
+
+	trigger = {
+		tag = SWA
+		has_reform = swabian_empire
+		ruler_has_personality = immortal_personality
+	}
+}

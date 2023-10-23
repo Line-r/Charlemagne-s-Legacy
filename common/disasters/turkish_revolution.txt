@@ -8,7 +8,7 @@ turkish_revolution = {
         has_any_disaster = no
 		NOT = {legitimacy = 60}
        	OR = {
-			is_year = 1620
+			current_age = age_of_absolutism
 			AND = {
 					has_country_flag = executed_ayhan
 			}
@@ -44,6 +44,9 @@ turkish_revolution = {
 				flag = turkish_revolts
 				days = 9125
 			}
+			custom_trigger_tooltip = {
+				tooltip = tt_rum_resolved_the_disaster_by_other_means
+			}
 		}
 
     }
@@ -65,6 +68,7 @@ turkish_revolution = {
         random_events = { 
                 1000 = 0
                 100 = turkish_revolution.2
+				100 = turkish_revolution.8
                 80 = turkish_revolution.3
 				50 = turkish_revolution.4
 				30 = turkish_revolution.5

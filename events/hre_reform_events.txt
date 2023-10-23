@@ -45,3 +45,19 @@ country_event = {
 		swap_non_generic_missions = yes
 	}
 }
+
+country_event = {
+	id = 9076
+	title = "EVTNAME9076"
+	desc = "EVTDESC9076"
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA9076"
+		LOT = {
+			inherit = ROOT
+		}
+	}
+}

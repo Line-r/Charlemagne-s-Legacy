@@ -1,8 +1,8 @@
 #2310 - Tikrit
 
-owner = ILK
-controller = ILK
-add_core = ILK
+owner = QAR
+controller = QAR
+add_core = QAR
 culture = al_iraqiya_arabic
 religion = sunni
 capital = "Tikrit"
@@ -13,7 +13,7 @@ base_production = 3
 base_manpower = 2
 is_city = yes
 add_core = IRQ
-add_core = ILK
+add_core = QAR
 discovered_by = east_african
 discovered_by = muslim
 discovered_by = ottoman

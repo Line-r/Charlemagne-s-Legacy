@@ -7,20 +7,19 @@ bookmark =
 	center = 183
 	default = yes
 	
-	country = BUR
 	country = FRA
 	country = WSX
 	country = EGY
 	country = RUM
 	country = LON
 	country = STY
-	country = MEC
-	country = LIV
-	country = BRB
+	country = ATH
+	country = WUR
+	country = VOL
 	country = MUN
-	country = SAX
+	country = ANJ
 	country = SAR
-	country = MAC
+	country = BRN
 	country = TRP
 	
 	easy_country = ENG

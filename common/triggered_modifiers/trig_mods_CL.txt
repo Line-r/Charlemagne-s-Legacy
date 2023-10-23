@@ -117,3 +117,24 @@ LON_cas_pu_maintained_mod = {
 	morale_damage = 0.15
 	land_morale = 0.10
 }
+
+crm_glorious_crimea = {
+	potential = {
+		tag = CRM
+		mission_completed = crm_siege_of_aqyar
+	}
+
+	trigger = {
+			NOT = {
+				num_of_owned_provinces_with = {
+					value = 6
+					OR = {
+						continent = europe
+						continent = asia
+					}
+				}
+			}
+	}
+
+	development_cost = -0.05
+}

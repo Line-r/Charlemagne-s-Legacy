@@ -3,8 +3,9 @@
 owner = FEO
 controller = FEO
 add_core = FEO 
+add_core = CRM
 culture = pontic_greek
-religion = orthodox
+religion = sunni
 capital = "Kerch"
 trade_goods = naval_supplies
 hre = no

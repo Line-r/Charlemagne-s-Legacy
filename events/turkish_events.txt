@@ -80,3 +80,225 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = turkish_events.3
+	title = turkish_events.3.t
+	desc = turkish_events.3.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = turkish_events.3.a
+		151 = {
+			move_capital_effect = yes
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+			add_province_modifier = {
+				name = rum_new_capital
+				duration = 7300
+			}
+		}
+		add_prestige = 25
+	}
+
+	option = {
+		name = turkish_events.3.b
+		capital_scope = {
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 3
+		}
+		add_stability = 1
+	}
+}
+
+country_event = {
+	id = turkish_events.4
+	title = turkish_events.4.t
+	desc = turkish_events.4.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = turkish_events.4.a
+		add_prestige = 20
+		add_country_modifier = {
+			name = rum_victory_over_alexander
+			duration = 12775
+		}
+
+		every_province = {
+			limit = {
+				is_core = MAC
+			}
+
+			remove_core = MAC
+		}
+	}
+}
+
+country_event = {
+	id = turkish_events.5
+	title = turkish_events.5.t
+	desc = turkish_events.5.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		prestige = 50
+	}
+	
+	option = {
+		name = turkish_events.5.a
+		inherit = ATH
+		inherit = TH8
+		inherit = SO8
+		inherit = HO8
+		inherit = ER8
+		inherit = NAX
+
+		inherit = SP8
+		inherit = CO8
+		inherit = OL8
+		inherit = PH8
+		inherit = CRT
+	}
+}
+
+
+country_event = {
+	id = turkish_events.6
+	title = turkish_events.6.t
+	desc = turkish_events.6.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+
+	major = yes
+	major_trigger = {
+		capital_scope = {
+			OR = {
+				continent = europe
+				continent = asia
+			}
+		}
+	}
+	
+	option = {
+		name = turkish_events.6.a
+		add_prestige = 25
+		add_legitimacy = 20
+
+		361 = {
+			set_base_tax = 3
+			set_base_production = 3
+			set_base_manpower = 3
+			destroy_great_project = {
+				type = pyramid_of_cheops
+			}
+			add_devastation = 100
+
+			hidden_effect = {
+				add_permanent_province_modifier = {
+					name = rum_sack_of_cairo
+					duration = -1
+				}
+			}
+		}
+
+		capital_scope = {
+			add_base_tax = 6
+			add_base_production = 6
+			add_base_manpower = 6
+		}
+
+		egypt_region = {
+			add_permanent_claim = root
+		}
+	}
+
+	option = {
+		name = turkish_events.6.b
+		add_casus_belli = {
+			type = cb_vassalize_mission
+			target = EGY
+			months = 600
+		}
+	}
+}
+
+country_event = {
+	id = turkish_events.7
+	title = turkish_events.7.t
+	desc = turkish_events.7.d
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	major_trigger = {
+		capital_scope = {
+			continent = europe
+		}
+	}
+
+	is_triggered_only = yes
+	
+	option = {
+		name = turkish_events.7.a
+		goto = 118
+		118 = {
+			add_base_tax = 4
+			add_base_production = 4
+			add_base_manpower = 3
+		}
+		set_capital = 118
+		custom_tooltip = tur_accept_all_italian_cultures_tt
+		hidden_effect = { 
+			add_country_modifier = { 
+				name = tur_legitimate_roman_empire_modifier
+				duration = -1 
+				hidden = yes 
+			}
+			add_accepted_culture = lombard
+			add_accepted_culture = tuscan
+			add_accepted_culture = sardinian
+			add_accepted_culture = romagnan
+			add_accepted_culture = ligurian
+			add_accepted_culture = venetian
+			add_accepted_culture = dalmatian
+			add_accepted_culture = neapolitan
+			add_accepted_culture = piedmontese
+			add_accepted_culture = umbrian
+			add_accepted_culture = sicilian
+			add_accepted_culture = maltese
+		}
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					religion = catholic
+				}
+				add_opinion = {
+					who = root
+					modifier = rum_desecrated_rome
+				}
+			}
+		}
+	}
+	option = {
+		name = turkish_events.7.b
+		goto = 151
+		151 = {
+			add_base_tax = 4
+			add_base_production = 4
+			add_base_manpower = 3
+			add_province_modifier = {
+				name = tur_expanded_governmential_offices
+				duration = -1
+			}
+		}
+	}
+}
+

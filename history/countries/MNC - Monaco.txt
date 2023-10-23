@@ -1,0 +1,21 @@
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = ligurian
+religion = catholic
+technology_group = western
+capital = 4957
+
+
+
+1415.1.1 = {
+	monarch = {
+		name = "Interregnum"
+		birth_date = 1375.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+}

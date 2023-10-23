@@ -1,0 +1,5 @@
+4953 = "Kerich"
+285 = "Kefe"
+2410 = "Aqyar"
+284 = "Canköy"
+4947 = "Kezlev"

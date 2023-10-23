@@ -348,7 +348,7 @@ champagne_area = { #3
 
 loire_area = { #5
 	color = { 231 143 5 }
-	177 178 4389
+	177 178 4389 4969
 }
 
 orleans_area = {
@@ -405,7 +405,7 @@ gelderland_area = {
 ########################################
 
 aragon_area = { #4
-	211 214 2990 4557
+	211 214 2990 4557 4967
 }
 
 catalonia_area = { #5
@@ -488,7 +488,7 @@ po_valley_area = { #3
 }
 
 piedmont_area = { #4
-	103 1875 2981 4727
+	103 1875 2981 4727 4959
 }
 
 tuscany_area = { #5
@@ -496,7 +496,7 @@ tuscany_area = { #5
 }
 
 liguria_area = { #3
-	101 102 2992
+	101 102 2992 4957
 }
 
 corsica_sardinia_area = { #4
@@ -533,7 +533,7 @@ emilia_romagna_area = { #5
 }
 
 central_italy_area = { #3
-	119 120 2977
+	119 120 2977 4968
 }
 
 ########################################
@@ -593,11 +593,11 @@ wessex_area = { #5
 }
 
 home_counties_area = { #4
-	235 236 237 4371 
+	235 236 237 4371 4973
 }
 
 east_anglia_area = { #3
-	238 1860 4370
+	238 1860 4370 4974
 }
 
 ########################################
@@ -685,11 +685,11 @@ estonia_ingria_area = { #3
 }
 
 livonia_area = { #4
-	37 38 273 4241
+	37 38 273 4241 4965
 }
 
 curonia_area = { #3
-	35 39 1935
+	35 39 1935 4964
 }
 
 east_prussia_area = { #5
@@ -1075,15 +1075,15 @@ macedonia_area = { #5 (Macedonia)
 }
 
 morea_area = { #4 Central Greece & Crete
-	146 163 4955 4957 4958 4959 4960 4961 4962
+	146 163 4955 4958 4960 4961 4962
 }
 
 northern_greece_area = { #3 #Northern Greece
-	142 144 147 4699 4698 4963 4964 4965 4966 4967 4968
+	142 144 147 4699 4698 4963 4965 4966
 }
 
 thrace_area = { #5
-	149 151 1764 4779 4705 4969 4970
+	149 151 1764 4779 4705 4970
 }
 
 bulgaria_area = { #5
@@ -1199,7 +1199,7 @@ erzurum_area = { #3	Erzurum and Trebizond
 }
 
 hudavendigar_area = { #3
-	316 317 2296 4971 4972 4973
+	316 317 2296 4971
 }
 
 germiyan_area = { #4
@@ -1218,11 +1218,11 @@ ankara_area = { #3
 }
 
 aegean_archipelago_area = { #4
-	164 320 2348 3003 4700 4974
+	164 320 2348 3003 4700
 }
 
 kastamonu_area = { #4
-	325 328 2299 2304
+	325 328 2299 2304 4972
 }
 
 karaman_area = { #4

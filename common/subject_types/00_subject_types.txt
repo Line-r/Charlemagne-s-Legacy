@@ -974,6 +974,7 @@ fiefdom = {
 	forms_trade_companies = no
 	joins_overlords_wars = no
 	place_relative_on_throne = yes
+	can_fight_independence_war = no
 
 	# Subject Interactions:
 	scutage = no

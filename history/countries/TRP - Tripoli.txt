@@ -1,7 +1,7 @@
 government = republic
 add_government_reform = phoenician_trade_republic
 technology_group = western
-religion = catholic
+religion = coptic
 primary_culture = phoenician
 government_rank = 2
 capital = 354	# Tripoli

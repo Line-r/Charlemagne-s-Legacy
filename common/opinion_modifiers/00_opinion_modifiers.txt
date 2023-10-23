@@ -5134,3 +5134,7 @@ emperor_lombard_league_member = {
 	opinion = 75
 	yearly_decay = 1
 }
+
+rum_desecrated_rome = {
+	opinion = -100
+}

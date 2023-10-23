@@ -1,5 +1,195 @@
-trp_berber_missions = {
+trp_path_1 = {
     slot = 1
+    generic = no
+    has_country_shield = yes
+    ai = yes
+
+    potential = {
+        tag = TRP
+    }
+
+    trp_bejaia_quarries = {
+        position = 2
+        icon = mission_unknown_mission
+        required_missions = {
+            integrate_kabylia
+        }
+        trigger = {
+            339 = {
+                owned_by = root
+                has_production_building_trigger = yes
+                has_manufactory_trigger = yes
+            }
+        }
+
+        effect = {
+            339 = {
+                add_province_modifier = {
+                    name = trp_bejaia_iron_mines
+                    duration = -1
+                }
+            }
+        }
+    }
+
+    trp_algerian_cloth_halls = {
+        position = 3
+        icon = mission_unknown_mission
+        required_missions = {
+            through_algiers
+        }
+
+        trigger = {
+            337 = {
+                owned_by = root
+                base_production = 10
+                has_production_building_trigger = yes
+                has_manufactory_trigger = yes
+            }
+            4562 = {
+                owned_by = root
+                base_production = 10
+                has_production_building_trigger = yes
+                has_manufactory_trigger = yes
+            }
+            336 = {
+                owned_by = root
+                base_production = 10
+                has_production_building_trigger = yes
+                has_manufactory_trigger = yes
+            }
+        }
+
+        effect = {
+            custom_tooltip = tt_all_production_building_upgrade
+            337 = {
+                upgrade_building = {
+                    production = yes
+                }
+            }
+            4562 = {
+                upgrade_building = {
+                    production = yes
+                } 
+            }
+            336 = {
+                upgrade_building = {
+                    production = yes
+                }
+            }
+        }
+    }
+
+
+    trp_maghreb_shipyards = {
+        position = 4
+        icon = mission_unknown_mission
+        required_missions = {
+            master_of_the_berbers
+        }
+
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 10
+                OR = {
+                    area = northern_morocco_area
+                    area = southern_morocco_area
+                    area = western_morocco_area
+                }
+                has_shipyard_building_trigger = yes
+            }
+        }
+
+        effect = {
+            country_event = {
+                id = trp_events.1
+            }
+        }
+    }
+
+    prepare_an_expedition = {
+        position = 5
+        icon = mission_aragonese_navy
+        required_missions = {
+            trp_maghreb_shipyards
+        }
+
+        trigger = {
+            num_of_explorers = 1
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = navigator_boost
+                duration = 5475
+            }
+
+            378 = {
+                add_unit_construction = {
+                    type = light_ship
+                    amount = 5
+                    speed = 0.5
+                    cost = 0
+                }
+            }
+        }
+    }
+
+    discover_the_americas = {
+        position = 6
+        icon = mission_caribbean_cn
+
+        required_missions = {
+            prepare_an_expedition
+        }
+
+        provinces_to_highlight = {
+            colonial_region = colonial_the_carribean
+        }
+
+        trigger = {
+            carribeans_region = {
+                has_discovered = root
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = colonial_enthusiasm
+                duration = 7300
+            }
+        }
+    }
+
+    settle_in_brazil = {
+        position = 7
+        icon = mission_colonise_brazil
+
+        required_missions = {
+            discover_the_americas
+        }
+
+        provinces_to_highlight = {
+            colonial_region = colonial_brazil
+        }
+
+        trigger = {
+            brazil_region = {
+                type = any
+                country_or_non_sovereign_subject_holds = root
+            }
+        }
+
+        effect = {
+            create_conquistador = {
+                tradition = 50
+            }
+        }
+    }
+}
+
+trp_berber_missions = {
+    slot = 2
     generic = no
     has_country_shield = yes
     ai = yes
@@ -198,12 +388,53 @@ trp_berber_missions = {
             iberia_region = {
                 add_permanent_claim = root
             }
+            1295 = {
+                add_trade_modifier = {
+                    who = root
+                    duration = 12775
+                    power = 75
+                    key = trp_valencian_trade
+                }
+            }
+        }
+    }
+
+    trp_atlantic_trade = {
+        position = 7
+        icon = mission_unknown_mission
+        required_missions = {
+            discover_the_americas
+        }
+
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				colonial_region = colonial_colombia
+				is_city = yes
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				colonial_region = colonial_brazil
+				is_city = yes
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				colonial_region = colonial_the_carribean
+				is_city = yes
+			}
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = trp_trans_atlantic_trade
+                duration = 9125
+            }
         }
     }
 }
 
 trp_minor_berber_branch = {
-    slot = 2
+    slot = 3
     generic = no
     has_country_shield = yes
     ai = yes
@@ -248,19 +479,35 @@ trp_minor_berber_branch = {
         }
     }
 
-}
+    trp_desert_development = {
+        position = 3
+        icon = mission_unknown_mission
+        required_missions = {
+            conquer_the_ibadi
+        }
 
-restoration_branch = {
-    slot = 4
-    generic = no
-    has_country_shield = yes
-    ai = yes
-    potential = {
-        tag = TRP
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 15
+                OR = {
+                    has_terrain = desert
+                    has_terrain = coastal_desert
+                }
+              has_production_building_trigger = yes
+              religion = root
+
+            }
+        }
+
+        effect = {
+            custom_tooltip = tt_trp_desert_dev
+        }
     }
 
+
+
     a_force_to_be_reckoned_with = {
-        position = 1
+        position = 4
         icon = mission_protect_granada
 
         trigger = {
@@ -276,7 +523,7 @@ restoration_branch = {
     }
 
     towards_the_delta = {
-        position = 2
+        position = 5
         icon = mission_conquer_timbuktu
         required_missions = {
             a_force_to_be_reckoned_with
@@ -301,7 +548,7 @@ restoration_branch = {
     }
 
     the_city_of_alexandria = {
-        position = 3
+        position = 6
         icon = mission_conquer_alexandria
 
         required_missions = {
@@ -319,6 +566,10 @@ restoration_branch = {
         }
 
         effect = {
+            add_country_modifier = {
+                name = trp_alexandrian_mercantilism
+                duration = -1
+            }
             bahari_area = {
                 add_permanent_claim = root
             }
@@ -342,7 +593,7 @@ restoration_branch = {
     }
 
     reconquest_of_phoenicia = {
-        position = 4
+        position = 7
         icon = mission_retake_ceuta
         required_missions = {
             the_city_of_alexandria
@@ -381,107 +632,23 @@ restoration_branch = {
             }
         }
     }
+
 }
 
-colonial_missions = {
-    slot = 3
+restoration_branch = {
+    slot = 4
     generic = no
     has_country_shield = yes
     ai = yes
     potential = {
         tag = TRP
     }
-
-    prepare_an_expedition = {
-        position = 1
-        icon = mission_aragonese_navy
-
-        trigger = {
-            num_of_explorers = 1
-        }
-
-        effect = {
-            add_country_modifier = {
-                name = navigator_boost
-                duration = 5475
-            }
-
-            378 = {
-                add_unit_construction = {
-                    type = light_ship
-                    amount = 5
-                    speed = 0.5
-                    cost = 0
-                }
-            }
-        }
-    }
-
-    discover_the_americas = {
-        position = 2
-        icon = mission_caribbean_cn
-
-        required_missions = {
-            prepare_an_expedition
-        }
-
-        provinces_to_highlight = {
-            colonial_region = colonial_the_carribean
-        }
-
-        trigger = {
-            carribeans_region = {
-                has_discovered = root
-            }
-        }
-
-        effect = {
-            add_country_modifier = {
-                name = colonial_enthusiasm
-                duration = 7300
-            }
-        }
-    }
-
-    settle_in_brazil = {
-        position = 3
-        icon = mission_colonise_brazil
-
-        required_missions = {
-            discover_the_americas
-        }
-
-        provinces_to_highlight = {
-            colonial_region = colonial_brazil
-        }
-
-        trigger = {
-            brazil_region = {
-                type = any
-                country_or_non_sovereign_subject_holds = root
-            }
-        }
-
-        effect = {
-            create_conquistador = {
-                tradition = 50
-            }
-        }
-    }
-}
-
-northern_branch = {
-    slot = 5
-    generic = no
-    has_country_shield = yes
-    ai = yes
-    potential = {
-        tag = TRP
-    }
-
     standardize_phoenician = {
-        position = 1
+        position = 2
         icon = mission_conquer_tunisia
+        required_missions = {
+            trp_carthiginian_legacy
+        }
 
         provinces_to_highlight = {
             OR = {
@@ -522,7 +689,7 @@ northern_branch = {
     }
 
     trp_seize_sicily = {
-        position = 2
+        position = 3
         icon = mission_break_sicily
         required_missions = {
             standardize_phoenician
@@ -546,6 +713,12 @@ northern_branch = {
             }
         }
         effect = { 
+            125 = {
+                add_province_modifier = {
+                    name = trp_enter_the_genoese_market
+                    duration = 9125
+                }
+            }
             western_mediterrenean_area = {
                 add_permanent_claim = root
             }
@@ -572,6 +745,10 @@ northern_branch = {
         }
 
         effect = {
+            add_country_modifier = {
+                name = trp_a_mediterranean_republic
+                duration = -1
+            }
             baleares_area = {
                 add_permanent_claim = root
             }
@@ -589,4 +766,145 @@ northern_branch = {
             }
         }
     }
+
+    trp_in_alexandrian_markets = {
+        position = 7
+        icon = mission_unknown_mission
+        required_missions = {
+            the_city_of_alexandria
+        }
+
+        trigger = {
+            358 = {
+                is_strongest_trade_power = root
+            }
+
+            mercantilism = 30
+        }
+
+        effect = {
+            add_mercantilism = 5
+            add_country_modifier = {
+                name = trp_alexandrias_markets
+                duration = 18250
+            }
+
+            define_advisor = {
+                type = trader
+                skill = 3
+                discount = yes
+            }
+        }
+    }
+
+}
+
+trp_path_5 = {
+    slot = 5
+    generic = no
+    has_country_shield = yes
+    ai = yes
+    potential = {
+        tag = TRP
+    }
+
+    trp_carthiginian_legacy = {
+        position = 1
+        icon = mission_unknown_mission
+
+        trigger = {
+            341 = {
+                owned_by = root
+                has_trade_building_trigger = yes
+                province_has_center_of_trade_of_level = 2
+                religion = root
+            }
+        }
+
+        effect = {
+            341 = {
+                set_center_level_3_center_of_trade = yes
+                add_province_modifier = {
+                    name = trp_a_new_carthage
+                    duration = -1
+                }
+            }
+        }
+    }
+
+    trp_secure_the_aures_passage = {
+        position = 2
+        icon = mission_unknown_mission
+        required_missions = {
+            trp_carthiginian_legacy
+        }
+
+        trigger = {
+            2454 = {
+                has_fort_building_trigger = yes
+            }
+        }
+
+        effect = {
+            2454 = {
+                custom_tooltip = tt_trp_fort_upgrade
+                upgrade_building = {
+                    fort = yes
+                }
+
+                add_province_modifier = {
+                    name = kef_fortifications
+                    duration = -1
+                }
+            }
+        }
+    }
+
+    trp_gold_of_the_holy_city = {
+        position = 3
+        icon = mission_unknown_mission
+        required_missions = {
+            trp_secure_the_aures_passage
+        }
+
+        trigger = {
+            4566 = {
+                development = 30
+                has_tax_building_trigger = yes
+                religion = root
+            }
+        }
+
+        effect = {
+            4566 = {
+                change_trade_goods = gold
+            }
+        }
+    }
+
+
+}
+
+colonial_missions = {
+    slot = 5
+    generic = no
+    has_country_shield = yes
+    ai = yes
+    potential = {
+        tag = TRP
+    }
+
+
+}
+
+northern_branch = {
+    slot = 5
+    generic = no
+    has_country_shield = yes
+    ai = yes
+    potential = {
+        tag = TRP
+    }
+
+
 }

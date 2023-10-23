@@ -7,6 +7,11 @@ country_event = {
 
 	is_triggered_only = yes
 
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+
 	option = {
 		name = swa_events.1.a
 		change_tag = SWA
@@ -40,7 +45,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 400
+		months = 200
 	
 		modifier = {
 			factor = 0.5
@@ -75,6 +80,11 @@ country_event = {
 	desc = swa_events.3.d
 
 	is_triggered_only = yes
+
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
 
 
 	option = {
@@ -142,6 +152,7 @@ country_event = {
 
 			add_ruler_modifier = {
 				name = swa_immortal_temp
+				hidden = yes
 			}
 		}
 	}
@@ -160,6 +171,7 @@ country_event = {
 		any_owned_province = {
 			has_province_modifier = swa_loyalist_province
 		}
+		has_reform = swabian_military_junta
 	}
 
 	mean_time_to_happen = {
@@ -191,6 +203,7 @@ country_event = {
 
 
 	option = {
+		name = swa_events.5.a
 		1868 = {
 			move_capital_effect = yes
 			add_base_tax = 3
@@ -205,16 +218,19 @@ country_event = {
 			clr_country_flag = swa_swabian_junta
 			set_country_flag = swa_augsburg_accord
 
-			set_variable = {
-				which = swaSiegfriedSanity
-				value = 0
-			}
 		}
 		
 	}
 
 	immediate = {
 		set_country_flag = swa_swabian_empire
+
+	
+		add_country_modifier = {
+			name = swa_siegfried_insanity_growth
+			duration = -1
+			hidden = yes
+		}
 	}
 	
 }
@@ -274,15 +290,30 @@ country_event = {
 
 
 	option = {
+		name = swa_events.8.a
 		kill_ruler = yes
 		swap_non_generic_missions = yes
 
+		define_ruler = {
+			name = "The Warcouncil"
+			adm = 3
+			dip = 3
+			mil = 5
+			regency = yes
+		}
+
 		hidden_effect = {
 			clr_country_flag = swa_siegfried_appears
+
+			add_ruler_personality = immortal_personality
 		}
 	}
 
 	option = {
+		name = swa_events.8.b
+		hidden_effect = {
+			set_country_flag = swa_siegfried_seeks_immortality
+		}
 		swap_non_generic_missions = yes
 		add_stability = -1
 		add_legitimacy = 25
@@ -293,5 +324,695 @@ country_event = {
 				size = 5
 			}
 		}
+	}
+}
+
+country_event = {
+	#Siegfried overrides parliament
+	id = swa_events.9
+	title = swa_events.9.t
+	desc = swa_events.9.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 30
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = swa_events.9.a
+		add_stability = -1
+	}
+}
+
+country_event = {
+	#Advisor paranoia
+	id = swa_events.10
+	title = swa_events.10.t
+	desc = swa_events.10.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 30
+		}
+
+		NOT = {
+			has_government_power = {
+				mechanic_type = siegfried_sanity_mechanic
+				power_type = siegfried_sanity_power
+				value = 70
+			}
+		}
+		has_advisor = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = swa_events.10.a
+		kill_advisor_by_category_effect = {
+			ADM = yes
+		}
+		kill_advisor_by_category_effect = {
+			DIP = yes
+		}
+		kill_advisor_by_category_effect = {
+			MIL = yes
+		}
+
+		add_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = -5
+		}
+	}
+
+	option = {
+		name = swa_events.10.b
+		add_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 5
+		}
+	}
+}
+
+country_event = {
+	#Manpower purge
+	id = swa_events.11
+	title = swa_events.11.t
+	desc = swa_events.11.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 40
+		}
+
+		NOT = {
+			has_government_power = {
+				mechanic_type = siegfried_sanity_mechanic
+				power_type = siegfried_sanity_power
+				value = 70
+			}
+		}
+
+		manpower_percentage = 0.60
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = swa_events.11.a
+		add_yearly_manpower = -1
+		add_army_professionalism = -0.05
+		add_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = -5
+		}
+	}
+
+	option = {
+		name = swa_events.11.b
+		add_mil_power = 10
+
+		add_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 5
+		}
+	}
+}
+
+country_event = {
+	#Random war dec
+	id = swa_events.12
+	title = swa_events.12.t
+	desc = swa_events.12.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 60
+		}
+
+		NOT = {
+			has_government_power = {
+				mechanic_type = siegfried_sanity_mechanic
+				power_type = siegfried_sanity_power
+				value = 70
+			}
+		}
+		NOT = {
+			calc_true_if = {
+				amount = 5
+
+				any_owned_province = {
+					NOT = {
+						controlled_by = root
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				NOT = {
+					war_with = root
+				}
+				NOT = {
+					is_subject_of = root
+				}
+				NOT = {
+					truce_with = root
+				}
+			}
+
+			save_event_target_as = swa_random_dec
+
+
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	option = {
+		name = swa_events.12.a
+		root = {
+			declare_war_with_cb = {
+				casus_belli = cb_swabian_totalenkrieg
+				who = event_target:swa_war_dec
+			}
+		}
+	}
+
+	option = {
+		name = swa_events.12.b
+		add_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 5
+		}
+		add_government_power = {
+			mechanic_type = swabian_war_council_mechanic
+			power_type = swabian_war_council_power
+			value = -10
+		}
+	}
+}
+
+country_event = {
+	#Bavarian massacre
+	id = swa_events.13
+	title = swa_events.13.t
+	desc = swa_events.13.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 65
+		}
+		
+		any_owned_province = {
+			culture = bavarian
+		}
+	}
+
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 64
+	}
+
+	option = {
+		name = swa_events.13.a
+		every_owned_province = {
+			limit = {
+				culture = bavarian
+			}
+
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+
+			add_province_modifier = {
+				name = swa_bavarian_massacre
+				duration = 7300
+			}
+		}
+	}
+}
+
+
+country_event = {
+	#Memmingen massacre
+	id = swa_events.14
+	title = swa_events.14.t
+	desc = swa_events.14.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 65
+		}
+		
+		owns = 68
+	}
+
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 64
+	}
+
+
+	option = {
+		name = swa_events.14.a
+		65 = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+
+			add_province_modifier = {
+				name = swa_memmingen_massacre
+				duration = 7300
+			}
+		}
+	}
+}
+
+
+country_event = {
+	#Advisor purge
+	id = swa_events.15
+	title = swa_events.15.t
+	desc = swa_events.15.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 70
+		}
+		has_advisor = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = swa_events.15.a
+		kill_advisor_by_category_effect = {
+			ADM = yes
+		}
+		kill_advisor_by_category_effect = {
+			DIP = yes
+		}
+		kill_advisor_by_category_effect = {
+			MIL = yes
+		}
+	}
+}
+
+country_event = {
+	#Random war dec forced
+	id = swa_events.16
+	title = swa_events.16.t
+	desc = swa_events.16.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 80
+		}
+		NOT = {
+			calc_true_if = {
+				amount = 5
+
+				any_owned_province = {
+					NOT = {
+						controlled_by = root
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				NOT = {
+					war_with = root
+				}
+				NOT = {
+					is_subject_of = root
+				}
+				NOT = {
+					truce_with = root
+				}
+			}
+
+			save_event_target_as = swa_random_dec
+
+
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	option = {
+		name = swa_events.16.a
+		root = {
+			declare_war_with_cb = {
+				casus_belli = cb_swabian_totalenkrieg
+				who = event_target:swa_random_dec
+			}
+		}
+}
+}
+
+country_event = {
+	#Manpower purge
+	id = swa_events.17
+	title = swa_events.17.t
+	desc = swa_events.17.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		tag = SWA
+		has_government_power = {
+			mechanic_type = siegfried_sanity_mechanic
+			power_type = siegfried_sanity_power
+			value = 70
+		}
+
+		manpower_percentage = 0.60
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = swa_events.17.a
+		add_yearly_manpower = -1
+		add_army_professionalism = -0.05
+	}
+
+}
+
+country_event = {
+	#Death of Siegfried
+	id = swa_events.18
+	title = swa_events.18.t
+	desc = swa_events.18.d
+	picture = TRADEGOODS_eventPicture
+
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	trigger = {
+		tag = SWA
+		has_ruler_flag = swa_siegfried
+		ruler_age = 85
+
+		NOT = {
+			has_country_flag = swa_siegfried_immortal
+		}
+		NOT = {
+			has_country_flag = swa_council_strengthened
+		}
+	}
+	
+	option = {
+		name = swa_events.18.a
+		add_stability = -3
+		add_government_reform = swabian_confederacy
+		custom_tooltip = tt_swa_empire_collapses
+		hidden_effect = {
+			release_all_possible_countries = yes
+			every_country = {
+				limit = {
+					capital_scope = {
+						culture = swabian
+					}
+				}
+				root = {
+					inherit = prev
+				}
+			}
+
+			clr_country_flag = swa_swabian_empire
+			clr_country_flag = swa_warcouncil_established
+		}
+
+		add_country_modifier = {
+			name = swa_demilitarization
+			duration = 18250
+		}
+	}
+}
+
+country_event = {
+	id = swa_events.19
+	title = swa_events.19.t
+	desc = swa_events.19.d
+	picture = TRADEGOODS_eventPicture
+	
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWA
+		has_ruler_flag = swa_siegfried
+		ruler_age = 85
+
+		NOT = {
+			has_country_flag = swa_siegfried_immortal
+		}
+		has_country_flag = swa_council_strengthened
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	
+	option = {
+		name = swa_events.19.a
+		add_stability = -1
+		swap_non_generic_missions = yes
+
+		define_ruler = {
+			name = "The Warcouncil"
+			adm = 3
+			dip = 3
+			mil = 5
+			regency = yes
+		}
+
+		hidden_effect = {
+			add_government_reform = swabian_empire_warcouncil
+			clr_country_flag = swa_siegfried_appears
+
+			add_ruler_personality = immortal_personality
+		}
+	}
+}
+
+country_event = {
+	id = swa_events.20
+	title = swa_events.20.t
+	desc = swa_events.20.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		same_continent = root
+	}
+	
+	option = {
+		name = swa_events.20.a
+		
+		if = {
+			limit = {
+				check_variable = {
+					which = swaImmortalChance
+					value = 0
+				}
+				NOT = {
+					check_variable = {
+						which = swaImmortalChance
+						value = 1
+					}
+				}
+			 }
+
+			 random_list = {
+				10 = {
+					add_ruler_personality = immortal_personality
+				}
+				90 = {
+					country_event = {
+						id = swa_events.19
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				check_variable = {
+					which = swaImmortalChance
+					value = 20
+				}
+				NOT = {
+					check_variable = {
+						which = swaImmortalChance
+						value = 21
+					}
+				}
+			 }
+
+			 random_list = {
+				30 = {
+					add_ruler_personality = immortal_personality
+				}
+				70 = {
+					country_event = {
+						id = swa_events.19
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				check_variable = {
+					which = swaImmortalChance
+					value = 40
+				}
+				NOT = {
+					check_variable = {
+						which = swaImmortalChance
+						value = 41
+					}
+				}
+			 }
+
+			 random_list = {
+				50 = {
+					add_ruler_personality = immortal_personality
+				}
+				50 = {
+					country_event = {
+						id = swa_events.19
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				check_variable = {
+					which = swaImmortalChance
+					value = 60
+				}
+				NOT = {
+					check_variable = {
+						which = swaImmortalChance
+						value = 61
+					}
+				}
+			 }
+
+			 random_list = {
+				70 = {
+					add_ruler_personality = immortal_personality
+				}
+				30 = {
+					country_event = {
+						id = swa_events.19
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				check_variable = {
+					which = swaImmortalChance
+					value = 80
+				}
+				NOT = {
+					check_variable = {
+						which = swaImmortalChance
+						value = 81
+					}
+				}
+			 }
+
+			 random_list = {
+				90 = {
+					add_ruler_personality = immortal_personality
+				}
+				10 = {
+					country_event = {
+						id = swa_events.19
+					}
+				}
+			}
+		}
+
+		
 	}
 }

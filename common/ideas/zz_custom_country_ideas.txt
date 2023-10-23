@@ -300,3 +300,94 @@ TRP_ideas = {
 	}
 
 }
+
+CRM_ideas = {
+	trigger = {
+		tag = CRM
+	}
+
+	free = yes
+
+	start = {
+		naval_forcelimit_modifier = 0.50
+		development_cost = -0.10
+	}
+
+	crm_peninsular_commerce = {
+		global_own_trade_power = 0.15
+	}
+
+	crm_trade_route_charting = {
+		ship_trade_power_modifier = 0.10
+	}
+
+	crm_tatar_legacy = {
+		cavalry_power = 0.20
+		discipline = 0.025
+	}
+
+	crm_empowered_marines = {
+		shock_damage_received = -0.20
+		regiment_disembark_speed = 0.33
+		is_marine_modifier = yes 
+	}
+
+	crm_hardy_seamen = {
+		global_sailors_modifier = 0.15
+	}
+
+	crm_pirate_detterence = {
+		light_ship_power = 0.15
+	}
+
+	crm_ascendant_republic = {
+		republican_tradition = 0.5
+	}
+
+	bonus = {
+		merchants = 2
+	}
+}
+
+BOU_ideas = {
+	start = {
+		ae_impact = -0.10
+		global_manpower_modifier = 0.20
+	}
+	
+	bonus = {
+		siege_ability = 0.15
+	}	
+
+	trigger = {
+		tag = BOU
+	}
+	free = yes		#will be added at load.
+
+	bou_parisian_guard = {
+		infantry_power = 0.15
+		drill_gain_modifier = 0.5
+	}
+	bou_champagne_dominance = {
+		global_own_trade_power = 0.15
+	}
+	elan = {
+		land_morale = 0.15
+		morale_damage = 0.05
+	}
+	mandats_territoriaux = {
+		production_efficiency = 0.15
+		inflation_reduction = 0.05
+	} 
+	liberty_egalite_fraternity = {
+		tolerance_heretic = 1 
+		tolerance_heathen = 1 
+	}
+	jourdan_law = {
+		manpower_recovery_speed = 0.2
+		discipline = 0.05
+	}
+	bou_prosperity_of_france = {
+		development_cost = -0.10
+	}
+}

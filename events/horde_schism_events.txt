@@ -44,7 +44,7 @@ country_event = {
 		days = 3650
 
 		modifier = {
-			factor = 0.2
+			factor = 0.5
 			is_at_war = yes
 		}
 	}
@@ -116,8 +116,8 @@ country_event = {
 		days = 1825
 
 		modifier = {
-			factor = 0.3
-			is_at_war = yes
+			factor = 0.1
+			exists = KRU
 		}
 	}
 
@@ -144,5 +144,29 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+country_event = {
+	id = horde_schism_events.5
+	title = horde_schism_events.5.t
+	desc = horde_schism_events.5.d
+	picture = TRADEGOODS_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GLH
+		has_disaster = horde_schisms
+		is_year = 1490
+	}
+
+	mean_time_to_happen = {
+		days = 1095
+	}
+	
+	option = {
+		name = horde_schism_events.5.a
+		release_all_possible_countries = yes
 	}
 }

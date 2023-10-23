@@ -1,0 +1,18 @@
+government = republic
+add_government_reform = merchants_reform
+technology_group = eastern
+religion = orthodox
+primary_culture = crimean
+capital = 284	# Crimea
+set_government_rank = 1
+
+1441.1.1 = {
+	monarch = {
+		name = "Mengli"
+		dynasty = Giray
+		birth_date = 1397.1.1
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}

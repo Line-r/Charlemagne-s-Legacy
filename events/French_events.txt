@@ -17,6 +17,7 @@ country_event = {
 			name = BOU_the_house_of_bourbon
 			duration = 10950
 		}
+		swap_free_idea_group = yes
 	}
 }
 

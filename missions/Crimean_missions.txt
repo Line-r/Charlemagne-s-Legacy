@@ -1,0 +1,781 @@
+crm_leftmost_path = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = CRM
+	}
+
+	crm_beautiful_city = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_siege_of_aqyar
+		}
+
+		trigger = {
+			4947 = {
+				owned_by = root
+				development = 20
+			}
+		}
+
+		effect = {
+			4947 = {
+				add_province_triggered_modifier = crm_a_beautiful_city
+			}
+		}
+	}
+
+	crm_kezlev_salt_mines = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_beautiful_city
+		}
+
+		trigger = {
+			4947 = {
+				has_production_building_trigger = yes
+				has_manufactory_trigger = yes
+			}
+		}
+
+		effect = {
+			4947 = {
+				change_trade_goods = salt
+				add_building_construction = {
+					building = wharf
+					cost = 0
+				}
+
+				add_province_modifier = {
+					name = crm_kezlev_industry
+					duration = -1
+				}
+			}
+		}
+	}
+
+	crm_establish_western_contact = {
+		position = 5
+		icon = mission_unknown_mission
+
+		trigger = {
+			any_ally = {
+				technology_group = western
+				has_opinion = {
+					who = root
+					value = 150
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_western_ideas
+				duration = 12775
+			}
+		}
+	}
+
+	crm_spreading_western_knowledge = {
+		position = 6
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_establish_western_contact
+		}
+
+		trigger = {
+			has_institution = printing_press
+		}
+
+		effect = {
+			change_technology_group = western
+
+			add_country_modifier = {
+				name = crm_westernization
+				duration = -1
+			}
+		}
+	}
+
+	crm_early_industrialization = {
+		position = 8
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_aqyar_glassblowing
+		}
+
+		trigger = {
+			all_owned_province = {
+				has_manufactory_trigger = yes
+				base_production = 15
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_early_industrialization
+				duration = 10950
+			}
+		}
+	}
+
+	crm_crimean_blast_furnaces = {
+		position = 9
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_early_industrialization
+			crm_kerch_quarry
+		}
+
+		trigger = {
+			adm_tech = 21
+			has_institution = manufactories
+		}
+
+		effect = {
+			285 = {
+				change_trade_goods = coal
+			}
+		}
+	}
+}
+
+crm_left_path = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = CRM
+	}
+
+	crm_spiritual_city = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_siege_of_aqyar
+		}		
+
+		trigger = {
+			284 = {
+				owned_by = root
+				development = 30
+				has_tax_building_trigger = yes
+				religion = root
+			}
+		}
+
+		effect = {
+			284 = {
+				upgrade_building = {
+					tax = yes
+				}
+
+				add_province_modifier = {
+					name = crm_spiritual_city
+					duration = 7300
+				}
+			}
+		}
+	}
+
+	crm_a_firm_discipline = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_spiritual_city
+		}
+
+		trigger = {
+			284 = {
+				owned_by = root
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+			}
+
+			army_size_percentage = 1
+			army_professionalism = 0.3
+		}
+
+		effect = {
+			284 = {
+				add_province_triggered_modifier = CRM_discipline
+			}
+
+			add_army_tradition = 20
+		}
+	}
+
+	crm_infrastructural_expansion = {
+		position = 5
+		icon = mission_unknown_mission
+
+		trigger = {
+			all_owned_province = {
+				num_of_times_expanded_infrastructure = 3
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_infrastructural_expansion
+				duration = 18250
+			}
+		}
+	}
+
+	crm_aqyar_glassblowing = {
+		position = 7
+		icon = mission_unknown_mission
+
+		trigger = {
+			2410 = {
+				owned_by = root
+				has_production_building_trigger = yes
+				development = 50
+			}
+		}
+
+		effect = {
+			2410 = {
+				change_trade_goods = glass
+				add_province_modifier = {
+					name = crm_glassworks
+					duration = -1
+				}
+			}
+		}
+	}
+
+	crm_kerch_quarry = {
+		position = 8
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_aqyar_glassblowing
+		}
+
+		trigger = {
+			4953 = {
+				has_production_building_trigger = yes
+				base_production = 15
+			}
+		}
+
+		effect = {
+			4953 = {
+				change_trade_goods = iron
+			}
+		}
+	}
+}
+
+
+crm_center_path = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = CRM
+	}
+
+	crm_siege_of_aqyar = {
+		position = 1
+		icon = mission_unknown_mission
+		
+
+		trigger = {
+			crimea_area = {
+				type = all
+				owned_by = root
+			}
+
+			NOT = {
+				exists = FEO
+			}
+
+			2410 = {
+				is_core = root
+			}
+		}
+
+		effect = {
+			set_government_rank = 2
+			add_republican_tradition = 10
+
+			2410 = {
+				move_capital_effect = yes
+			}
+
+			custom_tooltip = tt_crm_dev_trig
+
+		}
+		
+	}
+
+
+	crm_a_venerable_city = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_siege_of_aqyar
+		}
+
+		trigger = {
+			2410 = {
+				owned_by = root
+				OR = {
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+
+				development = 30
+			}
+		}
+
+		effect = {
+			custom_tooltip = tt_crm_trade_building_will_upgrade
+			2410 = {
+				if = {
+					limit = { 
+						has_building = marketplace
+					}
+					remove_building = marketplace
+					add_building = trade_depot
+				}
+
+				else_if = {
+					limit = {
+						has_building = trade_depot
+					 }
+					 remove_building = trade_depot
+					 add_building = stock_exchange
+				}
+
+				else = {
+					add_base_production = 2
+				}
+
+				add_province_triggered_modifier = CRM_venerable_city
+			}
+		}
+	}
+
+	crm_the_greatest_capital = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_a_venerable_city
+		}
+
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tt_crm_capital_highest_dev
+			}
+			hidden_trigger = {
+				2410 = {
+					NOT = {
+						any_province = {
+							higher_development_than = PREV
+						}
+					}
+				}
+			}
+
+		}
+
+		effect = {
+			2410 = {
+				add_province_triggered_modifier = CRM_greatest_capital
+				add_center_of_trade_level = 2
+			}
+			add_prestige = 25
+		}
+	}
+
+	crm_peninsula_of_desires = {
+		position = 4
+		icon = mission_unknown_mission
+		
+		trigger = {
+			grown_by_development = 250
+			crimea_area = {
+				is_prosperous = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_peninsula_of_desires
+				duration = -1
+			}
+		}
+	}
+
+	crm_crimea_ascendant = {
+		position = 6
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_peninsula_of_desires
+			crm_a_mercantile_republic
+			crm_infrastructural_expansion
+		}
+
+		trigger = {
+			prestige = 100
+		}
+
+		effect = {
+			set_government_rank = 3
+
+			add_country_modifier = {
+				name = crm_crimea_ascendant
+				duration = 7300
+			}
+		}
+	}
+}
+
+crm_right_path = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = CRM
+	}
+
+
+	crm_god_given_city = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_siege_of_aqyar
+		}
+
+		trigger = {
+			285 = {
+				owned_by = root
+				development = 20
+				religion = root
+
+				OR = {
+					has_building = temple
+					has_building = cathedral
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = tt_crm_upgrade_tax_building
+			285 = {
+				if = {
+					limit = {
+						has_building = temple
+					}
+	
+					remove_building = temple
+					add_building = cathedral
+				}
+				else = {
+					root = {
+						add_adm_power = 100
+					}
+				}
+
+				add_province_triggered_modifier = CRM_soldiers_of_god
+			}
+
+
+
+		}
+	}
+
+	crm_eternal_fortress = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_god_given_city
+		}
+
+		trigger = {
+			285 = {
+				owned_by = root
+				has_fort_building_trigger = yes
+			}
+		}
+
+		effect = {
+			285 = {
+				add_province_modifier = {
+					name = crm_eternal_fortress
+					duration = -1
+				}
+			}
+		}
+	}
+
+	crm_a_mercantile_republic = {
+		position = 5
+		icon = mission_unknown_mission
+		
+		trigger = {
+			all_owned_province = {
+				has_shipyard_building_trigger = yes
+			}
+			navy_size_percentage = 0.9
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_crimean_mercantilism
+				duration = -1
+			}
+		}
+	}
+
+	crm_establish_the_marines = {
+		position = 6
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_a_mercantile_republic
+		}
+
+		trigger = {
+			num_of_transport = 25
+			all_owned_province = {
+				has_dock_building_trigger = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_marines
+				duration = -1
+			}
+		}
+	}
+
+	crm_dominance_over_the_black_sea = {
+		position = 7
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_establish_the_marines
+		}
+
+		trigger = {
+			has_flagship = yes
+			1322 = {
+				any_country_active_in_node = {
+					NOT = {
+						navy_size = root
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_black_sea_dominance
+				duration = -1
+				desc = until_our_flagship_is_gone_desc 
+			}
+		}
+	}
+
+}
+
+
+crm_rightmost_path = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = CRM
+	}
+
+	crm_kerch_commerce = {
+		position = 2
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_siege_of_aqyar
+		}
+
+		trigger = {
+			4953 = {
+				owned_by = root
+				development = 20
+
+				has_trade_building_trigger = yes
+			}
+		}
+
+		effect = {
+			4953 = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+
+
+	crm_heart_of_wealth = {
+		position = 3
+		icon = mission_unknown_mission
+		required_missions = {
+			crm_kerch_commerce
+		}
+
+		trigger = {
+			4953 = {
+				owned_by = root
+				province_has_center_of_trade_of_level = 3
+			}
+
+			mercantilism = 30
+			1322 = {
+				is_strongest_trade_power = root
+			}
+		}
+
+		effect = {
+			4953 = {
+				add_province_triggered_modifier = CRM_crimean_commercial_center
+			}
+		}
+	}
+
+	crm_cultural_melting_pot = {
+		position = 5
+		icon = mission_unknown_mission
+		
+		trigger = {
+			crimea_area = {
+				type = all
+				owned_by = root
+			}
+			OR = {
+				AND = {
+					accepted_culture = pontic_greek
+					accepted_culture = goths
+				}
+				all_owned_province = {
+					culture = root
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { 
+					all_owned_province = {
+						culture = root
+					}
+				}
+
+				add_dip_power = 200
+				add_country_modifier = {
+					name = crm_intolerant_society
+					duration = 18250
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = crm_tolerant_society
+					duration = -1
+				}
+			}
+		}
+	}
+
+	crm_judean_refugees = {
+		position = 6
+		icon = mission_unknown_mission
+
+		required_missions = {
+			crm_cultural_melting_pot
+		}
+
+
+		trigger = {
+			4953 = {
+				OR = {
+					religion = jewish
+					religion = root
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = tt_crm_upgrade_tax_or_dev
+			if = {
+				limit = {
+					religion = root
+				}
+
+				4953 = {
+					remove_building = temple
+					add_building = cathedral
+				}
+
+			}
+			else = {
+				4953 = {
+					add_base_tax = 3
+				}
+			}
+		}
+	}
+
+	crm_beyond_the_bosphorus = {
+		position = 7
+		icon = mission_unknown_mission
+
+		required_missions = {
+			crm_establish_the_marines
+		}
+
+		trigger = {
+			has_idea_group = exploration_ideas
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_beyond_the_bosphorus
+				duration = 18250
+			}
+		}
+	}
+
+	crm_establish_new_aqyar = {
+		position = 8
+		icon = mission_unknown_mission
+
+		required_missions = {
+			crm_beyond_the_bosphorus
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+				is_city = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = crm_colonial_ambitions
+				duration = 9125
+			}
+		}
+	}
+}

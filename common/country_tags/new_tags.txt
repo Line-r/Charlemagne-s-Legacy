@@ -74,3 +74,10 @@ BRF = "countries/Breifne.txt"
 
 #Breakaway GLH states
 AKH = "countries/Arkhangelsk.txt"
+
+#Misc
+CRM = "countries/Crim.txt"
+MNC = "countries/Monaco.txt"
+ADR = "countries/Andorra.txt"
+SMR = "countries/SanMarino.txt"
+BEL = "countries/Belgium.txt"

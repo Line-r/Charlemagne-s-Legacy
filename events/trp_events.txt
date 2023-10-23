@@ -1,0 +1,61 @@
+namespace = trp_events
+country_event = {
+	id = trp_events.1
+	title = trp_events.1.t
+	desc = trp_events.1.d
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = trp_events.1.a
+		add_country_modifier = {
+			name = trp_a_pirates_life
+			duration = -1
+		}
+	}
+
+	option = {
+		name = trp_events.1.b
+		add_country_modifier = {
+			name = trp_expanded_dockyards
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = trp_events.2	
+	hidden = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_terrain = desert
+					has_terrain = coastal_desert
+				}
+				NOT = {
+					has_province_modifier = trp_desert_development
+				}
+			}
+
+			save_event_target_as = trp_desert
+		}
+	}
+
+	trigger = {
+		tag = TRP
+		mission_completed = trp_desert_development
+	}
+	
+	option = {
+		name = trp_events.2.a
+		event_target:trp_desert = {
+			add_province_modifier = {
+				name = trp_desert_development
+				duration = -1
+			}
+		}
+	}
+}

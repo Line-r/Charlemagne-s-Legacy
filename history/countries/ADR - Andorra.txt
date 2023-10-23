@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = catalan
+religion = catholic
+technology_group = western
+capital = 4967 # Valencia
+add_army_professionalism = 0.05
+
+1412.6.24 = {
+	monarch = {
+		name = "Regency"
+		adm = 2
+		dip = 1
+		mil = 2
+		regent = yes
+	}
+}

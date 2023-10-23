@@ -1,0 +1,25 @@
+siegfried_sanity_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 10
+	available = {
+		tag = SWA
+		has_ruler_flag = swa_siegfried
+	}
+
+	powers = {
+		siegfried_sanity_power = {
+			max = 100
+			scaled_modifier = {
+				modifier = {
+					global_unrest = 10
+					stability_cost_modifier = 1
+					advisor_cost = 0.5
+					build_cost = 1
+					republican_tradition = -0.5
+				 }
+			}
+		}
+	}
+
+	
+}

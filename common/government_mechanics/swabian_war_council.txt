@@ -1,6 +1,6 @@
 swabian_war_council_mechanic = {
 	alert_icon_gfx = GFX_alerticons_government_mechanics
-	alert_icon_index = 13
+	alert_icon_index = 12
 	available = {
 		tag = SWA
 		has_country_flag = swa_warcouncil_established

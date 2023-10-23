@@ -17,4 +17,6 @@ historical_friend = FRA
 		dip = 5
 		mil = 4
 	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = infertile_personality
 }
