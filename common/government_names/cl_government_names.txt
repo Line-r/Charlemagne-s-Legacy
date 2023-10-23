@@ -1,0 +1,229 @@
+
+gov_siegfried = {
+	rank = {
+		1 = GOVSIEGFRIED
+		2 = GOVSIEGFRIED
+		3 = GOVSIEGFRIED	
+	}
+
+	ruler_male = {
+		1 = GRACEFUL
+		2 = GRACEFUL
+		3 = GRACEFUL
+	}
+
+	trigger = {
+		tag = SWA
+		has_reform = swabian_empire
+		NOT = {
+			ruler_has_personality = immortal_personality
+		}
+	}
+}
+
+gov_siegfried_ascendant = {
+	rank = {
+		1 = GOVSIEGFRIEDASC
+		2 = GOVSIEGFRIEDASC
+		3 = GOVSIEGFRIEDASC
+	}
+
+	ruler_male = {
+		1 = ASC_GRACEFUL
+		2 = ASC_GRACEFUL
+		3 = ASC_GRACEFUL
+	}
+
+	trigger = {
+		tag = SWA
+		has_reform = swabian_empire
+		ruler_has_personality = immortal_personality
+	}
+}
+
+
+sisters_crusader_state = {
+	rank = {
+		1 = SISTERHOOD
+		2 = SISTERHOOD
+		3 = GRAND_SISTERHOOD
+	}
+
+	ruler_male = {
+		1 = GRAND_MASTER
+		2 = GRAND_MASTER
+		3 = COMMANDER_EMPEROR
+	}
+
+	ruler_female = {
+		1 = ABBESS
+		2 = MOTHER_SUPERIOR
+		3 = GRAND_MISTRESS
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	trigger = {
+		religion = catholic
+		has_reform = holy_state_reform
+		has_country_modifier = sisters_takeover
+	}
+}
+
+gov_jarldom = {
+	rank = {
+		1 = JARLDOM
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = JARL
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = JARL
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	consort_male = {
+		1 = CONSORT
+		2 = KING
+		3 = EMPEROR
+	}
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN
+		3 = EMPRESS
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			religion = norse_pagan_reformed
+			culture = norse
+		}
+	}
+}
+
+
+athens_merchant_republic = {
+	rank = {
+		1 = ATHENIAN_DEMOCRACY
+		2 = ATHENIAN_DEMOCRACY
+		3 = ATHENIAN_DEMOCRACY
+	}
+
+	ruler_male = {
+		1 = ARCHONTES
+		2 = ARCHONTES
+		3 = ARCHONTES
+	}
+
+	ruler_female = {
+		1 = ARCHONTES
+		2 = ARCHONTES
+		3 = ARCHONTES
+	}
+
+	trigger = {
+		tag = ATH
+	}
+}
+
+sparta_merchant_republic = {
+	rank = {
+		1 = SPARTAN_diarchy
+		2 = SPARTAN_diarchy
+		3 = SPARTAN_diarchy
+	}
+
+	ruler_male = {
+		1 = KING
+		2 = KING
+		3 = KING
+	}
+
+	ruler_female = {
+		1 = QUEEN
+		2 = QUEEN
+		3 = QUEEN
+	}
+
+	trigger = {
+		tag = SP8
+	}
+}
+
+polis = {
+	rank = {
+		1 = POLIS
+		2 = POLIS
+		3 = POLIS
+	}
+
+	ruler_male = {
+		1 = SPEAKER
+		2 = CHANCELOR
+		3 = PRESIDENT
+	}
+
+	ruler_female = {
+		1 = SPEAKER_fem
+		2 = CHANCELOR_fem
+		3 = PRESIDENT_fem
+	}
+
+	trigger = {
+		culture = greek
+	}
+}
+
+antipope = {
+	rank = {
+		1 = ANTIPAPACY
+		2 = ANTIPAPACY
+		3 = ANTIPAPACY
+	}
+
+	ruler_male = {
+		1 = ANTIPOPE
+		2 = ANTIPOPE
+		3 = ANTIPOPE
+	}
+
+	ruler_female = {
+		1 = ANTIPOPETTE
+		2 = ANTIPOPETTE
+		3 = ANTIPOPETTE
+	}
+
+	trigger = {
+		tag = ECC
+	}
+}

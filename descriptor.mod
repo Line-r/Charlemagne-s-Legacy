@@ -10,7 +10,7 @@ tags={
 	"Map"
 	"Religion"
 }
-name="Charlemagne's Legacy | Beta v0.0.9 InDev2"
+name="Charlemagne's Legacy | Beta v0.0.9 InDev4"
 replace_path="common/bookmarks"
 replace_path="gfx/loadingscreens"
 replace_path="missions"

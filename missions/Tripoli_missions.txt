@@ -884,27 +884,3 @@ trp_path_5 = {
 
 
 }
-
-colonial_missions = {
-    slot = 5
-    generic = no
-    has_country_shield = yes
-    ai = yes
-    potential = {
-        tag = TRP
-    }
-
-
-}
-
-northern_branch = {
-    slot = 5
-    generic = no
-    has_country_shield = yes
-    ai = yes
-    potential = {
-        tag = TRP
-    }
-
-
-}

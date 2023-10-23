@@ -185,7 +185,7 @@ athens_central_path = {
 		icon = foothold_in_greece
 
 		required_missions = {
-			riches_of_ragusa
+			grc_riches_of_ragusa
 			outmatch_sparta
 		}
 
@@ -304,7 +304,7 @@ athens_military_path = {
 		tag = ATH
 	}
 
-	build_an_army = {
+	grc_build_an_army = {
 		position = 2
 		icon = the_latin_empire
 		required_missions = {
@@ -328,7 +328,7 @@ athens_military_path = {
 		position = 3
 		icon = protect_against_austria
 		required_missions = {
-			build_an_army
+			grc_build_an_army
 		}
 
 		trigger = {
@@ -354,7 +354,7 @@ athens_trade_path = {
 		tag = ATH
 	}
 
-	aegean_wall = {
+	grc_aegean_wall = {
 		position = 2
 		icon = crusader_fleet
 		required_missions = {
@@ -367,7 +367,7 @@ athens_trade_path = {
 
 		effect = {
 			add_country_modifier = {
-				name = aegean_wall
+				name = grc_aegean_wall
 				duration = 3650
 			}
 			create_admiral = {
@@ -376,11 +376,11 @@ athens_trade_path = {
 		}
 	}
 
-	riches_of_ragusa = {
+	grc_riches_of_ragusa = {
 		position = 3
 		icon = dalmatian_conquest
 		required_missions = {
-			aegean_wall
+			grc_aegean_wall
 		}
 
 		trigger = {
@@ -481,7 +481,7 @@ sparta_central_path = {
 		icon = foothold_in_greece
 
 		required_missions = {
-			riches_of_ragusa
+			grc_riches_of_ragusa
 			outmatch_athens
 		}
 
@@ -590,7 +590,7 @@ sparta_military_path = {
 		tag = SP8
 	}
 
-	build_an_army = {
+	grc_build_an_army = {
 		position = 2
 		icon = the_latin_empire
 		required_missions = {
@@ -614,7 +614,7 @@ sparta_military_path = {
 		position = 3
 		icon = protect_against_austria
 		required_missions = {
-			build_an_army
+			grc_build_an_army
 		}
 
 		trigger = {
@@ -640,7 +640,7 @@ athens_trade_path = {
 		tag = SP8
 	}
 
-	aegean_wall = {
+	grc_aegean_wall = {
 		position = 2
 		icon = crusader_fleet
 		required_missions = {
@@ -653,7 +653,7 @@ athens_trade_path = {
 
 		effect = {
 			add_country_modifier = {
-				name = aegean_wall
+				name = grc_aegean_wall
 				duration = 3650
 			}
 			create_admiral = {
@@ -662,11 +662,11 @@ athens_trade_path = {
 		}
 	}
 
-	riches_of_ragusa = {
+	grc_riches_of_ragusa = {
 		position = 3
 		icon = dalmatian_conquest
 		required_missions = {
-			aegean_wall
+			grc_aegean_wall
 		}
 
 		trigger = {
@@ -1251,7 +1251,11 @@ arcadia_missions_center = {
 		}
 
 		trigger = {
-			militarised_society = 80
+			has_government_power = {
+				mechanic_type = militarization_mechanic
+				power_type = militarized_society
+				value = 80
+			}
 			army_size = 1
 		}
 
@@ -1401,7 +1405,11 @@ arcadia_missions_center = {
 				}
 			}
 
-			militarised_society = 1
+			has_government_power = {
+				mechanic_type = militarization_mechanic
+				power_type = militarized_society
+				value = 100
+			}
 			prestige = 75
 		}
 

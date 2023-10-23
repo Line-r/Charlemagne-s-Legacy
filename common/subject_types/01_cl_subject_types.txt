@@ -1,0 +1,265 @@
+#Forward declares
+westphalian_vassal = {}
+canton = {}
+heptarchic_subject = {}
+fiefdom = {}
+frankish_vassal = {}
+
+westphalian_vassal = {
+	copy_from = vassal
+	count = vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_claimsthrones
+	diplomacy_subject_sprite = GFX_diplomacy_throneclaimants
+	sprite = GFX_icon_vassal
+	
+	# Properties:
+	has_power_projection = yes
+	takes_diplo_slot = no
+	gets_help_with_rebels = no
+	separatists_become_subjects = yes
+	allows_taking_land_without_independence = yes
+	can_use_claims = yes
+	forms_trade_companies = no
+	can_concentrate_development = yes
+	forcelimit_to_overlord = 0.1
+
+	trust_on_start = 0
+	
+	base_liberty_desire = 10.0
+	military_focus = 1.2
+
+	relative_power_class = 1
+	should_quit_wars_on_activation = yes
+
+	can_fight = {
+		same_overlord = westphalian_vassal
+		independent_nations = yes
+	}
+	can_rival = {
+		same_overlord = westphalian_vassal
+		independent_nations = yes
+	}
+	can_ally = {
+		same_overlord = westphalian_vassal
+		independent_nations = yes
+	}
+	can_marry = {
+		same_overlord = westphalian_vassal
+		independent_nations = yes
+	}
+	
+	# Subject Interactions
+	#(disable)
+	scutage = no
+	grant_core_claim = yes
+	grant_province = yes
+	place_relative_on_throne = yes
+	enforce_religion = yes
+	enforce_culture = no
+	seize_territory = yes
+	
+	# Modifiers
+	
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+}
+
+canton = {
+	copy_from = vassal
+	count = vassal
+	diplomacy_overlord_sprite = GFX_diplomacy_leadmarch
+	diplomacy_subject_sprite = GFX_diplomacy_amvassal
+	sprite = GFX_icon_march
+	
+	# Properties:
+	has_power_projection = yes
+	takes_diplo_slot = no
+	gets_help_with_rebels = yes
+	separatists_become_subjects = yes
+	allows_taking_land_without_independence = yes
+	can_use_claims = no
+	forms_trade_companies = no
+	can_concentrate_development = yes
+	forcelimit_to_overlord = 0.0
+	can_be_annexed = no
+
+	trust_on_start = 0
+	
+	base_liberty_desire = -0.2
+
+	relative_power_class = 1
+	should_quit_wars_on_activation = no
+
+	# Subject Interactions
+	#(disable)
+	scutage = no
+	grant_core_claim = yes
+	grant_province = yes
+	place_relative_on_throne = no
+	enforce_religion = no
+	enforce_culture = no
+	seize_territory = no
+	contribute_to_capital = yes
+	fortify_march = yes
+	
+	#(enable)
+	
+	# Modifiers
+	
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_overlord = {
+		modifier = march_subject
+	}
+}
+
+heptarchic_subject = {
+	copy_from = personal_union
+	count = personal_union
+	diplomacy_overlord_sprite = GFX_diplomacy_leadunions
+	diplomacy_subject_sprite = GFX_diplomacy_inunion
+	sprite = GFX_icon_legitimacy
+	
+	# Properties:
+	pays_overlord = 1.0
+	has_overlords_ruler = no
+	has_power_projection = yes
+	takes_diplo_slot = no
+	gets_help_with_rebels = yes
+	separatists_become_subjects = yes
+	allows_taking_land_without_independence = yes
+	can_use_claims = yes
+	forms_trade_companies = no
+	can_concentrate_development = yes
+	forcelimit_to_overlord = 0
+	joins_overlords_wars = no
+
+
+	trust_on_start = 0
+	
+	base_liberty_desire = -0.25
+
+	relative_power_class = 1
+	should_quit_wars_on_activation = no
+
+	
+	can_ally = {
+		same_overlord = heptarchic_subject
+	}
+
+	# Subject Interactions
+	#(disable)
+	scutage = no
+	grant_core_claim = yes
+	grant_province = yes
+	place_relative_on_throne = no
+	enforce_religion = yes
+	enforce_culture = yes
+	seize_territory = yes
+	contribute_to_capital = no
+	fortify_march = no
+	
+	#(enable)
+	
+	# Modifiers
+	
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_overlord = {
+		modifier = union_subject
+	}
+}
+
+fiefdom = {
+	copy_from = vassal
+	
+	# Graphics:
+	sprite = GFX_icon_march
+	diplomacy_overlord_sprite = GFX_diplomacy_leadmarch
+	diplomacy_subject_sprite = GFX_diplomacy_weakmarch
+
+	# Properties:
+	pays_overlord = 0.25
+	military_focus = 1
+	base_liberty_desire = -25
+	can_be_annexed = yes
+	forcelimit_to_overlord = 0.1
+	is_march = yes
+	forms_trade_companies = no
+	joins_overlords_wars = no
+	place_relative_on_throne = yes
+	can_fight_independence_war = no
+
+	# Subject Interactions:
+	scutage = no
+	subsidize_armies = yes
+	fortify_march = yes
+	divert_trade = yes
+	seize_territory = yes
+	takeondebt = yes
+	
+	send_officers = yes
+
+	# Modifiers:
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_overlord = {
+		modifier = march_subject
+	}
+}
+
+frankish_vassal = {
+	copy_from = vassal
+	
+	# Graphics:
+	sprite = GFX_icon_march
+	diplomacy_overlord_sprite = GFX_diplomacy_leadmarch
+	diplomacy_subject_sprite = GFX_diplomacy_weakmarch
+
+	# Properties:
+	pays_overlord = 1.5
+	military_focus = 2
+	base_liberty_desire = -25
+	can_be_annexed = no
+	can_be_integrated = no
+	forcelimit_to_overlord = 0.1
+	is_march = yes
+	forms_trade_companies = no
+	joins_overlords_wars = yes
+	place_relative_on_throne = yes
+	max_government_rank = 1
+
+	# Subject Interactions:
+	scutage = no
+	subsidize_armies = yes
+	fortify_march = yes
+	divert_trade = yes
+	seize_territory = yes
+	takeondebt = yes
+	grant_province = yes
+	contribute_to_capital = yes
+	
+	send_officers = yes
+
+	# Modifiers:
+	modifier_overlord = clear #We don't want to duplicate the ones inherited from vassal
+	modifier_subject = clear #Ditto
+	modifier_subject = {
+		modifier = subject_nation
+	}
+	modifier_overlord = {
+		modifier = march_subject
+	}
+}

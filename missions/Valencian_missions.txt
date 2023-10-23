@@ -728,7 +728,7 @@ valencian_conquest_right_branch = {
 		}
 	}
 
-	gc_ara_banking = {
+	val_ara_banking = {
 		icon = mission_taula_de_canvi
 		required_missions = { consultate_of_the_sea }
 		position = 8

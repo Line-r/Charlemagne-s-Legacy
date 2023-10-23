@@ -1,0 +1,23 @@
+anti_papacy_reform = {
+	potential = {
+		tag = ECC
+	}
+
+	modifiers = {
+		prestige_per_development_from_conversion = 0.33
+		tolerance_own = 1
+		church_influence_modifier = 0.2
+		papal_influence = -100
+	}
+	valid_for_nation_designer = no
+	icon = "papacy"
+	allow_normal_conversion = yes
+	papacy = yes
+	allow_convert = no
+	lock_level_when_selected = yes
+	fixed_rank = 2
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}

@@ -1,0 +1,2725 @@
+
+fighting_crusaders = {
+	horde_unity = -10
+}
+reigned_in_lowland = {
+	imperial_authority_value = 0.15
+}
+earldom_prepare = {
+	land_morale = 0.10
+	infantry_power = 0.1
+	improve_relation_modifier = 0.10
+}
+romania_denied_rights = {
+	local_unrest = 3
+	local_autonomy = 0.33
+}
+
+#Pegu
+
+into_burma_peg = {
+
+	land_morale = 0.10
+	land_forcelimit_modifier = 0.15
+
+}
+
+bengal_trade_boom_peg = {
+
+	trade_efficiency = 0.15
+
+}
+
+religious_tentions_bng = {
+
+	tolerance_own = 1
+	global_unrest = 2
+
+}
+
+bengal_campaign_peg = {
+
+	core_creation = -0.15
+	ae_impact = -0.05
+
+}
+
+bengal_defeated_peg = {
+
+	army_tradition = 0.20
+
+}
+
+mountaineers_peg = {
+
+	shock_damage_received = -0.10
+
+}
+
+shan_conquest_peg = {
+
+	state_maintenance_modifier = -0.15
+
+}
+
+conquest_of_canton_peg = {
+
+	global_trade_power = 0.10
+
+}
+
+pegu_empire_peg = {
+
+	land_morale = 0.10
+	administrative_efficiency = 0.025
+
+}
+
+#Kitara Empire
+
+kitaran_border_restored_kta = {
+
+	legitimacy = 1
+	colonists = 1
+
+}
+
+markets_of_taveta_kta = {
+
+	province_trade_power_value = 10
+	local_development_cost = -0.15
+
+}
+
+crown_of_the_kongo_kta = {
+
+	artillery_power = 0.10
+	governing_capacity_modifier = 0.05
+
+}
+
+zanzibar_trade_kta = {
+
+	trade_efficiency = 0.10
+
+}
+
+kitaran_swahili_coast = {
+
+	global_trade_power = 0.10
+	governing_capacity_modifier= 0.05
+
+}
+
+kitaran_zambezi_kta = {
+
+	heavy_ship_power = 0.10
+	governing_capacity_modifier = 0.05
+
+}
+
+income_dev_boost_kta = {
+
+	development_cost = -0.10
+	global_tax_modifier = 0.10
+	build_cost = -0.10
+
+}
+
+#Somalis
+
+naval_enthusiasm_smi = {
+
+	naval_morale = 0.15
+
+}
+
+shipyards_of_hafun_smi = {
+
+	naval_forcelimit = 5
+	navy_tradition = 0.25
+	local_development_cost = -0.05
+
+}
+
+somali_unity_smi = {
+
+	land_morale = 0.10
+
+}
+
+magaaladasoomaaliyeed_smi = {
+
+	local_development_cost = -0.50
+	province_trade_power_value = 10
+
+}
+
+
+qasrigasomalia_smi = {
+
+	prestige = 1
+	local_unrest = -3
+
+}
+
+somali_yemen_smi = {
+
+	production_efficiency = 0.20
+
+}
+
+#Medri Bahri / Aksum
+
+unity_with_ethiopia_aks = {
+
+	global_unrest = -1
+	land_morale = 0.05
+
+}
+
+aksum_retaken_aks = {
+
+	land_morale = 0.10
+
+}
+
+exploration_spirit_aks = {
+
+	colonists = 1
+
+}
+
+dongola_coptic_zealousness_aks = {
+
+	local_missionary_strength = 0.02
+
+}
+
+qasr_ibrim_aks = {
+
+	local_missionary_maintenance_cost = -0.10
+	local_missionary_strength = 0.03
+
+}
+
+rough_terrain_surpassed_aks = {
+
+	local_development_cost = -0.55
+
+}
+
+in_the_name_of_christ_aks = {
+
+	missionaries = 1
+	global_missionary_strength = 0.1
+
+}
+
+aksum_restored = {
+
+	local_development_cost = -0.33
+	local_production_efficiency = 0.20
+
+}
+
+rapid_industrialization_aks = {
+
+	trade_goods_size_modifier = 0.20
+
+}
+
+booming_economy_aks = {
+
+	stability_cost_modifier = -0.20
+	global_tax_modifier = 0.20
+
+}
+
+empire_of_aksum_aks = {
+
+	administrative_efficiency = 0.05
+	land_morale = 0.10
+	core_creation = -0.10
+
+}
+
+#Ethiopia in mod
+
+eth_zealousness = {
+
+	global_missionary_strength = 0.02
+	missionary_maintenance_cost = -0.33
+
+}
+
+eth_coptic_zealousness = {
+
+	local_missionary_strength = 0.03
+
+}
+
+eth_expansion_of_the_faith = {
+
+	land_morale = 0.10
+
+}
+
+eth_nubian_temples = {
+
+	local_development_cost = -0.10
+	local_monthly_devastation = -0.05
+	local_friendly_movement_speed = 0.1
+
+}
+
+eth_egyptian_campaign = {
+
+	global_missionary_strength = 0.02
+	land_morale = 0.15
+
+}
+
+eth_defender_of_the_levant = {
+
+	global_missionary_strength = 0.01
+	land_morale = 0.10
+
+}
+
+eth_egyptian_recruits = {
+
+	global_manpower_modifier = 0.10
+
+}
+
+eth_building_manufactories = {
+
+	production_efficiency = 0.15
+
+}
+
+eth_trade_hegemon = {
+
+	global_trade_power = 0.10
+
+}
+
+eth_a_great_ethiopia = {
+
+	land_morale = 0.10
+	administrative_efficiency = 0.05
+	global_missionary_strength = 0.01
+
+}
+
+#Adal
+
+ada_far_reaching_diplomacy = {
+
+	diplomatic_reputation = 1
+
+}
+
+trading_fleet_ada = {
+
+	navy_tradition = 0.50
+	trade_efficiency = 0.10
+
+}
+
+ada_the_holy_cities = {
+
+	tolerance_own = 3
+
+}
+
+ada_golden_adal = {
+
+	prestige = 1
+	prestige_decay = -0.01
+	army_tradition = 0.75
+	navy_tradition = 0.75
+
+}
+
+ada_realm_stability = {
+
+	global_unrest = -2
+
+}
+
+ada_mastery_of_intrigue = {
+
+	fabricate_claims_cost = -0.33
+
+}
+
+#Moroccoan Minors
+
+colonial_expansion_mcm = {
+
+	global_colonial_growth = 25
+
+}
+
+caribbean_dominance_mcm = {
+
+	trade_steering = 0.33
+
+}
+
+floridan_colony_mcm = {
+
+	local_defensiveness = 0.15
+	trade_value = 3
+
+}
+
+shieldwall_granada_mcm = {
+
+	local_defensiveness = 0.20
+	local_friendly_movement_speed = 0.10
+
+}
+
+the_new_al_andalus_mcm = {
+
+	shock_damage_received = -0.20
+	fire_damage_received = -0.20
+
+}
+
+colonial_office_mcm = {
+
+	local_development_cost = -0.35
+	local_production_efficiency = 0.10
+
+}
+
+morocco_united_mcm = {
+
+	land_morale = 0.10
+	prestige = 0.50
+
+}
+
+barbary_coast_mcm = {
+
+	galley_power = 0.15
+	galley_cost = -0.15
+	naval_forcelimit_modifier = 0.10
+
+}
+
+african_power_mcm = {
+
+	administrative_efficiency = 0.05
+
+}
+
+#Moroccoan Minors - Events
+
+mcm_favours_berbers = {
+
+	improve_relation_modifier = 0.05
+	diplomatic_reputation = 0.50
+	liberty_desire = 15
+
+}
+
+mcm_crisis_of_morocco = {
+
+	land_maintenance_modifier = 0.10
+	infantry_power = -0.05
+	cavalry_power = -0.05
+	discipline = -0.05
+	diplomatic_reputation = -1
+
+}
+
+#Tlemcen
+
+diplomatic_approach_tlc = {
+
+	diplomatic_reputation = 1.50
+
+}
+
+tunisian_conquest_tlc = {
+
+	galley_power = 0.15
+	galley_cost = -0.15
+
+}
+
+tlemceni_pirates_tlc = {
+
+	privateer_efficiency = 0.33
+
+}
+
+angry_subjects_tlc = {
+
+	liberty_desire = 50
+
+}
+
+control_fez_tlc = {
+
+	trade_efficiency = 0.10
+	land_morale = 0.10
+
+}
+
+italian_raids_tlc = {
+
+	loot_amount = 0.20
+	land_maintenance_modifier = -0.10
+
+}
+
+rading_genoa_tlc = {
+
+	trade_efficiency = 0.10
+
+}
+
+tlemceni_textiles_tlc = {
+
+	global_trade_power = 0.10
+	production_efficiency = 0.10
+
+}
+
+trans_saharan_trade_tlc = {
+
+	trade_efficiency = 0.20
+
+}
+
+palace_of_tala_imsan_tlc = {
+
+	prestige = 1
+	prestige_decay = -0.03
+	local_unrest = -3
+	local_production_efficiency = 0.20
+	local_manpower_modifier = 0.10
+
+}
+
+professional_army_tlc = {
+
+	yearly_army_professionalism = 0.005
+	army_tradition = 0.50
+	navy_tradition = 0.50
+
+}
+
+#Mamluks
+
+mamluk_arch_revived_mam = {
+
+	prestige = 0.50
+	build_cost = 0.05
+	build_time = 0.05
+
+}
+
+mamluk_royal_complexes_mam = {
+
+	prestige = 0.25
+	global_unrest = -0.50
+
+}
+
+coffee_of_yemen_mam = {
+
+	global_unrest = -2
+
+}
+
+desert_campaign_mam = {
+
+	land_attrition = -0.25
+
+}
+
+al_hassa_secured_mam = {
+
+	trade_efficiency = 0.10
+
+}
+
+hormuz_campaign_mam = {
+
+	global_trade_power = 0.10
+	prestige_decay = -0.03
+
+}
+
+arabia_united_mam = {
+
+	global_unrest = -1
+	land_morale = 0.10
+
+}
+
+rich_mushasha_mam = {
+
+	trade_value = 5
+	defensiveness = 0.10
+	trade_goods_size_modifier = 0.10
+
+}
+
+the_cradle_of_civilization_mam = {
+
+	core_creation = -0.20
+
+}
+
+caspian_screens_mdf_mam = {
+
+	trade_value = 10
+	local_unrest = -5
+
+}
+
+victory_assured_mam = {
+
+	land_morale = 0.10
+	fire_damage_received = -0.05
+	shock_damage_received = -0.05
+
+}
+
+ottomans_vanquished_mam = {
+
+	legitimacy = 1
+	prestige = 1
+	infantry_power = 0.05
+
+}
+
+anatolian_guardian = {
+
+	ae_impact = -0.15
+	administrative_efficiency = 0.025
+
+}
+
+conquest_of_constantinople_mam = {
+
+	land_morale = 0.15
+
+}
+
+georgia_subjugated_mam = {
+
+	prestige = 1
+	core_creation = -0.10
+
+}
+
+ciracssia_relieved_mam = {
+
+	local_manpower_modifier = 0.50
+	local_unrest = -5
+
+}
+
+baghdad_restored_mam = {
+
+	local_development_cost = -0.15
+	local_tax_modifier = 0.33
+
+}
+
+jizya_mam = {
+
+	global_tax_modifier = 0.10
+
+}
+
+into_persia_mam = {
+
+	shock_damage = 0.15
+
+}
+
+conquest_of_khorasan_mam = {
+
+	local_unrest = -5
+	local_production_efficiency = 0.10
+
+}
+
+center_of_muslim_scholarly_mam = {
+
+	idea_cost = -0.15
+
+}
+
+the_house_of_all_muslims_mam = {
+
+	tolerance_heretic = 5
+
+}
+
+cyprus_dealt_with_mam = {
+
+	naval_attrition = -0.10
+	naval_morale = 0.10
+
+}
+
+algerian_pirates_mam = {
+
+	privateer_efficiency = 0.25
+	navy_tradition= -0.10
+
+}
+
+nubian_archers_mam = {
+
+	fire_damage = 0.15
+
+}
+
+the_muslims_of_the_horn_mam = {
+
+	tolerance_own = 1
+	global_unrest = -1
+
+}
+
+mosques_far_and_wide_mdf_mam = {
+
+	tolerance_own = 3
+	build_cost = -0.10
+
+}
+
+mamluk_caliphate_mam = {
+
+	land_morale = 0.10
+	administrative_efficiency = 0.05
+	missionaries = 1
+	tolerance_own = 2
+	core_creation = -0.10
+
+}
+
+venetians_expelled_mam = {
+
+	global_prov_trade_power_modifier = 0.15
+
+}
+
+defensive_bastion_crete_mam = {
+
+	local_defensiveness = 0.20
+	trade_value_modifier = 0.33
+
+}
+
+home_defense_mam = {
+
+	defensiveness = 0.10
+
+}
+
+alexandria_restored_mam = {
+
+	local_development_cost = -0.10
+	local_tax_modifier = 0.10
+
+}
+
+alexandrian_library_adm_mam = {
+
+	adm_tech_cost_modifier = -0.10
+
+}
+
+alexandrian_library_dip_mam = {
+
+	dip_tech_cost_modifier = -0.10
+
+}
+
+alexandrian_library_mil_mam = {
+
+	mil_tech_cost_modifier = -0.10
+
+}
+
+spice_boom_mam = {
+
+	trade_goods_size_modifier = 0.50
+
+}
+
+struck_at_venice_source_mam = {
+
+	global_trade_power = 0.15
+
+}
+
+economic_growth_mam = {
+
+	production_efficiency = 0.10
+
+}
+
+the_granary_of_the_mediterranean_mam = {
+
+	global_trade_goods_size_modifier = 0.15
+
+}
+
+lower_nile_city_mam = {
+
+	local_development_cost = -0.15
+	local_build_cost = -0.15
+
+}
+
+the_city_of_cities_mam = {
+
+	local_development_cost = -0.10
+	local_build_cost = -0.10
+	trade_goods_size = 0.50
+
+}
+
+royal_elites_founded_mam = {
+
+	local_manpower_modifier = 0.33
+
+}
+
+renovating_old_temples_mam = {
+
+	tolerance_own = 1
+
+}
+
+the_egyptian_road_mam = {
+
+	trade_efficiency = 0.10
+	global_trade_power = 0.10
+	diplomatic_upkeep = 1
+
+}
+
+military_reform_mam = {
+
+	mil_tech_cost_modifier = -0.05
+	infantry_power = 0.10
+
+}
+
+military_court_mam = {
+
+	mil_advisor_cost = -0.20
+
+}
+
+grand_military_hegemon_mam = {
+
+	land_maintenance_modifier = -0.10
+
+}
+
+new_diplomacy_mam = {
+
+	diplomatic_upkeep = 2
+
+}
+
+enhanced_administration_mam = {
+
+	administrative_efficiency = 0.025
+
+}
+
+nubian_archers_mdf_mam = {
+
+	fire_damage = 0.15
+
+}
+
+the_rule_of_the_autocrat_mam = {
+
+	yearly_absolutism = 0.5
+
+}
+
+#Sahara Provinces
+
+saharan_trade_centers = {
+	
+	trade_value = 3
+	local_development_cost = -0.15
+
+}
+
+#Timbuktu
+
+conquest_of_gao_tmb = {
+
+	core_creation = -0.10
+	ae_impact = -0.10
+
+}
+
+hausan_merchants_tmb = {
+
+	merchants = 1
+	trade_efficiency = 0.10
+
+}
+
+tuareg_unity_tmb = {
+
+	land_morale = 0.05
+	legitimacy = 1.5
+
+}
+
+riches_of_kanembornu = {
+	
+	local_production_efficiency = 0.33
+	local_unrest = -1
+
+}
+
+massina_defeated_tmb = {
+
+	army_tradition = 1
+	infantry_power = 0.10
+
+}
+
+mali_defeated_tmb = {
+
+	prestige = 1
+	land_morale = 0.15
+
+}
+
+pacified_fulo_tmb = {
+
+	cavalry_cost = -0.10
+	cavalry_power = 0.10
+	global_manpower_modifier = 0.10
+
+}
+
+timbuktu_on_coast_tmb = {
+
+	navy_tradition = 0.50
+	naval_morale = 0.15
+
+}
+
+mossi_subdued_tmb = {
+
+	reduced_liberty_desire = 10
+	vassal_income = 0.10
+
+}
+
+timbuktu_empire_tmb = {
+
+	administrative_efficiency = 0.075
+	land_morale = 0.10
+
+}
+
+center_of_scholarly_tmb = {
+
+	idea_cost = -0.10
+	technology_cost = -0.10
+	embracement_cost = -0.33
+
+}
+
+salt_monopoly_mdf_tmb = {
+
+	trade_steering = 0.15
+	global_trade_power = 0.10
+
+}
+
+glass_of_ife_mdf_tmb = {
+
+	trade_goods_size = 2
+
+}
+
+avoided_desertification_tmb = {
+
+	local_development_cost = -0.25
+	local_build_cost = -0.25
+
+}
+
+holy_cities_tmb = {
+
+	missionaries = 1
+
+}
+
+#Djenne
+
+grand_jenne_city_jnn = {
+
+	local_development_cost = -0.25
+	local_build_time = -0.25
+
+}
+
+scholars_of_jenne_jnn = {
+
+	idea_cost = -0.10
+	
+}
+
+secured_jenne_jnn = {
+
+	local_defensiveness = 0.15
+
+}
+
+segou_trade_jnn = {
+
+	trade_efficiency = 0.10
+	trade_steering = 0.15
+
+}
+
+songhai_defeated_jnn = {
+
+	prestige_from_land = 1
+	army_tradition = 0.50
+
+}
+
+#Mali
+
+new_era_of_generals_mal = {
+
+	free_leader_pool = 1
+
+}
+
+gao_reconquered_mal = {
+
+	core_creation = -0.33
+
+}
+
+jolof_subdued_mal = {
+
+	reduced_liberty_desire = 10
+	vassal_income = 0.10
+
+}
+
+colonial_enthusiasm_mal = {
+
+	colonists = 1
+
+}
+
+la_plata_mal = {
+
+	global_tariffs = 0.33
+
+}
+
+subdued_fulo_kingdom_mal = {
+
+	global_missionary_strength = 0.015
+	cavalry_power = 0.10
+
+}
+
+mali_empire_mal = {
+
+	land_morale = 0.10
+	core_creation = -0.15
+
+}
+
+niger_conquered_mal = {
+
+	production_efficiency = 0.20
+
+}
+
+great_city_mal = {
+
+	local_development_cost = -0.20
+	local_production_efficiency = 0.10
+	
+}
+
+court_of_law_mal = {
+
+	global_autonomy = -0.05
+
+}
+
+riches_of_colombia_mal = {
+
+	trade_efficiency = 0.10
+
+}
+
+#Songhai
+
+unknown_front_son = {
+
+	colonists = 1
+	range = 0.25
+
+}
+
+nubian_contact_son = {
+
+	technology_cost = -0.05
+
+}
+
+the_kola_nuts_son = {
+
+	production_efficiency = 0.10
+	trade_efficiency = 0.10
+
+}
+
+defended_azbin_east_son = {
+
+	local_defensiveness = 0.33
+
+}
+
+timbuktu_defeated_son = {
+
+	core_creation = -0.10
+	global_trade_power = 0.10
+
+}
+
+mali_ended_son = {
+
+	prestige = 1
+	land_morale = 0.10
+
+}
+
+songhai_empire_basedness_son = {
+
+	infantry_power = 0.15
+	administrative_efficiency = 0.05
+
+}
+
+the_great_gao_son = {
+
+	local_development_cost = -0.25
+	prestige_decay = -0.01
+	local_build_cost = -0.25
+	local_unrest = -3
+
+}
+
+absolutism_son = {
+
+	global_autonomy = -0.075
+
+}
+
+platteu_warriors_son = {
+
+	cavalry_power = 0.15
+	cavalry_cost = -0.15
+
+}
+
+songhai_invasion_son = {
+
+	local_unrest = -2
+	local_tax_modifier = 0.20
+
+}
+
+#Madagascar
+
+united_madagascar_mgr = {
+
+	land_morale = 0.15
+
+}
+
+conquest_of_zanzibar_mgr = {
+
+	global_trade_power = 0.10
+
+}
+
+end_of_mutapa_mgr = {
+
+	discipline = 0.025
+
+}
+
+fall_of_tete_mgr = {
+
+	trade_efficiency = 0.10
+	production_efficiency = 0.05
+
+}
+
+australasian_relations_restored_mgr = {
+
+	diplomatic_upkeep = 1
+
+}
+
+cape_colony_mgr = {
+
+	global_trade_goods_size_modifier = 0.05
+	prestige_decay = -0.01
+
+}
+
+#SA
+
+south_african_identity = {
+	prestige = 0.5
+	global_tax_modifier = 0.05
+}
+
+large_cape_colony = {
+	merchants = 1
+	trade_efficiency = 0.025
+	trade_steering = 0.025
+	naval_forcelimit = 5
+	land_forcelimit = 5
+}
+
+larger_cape_colony = {
+	merchants = 1
+	trade_efficiency = 0.05
+	trade_range_modifier = 0.15
+	trade_steering = 0.05
+	naval_forcelimit = 10
+	land_forcelimit = 10
+}
+
+phoenicia_restored = {
+	all_power_cost = -0.05
+}
+
+yearning_for_dutch_nation = {
+	local_unrest = 3
+	min_local_autonomy = 25
+}
+
+ascended_to_emperorship = {
+	imperial_authority = 0.10
+}
+
+leo_belgicus_united = {
+	all_power_cost = -0.05
+}
+
+#Dietsland_Flemish_Dutch
+dietsland_50_50 = {
+	improve_relation_modifier = 0.25
+	diplomatic_reputation = 1
+	stability_cost_modifier = -0.20
+	global_manpower_modifier = 0.20
+	yearly_army_professionalism = 0.1
+	land_maintenance_modifier = -0.20
+}
+
+dietsland_100_0 = {
+	discipline = 0.1
+	land_morale = 0.15
+	siege_ability = 0.15
+	army_tradition = 1
+	shock_damage_received = -0.15
+	fire_damage_received = -0.15
+	manpower_recovery_speed = 0.33
+}
+
+dietsland_0_100 = {
+	development_cost_modifier = -0.15
+	trade_goods_size_modifier = 0.33
+	trade_steering = 0.20
+	fort_maintenance_modifier = -0.25
+	global_ship_cost = -0.25
+	navy_tradition = 1
+	heavy_ship_power = 0.20
+}
+
+dietsland_60_40 = {
+	land_morale = 0.05
+	siege_ability = 0.05
+	army_tradition = 0.30
+}
+
+dietsland_70_30 = {
+	land_morale = 0.10
+	siege_ability = 0.10
+	army_tradition = 0.5
+}
+
+dietsland_80_20 = {
+	discipline = 0.05
+	land_morale = 0.10
+	siege_ability = 0.10
+	army_tradition = 0.5
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
+}
+
+dietsland_90_10 = {
+	discipline = 0.05
+	land_morale = 0.15
+	siege_ability = 0.10
+	army_tradition = 1
+	shock_damage_received = -0.10
+	fire_damage_received = -0.10
+}
+
+dietsland_40_60 = {
+	development_cost_modifier = -0.05
+	trade_goods_size_modifier = 0.10
+	navy_tradition = 0.30
+}
+
+dietsland_30_70 = {
+	development_cost_modifier = -0.05
+	trade_goods_size = 0.15
+	navy_tradition = 0.5
+}
+
+dietsland_20_80 = {
+	development_cost_modifier = -0.10
+	trade_goods_size = 0.15
+	trade_steering = 0.10
+	fort_maintenance_modifier = -0.10
+	global_ship_cost = -0.10
+	navy_tradition = 0.5
+}
+
+dietsland_10_90 = {
+	development_cost_modifier = -0.10
+	trade_goods_size = 0.20
+	trade_steering = 0.10
+	fort_maintenance_modifier = -0.10
+	global_ship_cost = -0.10
+	navy_tradition = 1
+	heavy_ship_power = 0.1
+}
+
+inf_50 = {
+	min_local_autonomy = 0
+	local_autonomy = -100
+}
+
+inf_40 = {
+	min_local_autonomy = 20
+}
+
+inf_30 = {
+	min_local_autonomy = 40
+}
+
+inf_20 = {
+	min_local_autonomy = 60
+	local_unrest = 1
+}
+
+inf_10 = {
+	min_local_autonomy = 80
+	local_unrest = 3
+}
+
+inf_0 = {
+	min_local_autonomy = 90
+	local_unrest = 5
+}
+
+black_sea_hegemon = {
+	naval_forcelimit_modifier = 0.2
+	global_sailors_modifier = 0.1
+}
+
+ayhans_philosophy = {
+	global_unrest = 3
+	legitimacy = -3
+}
+
+increased_local_autonomy = {
+	min_local_autonomy = 0.15
+}
+
+turkish_republicanism = {
+	republican_tradition = 0.5
+}
+
+we_are_all_turks = {
+	culture_conversion_cost = -0.25
+	num_accepted_cultures = 2
+}
+
+turkish_laicism = {
+	no_religion_penalty = yes
+}
+
+turkish_reformism = {
+	global_institution_spread = 0.2
+	embracement_cost = -0.33
+	technology_cost = -0.05
+}
+
+turkish_nationalism = {
+	global_manpower_modifier = 0.2
+	land_morale = 0.05
+}
+
+turkish_statism = {
+	trade_efficiency = 0.10
+	global_trade_power = 0.10
+	global_trade_goods_size_modifier = 0.05
+}
+
+the_six_arrows = {
+	yearly_revolutionary_zeal = 1
+}
+
+munster_control_enforced = {
+	diplomatic_annexation_cost = -0.25
+}
+
+chief_city_dortmund = {
+	trade_goods_size_modifier = 0.25
+}
+
+oldenburg_dockyards = {
+	local_ship_repair = 0.2
+}
+
+towards_saxony = {
+	land_morale = 0.1
+}
+
+early_industry = {
+	global_trade_goods_size = 0.03
+}
+
+growing_population = {
+	local_build_cost = -0.20
+}
+
+appeased_the_city_states = {
+	improve_relation_modifier = 0.25
+}
+
+shield_of_the_league = {
+	land_maintenance_modifier = -0.15
+	land_morale = 0.05
+}
+
+aegean_wall = {
+	naval_morale = 0.10
+}
+
+ragusan_hegemon = {
+	trade_efficiency = 0.1
+}
+
+beyond_the_mediterranean = {
+	colonists = 1
+	range = 0.20
+}
+
+masters_of_the_sea = {
+	navy_tradition = 0.5
+	naval_maintenance_modifier = -0.20
+}
+
+sicilian_might = {
+	ship_durability = 0.15
+}
+
+masters_of_trade = {
+	merchants = 1
+	global_trade_power = 0.2
+}
+
+broke_alexander = {
+	monthly_militarized_society = 0.1
+}
+
+sack_of_ragusa = {
+	galley_power = 0.15
+}
+
+spartan_superiority = {
+	army_tradition = 1
+	land_forcelimit_modifier = 0.2
+	land_morale = 0.05
+}
+
+galician_integration = {
+	num_accepted_cultures = 1
+}
+
+lon_completing_the_reconquista = {
+	land_morale = 0.15
+	manpower_recovery_speed = 0.15
+	global_missionary_strength = 0.03
+}
+
+an_example_to_us_all = {
+	diplomatic_annexation_cost = -0.20
+	culture_conversion_cost = -0.25
+}
+
+castillian_integration = {
+	num_accepted_cultures = 1
+}
+
+lon_plus_ultra = {
+	all_power_cost = -0.05
+	prestige = 1
+}
+
+madrid_university = {
+	global_institution_spread = 0.33
+}
+
+leonese_cloth_halls = {
+	trade_goods_size_modifier = 0.25
+}
+
+lon_army_reform = {
+	army_tradition = 0.5
+	infantry_power = 0.10
+}
+
+iberian_armada = {
+	heavy_ship_power = 0.1
+}
+
+towards_the_west_indies = {
+	range = 0.20
+}
+
+leonese_settlements = {
+	global_colonial_growth = 25
+}
+wealth_of_the_americas = {
+	inflation_reduction = 0.1
+}
+lon_sea_route_to_india = {
+	range = 0.20
+	global_trade_power = 0.15
+}
+
+leonese_tax_reforms = {
+	global_tax_modifier = 0.15
+}
+
+expanded_the_administration = {
+	administrative_efficiency = 0.05
+}
+
+viva_iberia = {
+	monthly_reform_progress	= 0.5
+}
+
+expanding_our_reach = {
+	global_ship_cost = -0.20
+}
+
+valencia_alexandria_prospers = {
+	trade_value_modifier = 0.5
+	province_trade_power_modifier = 0.33
+}
+
+true_king_of_aragon = {
+	diplomatic_annexation_cost = -0.20
+}
+
+king_of_the_basque = {
+	diplomatic_reputation = 1
+}
+
+dominator_of_southern_france = {
+	diplomatic_annexation_cost = -0.15
+	ae_impact = -0.05
+}
+
+
+the_macedon_rebellion = {
+	legitimacy = -0.5
+	stability_cost_modifier = 0.5
+	manpower_recovery_speed = -0.20
+	prestige = -2
+}
+
+restoration_of_macedon = {
+	manpower_recovery_speed = 0.25
+	legitimacy = 3
+}
+
+mac_recovered_the_army = {
+	land_morale = 0.1
+}
+
+mac_legitimized = {
+	development_cost_modifier = -0.1
+}
+
+macedon_rebuild = {
+	trade_goods_size_modifier = 0.15
+}
+
+athenian_thinkers = {
+	advisor_cost = -0.15
+	advisor_pool = 2
+}
+
+onwards_to_anatolia = {
+	discipline = 0.05
+	infantry_power = 0.1
+}
+
+black_sea_coast = {
+	light_ship_cost = -0.20
+
+}
+
+scourge_of_the_seljuks = {
+	prestige = 1
+	all_estate_loyalty_equilibrium = 0.1
+}
+
+mac_liberator_of_jerusalem = {
+	tolerance_own = 2
+}
+
+mac_control_the_persian_gulf = {
+	global_trade_power = 0.15
+}
+
+head_for_damascus = {
+	infantry_power = 0.05
+}
+
+spartan_empire = {
+	all_power_cost = -0.05
+}
+
+a_roman_army = {
+	army_tradition_decay = -0.03
+}
+
+roman_tax_reforms = {
+	global_tax_modifier = 0.20
+}
+
+roman_navy = {
+	galley_power = 0.15
+}
+
+roman_reformed_state = {
+	republican_tradition = 0.5
+	legitimacy = 1
+}
+
+praetorians_denied = {
+	global_unrest = 2
+}
+
+rebirth_of_the_praetorians = {
+	all_estate_loyalty_equilibrium = 0.1
+}
+
+roman_dictatorship = {
+	republican_tradition = -0.5
+	yearly_absolutism = 1
+	prestige = 1
+	administrative_efficiency = 0.05
+}
+
+dictatorial_powers = {
+	discipline = 0.025
+	harsh_treatment_cost = -0.25
+}
+
+senatorial_independence_maintained = {
+	candidate_random_bonus = 1
+}
+
+a_popular_government = {
+	republican_tradition = 0.5
+	global_unrest = -1
+}
+
+a_powerful_government = {
+	min_autonomy = -0.1
+}
+
+invasion_of_sicily = {
+	local_development_cost_modifier = -0.20
+	local_culture_conversion_cost = -0.15
+}
+
+the_northern_campaign = {
+	discipline = 0.05
+	land_morale = 0.1
+}
+
+rpr_venice = {
+	province_trade_power_modifier = 0.25
+}
+
+rpr_lombards_tamed = {
+	local_development_cost_modifier = -0.05
+	trade_goods_size_modifier = 0.15
+}
+
+claims_of_the_romans = {
+	ae_impact = -0.1
+}
+
+rpr_antwerp = {
+province_trade_power_modifier = 0.25
+}
+
+rpr_constantines_will = {
+	local_development_cost_modifier = -0.2
+	trade_goods_size_modifier = 0.15
+}
+
+rpr_conquest_of_alexandia = {
+	local_development_cost_modifier = -0.1
+	province_trade_power_modifier = 0.20
+}
+
+rpr_sassari_gold_mine = {
+	trade_goods_size = 1
+}
+
+mare_nostrum = {
+	naval_forcelimit_modifier = 0.33
+}
+
+railroad_mod_fra = {
+	discipline = 0.05
+	land_morale = 0.1
+	province_warscore_cost = -0.5
+}
+
+belgian_revolt_modifier = {
+	local_unrest = 10
+}
+
+leonese_viceroyals = {
+	colonists = 1
+}
+
+trieste_company = {
+	range = 0.2
+	global_colonial_growth = 15
+}
+expanded_the_commerce = {
+	trade_value_modifier = 0.25
+}
+gemcutters_of_cacares = {
+	trade_goods_size_modifier = 0.25
+}
+puerto_de_porto = {
+	local_ship_cost = -0.1
+	local_ship_repair = 0.2
+}
+pride_of_iberia = {
+	flagship_durability = 1
+	flagship_morale = 1
+}
+the_pen_and_sword = {
+	diplomatic_reputation = 1
+	mil_tech_cost_modifier = -0.05
+}
+superiority_above_all = {
+	discipline = 0.025
+}
+lon_a_fine_balance = {
+	improve_relation_modifier = 0.25
+	monarch_diplomatic_power = 1
+}
+the_greatest_canton = {
+	local_build_cost = -0.15
+}
+buying_swiss = {
+	trade_efficiency = 0.15
+	global_trade_power = 0.05
+}
+bernese_ironworking = {
+	trade_goods_size_modifier = 0.25
+}
+the_unconquerable_mountains = {
+	hostile_attrition = 1
+}
+prospering_under_bern = {
+	development_cost_modifier = -0.25
+	build_cost = -0.20
+}
+vampire_hunter = {
+	prestige = 1
+	army_tradition = 0.33
+}
+
+vol_black_soils = {
+	trade_goods_size = 1
+}
+
+grand_ironworks = {
+	local_production_efficiency = 0.25
+}
+
+carpathian_forts = {
+	hostile_attrition = 1
+	local_defensiveness = 0.10
+}
+
+fyrir_shipbuilding = {
+	light_ship_power = 0.15
+	ship_recruit_speed = -0.20
+}
+
+traditional_norse_training = {
+	land_morale = 0.05
+	discipline = 0.025
+}
+
+rich_lands_of_massachusetts = {
+	development_cost_modifier = -0.10
+}
+
+cradle_of_civilization = {
+	trade_efficiency = 0.10
+	global_trade_goods_size_modifier = 0.05
+}
+
+prelude_to_the_grand_expedition = {
+	may_explore = yes
+}
+
+prepare_the_grand_expedition = {
+	range = 0.25
+}
+
+settling_the_old_lands = {
+	colonists = 1
+}
+
+return_of_the_vikings = {
+	all_power_cost = -0.05
+}
+
+great_leap_westwards = {
+	auto_explore_adjacent_to_colony = yes
+	may_establish_frontier = yes
+}
+
+freshwater_settlements = {
+	global_colonial_growth = 15
+}
+
+quest_for_new_oslo = {
+	may_explore = yes
+	colonists = 1
+}
+
+ANJ_parisian_guard_pu = {
+	global_manpower_modifier = 0.1
+}
+
+ANJ_parisian_guard_perm = {
+	global_manpower_modifier = 0.05
+}
+
+ANJ_dealt_with_nuns_mod = {
+	discipline = 0.025
+}
+
+ANJ_crossbearer_mod = {
+	global_missionary_strength = 0.1
+}
+
+ANJ_dissatisfied_nuns = {
+	local_unrest = 5
+}
+
+ANJ_a_sign_of_our_faith = {
+	missionaries = 1
+}
+
+ANJ_king_of_anjou = {
+	years_to_integrate_personal_union = -10
+	diplomatic_annexation_cost = -0.2
+}
+
+ANJ_anjou_above_all = {
+	diplomatic_reputation = 1
+}
+
+ANJ_king_of_middle_francia_mod = {
+	diplomatic_reputation = 2
+}
+
+gemcutters_of_caux = {
+	local_development_cost_modifier = -0.10
+}
+
+ANJ_valley_of_cloth = {
+	local_build_cost = -0.15
+	local_production_efficiency = 0.33
+}
+
+ANJ_brittany_dockyards = {
+	ship_recruit_speed = -0.25
+}
+
+ANJ_discover_new_land = {
+	global_colonial_growth = 25
+}
+
+ANJ_ports_of_the_carribean = {
+	global_foreign_trade_power = 0.05
+}
+
+ANJ_traverse_the_mississippi = {
+	global_colonial_growth = 20
+}
+
+ANJ_house_of_the_rising_sun = {
+	local_production_efficiency = 0.1
+}
+
+ANJ_reach_further = {
+	range = 0.25
+}
+
+ANJ_further_and_further = {
+	colonist_placement_chance = 0.05
+}
+
+ANJ_luxury_goods_of_the_caribbean = {
+	trade_goods_size_modifier = 0.05
+}
+
+ANJ_a_dynasty_spanning_continents = {
+	colonists = 1
+	legitimacy = 1
+}
+
+BOU_the_house_of_bourbon = {
+	stability_cost_modifier = 0.1
+	global_unrest = 1
+	diplomatic_reputation = -1
+	legitimacy = -0.1
+	land_morale = 0.10
+	prestige = 1
+}
+
+FRA_bourbon_defeated = {
+	global_unrest = -0.1
+	improve_relation_modifier = 0.15
+	legitimacy = 0.5
+}
+
+fra_shepard_of_occitania = {
+	local_development_cost_modifier = -0.05
+	local_unrest = -2
+}
+
+fra_normandy_gained = {
+	improve_relation_modifier = 0.10
+	diplomatic_reputation = 1
+}
+
+fra_conquest_of_normandy = {
+	land_morale = 0.1
+	discipline = 0.025
+	ae_impact = -0.10
+}
+
+fra_anjou_vanquished = {
+	legitimacy = 0.5
+	prestige_decay = -0.2
+}
+
+fra_king_of_the_gascons = {
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}
+
+fra_shepard_of_the_south = {
+	years_to_integrate_personal_union = -15
+}
+
+vol_rebuild_kiev = {
+	local_development_cost_modifier = -0.1
+	local_production_efficiency = 0.15
+}
+
+vol_integrate_the_crimeans = {
+	local_culture_conversion_cost = -0.33
+}
+
+vol_conquest_of_prussia = {
+	land_morale = 0.05
+}
+
+vol_cannons_of_smolensk = {
+	siege_ability = 0.10
+}
+
+vol_ruler_of_estonia = {
+	local_development_cost = -0.15
+	local_prosperity_growth = 0.10
+}
+
+vol_crushed_the_horde = {
+	prestige = 1
+	shock_damage = 0.05
+}
+
+vol_pretenders_crushed = {
+	legitimacy = 2
+	prestige_decay = -0.03
+}
+
+vol_cossacks_appeased = {
+	special_unit_forcelimit = 0.5
+}
+
+vol_cossacks_employed = {
+	cossacks_loyalty_modifier = 0.1
+	land_forcelimit_modifier = 0.15
+}
+
+vol_port_of_riga = {
+	trade_goods_size = 1
+	local_sailors_modifier = 0.5
+	local_ship_repair = 0.5
+}
+
+vol_baltic_fleet = {
+	global_ship_cost = -0.33
+	ship_recruit_speed = 0.50
+}
+
+vol_master_of_the_steppes = {
+	cav_to_inf_ratio = 0.5
+	cavalry_shock = 1
+	cavalry_flanking = 0.05
+}
+
+wsx_onwards_to_normandy = {
+	heavy_ship_power = 0.10
+	regiment_disembark_speed = 0.20
+}
+
+wsx_william_the_reconquerer = {
+	local_build_cost = -0.1
+	local_years_of_nationalism = -5
+	local_unrest = -2
+}
+
+swa_reestablished_control = {
+	local_prosperity_growth = 0.2
+	local_unrest = -2
+}
+
+swa_dominator_of_swabia = {
+	diplomatic_reputation = 1
+}
+
+swa_glorious_city = {
+	local_development_cost_modifier = -0.10
+	local_production_efficiency = 0.15
+}
+
+swa_riches_of_swabia = {
+	development_cost = -0.05
+	trade_efficiency = 0.1
+}
+
+swa_siegfried_unrest = {
+	local_unrest = 2
+	local_autonomy = 0.05
+}
+
+swa_loyalist_province = {
+	local_unrest = 5
+	local_autonomy = 0.20
+}
+
+swa_reigned_in_province = {
+	autonomy_change_time = -0.5
+	local_prosperity_growth = 0.05
+	local_manpower_modifier = 0.1
+}
+
+swa_iron_fist_rule = {
+	min_local_autonomy = 0
+	local_unrest = -1
+}
+
+swa_military_support_lost = {
+	land_morale = -0.10
+	discipline = -0.05
+	manpower_recovery_speed = -0.50
+}
+
+swa_regained_military_support = {
+	manpower_recovery_speed = 0.15
+}
+
+swa_great_bavarian_expulsion = {
+	local_culture_conversion_cost = -0.5
+}
+
+swa_tk_increase = {
+	monthly_swabian_war_council_power = 2
+}
+
+swa_immortal_temp = {
+	monarch_lifespan = 100
+}
+
+swa_national_propaganda = {
+	land_forcelimit_modifier = 0.1
+	yearly_government_power = 12
+}
+
+swa_hell_on_earth_mod = {
+	manpower_recovery_speed = 0.15
+	prestige_from_land = 1
+}
+
+swa_swabian_supremacy = {
+	administrative_efficiency = 0.1
+	prestige_decay = -0.03
+}
+
+swa_swabia_above_all = {
+	all_power_cost = -0.05
+}
+
+swa_strenghten_the_council_mod = {
+	yearly_government_power = 6
+}
+
+swa_integrated_bavarians = {
+	local_manpower_modifier = 0.25
+	local_unrest = -2
+}
+
+swa_insurpassable_nation = {
+	prestige = 2
+}
+
+swa_konstanz_cloth_halls = {
+	trade_goods_size_modifier = 0.25
+}
+
+fra_influencing_the_empire = {
+	diplomatic_reputation = 2
+	diplomatic_upkeep = 1
+}
+
+fra_francia_ascendant = {
+	imperial_authority = 0.05
+	improve_relation_modifier = 0.15
+}
+
+fra_picardy_in_the_empire = {
+	local_development_cost_modifier = -0.05
+}
+
+fra_rex_italia = {
+	ae_impact = -0.10
+	diplomatic_reputation = 1
+}
+
+fra_rex_belgicus = {
+	development_cost_modifier = -0.10
+	production_efficiency = 0.05
+}
+
+fra_gate_to_francia = {
+	local_defensiveness = 0.20
+}
+
+fra_lothars_legacy = {
+	legitimacy = 1
+	all_power_cost = -0.025
+}
+
+fra_dominator_swabia = {
+	land_morale = 0.10
+}
+
+fra_rheinland_market = {
+	global_trade_power = 0.05
+	trade_efficiency = 0.10
+}
+
+fra_the_second_capital = {
+	trade_goods_size = 1
+}
+
+fra_nissa_la_bella = {
+	local_development_cost_modifier = -0.10
+	local_ship_repair = 0.15
+}
+fra_great_mines_of_sardinia = {
+	trade_goods_size = 1
+}
+fra_relations_with_the_pope = {
+	papal_influence = 2
+	curia_powers_cost = -0.20
+}
+fra_bow_to_no_man = {
+	tolerance_heretic = 2
+}
+
+fra_scourge_of_lothar = {
+	ae_impact = -0.10
+}
+
+fra_sparkling_wine = {
+	local_development_cost_modifier = -0.10
+	local_production_efficiency = 0.15
+}
+
+fra_genoese_trade = {
+	trade_value_modifier = 0.15
+}
+
+fra_le_havre = {
+	local_sailors_modifier = 0.15
+	local_ship_repair = -0.25
+}
+
+fra_gate_to_the_med = {
+	local_ship_repair = -0.25
+}
+
+fra_beyond_calais = {
+	range = 0.20
+}
+
+fra_compagnie_des_antilles = {
+	global_own_trade_power = 0.25
+}
+
+fra_spread_the_faith = {
+	local_missionary_strength = 0.05
+}
+
+fra_colombian_goods = {
+	trade_goods_size_modifier = 0.20
+}
+
+fra_northern_frontier = {
+	colonists = 1
+}
+
+fra_saint_laurent_monopolized = {
+	global_foreign_trade_power = 0.15
+}
+
+fra_glorious_marseilles = {
+	province_trade_power_modifier = 0.15
+}
+
+fra_wine_monopolies = {
+	trade_goods_size_modifier = 0.33
+}
+
+fra_troyes_manufacturing = {
+	trade_goods_size = 1
+}
+
+fra_rhineland_proximity = {
+	local_development_cost = -0.15
+	trade_value_modifier = 0.10
+}
+
+fra_orlean_centralised = {
+	local_development_cost_modifier = -0.10
+}
+
+fra_lorraine_steelmills = {
+	trade_goods_size = 1
+}
+
+fra_monopoly_over_champagne = {
+	global_own_trade_power = 0.15
+	caravan_power = 0.10
+}
+
+fra_influential_merchants = {
+	merchants = 1
+}
+
+fra_death_of_chivalry = {
+	all_estate_loyalty_equilibrium = 0.05
+	all_estate_influence_modifier = -0.10
+	reform_progress_growth = 0.05
+}
+
+fra_strength_in_numbers = {
+	infantry_power = 0.05
+}
+
+fra_revolutionized_conscription = {
+	infantry_cost = -0.50
+	cavalry_cost = -0.50
+	artillery_cost = -0.25
+	regiment_recruit_speed = 0.25
+}
+
+emperor_victorious_over_lombards = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.10
+	imperial_authority = 0.10
+}
+
+emperor_lombardy_freed = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.10
+	ae_impact = -0.15
+}
+
+emperor_victorious_against_emperor = {
+	prestige = 2
+}
+
+emperor_magna_humilitas = {
+	land_forcelimit_modifier = -0.5
+	land_maintenance_modifier = 0.25
+	land_morale = -0.1
+}
+
+emperor_leader_of_the_league = {
+	land_morale = 0.10
+	discipline = 0.05
+}
+
+brn_chur_markets = {
+	local_center_of_trade_upgrade_cost = -0.20
+	trade_value_modifier = 0.25
+}
+
+brn_lake_geneva_prosperity = {
+	local_development_cost_modifier = -0.10
+	local_prosperity_growth = 0.05
+	local_production_efficiency = 0.10
+}
+
+brn_alpine_confederacy = {
+	fort_maintenance_modifier = -0.20
+	global_prosperity_growth = 0.05
+}
+
+lon_looms_of_valencia = {
+	trade_goods_size = 1
+}
+
+lon_a_pious_kingdom = {
+	papal_influence = 1
+}
+
+lon_siding_with_ecclasia = {
+	tolerance_own = 2
+	tolerance_heretic = 1
+}
+
+lon_architecture_of_lisbon = {
+	local_development_cost_modifier = -0.10
+}
+
+lon_assembled_the_tercios = {
+	has_tercio = yes
+	allowed_tercio_fraction = 0.10
+	army_tradition = 0.5
+	yearly_army_professionalism = 0.25
+}
+
+swa_siegfried_insanity_growth = {
+	siegfried_sanity_power_gain_modifier = 0.25
+}
+
+swa_memmingen_massacre = {
+	local_unrest = 3
+}
+
+swa_bavarian_massacre = {
+	local_unrest = 2
+	local_monthly_devastation = 0.05
+}
+
+crm_eternal_fortress = {
+	local_defensiveness = 0.33
+	local_defender_dice_roll_bonus = 1
+}
+
+crm_spiritual_city = {
+	local_tax_modifier = 0.5
+}
+
+crm_kezlev_industry = {
+	local_production_efficiency = 0.20
+}
+
+crm_beautiful_city = {
+	prestige = 1
+}
+
+crm_western_ideas = {
+	technology_cost = -0.10
+	idea_cost = -0.05
+}
+
+crm_westernization = {
+	institution_growth = 1
+	embracement_cost = -0.33
+}
+
+crm_intolerant_society = {
+	culture_conversion_cost = -0.33
+	global_missionary_strength = 0.03
+}
+
+crm_tolerant_society = {
+	global_unrest = -2
+	no_religion_penalty = yes
+}
+
+crm_peninsula_of_desires = {
+	development_cost = -0.15
+}
+
+crm_crimean_mercantilism = {
+	global_sailors_modifier = 0.5
+	mercantilism_cost = -0.20
+}
+
+crm_marines = {
+	allowed_marine_fraction = 0.33
+}
+
+crm_infrastructural_expansion = {
+	expand_infrastructure_cost_modifier = -0.30
+	build_cost = -0.15
+}
+
+crm_crimea_ascendant = {
+	all_power_cost = -0.025
+}
+
+crm_black_sea_dominance = {
+	flagship_durability = 1
+	number_of_cannons_flagship_modifier = 0.33
+	naval_maintenance_flagship_modifier = -0.25
+}
+
+crm_glassworks = {
+	trade_goods_size = 1
+}
+
+crm_early_industrialization = {
+	production_efficiency = 0.25
+}
+
+crm_beyond_the_bosphorus = {
+	range = 0.50
+}
+
+crm_colonial_ambitions = {
+	colonists = 1
+	global_colonial_growth = 0.20
+}
+
+rum_centralization = {
+	local_autonomy = -0.05
+	local_prosperity_growth = 0.05
+}
+
+rum_new_capital = {
+	local_missionary_strength = 0.03
+	local_culture_conversion_cost = -0.33
+}
+
+rum_the_western_campaign = {
+	manpower_recovery_speed = 0.10
+	land_morale = 0.05
+}
+
+rum_victory_over_alexander = {
+	prestige_decay = -0.03
+	legitimacy = 0.01
+}
+
+rum_aegean_dominance = {
+	local_development_cost = -0.05
+}
+
+rum_greek_dominance = {
+	local_missionary_strength = 0.02
+	local_culture_conversion_cost = -0.33
+	local_culture_conversion_time = -0.25
+}
+
+rum_western_conscription = {
+	local_manpower_modifier = 0.10
+}
+
+rum_albanian_mercenaries = {
+	mercenary_cost = -0.20
+	merc_maintenance_modifier = -0.10
+}
+
+rum_albanian_fortifications = {
+	local_defensiveness = 0.25
+}
+
+rum_kosovo_goldmine = {
+	trade_goods_size = 1
+}
+
+rum_dalmatian_mercantilism = {
+	trade_value_modifier = 0.20
+}
+
+rum_the_great_push_east = {
+	infantry_power = 0.05
+	cavalry_power = 0.10
+}
+
+rum_caucasian_conquest = {
+	local_development_cost = -0.10
+	local_monthly_devastation = -0.05
+	local_autonomy = -0.05
+}
+
+rum_jasmine_city = {
+	trade_value_modifier = 0.25
+	local_development_cost = -0.15
+	local_build_cost = -0.10
+}
+
+rum_sack_of_cairo = {
+	local_development_cost = 0.35
+}
+
+rum_seljuk_domination = {
+	liberty_desire = -0.25
+	global_own_trade_power = 0.10
+}
+
+rum_northern_vineyards = {
+	trade_goods_size = 1
+}
+
+rum_intellectual_center_of_muslim_world = {
+	technology_cost = -0.10
+	idea_cost = -0.05
+}
+
+rum_bashra_trade = {
+	province_trade_power_modifier = 0.33
+}
+
+rum_trans_mediterranean_trade = {
+	global_foreign_trade_power = 0.05
+	global_ship_trade_power = 0.15
+}
+
+rum_center_of_the_worlds_trade = {
+	global_own_trade_power = 0.10
+	trade_efficiency = 0.15
+	trade_value_modifier = 0.25
+}
+
+rum_al_sham_fairs = {
+	trade_value_modifier = 0.10
+}
+
+rum_troyan_shipyards = {
+	local_ship_cost = -0.25
+	ship_recruit_speed = 0.50
+}
+
+rum_modernized_janissary_organisation = {
+	allow_janissaries_from_own_faith = yes
+}
+
+rum_anatolian_shipbuilding = {
+	ship_recruit_speed = 0.25
+}
+
+rum_anatolian_siege_equipment = {
+	artillery_cost = -0.50
+	artillery_power = 0.15
+}
+
+rum_fourdeckers = {
+	flagship_morale = 0.10
+	number_of_cannons_flagship_modifier = 0.50
+}
+
+rum_gem_of_worlds_desire = {
+	local_development_cost = -0.30
+	trade_value_modifier = 0.10
+}
+
+rum_imperial_capital = {
+	local_development_cost = -0.20
+	local_build_cost = -0.25
+}
+
+rum_copper_exploitation = {
+	trade_goods_size = 1
+}
+
+rum_bursa_silk = {
+	trade_goods_size_modifier = 0.25
+}
+
+rum_rise_of_the_seljuks = {
+	core_creation = -0.25
+}
+
+rum_preparation_for_zagros = {
+	siege_ability = 0.25
+}
+
+rum_in_to_persia = {
+	discipline = 0.05
+	movement_speed = 0.10
+}
+
+rum_back_in_seljuk_hands = {
+	local_development_cost = -0.10
+	local_monthly_devastation = -0.05
+	local_autonomy = -0.05
+}
+
+rum_crimean_markets = {
+	trade_value_modifier = 0.20
+}
+
+swa_demilitarization = {
+	land_forcelimit_modifier = -0.50
+	land_maintenance_modifier = 0.15
+	land_morale = -0.05
+	global_manpower_modifier = -0.25
+}
+
+trp_bejaia_iron_mines = {
+	trade_goods_size = 1
+	local_development_cost = -0.15
+}
+
+trp_alexandrian_mercantilism = {
+	merchants = 1
+}
+
+trp_alexandrias_markets = {
+	global_foreign_trade_power = 0.10
+	mercantilism_cost = -0.33
+}
+
+trp_a_new_carthage = {
+	local_development_cost = -0.10
+	province_trade_power_modifier = 0.33
+}
+
+kef_fortifications = {
+	local_defensiveness = 0.25
+	local_defender_dice_roll_bonus = 1
+}
+trp_a_pirates_life = {
+	may_perform_slave_raid = yes
+}
+trp_expanded_dockyards = {
+	naval_forcelimit_modifier = 0.25
+	light_ship_power = 0.15
+}
+trp_a_mediterranean_republic = {
+	trade_efficiency = 0.20
+	republican_tradition = 0.50
+}
+
+trp_enter_the_genoese_market = {
+	province_trade_power_modifier = 0.20
+	local_center_of_trade_upgrade_cost = -0.50
+}
+
+trp_desert_development = {
+	local_development_cost = -0.50
+	local_build_cost = -0.15
+}
+
+trp_trans_atlantic_trade = {
+	colony_development_boost = 1
+	colonist_placement_chance = 0.05
+	trade_steering = 0.15
+}
+
+fra_antwerpian_markets = {
+	global_foreign_trade_power = 0.10
+}
+fra_king_of_flanders = {
+	diplomatic_upkeep = 1
+	improve_relation_modifier = 0.20
+}
+fra_french_overlord = {
+	liberty_desire = -0.25
+}
+
+fla_belgian_subject = {
+	development_cost_modifier = -0.30
+	production_efficiency = 0.20
+}
+
+fra_king_of_belgium = {
+	development_cost = -0.15
+}
+
+fra_flemish_militia = {
+	has_carolean = yes
+	mercenary_cost = -0.20
+}
+
+fra_flemish_militia_local = {
+	local_has_carolean = yes
+}

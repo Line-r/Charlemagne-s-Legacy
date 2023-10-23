@@ -1,0 +1,65 @@
+dying_horde = {
+	opinion = -200
+}
+fra_normandy_denied = {
+	opinion = -100
+	yearly_decay = 3
+}
+target_of_swabian_imperialism = {
+	opinion = -100
+	yearly_decay = 2
+}
+
+fra_denied_entrance = {
+	opinion = -50
+}
+
+fra_stole_electorate = {
+	opinion = -150
+	yearly_decay = 2
+}
+
+fra_refused_electorate = {
+	opinion = -50
+	yearly_decay = 0.5
+}
+
+fra_reconciliation_with_francia = {
+	opinion = 50
+}
+
+fra_ceded_avignon = {
+	opinion = 100
+}
+
+fra_denied_avignon = {
+	opinion = -50
+}
+fra_granted_malta = {
+	opinion = 150
+	yearly_decay = 0.5
+}
+
+fla_flanders_joins_empire = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+fla_refused_membership = {
+	opinion = -150
+	yearly_decay = 1
+}
+
+emperor_diplomatic_mission_failed = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+emperor_lombard_league_member = {
+	opinion = 75
+	yearly_decay = 1
+}
+
+rum_desecrated_rome = {
+	opinion = -100
+}

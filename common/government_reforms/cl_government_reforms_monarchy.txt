@@ -1,0 +1,217 @@
+
+westphalian_overlord = {
+	icon = "elective_monarchy"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			AND = {
+				capital_scope = {
+					province_id = 86
+				}
+				culture_group = germanic
+				NOT = { exists = WES }
+			}
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = westphalian_overlord
+			}
+		}
+	}
+
+	fixed_rank = 2
+	allow_vassal_alliance = yes
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+
+	modifiers = {
+		diplomats = 1
+		diplomatic_reputation = 2
+		max_absolutism = 15
+	}
+
+	conditional = {
+		allow = { has_dlc = "Res Publica" }
+		is_elective = yes
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
+westphalian_subject = {
+	icon = "peasants"
+	allow_normal_conversion = no
+	potential = {
+		overlord = { has_reform = westphalian_overlord }
+	}
+	fixed_rank = 1
+	maintain_dynasty = yes
+	lock_level_when_selected = yes
+
+	modifiers = {
+		land_morale = 0.1
+		trade_efficiency = 0.15
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
+middle_frankish_state = {
+	icon = "austrian_dual_monarchy_reform"
+	allow_normal_conversion = no
+
+	potential = {
+		tag = BUR
+		is_emperor = yes
+	}
+
+	fixed_rank = 2
+	maintain_dynasty = yes
+	lock_level_when_selected = yes
+
+	modifiers = {
+		diplomatic_reputation = 1
+		diplomats = 1
+		diplomatic_annexation_cost = -0.15
+		diplomatic_upkeep = 2
+		imperial_authority = 0.15
+	}
+}
+
+
+preserve_mamluk_regiments_mam_reform = {
+
+	icon = "mamluk_government"
+	allow_normal_conversion = no
+	potential = {
+		tag = MAM
+	}
+	modifiers = {
+		cavalry_power = 0.10
+		cavalry_cost = -0.10
+		mil_tech_cost_modifier = 0.05
+		nobles_loyalty_modifier = 0.10
+		nobles_influence_modifier = 0.10
+	}
+	ai = {
+		factor = 2.5
+	}
+
+}
+
+reform_mamluk_armies_mam_reform = {
+
+	icon = "mamluk_government"
+	allow_normal_conversion = no
+	potential = {
+		tag = MAM
+	}
+	modifiers = {
+		infantry_power = 0.05
+		mil_tech_cost_modifier = -0.10
+		nobles_loyalty_modifier = -0.05
+		nobles_influence_modifier = -0.10
+	}
+	ai = {
+		factor = 2.5
+	}
+
+}
+
+
+spartan_training = {
+	icon = "trading_city"
+	allow_normal_conversion = no
+	lock_level_when_selected = no
+
+	trigger = {
+		has_reform = spartan_training
+	}
+
+	potential = {
+		tag = MAC
+	}
+
+	modifiers = {
+		monarch_military_power = 1
+	}
+
+	custom_attributes = {
+		militarised_society = yes
+	}
+
+}
+
+thardom = {
+	icon = "king"
+	allow_normal_conversion = yes
+	potential = {
+		culture_group = east_slavic
+		OR = {
+			AND = {
+				tag = VOL
+			}
+			AND = {
+				tag = UKR
+			}
+		}
+	}
+
+	modifiers = {
+		global_manpower_modifier = 0.20
+		min_local_autonomy = 0.05
+		global_unrest = -2
+		governing_capacity = 400
+	}
+
+	conditional = {
+		allow = { has_dlc = "Third Rome" }
+		government_abilities = {
+			russian_mechanic
+		}
+		claim_states = yes
+	}
+}
+
+styrian_archduchy_reform = {
+	icon = "austrian_archduchy_reform"
+	allow_normal_conversion = yes
+	legacy_equivalent = austrian_archduchy
+	valid_for_nation_designer = yes
+	maintain_dynasty = yes
+	potential = {
+		OR = {
+			tag = STY
+			tag = STN
+			has_reform = austrian_archduchy_reform
+			have_had_reform = austrian_archduchy_reform
+		}
+	}
+	nation_designer_cost = 0
+	modifiers = {
+		liberty_desire_from_subject_development = -0.33
+		nobles_influence_modifier = 0.05
+		num_accepted_cultures = 1
+		maratha_exclusive_influence_modifier = 0.05
+		rajput_exclusive_influence_modifier = 0.05
+	}
+}
+
+anjou_splendor_government = {
+	icon = "austrian_archduchy_reform"
+	allow_normal_conversion = no
+	legacy_equivalent = feudal_monarchy
+	maintain_dynasty = yes
+
+	potential = {
+		tag = ANJ
+		has_reform = anjou_splendor_government
+	}
+
+	modifiers = {
+		liberty_desire_from_subject_development = -0.10
+		diplomatic_upkeep = 2
+	}
+}

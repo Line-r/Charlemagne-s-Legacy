@@ -1138,8 +1138,8 @@ swa_totalenkrieg_path_3 = {
 		trigger = {
 			any_country = {
 				total_losses_in_won_wars = {
-					winner = ROOT
-					looser = THIS
+					winner = root
+					looser = prev
 					casualties = 2500000
 				}
 			}

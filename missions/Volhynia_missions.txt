@@ -1007,7 +1007,7 @@ vol_westwards_expansion = {
 
 	sack_of_the_second_rome = {
 		required_missions = {
-			king_of_romania
+			vol_king_of_romania
 		}
 		icon = a_roman_empire
 		position = 4
@@ -1153,7 +1153,7 @@ vol_misc_mission = {
 		}
 	}
 
-	king_of_romania = {
+	vol_king_of_romania = {
 		required_missions = {
 			vol_tame_the_bull
 		}
@@ -1207,7 +1207,7 @@ vol_misc_mission = {
 		position = 5
 		icon = take_the_littoral
 		required_missions = {
-			king_of_romania
+			vol_king_of_romania
 		}
 
 		trigger = {

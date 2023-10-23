@@ -329,7 +329,6 @@ CRM_ideas = {
 	crm_empowered_marines = {
 		shock_damage_received = -0.20
 		regiment_disembark_speed = 0.33
-		is_marine_modifier = yes 
 	}
 
 	crm_hardy_seamen = {

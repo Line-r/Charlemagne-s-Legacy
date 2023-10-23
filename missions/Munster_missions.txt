@@ -1,4 +1,4 @@
-centralisation_missions = {
+mun_centralisation_missions = {
 	slot = 3
 	has_country_shield = yes
 	ai = yes
@@ -128,7 +128,7 @@ centralisation_missions = {
 	}
 }
 
-centralize_north = {
+mun_centralize_north = {
 	slot = 2
 	has_country_shield = yes
 	ai = yes
@@ -170,7 +170,7 @@ centralize_north = {
 	}
 }
 
-centralize_south = {
+mun_centralize_south = {
 	slot = 4
 	has_country_shield = yes
 	ai = yes
@@ -211,7 +211,7 @@ centralize_south = {
 	}
 }
 
-additional_missions = {
+mun_additional_missions = {
 	slot = 4
 	generic = no
 	has_country_shield = yes
@@ -266,7 +266,7 @@ additional_missions = {
 	}
 }
 
-additional_missions_2 = {
+mun_additional_missions_2 = {
 	slot = 5
 	generic = no
 	has_country_shield = yes

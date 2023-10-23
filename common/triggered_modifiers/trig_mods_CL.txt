@@ -1,4 +1,3 @@
-
 ANJ_splendor_mechanic_1 = {
 	potential = {
 		tag = ANJ

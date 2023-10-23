@@ -127,7 +127,7 @@ sty_PU_missions = {
 		position = 7
 		icon = glory_to_von_habsburg
 		required_missions = {
-			king_of_romania
+			sty_king_of_romania
 			seize_slavonia
 		}
 		trigger = {
@@ -1048,7 +1048,7 @@ king_of_hungary = {
 	}
 }
 
-king_of_romania = {
+sty_king_of_romania = {
 	position = 6
 	icon = polish_subjects
 	required_missions = {

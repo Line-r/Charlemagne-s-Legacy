@@ -22,11 +22,11 @@ change_estate_land_share = {
 }
 
 
-1380.9.16 = {
+1410.9.16 = {
 	monarch = {
 		name = "Philippe IV"
 		dynasty = "Capet"
-		birth_date = 1394.12.3
+		birth_date = 1385.1.1
 		adm = 4
 		dip = 3
 		mil = 4
